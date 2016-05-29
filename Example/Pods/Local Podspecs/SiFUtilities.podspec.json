@@ -1,0 +1,23 @@
+{
+  "name": "SiFUtilities",
+  "version": "0.1.0",
+  "summary": "A short description of SiFUtilities.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/SiFUtilities",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "NGUYEN CHI CONG": "congnc.if@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/SiFUtilities.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "SiFUtilities/Classes/**/*",
+  "vendored_frameworks": "SiFUtilities/SiFUtilities.framework"
+}

@@ -1,0 +1,6 @@
+framework module Pods_SiFUtilities_Tests {
+  umbrella header "Pods-SiFUtilities_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
