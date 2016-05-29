@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'SiFUtilities/Classes/**/*'
+  #s.source_files = 'SiFUtilities/Classes/**/*'
   
   # s.resource_bundles = {
   #   'SiFUtilities' => ['SiFUtilities/Assets/*.png']
