@@ -22,7 +22,7 @@
 		</data>
 		<key>Modules/SiFUtilities.swiftmodule/arm.swiftmodule</key>
 		<data>
-		o1OczatMf1Jj0tHjd51ErAcDK10=
+		d994rEO0w1R0Bh2uDURYOG486V8=
 		</data>
 		<key>Modules/SiFUtilities.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Modules/SiFUtilities.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		OuKtsbj/B3nEoI3QbOptuwG08Ss=
+		J7H4qU4QOh5MEJXbTRoBkrrWlH8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -76,11 +76,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			o1OczatMf1Jj0tHjd51ErAcDK10=
+			d994rEO0w1R0Bh2uDURYOG486V8=
 			</data>
 			<key>hash2</key>
 			<data>
-			VEOQBFFVmXX6FRGDtTBqkksSkTCfTJQhhx7abdMcG1U=
+			2oziE58V3Xe69UiFk/5g24Xu1gwy+4GY97mcmmjqbLU=
 			</data>
 		</dict>
 		<key>Modules/SiFUtilities.swiftmodule/arm64.swiftdoc</key>
@@ -98,11 +98,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			OuKtsbj/B3nEoI3QbOptuwG08Ss=
+			J7H4qU4QOh5MEJXbTRoBkrrWlH8=
 			</data>
 			<key>hash2</key>
 			<data>
-			X12Ng60iwNKDnLm6+n/qAWEZ6oQsKom41TKVBeUeNyU=
+			IR5OdQsqQQWOuM+LhxZLA7PZZHoa9jPbmgFwGD787Hw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
