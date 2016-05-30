@@ -1,5 +1,5 @@
 PODS:
-  - SiFUtilities (0.1.0)
+  - SiFUtilities (0.1.1)
 
 DEPENDENCIES:
   - SiFUtilities (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SiFUtilities: 1d4e4f32a8648c76beb65f00a0b1daf0eb141074
+  SiFUtilities: 348edd84566221ff8ddbeb15ab0c29fc8213b07f
 
-PODFILE CHECKSUM: dc144ddfd94a80c72ce1f7916521482cd9c7d125
+PODFILE CHECKSUM: 7f2d8010a8f81bf26aeaed0d4ec5a28ac51ab7e2
 
 COCOAPODS: 1.0.0

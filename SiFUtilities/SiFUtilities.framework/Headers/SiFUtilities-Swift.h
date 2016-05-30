@@ -104,57 +104,16 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 @property (nonatomic, readonly, copy) NSString * _Nonnull nameOfClass;
 @end
 
-@class UIViewController;
-@class NSBundle;
-@class NSCoder;
 
-SWIFT_CLASS("_TtC12SiFUtilities23SiFNavigationController")
-@interface SiFNavigationController : UINavigationController
-- (void)viewWillAppear:(BOOL)animated;
-- (BOOL)prefersStatusBarHidden;
-- (UIStatusBarStyle)preferredStatusBarStyle;
-- (nonnull instancetype)initWithNavigationBarClass:(Class _Nullable)navigationBarClass toolbarClass:(Class _Nullable)toolbarClass OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)initWithRootViewController:(UIViewController * _Nonnull)rootViewController OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@interface UINavigationController (SWIFT_EXTENSION(SiFUtilities))
+- (BOOL)sif_prefersStatusBarHidden;
+- (UIStatusBarStyle)sif_preferredStatusBarStyle;
 @end
 
 
-SWIFT_CLASS("_TtC12SiFUtilities19SiFTabBarController")
-@interface SiFTabBarController : UITabBarController
-- (void)viewWillAppear:(BOOL)animated;
-- (UIStatusBarStyle)preferredStatusBarStyle;
-- (BOOL)prefersStatusBarHidden;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-SWIFT_CLASS("_TtC12SiFUtilities22SiFTableViewController")
-@interface SiFTableViewController : UITableViewController
-- (void)viewWillAppear:(BOOL)animated;
-- (BOOL)prefersStatusBarHidden;
-- (UIStatusBarStyle)preferredStatusBarStyle;
-- (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-SWIFT_CLASS("_TtC12SiFUtilities17SiFViewController")
-@interface SiFViewController : UIViewController
-- (void)viewWillAppear:(BOOL)animated;
-- (BOOL)prefersStatusBarHidden;
-- (UIStatusBarStyle)preferredStatusBarStyle;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-@interface UIViewController (SWIFT_EXTENSION(SiFUtilities))
-+ (void)initialize;
-- (void)sif_viewDidLayoutSubviews;
-- (void)viewFinishedLayout;
+@interface UITabBarController (SWIFT_EXTENSION(SiFUtilities))
+- (UIStatusBarStyle)sif_preferredStatusBarStyle;
+- (BOOL)sif_prefersStatusBarHidden;
 @end
 
 
@@ -163,6 +122,17 @@ SWIFT_CLASS("_TtC12SiFUtilities17SiFViewController")
 + (UIViewController * _Nonnull)instantiateViewControllerFromMainStoryboardWithIdentifier:(NSString * _Nonnull)identifier;
 + (UIViewController * _Nonnull)instantiateViewControllerFromMainStoryboard;
 + (UIViewController * _Nonnull)instantiateViewControllerFromStoryboardFile:(NSString * _Nonnull)fileName;
+@end
+
+
+@interface UIViewController (SWIFT_EXTENSION(SiFUtilities))
++ (void)initialize;
++ (void)swizzledMethod:(Class _Null_unspecified)cls originalSelector:(SEL _Null_unspecified)originalSelector to:(SEL _Null_unspecified)swizzledSelector;
+- (void)sif_viewDidLayoutSubviews;
+- (void)viewFinishedLayout;
+- (void)sif_viewWillAppear:(BOOL)animated;
+- (BOOL)sif_prefersStatusBarHidden;
+- (UIStatusBarStyle)sif_preferredStatusBarStyle;
 @end
 
 

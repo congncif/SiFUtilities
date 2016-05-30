@@ -2,10 +2,4 @@ use_frameworks!
 
 target 'SiFUtilities_Example' do
   pod 'SiFUtilities', :path => '../'
-
-  target 'SiFUtilities_Tests' do
-    inherit! :search_paths
-
-    
-  end
 end
