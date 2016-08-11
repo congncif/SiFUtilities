@@ -92,16 +92,73 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 # endif
 #endif
 #if defined(__has_feature) && __has_feature(modules)
+@import AVFoundation;
 @import ObjectiveC;
+@import Foundation;
 @import UIKit;
+@import CoreGraphics;
+@import Foundation.NSURLSession;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
 #pragma clang diagnostic ignored "-Wduplicate-method-arg"
+@class UIImage;
+
+@interface AVPlayer (SWIFT_EXTENSION(SiFUtilities))
+- (UIImage * _Nullable)takeScreenshot;
+@end
+
+
+SWIFT_CLASS("_TtC12SiFUtilities8KVObject")
+@interface KVObject : NSObject
+- (nonnull instancetype)initWithDictionary:(NSDictionary<NSString *, id> * _Nonnull)dictionary OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+- (NSDictionary<NSString *, id> * _Nonnull)toDictionary;
+@end
+
+
+@interface NSData (SWIFT_EXTENSION(SiFUtilities))
+- (NSString * _Nonnull)deviceToken;
+@end
+
+@class NSTimeZone;
+
+@interface NSDate (SWIFT_EXTENSION(SiFUtilities))
+- (NSString * _Nonnull)toStringWithFormat:(NSString * _Nullable)format timeZone:(NSTimeZone * _Nonnull)timeZone;
+@end
+
+
+@interface NSObject (SWIFT_EXTENSION(SiFUtilities))
+@end
+
 
 @interface NSObject (SWIFT_EXTENSION(SiFUtilities))
 + (NSString * _Nonnull)nameOfClass;
 @property (nonatomic, readonly, copy) NSString * _Nonnull nameOfClass;
+@end
+
+
+@interface NSURL (SWIFT_EXTENSION(SiFUtilities))
+- (NSDictionary<NSString *, NSString *> * _Nullable)getKeyValueParameters;
+@end
+
+@class UIViewController;
+
+@interface UIApplication (SWIFT_EXTENSION(SiFUtilities))
++ (UIViewController * _Nullable)topViewController:(UIViewController * _Nullable)base;
+@end
+
+
+@interface UIColor (SWIFT_EXTENSION(SiFUtilities))
+- (nonnull instancetype)initWithR:(CGFloat)r g:(CGFloat)g b:(CGFloat)b;
+- (nonnull instancetype)initWithR:(CGFloat)r g:(CGFloat)g b:(CGFloat)b aPercent:(CGFloat)aPercent;
++ (UIColor * _Nonnull)randomColor:(CGFloat)alpha;
++ (UIColor * _Nonnull)randomColor;
+@end
+
+
+@interface UIImage (SWIFT_EXTENSION(SiFUtilities))
++ (UIImage * _Nonnull)imageWithColor:(UIColor * _Nonnull)color;
 @end
 
 
@@ -117,11 +174,23 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 @end
 
 
+@interface UIView (SWIFT_EXTENSION(SiFUtilities))
+- (UIImage * _Nullable)takeScreenshot;
+@end
+
+
 @interface UIViewController (SWIFT_EXTENSION(SiFUtilities))
-+ (UIViewController * _Nonnull)instantiateViewControllerFromStoryboard:(NSString * _Nonnull)name withIdentifier:(NSString * _Nonnull)identifier;
-+ (UIViewController * _Nonnull)instantiateViewControllerFromMainStoryboardWithIdentifier:(NSString * _Nonnull)identifier;
-+ (UIViewController * _Nonnull)instantiateViewControllerFromMainStoryboard;
-+ (UIViewController * _Nonnull)instantiateViewControllerFromStoryboardFile:(NSString * _Nonnull)fileName;
++ (nonnull instancetype)instantiateViewControllerFromStoryboard:(NSString * _Nonnull)name withIdentifier:(NSString * _Nonnull)identifier;
++ (nonnull instancetype)instantiateViewControllerFromMainStoryboardWithIdentifier:(NSString * _Nonnull)identifier;
++ (nonnull instancetype)instantiateViewControllerFromMainStoryboard;
++ (nonnull instancetype)instantiateViewControllerFromStoryboardFile:(NSString * _Nonnull)fileName;
+
+/// Init with storyboard path
+///
+/// \param storyboardPath <storyboard file name>.<storyboard identifier>
+///
+/// \returns  instance of this class
++ (nonnull instancetype)instantiateViewControllerWithStoryboardPath:(NSString * _Nonnull)storyboardPath;
 @end
 
 
@@ -144,6 +213,14 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 @property (nonatomic) BOOL statusBarHidden;
 - (void)showLoading;
 - (void)hideLoading;
+@end
+
+
+SWIFT_CLASS("_TtC12SiFUtilities14VersionChecker")
+@interface VersionChecker : NSObject <NSURLSessionDelegate>
++ (VersionChecker * _Nonnull)sharedInstance;
+- (void)checkVersionWithCompletion:(void (^ _Nonnull)(BOOL readyForSale, NSString * _Nonnull storeVersion))completion;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 #pragma clang diagnostic pop
