@@ -13,7 +13,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0BE7AE6F87C0CC4BD79B167C24158B39 /* SiFUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SiFUtilities.framework; path = SiFUtilities/SiFUtilities.framework; sourceTree = "<group>"; };
 		1B22580D92EB72B8E86CB0C0C2E13FB8 /* Pods-SiFUtilities_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SiFUtilities_Example-umbrella.h"; sourceTree = "<group>"; };
 		24FBC70F3C68888EB02BD940D8D9BCC8 /* Pods-SiFUtilities_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SiFUtilities_Example.release.xcconfig"; sourceTree = "<group>"; };
 		34452ACFD7E3A13EDFF75FF4E7317C48 /* Pods-SiFUtilities_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SiFUtilities_Example-frameworks.sh"; sourceTree = "<group>"; };
@@ -22,6 +21,7 @@
 		6521F6A052F5D42FB177CD34EEA525DD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6AB2B5D38A04FD196A344D5D7D426E0F /* Pods-SiFUtilities_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SiFUtilities_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		94C943F91F0B1053301DFB0FE1FC0172 /* SiFUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SiFUtilities.framework; path = SiFUtilities/SiFUtilities.framework; sourceTree = "<group>"; };
 		97B2BA5553C3169CB1F352BD10A26086 /* Pods-SiFUtilities_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SiFUtilities_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		DD3DDD039D5027DB545DCADE04E92748 /* Pods-SiFUtilities_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SiFUtilities_Example-dummy.m"; sourceTree = "<group>"; };
@@ -49,6 +49,14 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		2A0C168EDF5C74B8802381E040EF00EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				94C943F91F0B1053301DFB0FE1FC0172 /* SiFUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -57,20 +65,20 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		59FA52545BCE0F68B855F71F3098858D /* Frameworks */ = {
+		5E7D28FCF863DFAE04D445FFC1366617 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0BE7AE6F87C0CC4BD79B167C24158B39 /* SiFUtilities.framework */,
+				A09206B71D3E90B1AE8EC6B7FA584F30 /* SiFUtilities */,
 			);
-			name = Frameworks;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				E1C727302CC646600FFC1E62F23E10CE /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				5E7D28FCF863DFAE04D445FFC1366617 /* Pods */,
 				81D496AA7C3C487F4B0D8B6D4500AB53 /* Products */,
 				10B035D3F62AB96F68484EE17AB0E46B /* Targets Support Files */,
 			);
@@ -84,13 +92,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BC165F0DC7AE0DF20AE190F517A8BC38 /* SiFUtilities */ = {
+		A09206B71D3E90B1AE8EC6B7FA584F30 /* SiFUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				59FA52545BCE0F68B855F71F3098858D /* Frameworks */,
+				2A0C168EDF5C74B8802381E040EF00EF /* Frameworks */,
 			);
-			name = SiFUtilities;
-			path = ../..;
+			path = SiFUtilities;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -117,14 +124,6 @@
 			);
 			name = "Pods-SiFUtilities_Example";
 			path = "Target Support Files/Pods-SiFUtilities_Example";
-			sourceTree = "<group>";
-		};
-		E1C727302CC646600FFC1E62F23E10CE /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				BC165F0DC7AE0DF20AE190F517A8BC38 /* SiFUtilities */,
-			);
-			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

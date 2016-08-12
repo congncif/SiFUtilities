@@ -93,8 +93,8 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if defined(__has_feature) && __has_feature(modules)
 @import AVFoundation;
-@import ObjectiveC;
 @import Foundation;
+@import ObjectiveC;
 @import UIKit;
 @import CoreGraphics;
 @import Foundation.NSURLSession;
@@ -106,14 +106,6 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 
 @interface AVPlayer (SWIFT_EXTENSION(SiFUtilities))
 - (UIImage * _Nullable)takeScreenshot;
-@end
-
-
-SWIFT_CLASS("_TtC12SiFUtilities8KVObject")
-@interface KVObject : NSObject
-- (nonnull instancetype)initWithDictionary:(NSDictionary<NSString *, id> * _Nonnull)dictionary OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-- (NSDictionary<NSString *, id> * _Nonnull)toDictionary;
 @end
 
 

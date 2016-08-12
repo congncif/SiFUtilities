@@ -10,7 +10,7 @@ import UIKit
 
 import SiFUtilities
 
-class ViewController: SiFViewController {
+class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +21,10 @@ class ViewController: SiFViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewFinishedLayout() {
+        super.viewFinishedLayout()
     }
 
 }
