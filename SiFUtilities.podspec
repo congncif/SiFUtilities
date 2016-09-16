@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SiFUtilities'
-  s.version          = '0.3.1'
+  s.version          = '1.0.0'
   s.summary          = 'A set of utilities for UIViewController & more - SiFUtilities.'
 
 # This description is used to generate tags and improve search results.
