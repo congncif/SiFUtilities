@@ -2,13 +2,12 @@
 //  SiFUtilities.h
 //  SiFUtilities
 //
-//  Created by FOLY on 5/29/16.
+//  Created by FOLY on 9/29/16.
 //  Copyright © 2016 [iF] Solution. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-//swift 3 - 1.0.1
 //! Project version number for SiFUtilities.
 FOUNDATION_EXPORT double SiFUtilitiesVersionNumber;
 
@@ -17,4 +16,4 @@ FOUNDATION_EXPORT const unsigned char SiFUtilitiesVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <SiFUtilities/PublicHeader.h>
 
-#import "NSManagedObject+SiF.h"
+

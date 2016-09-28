@@ -203,8 +203,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 @property (nonatomic) BOOL blurLoading;
 @property (nonatomic) UIStatusBarStyle statusBarStyle;
 @property (nonatomic) BOOL statusBarHidden;
-- (void)showLoading;
-- (void)hideLoading;
+- (void)showLoadingWithAnimated:(BOOL)animated customIndicator:(UIView * _Nullable)customIndicator;
+- (void)hideLoadingWithAnimated:(BOOL)animated;
 @end
 
 
