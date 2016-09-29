@@ -174,6 +174,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 @end
 
 
+@interface UIView (SWIFT_EXTENSION(SiFUtilities))
+@property (nonatomic) NSInteger loadingCount;
+- (void)showLoadingWithBlurBackground:(BOOL)blurBackground customIndicator:(UIView * _Nullable)customIndicator animated:(BOOL)animated;
+- (void)hideLoadingWithAnimated:(BOOL)animated;
+@end
+
+
 @interface UIViewController (SWIFT_EXTENSION(SiFUtilities))
 + (nonnull instancetype)instantiateViewControllerFromStoryboard:(NSString * _Nonnull)name withIdentifier:(NSString * _Nonnull)identifier;
 + (nonnull instancetype)instantiateViewControllerFromMainStoryboardWithIdentifier:(NSString * _Nonnull)identifier;
@@ -198,13 +205,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 
 
 @interface UIViewController (SWIFT_EXTENSION(SiFUtilities))
-@property (nonatomic) NSInteger loadingCount;
 @property (nonatomic) BOOL layoutDidFinished;
 @property (nonatomic) BOOL blurLoading;
 @property (nonatomic) UIStatusBarStyle statusBarStyle;
 @property (nonatomic) BOOL statusBarHidden;
-- (void)showLoadingWithAnimated:(BOOL)animated customIndicator:(UIView * _Nullable)customIndicator;
-- (void)hideLoadingWithAnimated:(BOOL)animated;
+- (void)showLoading;
+- (void)hideLoading;
 @end
 
 
