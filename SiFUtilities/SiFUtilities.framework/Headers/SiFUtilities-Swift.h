@@ -206,7 +206,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 
 @interface UIViewController (SWIFT_EXTENSION(SiFUtilities))
 @property (nonatomic) BOOL layoutDidFinished;
-@property (nonatomic) BOOL blurLoading;
 @property (nonatomic) UIStatusBarStyle statusBarStyle;
 @property (nonatomic) BOOL statusBarHidden;
 - (void)showLoading;
