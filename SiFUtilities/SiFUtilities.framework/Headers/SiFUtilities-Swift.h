@@ -158,14 +158,14 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 
 
 @interface UINavigationController (SWIFT_EXTENSION(SiFUtilities))
-- (BOOL)sif_prefersStatusBarHidden;
-- (UIStatusBarStyle)sif_preferredStatusBarStyle;
+@property (nonatomic, readonly) BOOL sif_prefersStatusBarHidden;
+@property (nonatomic, readonly) UIStatusBarStyle sif_preferredStatusBarStyle;
 @end
 
 
 @interface UITabBarController (SWIFT_EXTENSION(SiFUtilities))
-- (UIStatusBarStyle)sif_preferredStatusBarStyle;
-- (BOOL)sif_prefersStatusBarHidden;
+@property (nonatomic, readonly) UIStatusBarStyle sif_preferredStatusBarStyle;
+@property (nonatomic, readonly) BOOL sif_prefersStatusBarHidden;
 @end
 
 
