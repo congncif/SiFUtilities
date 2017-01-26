@@ -136,9 +136,9 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 @interface NSObject (SWIFT_EXTENSION(SiFUtilities))
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull nameOfClass;)
-+ (NSString * _Nonnull)nameOfClass;
-@property (nonatomic, readonly, copy) NSString * _Nonnull nameOfClass;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull className;)
++ (NSString * _Nonnull)className;
+@property (nonatomic, readonly, copy) NSString * _Nonnull className;
 @end
 
 @class UIViewController;
@@ -158,6 +158,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 @interface UIImage (SWIFT_EXTENSION(SiFUtilities))
 + (UIImage * _Nullable)imageWithColor:(UIColor * _Nonnull)color;
 + (UIImage * _Nullable)imageWithColor:(UIColor * _Nonnull)color size:(CGSize)size;
+@end
+
+
+@interface UIStoryboard (SWIFT_EXTENSION(SiFUtilities))
+@property (nonatomic, readonly, strong) UIStoryboard * _Nonnull main;
+- (nonnull instancetype)initWithName:(NSString * _Nonnull)name;
 @end
 
 
@@ -182,11 +188,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 
 
 @interface UIViewController (SWIFT_EXTENSION(SiFUtilities))
-+ (nonnull instancetype)instantiateViewControllerFromStoryboard:(NSString * _Nonnull)name withIdentifier:(NSString * _Nonnull)identifier;
-+ (nonnull instancetype)instantiateViewControllerFromMainStoryboardWithIdentifier:(NSString * _Nonnull)identifier;
-+ (nonnull instancetype)instantiateViewControllerFromMainStoryboard;
-+ (nonnull instancetype)instantiateViewControllerFromStoryboardFile:(NSString * _Nonnull)fileName;
-+ (nonnull instancetype)instantiateInitialViewController;
++ (nonnull instancetype)instantiateFromStoryboardWithName:(NSString * _Nonnull)name identifier:(NSString * _Nonnull)identifier;
++ (nonnull instancetype)instantiateFromMainStoryboardWithIdentifier:(NSString * _Nonnull)identifier;
++ (nonnull instancetype)instantiateInitialFromStoryboardWithName:(NSString * _Nonnull)name;
 /**
   Init with storyboard path
   \param storyboardPath <storyboard file name>.<storyboard identifier>
@@ -201,14 +205,17 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 
 @interface UIViewController (SWIFT_EXTENSION(SiFUtilities))
 @property (nonatomic, readonly) BOOL layoutDidFinished;
+@property (nonatomic, readonly) BOOL didDisplay;
 @property (nonatomic) UIStatusBarStyle statusBarStyle;
-@property (nonatomic) NSInteger statusStyleRaw;
+@property (nonatomic) NSInteger statusStyleRawValue;
 @property (nonatomic) BOOL statusBarHidden;
 /**
   <hr/>
 */
 + (void)initialize SWIFT_METHOD_FAMILY(none);
++ (void)swizzledMethod:(Class _Null_unspecified)cls originalSelector:(SEL _Nonnull)originalSelector to:(SEL _Nonnull)swizzledSelector;
 - (void)viewDidFinishLayout;
+- (void)viewDidDisplay;
 @end
 
 #pragma clang diagnostic pop
