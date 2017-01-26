@@ -189,8 +189,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 
 @interface UIViewController (SWIFT_EXTENSION(SiFUtilities))
 + (nonnull instancetype)instantiateFromStoryboardWithName:(NSString * _Nonnull)name identifier:(NSString * _Nonnull)identifier;
++ (nonnull instancetype)instantiateFromStoryboardWithName:(NSString * _Nonnull)name;
++ (nonnull instancetype)instantiateFromStoryboard;
 + (nonnull instancetype)instantiateFromMainStoryboardWithIdentifier:(NSString * _Nonnull)identifier;
++ (nonnull instancetype)instantiateFromMainStoryboard;
 + (nonnull instancetype)instantiateInitialFromStoryboardWithName:(NSString * _Nonnull)name;
++ (nonnull instancetype)instantiateInitialFromStoryboard;
 /**
   Init with storyboard path
   \param storyboardPath <storyboard file name>.<storyboard identifier>
