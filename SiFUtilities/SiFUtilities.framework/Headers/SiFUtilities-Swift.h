@@ -131,6 +131,13 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @end
 
 
+SWIFT_CLASS("_TtC12SiFUtilities14KeyvalueObject")
+@interface KeyvalueObject : NSObject
+- (nonnull instancetype)initWithDictionary:(NSDictionary<NSString *, id> * _Nonnull)dictionary OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 @interface NSObject (SWIFT_EXTENSION(SiFUtilities))
 @end
 
@@ -189,12 +196,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 
 @interface UIViewController (SWIFT_EXTENSION(SiFUtilities))
 + (nonnull instancetype)instantiateFromStoryboardWithName:(NSString * _Nonnull)name identifier:(NSString * _Nonnull)identifier;
-+ (nonnull instancetype)instantiateFromStoryboardWithName:(NSString * _Nonnull)name;
-+ (nonnull instancetype)instantiateFromStoryboard;
 + (nonnull instancetype)instantiateFromMainStoryboardWithIdentifier:(NSString * _Nonnull)identifier;
-+ (nonnull instancetype)instantiateFromMainStoryboard;
 + (nonnull instancetype)instantiateInitialFromStoryboardWithName:(NSString * _Nonnull)name;
-+ (nonnull instancetype)instantiateInitialFromStoryboard;
 /**
   Init with storyboard path
   \param storyboardPath <storyboard file name>.<storyboard identifier>
