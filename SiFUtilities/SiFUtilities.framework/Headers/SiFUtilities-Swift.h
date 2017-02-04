@@ -131,8 +131,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @end
 
 
-SWIFT_CLASS("_TtC12SiFUtilities14KeyvalueObject")
-@interface KeyvalueObject : NSObject
+SWIFT_CLASS("_TtC12SiFUtilities14KeyValueObject")
+@interface KeyValueObject : NSObject
 - (nonnull instancetype)initWithDictionary:(NSDictionary<NSString *, id> * _Nonnull)dictionary OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -184,6 +184,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 @property (nonatomic) NSInteger loadingCount;
 - (void)showLoadingWithBlurBackground:(BOOL)blurBackground customIndicator:(UIView * _Nullable)customIndicator animated:(BOOL)animated;
 - (void)hideLoadingWithAnimated:(BOOL)animated;
+@end
+
+
+@interface UIViewController (SWIFT_EXTENSION(SiFUtilities))
+- (void)confirmWithTitle:(NSString * _Nullable)title message:(NSString * _Nullable)message cancelTitle:(NSString * _Nonnull)cancelTitle cancelHandler:(void (^ _Nonnull)(void))cancelHandler confirmedTitle:(NSString * _Nonnull)confirmedTitle confirmedHandler:(void (^ _Nonnull)(void))confirmedHandler;
+- (void)notifyWithTitle:(NSString * _Nullable)title message:(NSString * _Nullable)message buttonTitle:(NSString * _Nonnull)buttonTitle handler:(void (^ _Nonnull)(void))handler;
 @end
 
 
