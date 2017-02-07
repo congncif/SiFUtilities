@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'SiFUtilities'
   s.version          = '1.2.6'
-  s.summary          = 'A set of utilities for UIViewController & more - SiFUtilities.'
+  s.summary          = 'A set of utilities for app.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -21,6 +21,7 @@ Pod::Spec.new do |s|
 - Get instance view controller from Storyboard shortly
 - Handle viewcontroller did finished layout at first time
 - Configure status bar quickly
+- More extensions
                        DESC
 
   s.homepage         = 'https://github.com/congncif/SiFUtilities'
@@ -28,7 +29,7 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'NGUYEN CHI CONG' => 'congnc.if@gmail.com' }
   s.source           = { :git => 'https://github.com/congncif/SiFUtilities.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/congncif'
+  s.social_media_url = 'https://twitter.com/congncif'
 
   s.ios.deployment_target = '8.0'
 
