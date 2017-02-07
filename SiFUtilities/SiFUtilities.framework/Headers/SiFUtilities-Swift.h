@@ -168,6 +168,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 @end
 
 
+@interface UIImage (SWIFT_EXTENSION(SiFUtilities))
+- (UIImage * _Nullable)compressWithRatio:(CGFloat)ratio minLength:(CGFloat)minLength;
+- (UIImage * _Nullable)withMinLength:(CGFloat)minLength;
+- (UIImage * _Nullable)compressWithRatio:(CGFloat)ratio;
+@end
+
+
 @interface UIStoryboard (SWIFT_EXTENSION(SiFUtilities))
 @property (nonatomic, readonly, strong) UIStoryboard * _Nonnull main;
 - (nonnull instancetype)initWithName:(NSString * _Nonnull)name;
@@ -197,6 +204,15 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 - (void)addStatusPlaceholderViewWithHeight:(CGFloat)height;
 - (void)showLoading;
 - (void)hideLoading;
+@end
+
+@class UIStoryboardSegue;
+
+@interface UIViewController (SWIFT_EXTENSION(SiFUtilities))
+- (IBAction)unwind:(UIStoryboardSegue * _Nonnull)unwindSegue;
+- (IBAction)pop:(id _Nullable)sender;
+- (IBAction)popToRoot:(id _Nullable)sender;
+- (IBAction)dismiss:(id _Nullable)sender;
 @end
 
 
