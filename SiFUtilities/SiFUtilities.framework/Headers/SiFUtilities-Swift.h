@@ -201,18 +201,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 
 
 @interface UIViewController (SWIFT_EXTENSION(SiFUtilities))
-- (void)addStatusPlaceholderViewWithHeight:(CGFloat)height;
+- (void)addPlaceholderStatusViewWithHeight:(CGFloat)height;
 - (void)showLoading;
 - (void)hideLoading;
-@end
-
-@class UIStoryboardSegue;
-
-@interface UIViewController (SWIFT_EXTENSION(SiFUtilities))
-- (IBAction)unwind:(UIStoryboardSegue * _Nonnull)unwindSegue;
-- (IBAction)pop:(id _Nullable)sender;
-- (IBAction)popToRoot:(id _Nullable)sender;
-- (IBAction)dismiss:(id _Nullable)sender;
 @end
 
 

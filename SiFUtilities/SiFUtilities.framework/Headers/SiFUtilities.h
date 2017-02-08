@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-// v1.2.7
+// v1.2.8
 //! Project version number for SiFUtilities.
 FOUNDATION_EXPORT double SiFUtilitiesVersionNumber;
 
