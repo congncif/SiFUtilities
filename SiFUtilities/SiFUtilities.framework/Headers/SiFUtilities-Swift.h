@@ -194,6 +194,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 @end
 
 
+@interface UIView (SWIFT_EXTENSION(SiFUtilities))
+@end
+
+
 @interface UIViewController (SWIFT_EXTENSION(SiFUtilities))
 - (void)confirmWithTitle:(NSString * _Nullable)title message:(NSString * _Nullable)message cancelTitle:(NSString * _Nonnull)cancelTitle cancelHandler:(void (^ _Nonnull)(void))cancelHandler confirmedTitle:(NSString * _Nonnull)confirmedTitle confirmedHandler:(void (^ _Nonnull)(void))confirmedHandler;
 - (void)notifyWithTitle:(NSString * _Nullable)title message:(NSString * _Nullable)message buttonTitle:(NSString * _Nonnull)buttonTitle handler:(void (^ _Nonnull)(void))handler;
