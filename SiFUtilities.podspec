@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SiFUtilities'
-  s.version          = '2.0.0'
+  s.version          = '2.0.1'
   s.summary          = 'A set of utilities for app.'
 
 # This description is used to generate tags and improve search results.
@@ -33,15 +33,15 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
 
-  #s.source_files = 'SiFUtilities/Classes/**/*'
+  s.source_files = 'SiFUtilities/Classes/*.swift'
   
   # s.resource_bundles = {
   #   'SiFUtilities' => ['SiFUtilities/Assets/*.png']
   # }
 
-s.vendored_frameworks = 'SiFUtilities/SiFUtilities.framework'
+#s.vendored_frameworks = 'SiFUtilities/SiFUtilities.framework'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+s.frameworks = 'UIKit', 'Foundation', 'AVFoundation'
   # s.dependency 'AFNetworking', '~> 2.3'
 end
