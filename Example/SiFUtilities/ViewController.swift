@@ -47,6 +47,9 @@ class ViewController: UIViewController {
         print(test2.dictionary)
         print(test2.JSONString!)
         
+        let v = value()
+        print(v)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,6 +59,15 @@ class ViewController: UIViewController {
     
     override func viewDidFinishLayout() {
         
+    }
+    
+    func value() -> String {
+        let keeper = ValueKeeper<String>(defaultValue: "Default") { completion in
+            DispatchQueue.global().asyncAfter(deadline: .now() + 0.2, execute: {
+                completion("Test")
+            })
+        }
+        return keeper.syncValue!
     }
 
 }
