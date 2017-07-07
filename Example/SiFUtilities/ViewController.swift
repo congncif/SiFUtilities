@@ -9,8 +9,23 @@
 import UIKit
 import SiFUtilities
 
-struct Test: KeyValueProtocol {
+class Test: KeyValueProtocol {
     var name: String?
+    var address: String?
+    
+    var mapKeys: [String : String] {
+        return ["name" : "nameMapped"]
+    }
+}
+
+class Test2: Test {
+    var age: Int?
+    
+    override var mapKeys: [String : String] {
+        var keys = super.mapKeys
+        keys["age"] = "ageMapped"
+        return keys
+    }
 }
 
 class ViewController: UIViewController {
@@ -18,8 +33,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let test = Test()
-        print(test.dictionary)
+//        let test = Test()
+//        test.name = "clgt"
+//        test.address = "HN"
+//        print(test.dictionary)
+//        print(test.JSONString!)
+        
+        let test2 = Test2()
+        test2.name = "XXX"
+        test2.address = "SG"
+//        test2.age = 100
+        
+        print(test2.dictionary)
+        print(test2.JSONString!)
         
     }
 
