@@ -30,7 +30,6 @@ extension UIApplication {
     
     private static let runOnce: Void = {
         SwizzlingEntry.swizzling()
-        UIViewController.swizzling()
     }()
     
     override open var next: UIResponder? {

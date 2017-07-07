@@ -103,7 +103,7 @@ import Foundation
     //MARK: -  Method Swizzling
     /*********************************************************************************/
     
-    open class func swizzling() {
+    open override class func initialize() {
         struct Static {
             static var token = false
         }

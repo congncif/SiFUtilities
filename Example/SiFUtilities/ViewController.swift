@@ -7,14 +7,19 @@
 //
 
 import UIKit
-
 import SiFUtilities
+
+struct Test: KeyValueProtocol {
+    var name: String?
+}
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let test = Test()
+        print(test.dictionary)
         
     }
 
@@ -23,8 +28,8 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewFinishedLayout() {
-        super.viewFinishedLayout()
+    override func viewDidFinishLayout() {
+        
     }
 
 }

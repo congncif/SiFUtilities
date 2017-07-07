@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_SiFUtilities_ExampleVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_SiFUtilities_ExampleVersionString[];
+FOUNDATION_EXPORT double SiFUtilitiesVersionNumber;
+FOUNDATION_EXPORT const unsigned char SiFUtilitiesVersionString[];
 

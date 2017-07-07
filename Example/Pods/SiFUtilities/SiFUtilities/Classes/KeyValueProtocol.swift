@@ -10,19 +10,6 @@ import Foundation
 
 public protocol KeyValueProtocol {}
 
-func unwrap(any:Any) -> Any? {
-    let mi = Mirror(reflecting: any)
-    
-    if let style = mi.displayStyle, style != .optional {
-        return any
-    }
-    
-    if mi.children.count == 0 { return nil }
-    let (_, some) = mi.children.first!
-    return some
-    
-}
-
 public extension KeyValueProtocol {
     public var dictionary: [String: Any] {
         var dict = [String: Any]()
@@ -39,7 +26,7 @@ public extension KeyValueProtocol {
                     })
                 }
                 else {
-                    dict[key] = unwrap(any: child.value)
+                    dict[key] = child.value
                 }
             }
         }
@@ -58,7 +45,7 @@ public extension KeyValueProtocol {
                         })
                     }
                     else {
-                        dict[key] = unwrap(any: child.value)
+                        dict[key] = child.value
                     }
                 }
             }
