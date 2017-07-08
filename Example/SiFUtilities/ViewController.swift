@@ -51,6 +51,20 @@ class ViewController: UIViewController {
         print(v)
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let blur = UIBlurEffect(style: UIBlurEffectStyle.light)
+        let blurView = UIVisualEffectView(effect: blur)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.view.showLoading(overlayView: blurView)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.view.hideLoading()
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
