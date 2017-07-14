@@ -20,10 +20,17 @@ public class ValueKeeper<Value> {
     public var syncValue: Value? {
         var val = value
         let semaphore = DispatchSemaphore(value: 0)
-        getValueAsync({ newValue in
-            val = newValue
-            semaphore.signal()
-        })
+        
+        DispatchQueue.global().async { [weak self] in
+            guard let this = self else {
+                semaphore.signal()
+                return
+            }
+            this.getValueAsync({ newValue in
+                val = newValue
+                semaphore.signal()
+            })
+        }
         _ = semaphore.wait(timeout: .distantFuture)
         return val
     }

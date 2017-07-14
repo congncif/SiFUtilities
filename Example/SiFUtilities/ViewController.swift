@@ -77,7 +77,7 @@ class ViewController: UIViewController {
     
     func value() -> String {
         let keeper = ValueKeeper<String>(defaultValue: "Default") { completion in
-            DispatchQueue.global().asyncAfter(deadline: .now() + 0.2, execute: {
+            DispatchQueue.global().asyncAfter(deadline: .now() + 5, execute: {
                 completion("Test")
             })
         }
