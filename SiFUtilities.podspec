@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SiFUtilities'
-  s.version          = '2.1.2'
+  s.version          = '2.1.3'
   s.summary          = 'A set of utilities for app.'
 
 # This description is used to generate tags and improve search results.
@@ -42,6 +42,6 @@ Pod::Spec.new do |s|
 #s.vendored_frameworks = 'SiFUtilities/SiFUtilities.framework'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-s.frameworks = 'UIKit', 'Foundation', 'AVFoundation'
+s.frameworks = 'UIKit', 'Foundation', 'AVFoundation', 'CoreData'
   # s.dependency 'AFNetworking', '~> 2.3'
 end

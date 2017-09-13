@@ -31,12 +31,12 @@ public func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 
 //MARK: - NSObjects
 
-public extension NSObject{
-    public class var className: String{
+public extension NSObject {
+    public class var className: String {
         return NSStringFromClass(self).components(separatedBy: ".").last!
     }
     
-    public var className: String{
+    public var className: String {
         return NSStringFromClass(type(of: self)).components(separatedBy: ".").last!
     }
 }
@@ -79,46 +79,6 @@ public extension PropertyNames {
 }
 
 extension NSObject: PropertyNames {}
-
-//MARK: - Sequence
-//////////////////////////////////////////////////////////////////////////////////////
-
-public extension Array {
-    
-    public mutating func shuffle() {
-        for _ in 0..<self.count {
-            sort { (_,_) in arc4random() < arc4random() }
-        }
-    }
-}
-
-public extension Sequence {
-    
-    /// Categorises elements of self into a dictionary, with the keys given by keyFunc
-    
-    func categorise<U : Hashable>(_ keyFunc: (Iterator.Element) -> U) -> [U:[Iterator.Element]] {
-        var dict: [U:[Iterator.Element]] = [:]
-        for el in self {
-            let key = keyFunc(el)
-            if case nil = dict[key]?.append(el) { dict[key] = [el] }
-        }
-        return dict
-    }
-}
-
-//////////////////////////////////////////////////////////////////////////////////////
-
-public extension Date {
-    public func toString(format: String? = "dd-MM-yyyy", timeZone: TimeZone = TimeZone(secondsFromGMT: 0)!) -> String {
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.timeZone = timeZone
-        let internalFormat = format
-        dateFormatter.dateFormat = internalFormat
-        
-        return dateFormatter.string(from: self)
-    }
-}
 
 public extension URL {
     public var keyValueParameters: Dictionary<String, String>? {

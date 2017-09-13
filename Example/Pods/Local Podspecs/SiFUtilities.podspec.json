@@ -23,6 +23,7 @@
   "frameworks": [
     "UIKit",
     "Foundation",
-    "AVFoundation"
+    "AVFoundation",
+    "CoreData"
   ]
 }
