@@ -58,7 +58,7 @@ extension NSManagedObject {
     // all keys = entity properties
     func dictionary<T: ValueTransformer>(ignoreKeys: [String] = [],
                     mapKeys: [String: String] = [:],
-                    transformers: [String: T] = [:]) -> [String: Any] {
+                    reverseTransformers: [String: T] = [:]) -> [String: Any] {
         let dictProperties = self.entity.propertiesByName
         let properties = Array(dictProperties.keys)
         
@@ -76,8 +76,8 @@ extension NSManagedObject {
             }
             
             var destinationValue: Any? = self.value(forKey: property)
-            if let transfomer = transformers[property] {
-                destinationValue = transfomer.transformedValue(destinationValue)
+            if let transfomer = reverseTransformers[property] {
+                destinationValue = transfomer.reverseTransformedValue(destinationValue)
             }
             
             dict[key] = destinationValue
