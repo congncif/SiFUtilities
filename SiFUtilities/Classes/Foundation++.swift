@@ -58,14 +58,14 @@ public extension PropertyNames {
             
             // iterate each objc_property_t struct
             for i: UInt32 in 0 ..< count {
-                let property = properties?[Int(i)]
-                
-                // retrieve the property name by calling property_getName function
-                let cname = property_getName(property)
-                
-                // covert the c string into a Swift string
-                let name = String(cString: cname!)
-                results.append(name)
+                if let property = properties?[Int(i)] {
+                    // retrieve the property name by calling property_getName function
+                    let cname = property_getName(property)
+                    
+                    // covert the c string into a Swift string
+                    let name = String(cString: cname)
+                    results.append(name)
+                }
             }
             
             // release objc_property_t structs

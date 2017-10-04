@@ -144,12 +144,14 @@ import Foundation
         swizzledMethod(self, originalSelector: originalSelector4, to: swizzledSelector4)
     }
     
-    public class func swizzledMethod(_ cls: AnyClass!,
+    public class func swizzledMethod(_ cls: AnyClass,
                                      originalSelector:Selector,
                                      to swizzledSelector: Selector) {
         
-        let originalMethod = class_getInstanceMethod(cls, originalSelector)
-        let swizzledMethod = class_getInstanceMethod(cls, swizzledSelector)
+        guard let originalMethod = class_getInstanceMethod(cls, originalSelector),
+            let swizzledMethod = class_getInstanceMethod(cls, swizzledSelector) else {
+            return
+        }
         
         let didAddMethod = class_addMethod(cls,
                                            originalSelector,
@@ -166,33 +168,33 @@ import Foundation
         }
     }
     
-    func sif_viewDidLayoutSubviews() {
+    @objc func sif_viewDidLayoutSubviews() {
         if layoutDidFinished == false {
             layoutDidFinished = true
             self.viewDidFinishLayout()
         }
     }
     
-    open func viewDidFinishLayout() {}
-    open func viewDidDisplay() {}
+    @objc open func viewDidFinishLayout() {}
+    @objc open func viewDidDisplay() {}
     
-    func sif_viewWillAppear(_ animated: Bool) {
+    @objc func sif_viewWillAppear(_ animated: Bool) {
         self.setNeedsStatusBarAppearanceUpdate()
     }
     
-    func sif_viewDidAppear(_ animated: Bool) {
+    @objc func sif_viewDidAppear(_ animated: Bool) {
         if didDisplay == false {
             didDisplay = true
             self.viewDidDisplay()
         }
     }
     
-    var sif_prefersStatusBarHidden: Bool {
+    @objc var sif_prefersStatusBarHidden: Bool {
         return statusBarHidden
     }
     
     
-    var sif_preferredStatusBarStyle: UIStatusBarStyle {
+    @objc var sif_preferredStatusBarStyle: UIStatusBarStyle {
         return statusBarStyle
     }
 }

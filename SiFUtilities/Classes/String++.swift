@@ -32,7 +32,7 @@ public extension String {
         }
         
         return try? NSAttributedString(data: data,
-                                       options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,NSCharacterEncodingDocumentAttribute: NSNumber(value: String.Encoding.utf8.rawValue)],
+                                       options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html, NSAttributedString.DocumentReadingOptionKey.characterEncoding: NSNumber(value: String.Encoding.utf8.rawValue)],
                                        documentAttributes: nil)
     }
     
@@ -44,7 +44,7 @@ public extension String {
         
         var result: String?
         result = try? NSAttributedString(data: data,
-                                         options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,NSCharacterEncodingDocumentAttribute: NSNumber(value: String.Encoding.utf8.rawValue)],
+                                         options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html, NSAttributedString.DocumentReadingOptionKey.characterEncoding: NSNumber(value: String.Encoding.utf8.rawValue)],
                                          documentAttributes: nil).string
         return result
     }
