@@ -18,7 +18,13 @@ class SwizzlingEntry {
     static func swizzling() {
         let typeCount = Int(objc_getClassList(nil, 0))
         let types = UnsafeMutablePointer<AnyClass?>.allocate(capacity: typeCount)
-        let autoreleasingTypes = AutoreleasingUnsafeMutablePointer<AnyClass>(types)
+        
+        #if swift(>=4.0)
+            let autoreleasingTypes = AutoreleasingUnsafeMutablePointer<AnyClass>(types)
+        #else
+            let autoreleasingTypes = AutoreleasingUnsafeMutablePointer<AnyClass?>(types)
+        #endif
+    
         objc_getClassList(autoreleasingTypes, Int32(typeCount))
         for index in 0 ..< typeCount { (types[index] as? SelfAware.Type)?.awake() }
         types.deallocate(capacity: typeCount)

@@ -41,6 +41,7 @@ public extension NSObject {
     }
 }
 
+
 public protocol PropertyNames: class {
     var propertyNames: [String] {get}
 }
@@ -60,11 +61,17 @@ public extension PropertyNames {
             for i: UInt32 in 0 ..< count {
                 if let property = properties?[Int(i)] {
                     // retrieve the property name by calling property_getName function
-                    let cname = property_getName(property)
-                    
                     // covert the c string into a Swift string
-                    let name = String(cString: cname)
-                    results.append(name)
+                    #if swift(>=4.0)
+                        let cname = property_getName(property)
+                        let name = String(cString: cname)
+                        results.append(name)
+                    #else
+                        if let cname = property_getName(property) {
+                            let name = String(cString: cname)
+                            results.append(name)
+                        }
+                    #endif
                 }
             }
             
@@ -79,6 +86,7 @@ public extension PropertyNames {
 }
 
 extension NSObject: PropertyNames {}
+
 
 public extension URL {
     public var keyValueParameters: Dictionary<String, String>? {

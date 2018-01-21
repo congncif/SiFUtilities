@@ -25,6 +25,7 @@ public extension String {
         return randomString
     }
     
+    /*
     public var htmlToAttributedString: NSAttributedString? {
         
         guard let data = data(using: String.Encoding.utf8) else {
@@ -48,7 +49,7 @@ public extension String {
                                          documentAttributes: nil).string
         return result
     }
-    
+     */
     public func containOneAtLeastRegex(separatedBy: String? = nil) -> String {
         
         let searchTags = separatedBy == nil ? [self] : self.components(separatedBy: separatedBy!)
