@@ -31,7 +31,7 @@ extension KeyValueProtocol {
     }
 }
 
-func unwrap(any:Any) -> Any? {
+func wrap(any: Any) -> Any? {
     let mi = Mirror(reflecting: any)
     if let style = mi.displayStyle {
         if style != .optional {
@@ -78,16 +78,19 @@ public extension KeyValueProtocol {
     }
     
     func parse(value: Any) -> Any? {
-        if let value = value as? KeyValueProtocol {
-            return value.dictionary
+        
+        let wrappedValue = wrap(any: value)
+        
+        if let object = wrappedValue as? KeyValueProtocol {
+            return object.dictionary
         }
-        else if let values = value as? [KeyValueProtocol] {
+        else if let values = wrappedValue as? [KeyValueProtocol] {
             return values.map({ (item) -> [String: Any] in
                 return item.dictionary
             })
         }
         else {
-            return unwrap(any: value)
+            return wrappedValue
         }
     }
     

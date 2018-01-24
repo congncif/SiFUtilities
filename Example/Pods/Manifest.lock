@@ -1,5 +1,5 @@
 PODS:
-  - SiFUtilities (2.1.2)
+  - SiFUtilities (3.2.1)
 
 DEPENDENCIES:
   - SiFUtilities (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  SiFUtilities: 2c36e0278a4985002d2a8f0be2f8b12ebca95149
+  SiFUtilities: f68968e348dbbbe99336ff95a9f8e82c9d5c0e26
 
 PODFILE CHECKSUM: 478561156f8b79ebe1f0d553cf63ff219f44930e
 

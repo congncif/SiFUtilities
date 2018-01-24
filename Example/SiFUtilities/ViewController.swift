@@ -28,6 +28,18 @@ class Test2: Test {
     }
 }
 
+class AdAttribute: KeyValueProtocol {
+    var id: String = ""
+    var scope: String = "XPFeedScope.global.rawValue"
+    var type: String = "XPFeedType.event.rawValue"
+    var title: String?
+}
+
+class Test3: NSObject, KeyValueProtocol {
+    var test2: Test2 = Test2()
+    var attr: AdAttribute = AdAttribute()
+}
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -42,10 +54,13 @@ class ViewController: UIViewController {
         let test2 = Test2()
         test2.name = "XXX"
         test2.address = "SG"
-//        test2.age = 100
         
-        print(test2.dictionary)
-        print(test2.JSONString!)
+        let test3 = Test3()
+        test3.test2 = test2
+        test3.attr = AdAttribute()
+        
+        print(test3.dictionary)
+//        print(test3.JSONString!)
         
         let v = value()
         print(v)
@@ -55,15 +70,15 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let blur = UIBlurEffect(style: UIBlurEffectStyle.light)
-        let blurView = UIVisualEffectView(effect: blur)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.view.showLoading(overlayView: blurView)
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.view.hideLoading()
-        }
+//        let blur = UIBlurEffect(style: UIBlurEffectStyle.light)
+//        let blurView = UIVisualEffectView(effect: blur)
+//
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//            self.view.showLoading(overlayView: blurView)
+//        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//            self.view.hideLoading()
+//        }
     }
 
     override func didReceiveMemoryWarning() {
