@@ -73,4 +73,10 @@ extension String {
         
         return dateFormatter.date(from: self)
     }
+    
+    public var trimmingWhiteSpaces: String {
+        let string = self as NSString
+        let trimmedString = string.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
+        return trimmedString
+    }
 }
