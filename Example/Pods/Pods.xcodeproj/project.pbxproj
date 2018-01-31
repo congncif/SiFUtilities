@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0265985C1ABBD907E3FD7F90EE9AA45B /* String+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E205A5066EC4A9D7C170A5A08E953F /* String+Validation.swift */; };
 		05AB5E91AB3127D22632D304AE11845A /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335FEB15F5AB2F6DF72603D61EE9C39A /* UIView+Border.swift */; };
+		207EB4B6202214A9006D3485 /* PHAsset++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207EB4B5202214A9006D3485 /* PHAsset++.swift */; };
 		47ED8C25A0189A057CDFAAE345AF4688 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0192874356F8A4B620EABACB30C2BE8B /* Foundation.framework */; };
 		4860882FE5097794C0F91E0C4724D49F /* String+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A73C42570EAEE2DADBA8385F7D35A2 /* String+JSON.swift */; };
 		4A2DF3636B2305D505152384706B418C /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D60CB7959722A061BEE87439A9EA36 /* UIViewController+Utils.swift */; };
@@ -62,16 +63,17 @@
 		1C053B1FDFDFDAA661A0AD44300A07EF /* String++.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String++.swift"; path = "SiFUtilities/Classes/String++.swift"; sourceTree = "<group>"; };
 		1F341C4B36653FEEA0C6514299B47EDE /* UIViewController+Storyboard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+Storyboard.swift"; path = "SiFUtilities/Classes/UIViewController+Storyboard.swift"; sourceTree = "<group>"; };
 		1FFF53F5C3920A5434964BDF51F3774C /* UIView+Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Utils.swift"; path = "SiFUtilities/Classes/UIView+Utils.swift"; sourceTree = "<group>"; };
+		207EB4B5202214A9006D3485 /* PHAsset++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHAsset++.swift"; sourceTree = "<group>"; };
 		21BE8C29A1D65B013BE108C9D880F675 /* SiFUtilities-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SiFUtilities-prefix.pch"; sourceTree = "<group>"; };
 		24FBC70F3C68888EB02BD940D8D9BCC8 /* Pods-SiFUtilities_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SiFUtilities_Example.release.xcconfig"; sourceTree = "<group>"; };
-		318BFCDD1F31B5DD66A4A645B38D6B13 /* SiFUtilities.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SiFUtilities.modulemap; sourceTree = "<group>"; };
+		318BFCDD1F31B5DD66A4A645B38D6B13 /* SiFUtilities.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SiFUtilities.modulemap; sourceTree = "<group>"; };
 		335FEB15F5AB2F6DF72603D61EE9C39A /* UIView+Border.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Border.swift"; path = "SiFUtilities/Classes/UIView+Border.swift"; sourceTree = "<group>"; };
 		34452ACFD7E3A13EDFF75FF4E7317C48 /* Pods-SiFUtilities_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SiFUtilities_Example-frameworks.sh"; sourceTree = "<group>"; };
 		379307B46ECED53E9FA70E0BCF8E86A0 /* Dictionary++.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Dictionary++.swift"; path = "SiFUtilities/Classes/Dictionary++.swift"; sourceTree = "<group>"; };
 		37D28DD3470CFF42737F411D8A1D0A11 /* UIView+Loading.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Loading.swift"; path = "SiFUtilities/Classes/UIView+Loading.swift"; sourceTree = "<group>"; };
 		48060BE826E8CBB5956CCFE4A1D2DCF5 /* SiFUtilities.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SiFUtilities.xcconfig; sourceTree = "<group>"; };
 		53D0A6CC343F38F267FC248273C27AD0 /* UIImage+Compress.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+Compress.swift"; path = "SiFUtilities/Classes/UIImage+Compress.swift"; sourceTree = "<group>"; };
-		5442227673C8222176EAB2ECA6F62D46 /* Pods-SiFUtilities_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SiFUtilities_Example.modulemap"; sourceTree = "<group>"; };
+		5442227673C8222176EAB2ECA6F62D46 /* Pods-SiFUtilities_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SiFUtilities_Example.modulemap"; sourceTree = "<group>"; };
 		5678F6E4AA5F32724DD53887C126FCAC /* AssociatedObject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssociatedObject.swift; path = SiFUtilities/Classes/AssociatedObject.swift; sourceTree = "<group>"; };
 		57CDC2F6C38A9702692231DFB3B5AE53 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		591E167645CE610CFAB8179F425BBBB4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
@@ -82,14 +84,14 @@
 		6E45CDC7D3F99D07ABFBFAA08BAEE46B /* Foundation++.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Foundation++.swift"; path = "SiFUtilities/Classes/Foundation++.swift"; sourceTree = "<group>"; };
 		723157DE6537D10EFAB334294A4AFBF6 /* KeyValueProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyValueProtocol.swift; path = SiFUtilities/Classes/KeyValueProtocol.swift; sourceTree = "<group>"; };
 		84F5CED00D4637C8D3AE2E7375C89E58 /* CommonError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CommonError.swift; path = SiFUtilities/Classes/CommonError.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		97B2BA5553C3169CB1F352BD10A26086 /* Pods-SiFUtilities_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SiFUtilities_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9A492D36C4D2692497AB08DEC6308CC9 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+Alert.swift"; path = "SiFUtilities/Classes/UIViewController+Alert.swift"; sourceTree = "<group>"; };
-		A12AF4F2CBE0C3BCE825B2A37DAFE12B /* SiFUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SiFUtilities.framework; path = SiFUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A12AF4F2CBE0C3BCE825B2A37DAFE12B /* SiFUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SiFUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1E205A5066EC4A9D7C170A5A08E953F /* String+Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Validation.swift"; path = "SiFUtilities/Classes/String+Validation.swift"; sourceTree = "<group>"; };
 		BE2EF3108682BBCFA0394E6560560142 /* AVPlayer++.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AVPlayer++.swift"; path = "SiFUtilities/Classes/AVPlayer++.swift"; sourceTree = "<group>"; };
 		C1B2E7D5B112C8AF1B9DD9AD0F54C872 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
-		C61D4214918320E061FED1AFA51DC1D1 /* Pods_SiFUtilities_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SiFUtilities_Example.framework; path = "Pods-SiFUtilities_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C61D4214918320E061FED1AFA51DC1D1 /* Pods_SiFUtilities_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SiFUtilities_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF9F5E3EB41166F15FF7B6EB61B6C749 /* Swizzling.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swizzling.swift; path = SiFUtilities/Classes/Swizzling.swift; sourceTree = "<group>"; };
 		D338F452E60D199581FD1E48FF058B6C /* UIViewController+Runtime.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+Runtime.swift"; path = "SiFUtilities/Classes/UIViewController+Runtime.swift"; sourceTree = "<group>"; };
 		D42A5132ED8F9BD2FE31DB551BD3E9B6 /* UIViewController+Show.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+Show.swift"; path = "SiFUtilities/Classes/UIViewController+Show.swift"; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				02A73C42570EAEE2DADBA8385F7D35A2 /* String+JSON.swift */,
 				A1E205A5066EC4A9D7C170A5A08E953F /* String+Validation.swift */,
 				CF9F5E3EB41166F15FF7B6EB61B6C749 /* Swizzling.swift */,
+				207EB4B5202214A9006D3485 /* PHAsset++.swift */,
 				53D0A6CC343F38F267FC248273C27AD0 /* UIImage+Compress.swift */,
 				DEBE59CE4AC4CEAD2A3F99B9FCF26E4E /* UIKit++.swift */,
 				335FEB15F5AB2F6DF72603D61EE9C39A /* UIView+Border.swift */,
@@ -313,6 +316,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					DEEB43FA7DE510868C046CFE28A91FF3 = {
+						LastSwiftMigration = 0920;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -370,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				207EB4B6202214A9006D3485 /* PHAsset++.swift in Sources */,
 				E507253D9E0AB843B37DBDFB5A3107D1 /* Pods-SiFUtilities_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,6 +399,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F1D0AE16C23728F5D5CECA1A633C7B9A /* Pods-SiFUtilities_Example.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -414,6 +424,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -487,6 +498,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24FBC70F3C68888EB02BD940D8D9BCC8 /* Pods-SiFUtilities_Example.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -510,6 +522,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
