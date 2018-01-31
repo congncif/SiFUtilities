@@ -14,8 +14,6 @@ extension Date {
     }
 }
 
-//////////////////////////////////////////////////////////////////////////////////////
-
 extension Date {
     public func toString(format: String? = "dd-MM-yyyy", timeZone: TimeZone = TimeZone(secondsFromGMT: 0)!) -> String {
         
@@ -25,5 +23,17 @@ extension Date {
         dateFormatter.dateFormat = internalFormat
         
         return dateFormatter.string(from: self)
+    }
+    
+    public var localDateFromGMT: Date {
+        let timezone = TimeZone.current
+        let seconds = timezone.secondsFromGMT(for: self)
+        return Date(timeInterval: TimeInterval(seconds), since: self)
+    }
+    
+    public var gmtDateFromLocal: Date {
+        let timezone = TimeZone.current
+        let seconds = timezone.secondsFromGMT(for: self)
+        return Date(timeInterval: TimeInterval(-seconds), since: self)
     }
 }
