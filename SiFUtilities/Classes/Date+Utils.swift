@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension Date {
+extension Date {
     public var age: Int {
         return Calendar.current.dateComponents([.year], from: self, to: Date()).year!
     }
@@ -16,7 +16,7 @@ public extension Date {
 
 //////////////////////////////////////////////////////////////////////////////////////
 
-public extension Date {
+extension Date {
     public func toString(format: String? = "dd-MM-yyyy", timeZone: TimeZone = TimeZone(secondsFromGMT: 0)!) -> String {
         
         let dateFormatter = DateFormatter()

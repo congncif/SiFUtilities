@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension UIView {
-    public func animate(duration: CFTimeInterval = 0.35, transitionType: String = kCATransitionFade, direction: String = kCATransitionFromLeft) {
+    open func animate(duration: CFTimeInterval = 0.35, transitionType: String = kCATransitionFade, direction: String = kCATransitionFromLeft) {
         let transition = CATransition()
         transition.duration = duration
         transition.type = transitionType
@@ -19,7 +19,7 @@ extension UIView {
         self.layer.add(transition, forKey: "animation")
     }
     
-    public func takeScreenshot() -> UIImage? {
+    open func takeScreenshot() -> UIImage? {
         UIGraphicsBeginImageContext(self.bounds.size)
         self.layer.render(in: UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()

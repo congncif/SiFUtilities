@@ -8,9 +8,8 @@
 
 import Foundation
 
-public extension String {
+extension String {
     public static func random(length: Int) -> String {
-        
         let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         let len = UInt32(letters.length)
         
@@ -64,18 +63,7 @@ public extension String {
         
         return regex
     }
-    
-    func toDate(format: String? = nil) -> Date? {
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
-        let internalFormat = format != nil ? format : "dd-MM-yyyy"
-        dateFormatter.dateFormat = internalFormat
-        
-        return dateFormatter.date(from: self)
-    }
-    
-    
+     
     public func toDate(format: String? = "dd-MM-yyyy", timeZone: TimeZone = TimeZone(secondsFromGMT: 0)!) -> Date? {
         
         let dateFormatter = DateFormatter()

@@ -14,6 +14,7 @@ extension UIView {
     fileprivate struct AssociatedKeys {
         static var LoadingCount = 0
     }
+    
     public var loadingCount: Int {
         get {
             let number = objc_getAssociatedObject(self, &AssociatedKeys.LoadingCount) as? NSNumber

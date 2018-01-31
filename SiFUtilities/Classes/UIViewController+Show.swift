@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension UIViewController {
-    public func show(on baseViewController: UIViewController,
+    open func show(on baseViewController: UIViewController,
                      animated: Bool = true,
                      completion: (() -> Void)? = nil) {
         if let navigation = baseViewController as? UINavigationController {
@@ -23,7 +23,7 @@ extension UIViewController {
         }
     }
     
-    public func show(viewController: UIViewController,
+    open func show(viewController: UIViewController,
                      from baseviewController: UIViewController? = nil,
                      animated: Bool = true,
                      completion: (() -> Void)? = nil) {
@@ -38,7 +38,7 @@ extension UIViewController {
         viewController.show(on: base, animated: animated, completion: completion)
     }
     
-    public func backToPrevious(animated: Bool = true, completion: (() -> Void)? = nil) {
+    open func backToPrevious(animated: Bool = true, completion: (() -> Void)? = nil) {
         if let navigation = self.navigationController {
             if navigation.viewControllers.first != self {
                 navigation.popViewController(animated: animated)
@@ -59,7 +59,7 @@ extension UIViewController {
         }
     }
     
-    public func forceDismiss(animated: Bool = true, completion: (() -> Void)? = nil) {
+    open func forceDismiss(animated: Bool = true, completion: (() -> Void)? = nil) {
         if let _ = self.presentingViewController {
             dismiss(animated: animated, completion: completion)
         } else if let navigation = navigationController, let _ = navigation.presentingViewController {

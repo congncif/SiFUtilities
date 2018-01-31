@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class ValueKeeper<Value> {
+open class ValueKeeper<Value> {
     private var value: Value?
     private var getValueAsync: ((@escaping (Value?) ->Void) -> Void)
     
@@ -17,7 +17,7 @@ public class ValueKeeper<Value> {
         self.getValueAsync = getValueAsync
     }
     
-    public var syncValue: Value? {
+    open var syncValue: Value? {
         var val = value
         let semaphore = DispatchSemaphore(value: 0)
         
@@ -34,5 +34,4 @@ public class ValueKeeper<Value> {
         _ = semaphore.wait(timeout: .distantFuture)
         return val
     }
-    
 }

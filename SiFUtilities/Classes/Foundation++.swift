@@ -31,12 +31,12 @@ public func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 
 //MARK: - NSObjects
 
-public extension NSObject {
-    public class var className: String {
+extension NSObject {
+    open class var className: String {
         return NSStringFromClass(self).components(separatedBy: ".").last!
     }
     
-    public var className: String {
+    open var className: String {
         return NSStringFromClass(type(of: self)).components(separatedBy: ".").last!
     }
 }
@@ -88,7 +88,7 @@ public extension PropertyNames {
 extension NSObject: PropertyNames {}
 
 
-public extension URL {
+extension URL {
     public var keyValueParameters: Dictionary<String, String>? {
         var results = [String:String]()
         let keyValues = self.query?.components(separatedBy: "&")

@@ -54,7 +54,7 @@ import Foundation
         }
     }
     
-    public var statusBarStyle: UIStatusBarStyle {
+    open var statusBarStyle: UIStatusBarStyle {
         get {
             let number = objc_getAssociatedObject(self, &AssociatedKeys.StatusBarStyle) as? NSNumber
             guard number != nil else { return UIStatusBarStyle.default }
@@ -73,7 +73,7 @@ import Foundation
         }
     }
     
-    @IBInspectable public var statusStyleRawValue: Int {
+    @IBInspectable open var statusStyleRawValue: Int {
         get {
             return statusBarStyle.rawValue
         }
@@ -82,7 +82,7 @@ import Foundation
         }
     }
     
-    @IBInspectable public var statusBarHidden: Bool {
+    @IBInspectable open var statusBarHidden: Bool {
         get {
             let number = objc_getAssociatedObject(self, &AssociatedKeys.StatusBarHidden) as? NSNumber
             guard number != nil else { return false }
@@ -144,7 +144,7 @@ import Foundation
         swizzledMethod(self, originalSelector: originalSelector4, to: swizzledSelector4)
     }
     
-    public class func swizzledMethod(_ cls: AnyClass,
+    open class func swizzledMethod(_ cls: AnyClass,
                                      originalSelector:Selector,
                                      to swizzledSelector: Selector) {
         

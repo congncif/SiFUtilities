@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public extension UIImage {
+extension UIImage {
     public func compress(ratio: CGFloat, minLength: CGFloat = 100) -> UIImage? {
         let size = self.size
         let widthRatio = minLength/size.width

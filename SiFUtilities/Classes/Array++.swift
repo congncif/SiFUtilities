@@ -21,7 +21,6 @@ extension Array where Element: Equatable {
 //////////////////////////////////////////////////////////////////////////////////////
 
 public extension Array {
-    
     public mutating func shuffle() {
         for _ in 0..<self.count {
             sort { (_,_) in arc4random() < arc4random() }
@@ -30,7 +29,6 @@ public extension Array {
 }
 
 public extension Sequence {
-    
     /// Categorises elements of self into a dictionary, with the keys given by keyFunc
     
     func categorise<U : Hashable>(_ keyFunc: (Iterator.Element) -> U) -> [U:[Iterator.Element]] {
