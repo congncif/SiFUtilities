@@ -28,10 +28,6 @@ extension Int {
         return Float(self)
     }
     
-    public var float32Value: Float32 {
-        return Float32(self)
-    }
-    
     public var doubleValue: Double {
         return Double(self)
     }
@@ -80,10 +76,6 @@ extension Int8 {
     
     public var floatValue: Float {
         return Float(self)
-    }
-    
-    public var float32Value: Float32 {
-        return Float32(self)
     }
     
     public var doubleValue: Double {
@@ -136,18 +128,6 @@ extension Int16 {
         return Float(self)
     }
     
-    public var float32Value: Float32 {
-        return Float32(self)
-    }
-    
-    public var float64Value: Float64 {
-        return Float64(self)
-    }
-    
-    public var float80Value: Float80 {
-        return Float80(self)
-    }
-    
     public var doubleValue: Double {
         return Double(self)
     }
@@ -198,18 +178,6 @@ extension Int32 {
         return Float(self)
     }
     
-    public var float32Value: Float32 {
-        return Float32(self)
-    }
-    
-    public var float64Value: Float64 {
-        return Float64(self)
-    }
-    
-    public var float80Value: Float80 {
-        return Float80(self)
-    }
-    
     public var doubleValue: Double {
         return Double(self)
     }
@@ -254,22 +222,6 @@ extension Int64 {
     
     public var int32Value: Int32 {
         return Int32(self)
-    }
-    
-    public var floatValue: Float {
-        return Float(self)
-    }
-    
-    public var float32Value: Float32 {
-        return Float32(self)
-    }
-    
-    public var float64Value: Float64 {
-        return Float64(self)
-    }
-    
-    public var float80Value: Float80 {
-        return Float80(self)
     }
     
     public var doubleValue: Double {
@@ -322,142 +274,6 @@ extension Float {
         return Int64(self)
     }
     
-    public var float32Value: Float32 {
-        return Float32(self)
-    }
-    
-    public var float64Value: Float64 {
-        return Float64(self)
-    }
-    
-    public var float80Value: Float80 {
-        return Float80(self)
-    }
-    
-    public var doubleValue: Double {
-        return Double(self)
-    }
-    
-    public var stringValue: String {
-        return String(describing: self)
-    }
-    
-    public var uintValue: UInt {
-        return UInt(self)
-    }
-    
-    public var uint8Value: UInt8 {
-        return UInt8(self)
-    }
-    
-    public var uint16Value: UInt16 {
-        return UInt16(self)
-    }
-    
-    public var uint32Value: UInt32 {
-        return UInt32(self)
-    }
-    
-    public var uint64Value: UInt64 {
-        return UInt64(self)
-    }
-}
-
-extension Float64 {
-    public var intValue: Int {
-        return Int(self)
-    }
-    
-    public var int8Value: Int8 {
-        return Int8(self)
-    }
-    
-    public var int16Value: Int16 {
-        return Int16(self)
-    }
-    
-    public var int32Value: Int32 {
-        return Int32(self)
-    }
-    
-    public var int64Value: Int64 {
-        return Int64(self)
-    }
-    
-    public var float32Value: Float32 {
-        return Float32(self)
-    }
-    
-    public var floatValue: Float {
-        return Float(self)
-    }
-    
-    public var float80Value: Float80 {
-        return Float80(self)
-    }
-    
-    public var doubleValue: Double {
-        return Double(self)
-    }
-    
-    public var stringValue: String {
-        return String(describing: self)
-    }
-    
-    public var uintValue: UInt {
-        return UInt(self)
-    }
-    
-    public var uint8Value: UInt8 {
-        return UInt8(self)
-    }
-    
-    public var uint16Value: UInt16 {
-        return UInt16(self)
-    }
-    
-    public var uint32Value: UInt32 {
-        return UInt32(self)
-    }
-    
-    public var uint64Value: UInt64 {
-        return UInt64(self)
-    }
-}
-
-extension Float80 {
-    public var intValue: Int {
-        return Int(self)
-    }
-    
-    public var int8Value: Int8 {
-        return Int8(self)
-    }
-    
-    public var int16Value: Int16 {
-        return Int16(self)
-    }
-    
-    public var int32Value: Int32 {
-        return Int32(self)
-    }
-    
-    public var int64Value: Int64 {
-        return Int64(self)
-    }
-    
-    public var float32Value: Float32 {
-        return Float32(self)
-    }
-    
-    public var float64Value: Float64 {
-        return Float64(self)
-    }
-    
-    public var floatValue: Float {
-        return Float(self)
-    }
-    
     public var doubleValue: Double {
         return Double(self)
     }
@@ -506,10 +322,6 @@ extension UInt {
     
     public var floatValue: Float {
         return Float(self)
-    }
-    
-    public var float32Value: Float32 {
-        return Float32(self)
     }
     
     public var doubleValue: Double {
@@ -562,10 +374,6 @@ extension UInt8 {
         return Float(self)
     }
     
-    public var float32Value: Float32 {
-        return Float32(self)
-    }
-    
     public var doubleValue: Double {
         return Double(self)
     }
@@ -614,10 +422,6 @@ extension UInt16 {
     
     public var floatValue: Float {
         return Float(self)
-    }
-    
-    public var float32Value: Float32 {
-        return Float32(self)
     }
     
     public var doubleValue: Double {
@@ -670,10 +474,6 @@ extension UInt32 {
         return Float(self)
     }
     
-    public var float32Value: Float32 {
-        return Float32(self)
-    }
-    
     public var doubleValue: Double {
         return Double(self)
     }
@@ -722,10 +522,6 @@ extension UInt64 {
     
     public var floatValue: Float {
         return Float(self)
-    }
-    
-    public var float32Value: Float32 {
-        return Float32(self)
     }
     
     public var doubleValue: Double {
