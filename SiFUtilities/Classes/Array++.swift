@@ -26,6 +26,12 @@ extension Array where Element: Equatable {
             sort { (_,_) in arc4random() < arc4random() }
         }
     }
+    
+    public mutating func replace(_ item: Element) {
+        if let index = index(of: item) {
+            self[index] = item
+        }
+    }
 }
 
 extension Sequence {
