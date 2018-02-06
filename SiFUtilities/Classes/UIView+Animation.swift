@@ -21,7 +21,6 @@ extension UIView {
         transition.type = transitionType
         transition.subtype = direction
         transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        transition.delegate = self
         transition.isRemovedOnCompletion = true
         layer.add(transition, forKey: key)
     }
