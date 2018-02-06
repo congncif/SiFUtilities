@@ -30,6 +30,6 @@ extension UIImage {
         let compressSize = CGSize(width: size.width * ratio, height: size.height * ratio)
         let imageView = UIImageView(frame: CGRect(origin: CGPoint.zero, size: compressSize))
         imageView.image = self
-        return imageView.takeScreenshot()
+        return imageView.takeImage()
     }
 }
