@@ -36,6 +36,8 @@
 		204F5AC82029F27100ABE58F /* Number++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F5AAB2029F27100ABE58F /* Number++.swift */; };
 		204F5AC92029F27100ABE58F /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F5AAC2029F27100ABE58F /* Date+Utils.swift */; };
 		204F5ACA2029F27100ABE58F /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F5AAD2029F27100ABE58F /* UIView+Animation.swift */; };
+		207D4B53203DBA9E0009BD39 /* UIViewController+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D4B51203DB9430009BD39 /* UIViewController+Nib.swift */; };
+		207D4B55203DBAD20009BD39 /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D4B54203DBAD20009BD39 /* UIView+Nib.swift */; };
 		47ED8C25A0189A057CDFAAE345AF4688 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0192874356F8A4B620EABACB30C2BE8B /* Foundation.framework */; };
 		7E3C8B757CF9B8CB4E31E14C15978847 /* Pods-SiFUtilities_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B22580D92EB72B8E86CB0C0C2E13FB8 /* Pods-SiFUtilities_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8801266F6F479C8C6B029FC06A925867 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0192874356F8A4B620EABACB30C2BE8B /* Foundation.framework */; };
@@ -89,6 +91,8 @@
 		204F5AAB2029F27100ABE58F /* Number++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Number++.swift"; sourceTree = "<group>"; };
 		204F5AAC2029F27100ABE58F /* Date+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
 		204F5AAD2029F27100ABE58F /* UIView+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Animation.swift"; sourceTree = "<group>"; };
+		207D4B51203DB9430009BD39 /* UIViewController+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Nib.swift"; sourceTree = "<group>"; };
+		207D4B54203DBAD20009BD39 /* UIView+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
 		21BE8C29A1D65B013BE108C9D880F675 /* SiFUtilities-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SiFUtilities-prefix.pch"; sourceTree = "<group>"; };
 		24FBC70F3C68888EB02BD940D8D9BCC8 /* Pods-SiFUtilities_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SiFUtilities_Example.release.xcconfig"; sourceTree = "<group>"; };
 		318BFCDD1F31B5DD66A4A645B38D6B13 /* SiFUtilities.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SiFUtilities.modulemap; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 				204F5A962029F27100ABE58F /* UIViewController+Show.swift */,
 				204F5A912029F27100ABE58F /* UIViewController+Storyboard.swift */,
 				204F5AA52029F27100ABE58F /* UIViewController+Utils.swift */,
+				207D4B51203DB9430009BD39 /* UIViewController+Nib.swift */,
+				207D4B54203DBAD20009BD39 /* UIView+Nib.swift */,
 				204F5A9E2029F27100ABE58F /* ValueKeeper.swift */,
 			);
 			name = Classes;
@@ -371,6 +377,7 @@
 				204F5AC62029F27100ABE58F /* String+Validation.swift in Sources */,
 				204F5AB12029F27100ABE58F /* Swizzling.swift in Sources */,
 				204F5AC12029F27100ABE58F /* UIView+Border.swift in Sources */,
+				207D4B55203DBAD20009BD39 /* UIView+Nib.swift in Sources */,
 				204F5AB02029F27100ABE58F /* AssociatedObject.swift in Sources */,
 				204F5AB22029F27100ABE58F /* String++.swift in Sources */,
 				204F5ABB2029F27100ABE58F /* ValueKeeper.swift in Sources */,
@@ -384,6 +391,7 @@
 				204F5AC52029F27100ABE58F /* KeyValueProtocol.swift in Sources */,
 				204F5AB92029F27100ABE58F /* PHAsset++.swift in Sources */,
 				204F5ABD2029F27100ABE58F /* UIKit++.swift in Sources */,
+				207D4B53203DBA9E0009BD39 /* UIViewController+Nib.swift in Sources */,
 				204F5AC32029F27100ABE58F /* Array++.swift in Sources */,
 				204F5AC92029F27100ABE58F /* Date+Utils.swift in Sources */,
 				204F5AB62029F27100ABE58F /* UIView+Utils.swift in Sources */,
