@@ -36,6 +36,7 @@
 		204F5AC82029F27100ABE58F /* Number++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F5AAB2029F27100ABE58F /* Number++.swift */; };
 		204F5AC92029F27100ABE58F /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F5AAC2029F27100ABE58F /* Date+Utils.swift */; };
 		204F5ACA2029F27100ABE58F /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F5AAD2029F27100ABE58F /* UIView+Animation.swift */; };
+		2079D52620616728002E391B /* UIViewController+Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2079D52520616728002E391B /* UIViewController+Overlay.swift */; };
 		207D4B53203DBA9E0009BD39 /* UIViewController+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D4B51203DB9430009BD39 /* UIViewController+Nib.swift */; };
 		207D4B55203DBAD20009BD39 /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D4B54203DBAD20009BD39 /* UIView+Nib.swift */; };
 		47ED8C25A0189A057CDFAAE345AF4688 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0192874356F8A4B620EABACB30C2BE8B /* Foundation.framework */; };
@@ -91,6 +92,7 @@
 		204F5AAB2029F27100ABE58F /* Number++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Number++.swift"; sourceTree = "<group>"; };
 		204F5AAC2029F27100ABE58F /* Date+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
 		204F5AAD2029F27100ABE58F /* UIView+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Animation.swift"; sourceTree = "<group>"; };
+		2079D52520616728002E391B /* UIViewController+Overlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Overlay.swift"; sourceTree = "<group>"; };
 		207D4B51203DB9430009BD39 /* UIViewController+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Nib.swift"; sourceTree = "<group>"; };
 		207D4B54203DBAD20009BD39 /* UIView+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
 		21BE8C29A1D65B013BE108C9D880F675 /* SiFUtilities-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SiFUtilities-prefix.pch"; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				204F5AA42029F27100ABE58F /* UIView+Border.swift */,
 				204F5AA22029F27100ABE58F /* UIView+Loading.swift */,
 				204F5A982029F27100ABE58F /* UIView+Utils.swift */,
+				2079D52520616728002E391B /* UIViewController+Overlay.swift */,
 				204F5A9F2029F27100ABE58F /* UIViewController+Alert.swift */,
 				204F5A952029F27100ABE58F /* UIViewController+Runtime.swift */,
 				204F5A962029F27100ABE58F /* UIViewController+Show.swift */,
@@ -377,6 +380,7 @@
 				204F5AC62029F27100ABE58F /* String+Validation.swift in Sources */,
 				204F5AB12029F27100ABE58F /* Swizzling.swift in Sources */,
 				204F5AC12029F27100ABE58F /* UIView+Border.swift in Sources */,
+				2079D52620616728002E391B /* UIViewController+Overlay.swift in Sources */,
 				207D4B55203DBAD20009BD39 /* UIView+Nib.swift in Sources */,
 				204F5AB02029F27100ABE58F /* AssociatedObject.swift in Sources */,
 				204F5AB22029F27100ABE58F /* String++.swift in Sources */,

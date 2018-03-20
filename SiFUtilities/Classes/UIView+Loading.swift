@@ -32,7 +32,7 @@ extension UIView {
         }
     }
     
-    open func showLoading(overlayView: UIView = UIView(),
+    @objc open func showLoading(overlayView: UIView = UIView(),
                           customIndicator: UIView? = nil,
                           animated: Bool = true) {
         var blurView = self.viewWithTag(LoadingTag)
@@ -90,7 +90,7 @@ extension UIView {
         self.loadingCount = count + 1
     }
     
-    open func hideLoading(animated: Bool = true) {
+    @objc open func hideLoading(animated: Bool = true) {
         self.loadingCount = loadingCount - 1
         if loadingCount <= 0 {
             let loadingView = self.viewWithTag(LoadingTag)

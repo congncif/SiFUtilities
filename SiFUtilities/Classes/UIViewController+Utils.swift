@@ -30,11 +30,11 @@ extension UIViewController {
     }
     
     // MARK: - Loading
-    open func showLoading() {
+    @objc open func showLoading() {
         self.view.showLoading()
     }
     
-    open func hideLoading() {
+    @objc open func hideLoading() {
         self.view.hideLoading()
     }
 }

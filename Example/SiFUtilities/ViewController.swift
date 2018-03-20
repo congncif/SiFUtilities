@@ -62,9 +62,14 @@ class ViewController: UIViewController {
         print(test3.dictionary)
 //        print(test3.JSONString!)
         
-        let v = value()
-        print(v)
         
+    }
+    
+    override func viewDidDisplay() {
+        DispatchQueue.global().async {
+            let v = self.value()
+            print(v)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -90,13 +95,20 @@ class ViewController: UIViewController {
         
     }
     
-    func value() -> String {
+    func value() -> String? {
         let keeper = ValueKeeper<String>(defaultValue: "Default") { completion in
-            DispatchQueue.global().asyncAfter(deadline: .now() + 5, execute: {
+            DispatchQueue.global().asyncAfter(deadline: .now() + 10, execute: {
                 completion("Test")
             })
         }
-        return keeper.syncValue!
+        return keeper.syncValue
+    }
+    
+    @IBAction func tap() {
+        let vc = EXViewController.instantiateFromMainStoryboard()
+        vc.showOverlay(on: self, animation: { v in
+            v.moveInFromLeft()
+        })
     }
 
 }
