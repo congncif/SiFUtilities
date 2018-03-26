@@ -40,6 +40,16 @@ class Test3: NSObject, KeyValueProtocol {
     var attr: AdAttribute = AdAttribute()
 }
 
+public enum APIEndpoint: String, EndpointProtocol {
+    case login
+    enum work: String, EndpointProtocol {
+        case examEp = "exam_ep"
+        case clgt = "clgt/%d"
+        case xxx = "xxx/%@/abc/%d"
+    }
+}
+
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -51,25 +61,27 @@ class ViewController: UIViewController {
 //        print(test.dictionary)
 //        print(test.JSONString!)
         
-        let test2 = Test2()
-        test2.name = "XXX"
-        test2.address = "SG"
-        
-        let test3 = Test3()
-        test3.test2 = test2
-        test3.attr = AdAttribute()
-        
-        print(test3.dictionary)
+//        let test2 = Test2()
+//        test2.name = "XXX"
+//        test2.address = "SG"
+//
+//        let test3 = Test3()
+//        test3.test2 = test2
+//        test3.attr = AdAttribute()
+//
+//        print(test3.dictionary)
 //        print(test3.JSONString!)
         
-        
+        print("XXX==> " + APIEndpoint.login.path())
+        print("New path " + APIEndpoint.work.clgt.path(123))
+        print("XXX path " + APIEndpoint.work.xxx.path("abc", 123))
     }
     
     override func viewDidDisplay() {
-        DispatchQueue.global().async {
-            let v = self.value()
-            print(v)
-        }
+//        DispatchQueue.global().async {
+//            let v = self.value()
+//            print(v)
+//        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
