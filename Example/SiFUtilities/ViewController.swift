@@ -1,4 +1,5 @@
 //
+import SiFUtilities
 //  ViewController.swift
 //  SiFUtilities
 //
@@ -7,21 +8,20 @@
 //
 
 import UIKit
-import SiFUtilities
 
 class Test: KeyValueProtocol {
     var name: String?
     var address: String?
-    
-    var mapKeys: [String : String] {
-        return ["name" : "nameMapped"]
+
+    var mapKeys: [String: String] {
+        return ["name": "nameMapped"]
     }
 }
 
 class Test2: Test {
     var age: Int?
-    
-    override var mapKeys: [String : String] {
+
+    override var mapKeys: [String: String] {
         var keys = super.mapKeys
         keys["age"] = "ageMapped"
         return keys
@@ -40,21 +40,30 @@ class Test3: NSObject, KeyValueProtocol {
     var attr: AdAttribute = AdAttribute()
 }
 
-public enum APIEndpoint: String, EndpointProtocol {
+protocol NewEndPoint: EndpointProtocol {
+    
+}
+
+extension NewEndPoint {
+    public static var base: String { return "https://sif.vn" }
+}
+
+//extension EndpointProtocol {
+//    public static var base: String { return "https://sif.vn" }
+//}
+
+public enum APIEndpoint: String, NewEndPoint {
     case login
-    enum work: String, EndpointProtocol {
-        
+    enum work: String, NewEndPoint {
         static var root: String = "work"
-        
+
         case examEp = "exam_ep"
         case clgt = "clgt/%d"
         case xxx = "xxx/%@/abc/%d"
     }
 }
 
-
 class ViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -63,7 +72,7 @@ class ViewController: UIViewController {
 //        test.address = "HN"
 //        print(test.dictionary)
 //        print(test.JSONString!)
-        
+
 //        let test2 = Test2()
 //        test2.name = "XXX"
 //        test2.address = "SG"
@@ -74,22 +83,22 @@ class ViewController: UIViewController {
 //
 //        print(test3.dictionary)
 //        print(test3.JSONString!)
-        
+
         print("XXX==> " + APIEndpoint.login.path())
         print("New path " + APIEndpoint.work.clgt.path(123))
         print("XXX path " + APIEndpoint.work.xxx.path("abc", 123))
     }
-    
+
     override func viewDidDisplay() {
 //        DispatchQueue.global().async {
 //            let v = self.value()
 //            print(v)
 //        }
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+
 //        let blur = UIBlurEffect(style: UIBlurEffectStyle.light)
 //        let blurView = UIVisualEffectView(effect: blur)
 //
@@ -105,11 +114,10 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     override func viewDidFinishLayout() {
-        
     }
-    
+
     func value() -> String? {
         let keeper = ValueKeeper<String>(defaultValue: "Default") { completion in
             DispatchQueue.global().asyncAfter(deadline: .now() + 10, execute: {
@@ -118,13 +126,11 @@ class ViewController: UIViewController {
         }
         return keeper.syncValue
     }
-    
+
     @IBAction func tap() {
         let vc = EXViewController.instantiateFromMainStoryboard()
         vc.showOverlay(on: self, animation: { v in
             v.moveInFromLeft()
         })
     }
-
 }
-

@@ -7,14 +7,9 @@
 
 import Foundation
 
-open class EndpointBase {
-    open static var path: String = ""
-}
-
 public protocol EndpointProtocol: CustomStringConvertible {
     static var base: String { get }
     static var root: String { get }
-    func path(base: String, _ arguments: CVarArg...) -> String
 }
 
 func PathHelper(format: String) -> (_ params: CVaListPointer) -> String {
@@ -33,7 +28,7 @@ extension EndpointProtocol {
     }
 
     public func path(base: String = "", _ arguments: CVarArg...) -> String {
-        let basePath = base.isEmpty ? (Self.base.isEmpty ? EndpointBase.path : Self.base) : base
+        let basePath = base.isEmpty ? Self.base : base
         let purePath = basePath +/ (Self.root.isEmpty ? description : Self.root +/ description)
         if arguments.count > 0 {
             let helper = PathHelper(format: purePath)
@@ -41,6 +36,12 @@ extension EndpointProtocol {
         } else {
             return purePath
         }
+    }
+    
+    public func path(base: String = "") -> String {
+        let basePath = base.isEmpty ? Self.base : base
+        let purePath = basePath +/ (Self.root.isEmpty ? description : Self.root +/ description)
+        return purePath
     }
 }
 
