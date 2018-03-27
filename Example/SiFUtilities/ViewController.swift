@@ -87,6 +87,7 @@ class ViewController: UIViewController {
         print("XXX==> " + APIEndpoint.login.path())
         print("New path " + APIEndpoint.work.clgt.path(123))
         print("XXX path " + APIEndpoint.work.xxx.path("abc", 123))
+        print("XXX path " + APIEndpoint.work.path())
     }
 
     override func viewDidDisplay() {

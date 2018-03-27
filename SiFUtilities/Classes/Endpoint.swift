@@ -38,9 +38,26 @@ extension EndpointProtocol {
         }
     }
     
+    public static func path(base: String = "", _ arguments: CVarArg...) -> String {
+        let basePath = base.isEmpty ? Self.base : base
+        let purePath = basePath +/ Self.root
+        if arguments.count > 0 {
+            let helper = PathHelper(format: purePath)
+            return withVaList(arguments) { helper($0) }
+        } else {
+            return purePath
+        }
+    }
+
     public func path(base: String = "") -> String {
         let basePath = base.isEmpty ? Self.base : base
         let purePath = basePath +/ (Self.root.isEmpty ? description : Self.root +/ description)
+        return purePath
+    }
+
+    public static func path(base: String = "") -> String {
+        let basePath = base.isEmpty ? Self.base : base
+        let purePath = basePath +/ Self.root
         return purePath
     }
 }

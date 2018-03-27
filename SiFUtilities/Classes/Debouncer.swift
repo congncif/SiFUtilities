@@ -18,10 +18,19 @@ public class Debouncer: NSObject {
         self.callback = callback
     }
     
+    deinit {
+        cancel()
+    }
+    
     public func call() {
-        timer?.invalidate()
+        cancel()
         let nextTimer = Timer.scheduledTimer(timeInterval: delay, target: self, selector: #selector(Debouncer.fireNow), userInfo: nil, repeats: false)
         timer = nextTimer
+    }
+    
+    public func cancel() {
+        timer?.invalidate()
+        timer = nil
     }
     
     @objc public func fireNow() {
