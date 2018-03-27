@@ -43,6 +43,9 @@ class Test3: NSObject, KeyValueProtocol {
 public enum APIEndpoint: String, EndpointProtocol {
     case login
     enum work: String, EndpointProtocol {
+        
+        static var root: String = "work"
+        
         case examEp = "exam_ep"
         case clgt = "clgt/%d"
         case xxx = "xxx/%@/abc/%d"
