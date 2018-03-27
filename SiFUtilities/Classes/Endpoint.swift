@@ -12,6 +12,7 @@ open class EndpointBase {
 }
 
 public protocol EndpointProtocol: CustomStringConvertible {
+    static var base: String { get }
     static var root: String { get }
     func path(base: String, _ arguments: CVarArg...) -> String
 }
@@ -23,12 +24,17 @@ func PathHelper(format: String) -> (_ params: CVaListPointer) -> String {
 }
 
 extension EndpointProtocol {
+    public static var base: String {
+        return ""
+    }
+
     public static var root: String {
         return ""
     }
-    
-    public func path(base: String = EndpointBase.path, _ arguments: CVarArg...) -> String {
-        let purePath = base +/ (Self.root.isEmpty ? description : Self.root +/ description)
+
+    public func path(base: String = "", _ arguments: CVarArg...) -> String {
+        let basePath = base.isEmpty ? (Self.base.isEmpty ? EndpointBase.path : Self.base) : base
+        let purePath = basePath +/ (Self.root.isEmpty ? description : Self.root +/ description)
         if arguments.count > 0 {
             let helper = PathHelper(format: purePath)
             return withVaList(arguments) { helper($0) }
