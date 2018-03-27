@@ -55,11 +55,16 @@ extension NewEndPoint {
 public enum APIEndpoint: String, NewEndPoint {
     case login
     enum work: String, NewEndPoint {
-        static var root: String = "work"
-
         case examEp = "exam_ep"
-        case clgt = "clgt/%d"
+        case cool = "cool/%d"
         case xxx = "xxx/%@/abc/%d"
+    }
+    
+    enum newpp: String, NewEndPoint {
+        static var base: String {
+            return "ftp://aba.com"
+        }
+        case example
     }
 }
 
@@ -85,9 +90,10 @@ class ViewController: UIViewController {
 //        print(test3.JSONString!)
 
         print("XXX==> " + APIEndpoint.login.path())
-        print("New path " + APIEndpoint.work.clgt.path(123))
+        print("New path " + APIEndpoint.work.cool.path(123))
         print("XXX path " + APIEndpoint.work.xxx.path("abc", 123))
         print("XXX path " + APIEndpoint.work.path())
+        print("XXX path " + APIEndpoint.newpp.path())
     }
 
     override func viewDidDisplay() {

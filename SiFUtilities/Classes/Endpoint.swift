@@ -24,7 +24,7 @@ extension EndpointProtocol {
     }
 
     public static var root: String {
-        return ""
+        return String(describing: self)
     }
 
     public func path(base: String = "", _ arguments: CVarArg...) -> String {
