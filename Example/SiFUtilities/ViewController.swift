@@ -136,8 +136,9 @@ class ViewController: UIViewController {
 
     @IBAction func tap() {
         let vc = EXViewController.instantiateFromMainStoryboard()
-        vc.showOverlay(on: self, animation: { v in
-            v.moveInFromLeft()
-        })
+//        vc.showOverlay(on: self, animation: { v in
+//            v.moveInFromLeft()
+//        })
+        present(vc, embedIn: NavViewController.self)
     }
 }

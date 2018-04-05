@@ -11,8 +11,8 @@ import UIKit
 
 extension UIViewController {
     open func show(on baseViewController: UIViewController,
-                     animated: Bool = true,
-                     completion: (() -> Void)? = nil) {
+                   animated: Bool = true,
+                   completion: (() -> Void)? = nil) {
         if let navigation = baseViewController as? UINavigationController {
             navigation.pushViewController(self, animated: animated)
             if let completion = completion {
@@ -24,9 +24,9 @@ extension UIViewController {
     }
     
     open func show(viewController: UIViewController,
-                     from baseviewController: UIViewController? = nil,
-                     animated: Bool = true,
-                     completion: (() -> Void)? = nil) {
+                   from baseviewController: UIViewController? = nil,
+                   animated: Bool = true,
+                   completion: (() -> Void)? = nil) {
         guard let base = baseviewController else {
             if let navigation = self.navigationController {
                 viewController.show(on: navigation, animated: animated, completion: completion)
@@ -69,5 +69,40 @@ extension UIViewController {
         } else {
             print("Presenting page not found")
         }
+    }
+    
+    open func present(_ vc: UIViewController, embedIn NavigationType: UINavigationController.Type = UINavigationController.self, cancelButton position: CancelButtonPosition = .left, animated: Bool = true, completion: (() -> Void)? = nil) {
+        if let nav = vc as? UINavigationController {
+            nav.topViewController?.showCancelButton(at: position)
+            present(nav, animated: animated, completion: completion)
+        } else {
+            vc.showCancelButton(at: position)
+            let nav = NavigationType.init(rootViewController: vc)
+            present(nav, animated: animated, completion: completion)
+        }
+    }
+}
+
+extension UIViewController {
+    public enum CancelButtonPosition {
+        case none
+        case left
+        case right
+    }
+    
+    open func showCancelButton(at position: CancelButtonPosition = .left) {
+        let cancelButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(dismissButtonDidTap(_:)))
+        switch position {
+        case .left:
+            navigationItem.leftBarButtonItem = cancelButton
+        case .right:
+            navigationItem.rightBarButtonItem = cancelButton
+        default:
+            break
+        }
+    }
+    
+    @IBAction @objc open func dismissButtonDidTap(_ sender: Any) {
+        forceDismiss()
     }
 }
