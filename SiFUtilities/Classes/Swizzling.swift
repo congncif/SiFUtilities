@@ -23,10 +23,16 @@ class SwizzlingEntry {
         #else
             let autoreleasingTypes = AutoreleasingUnsafeMutablePointer<AnyClass?>(types)
         #endif
-    
+        
         objc_getClassList(autoreleasingTypes, Int32(typeCount))
         for index in 0 ..< typeCount { (types[index] as? SelfAware.Type)?.awake() }
-        types.deallocate()
+        
+        #if swift(>=4.1)
+            types.deallocate()
+        #else
+            types.deallocate(capacity: typeCount)
+        #endif
+        
     }
 }
 
@@ -36,7 +42,7 @@ extension UIApplication {
         UIViewController.swizzling()
     }()
     
-    override open var next: UIResponder? {
+    open override var next: UIResponder? {
         // Called before applicationDidFinishLaunching
         UIApplication.runOnce
         return super.next
