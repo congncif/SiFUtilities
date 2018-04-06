@@ -101,6 +101,7 @@ class ViewController: UIViewController {
 //            let v = self.value()
 //            print(v)
 //        }
+        
     }
 
     override func viewDidAppear(_ animated: Bool) {

@@ -11,22 +11,22 @@ import Foundation
 extension Array where Element: Equatable {
     public mutating func remove(_ item: Element) {
         if let index = index(of: item) {
-            remove(at: index)
+            self.remove(at: index)
         }
     }
-    
+
     public func array(removing item: Element) -> [Element] {
         var result = self
         result.remove(item)
         return result
     }
-    
+
     public mutating func shuffle() {
         for _ in 0..<self.count {
-            sort { (_,_) in arc4random() < arc4random() }
+            sort { _, _ in arc4random() < arc4random() }
         }
     }
-    
+
     public mutating func replace(_ item: Element) {
         if let index = index(of: item) {
             self[index] = item
@@ -34,14 +34,56 @@ extension Array where Element: Equatable {
     }
 }
 
+extension Array where Element: Hashable {
+    public func after(item: Element) -> Element? {
+        if let index = self.index(of: item), index + 1 < self.count {
+            return self[index + 1]
+        }
+        return nil
+    }
+}
+
+extension Array {
+    public func chunk(_ chunkSize: Int) -> [[Element]] {
+        return stride(from: 0, to: self.count, by: chunkSize).map({ (startIndex) -> [Element] in
+            let endIndex = (startIndex.advanced(by: chunkSize) > self.count) ? self.count - startIndex : chunkSize
+            return Array(self[startIndex..<startIndex.advanced(by: endIndex)])
+        })
+    }
+}
+
+infix operator &
+public func  &<T : Equatable>(lhs: [T], rhs: [T]) -> [T] {
+    return lhs.filter { rhs.contains($0) }
+}
+
+extension Collection {
+    public subscript(safe index: Index) -> Element? {
+        return indices.contains(index) ? self[index] : nil
+    }
+}
+
 extension Sequence {
     /// Categorises elements of self into a dictionary, with the keys given by keyFunc
-    public func categorise<U : Hashable>(_ keyFunc: (Iterator.Element) -> U) -> [U:[Iterator.Element]] {
-        var dict: [U:[Iterator.Element]] = [:]
+    public func categorise<U: Hashable>(_ keyFunc: (Iterator.Element) -> U) -> [U: [Iterator.Element]] {
+        var dict: [U: [Iterator.Element]] = [:]
         for el in self {
             let key = keyFunc(el)
             if case nil = dict[key]?.append(el) { dict[key] = [el] }
         }
         return dict
+    }
+
+    public func group<GroupingType: Hashable>(by key: (Iterator.Element) -> GroupingType) -> [[Iterator.Element]] {
+        var groups: [GroupingType: [Iterator.Element]] = [:]
+        var groupsOrder: [GroupingType] = []
+        forEach { element in
+            let key = key(element)
+            if case nil = groups[key]?.append(element) {
+                groups[key] = [element]
+                groupsOrder.append(key)
+            }
+        }
+        return groupsOrder.map { groups[$0]! }
     }
 }

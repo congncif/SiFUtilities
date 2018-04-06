@@ -42,6 +42,8 @@
 		207D4B55203DBAD20009BD39 /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D4B54203DBAD20009BD39 /* UIView+Nib.swift */; };
 		20B4B50620693C2300D6B7C9 /* Enum++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B4B50520693C2300D6B7C9 /* Enum++.swift */; };
 		20B4B50820693CC700D6B7C9 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B4B50720693CC700D6B7C9 /* Endpoint.swift */; };
+		20E587ED2077C70100C5D65B /* UINavigationBar++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E587EB2077C66B00C5D65B /* UINavigationBar++.swift */; };
+		20E587EF2077CAD500C5D65B /* UITextField++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E587EE2077CAD500C5D65B /* UITextField++.swift */; };
 		47ED8C25A0189A057CDFAAE345AF4688 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0192874356F8A4B620EABACB30C2BE8B /* Foundation.framework */; };
 		7E3C8B757CF9B8CB4E31E14C15978847 /* Pods-SiFUtilities_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B22580D92EB72B8E86CB0C0C2E13FB8 /* Pods-SiFUtilities_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8801266F6F479C8C6B029FC06A925867 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0192874356F8A4B620EABACB30C2BE8B /* Foundation.framework */; };
@@ -101,6 +103,8 @@
 		207D4B54203DBAD20009BD39 /* UIView+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
 		20B4B50520693C2300D6B7C9 /* Enum++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enum++.swift"; sourceTree = "<group>"; };
 		20B4B50720693CC700D6B7C9 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		20E587EB2077C66B00C5D65B /* UINavigationBar++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar++.swift"; sourceTree = "<group>"; };
+		20E587EE2077CAD500C5D65B /* UITextField++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField++.swift"; sourceTree = "<group>"; };
 		21BE8C29A1D65B013BE108C9D880F675 /* SiFUtilities-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SiFUtilities-prefix.pch"; sourceTree = "<group>"; };
 		24FBC70F3C68888EB02BD940D8D9BCC8 /* Pods-SiFUtilities_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SiFUtilities_Example.release.xcconfig"; sourceTree = "<group>"; };
 		318BFCDD1F31B5DD66A4A645B38D6B13 /* SiFUtilities.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SiFUtilities.modulemap; sourceTree = "<group>"; };
@@ -196,6 +200,8 @@
 				20388034207683A7002FE6BA /* TimeInterval+Ex.swift */,
 				204F5A902029F27100ABE58F /* UIImage+Compress.swift */,
 				204F5AA02029F27100ABE58F /* UIKit++.swift */,
+				20E587EB2077C66B00C5D65B /* UINavigationBar++.swift */,
+				20E587EE2077CAD500C5D65B /* UITextField++.swift */,
 				204F5AAD2029F27100ABE58F /* UIView+Animation.swift */,
 				204F5AA42029F27100ABE58F /* UIView+Border.swift */,
 				204F5AA22029F27100ABE58F /* UIView+Loading.swift */,
@@ -354,7 +360,7 @@
 				LastUpgradeCheck = 0700;
 				TargetAttributes = {
 					DEEB43FA7DE510868C046CFE28A91FF3 = {
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 0930;
 					};
 				};
 			};
@@ -393,6 +399,7 @@
 				204F5AC12029F27100ABE58F /* UIView+Border.swift in Sources */,
 				2079D52620616728002E391B /* UIViewController+Overlay.swift in Sources */,
 				207D4B55203DBAD20009BD39 /* UIView+Nib.swift in Sources */,
+				20E587ED2077C70100C5D65B /* UINavigationBar++.swift in Sources */,
 				204F5AB02029F27100ABE58F /* AssociatedObject.swift in Sources */,
 				204F5AB22029F27100ABE58F /* String++.swift in Sources */,
 				204F5ABB2029F27100ABE58F /* ValueKeeper.swift in Sources */,
@@ -425,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E507253D9E0AB843B37DBDFB5A3107D1 /* Pods-SiFUtilities_Example-dummy.m in Sources */,
+				20E587EF2077CAD500C5D65B /* UITextField++.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
