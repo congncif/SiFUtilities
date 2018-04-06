@@ -28,7 +28,6 @@ public func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
     }
 }
 
-
 //MARK: - NSObjects
 
 extension NSObject {
@@ -40,53 +39,6 @@ extension NSObject {
         return NSStringFromClass(type(of: self)).components(separatedBy: ".").last!
     }
 }
-
-
-public protocol PropertyNames: class {
-    var propertyNames: [String] {get}
-}
-
-public extension PropertyNames {
-    public var propertyNames: [String] {
-        
-        if self is NSObject {
-            var results: Array<String> = []
-            
-            // retrieve the properties via the class_copyPropertyList function
-            var count: UInt32 = 0
-            let myClass: AnyClass = Self.self //self.classForCoder
-            let properties = class_copyPropertyList(myClass, &count)
-            
-            // iterate each objc_property_t struct
-            for i: UInt32 in 0 ..< count {
-                if let property = properties?[Int(i)] {
-                    // retrieve the property name by calling property_getName function
-                    // covert the c string into a Swift string
-                    #if swift(>=4.0)
-                        let cname = property_getName(property)
-                        let name = String(cString: cname)
-                        results.append(name)
-                    #else
-                        if let cname = property_getName(property) {
-                            let name = String(cString: cname)
-                            results.append(name)
-                        }
-                    #endif
-                }
-            }
-            
-            // release objc_property_t structs
-            free(properties)
-            
-            return results
-        }else {
-            return Mirror(reflecting: self).children.compactMap { $0.label }
-        }
-    }
-}
-
-extension NSObject: PropertyNames {}
-
 
 extension URL {
     public var keyValueParameters: Dictionary<String, String>? {
