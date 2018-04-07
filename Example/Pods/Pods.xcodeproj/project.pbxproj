@@ -37,6 +37,7 @@
 		204F5AC82029F27100ABE58F /* Number++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F5AAB2029F27100ABE58F /* Number++.swift */; };
 		204F5AC92029F27100ABE58F /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F5AAC2029F27100ABE58F /* Date+Utils.swift */; };
 		204F5ACA2029F27100ABE58F /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F5AAD2029F27100ABE58F /* UIView+Animation.swift */; };
+		204F9DE12078A33200F6FC4F /* Object++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F9DDF2078A32800F6FC4F /* Object++.swift */; };
 		2079D52620616728002E391B /* UIViewController+Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2079D52520616728002E391B /* UIViewController+Overlay.swift */; };
 		207D4B53203DBA9E0009BD39 /* UIViewController+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D4B51203DB9430009BD39 /* UIViewController+Nib.swift */; };
 		207D4B55203DBAD20009BD39 /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D4B54203DBAD20009BD39 /* UIView+Nib.swift */; };
@@ -98,6 +99,7 @@
 		204F5AAB2029F27100ABE58F /* Number++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Number++.swift"; sourceTree = "<group>"; };
 		204F5AAC2029F27100ABE58F /* Date+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
 		204F5AAD2029F27100ABE58F /* UIView+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Animation.swift"; sourceTree = "<group>"; };
+		204F9DDF2078A32800F6FC4F /* Object++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Object++.swift"; sourceTree = "<group>"; };
 		2079D52520616728002E391B /* UIViewController+Overlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Overlay.swift"; sourceTree = "<group>"; };
 		207D4B51203DB9430009BD39 /* UIViewController+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Nib.swift"; sourceTree = "<group>"; };
 		207D4B54203DBAD20009BD39 /* UIView+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				20B4B50720693CC700D6B7C9 /* Endpoint.swift */,
 				20B4B50520693C2300D6B7C9 /* Enum++.swift */,
 				204F5A9B2029F27100ABE58F /* Foundation++.swift */,
+				204F9DDF2078A32800F6FC4F /* Object++.swift */,
 				204F5AA82029F27100ABE58F /* KeyValueProtocol.swift */,
 				204F5AA32029F27100ABE58F /* NSManagedObject+SiF.swift */,
 				204F5AAB2029F27100ABE58F /* Number++.swift */,
@@ -398,6 +401,7 @@
 				204F5AB12029F27100ABE58F /* Swizzling.swift in Sources */,
 				204F5AC12029F27100ABE58F /* UIView+Border.swift in Sources */,
 				2079D52620616728002E391B /* UIViewController+Overlay.swift in Sources */,
+				204F9DE12078A33200F6FC4F /* Object++.swift in Sources */,
 				207D4B55203DBAD20009BD39 /* UIView+Nib.swift in Sources */,
 				20E587ED2077C70100C5D65B /* UINavigationBar++.swift in Sources */,
 				204F5AB02029F27100ABE58F /* AssociatedObject.swift in Sources */,

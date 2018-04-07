@@ -102,7 +102,11 @@ class ViewController: UIViewController {
 //            print(v)
 //        }
         
+        print(typeName)
+        print(weakSelf() as Any)
     }
+    
+//    func
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

@@ -28,18 +28,6 @@ public func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
     }
 }
 
-//MARK: - NSObjects
-
-extension NSObject {
-    open class var className: String {
-        return NSStringFromClass(self).components(separatedBy: ".").last!
-    }
-    
-    open var className: String {
-        return NSStringFromClass(type(of: self)).components(separatedBy: ".").last!
-    }
-}
-
 extension URL {
     public var keyValueParameters: Dictionary<String, String>? {
         var results = [String:String]()
