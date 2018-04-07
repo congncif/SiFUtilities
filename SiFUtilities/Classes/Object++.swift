@@ -15,8 +15,8 @@ import Foundation
  *      }
  */
 public protocol WeakReferenceProtocol: class {
-    associatedtype T
-    var weakSelf: () -> T? { get }
+    associatedtype WeakReferenceType
+    var weakSelf: () -> WeakReferenceType? { get }
 }
 
 extension WeakReferenceProtocol {
