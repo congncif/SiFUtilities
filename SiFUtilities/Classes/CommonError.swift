@@ -11,13 +11,18 @@ import Foundation
 open class CommonError: Error {
     open var title: String?
     open var message: String?
-    
+
     public init(title: String? = nil, message: String? = nil) {
         self.title = title
         self.message = message
     }
-    
+
     open var localizedDescription: String {
-        return self.message ?? "Unkown error"
+        if let tit = title {
+            return tit
+        } else if let msg = message {
+            return msg
+        }
+        return "Unkown error"
     }
 }

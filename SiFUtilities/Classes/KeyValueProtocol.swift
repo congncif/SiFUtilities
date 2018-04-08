@@ -9,8 +9,8 @@
 import Foundation
 
 public protocol KeyValueProtocol {
-    var mapKeys: [String: String] {get}
-    var ignoreKeys: [String] {get}
+    var mapKeys: [String: String] { get }
+    var ignoreKeys: [String] { get }
 }
 
 extension KeyValueProtocol {
@@ -51,7 +51,7 @@ public extension KeyValueProtocol {
         
         for child in otherSelf.children {
             if let key = child.label {
-                if ignoreKeys.contains(key) {
+                if self.ignoreKeys.contains(key) {
                     continue
                 }
                 let newKey = mapKey(for: key)
@@ -64,7 +64,7 @@ public extension KeyValueProtocol {
         while let superMirror = mirror.superclassMirror {
             for child in superMirror.children {
                 if let key = child.label {
-                    if ignoreKeys.contains(key) {
+                    if self.ignoreKeys.contains(key) {
                         continue
                     }
                     let newKey = mapKey(for: key)
@@ -78,7 +78,6 @@ public extension KeyValueProtocol {
     }
     
     func parse(value: Any) -> Any? {
-        
         let wrappedValue = wrap(any: value)
         
         if let object = wrappedValue as? KeyValueProtocol {
@@ -86,7 +85,7 @@ public extension KeyValueProtocol {
         }
         else if let values = wrappedValue as? [KeyValueProtocol] {
             return values.map({ (item) -> [String: Any] in
-                return item.dictionary
+                item.dictionary
             })
         }
         else {
@@ -99,10 +98,19 @@ public extension KeyValueProtocol {
             let jsonData = try JSONSerialization.data(withJSONObject: dictionary,
                                                       options: .prettyPrinted)
             return String(data: jsonData, encoding: String.Encoding.utf8)
-        } catch {
+        }
+        catch {
             print(error.localizedDescription)
             return nil
         }
+    }
+    
+    public var stringDictionary: [String: String] {
+        var dict: [String: String] = [:]
+        for (key, value) in self.dictionary {
+            dict[key] = String(describing: value)
+        }
+        return dict
     }
     
     public var keys: [String] {

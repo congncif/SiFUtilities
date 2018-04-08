@@ -13,11 +13,11 @@ public protocol EnumCollection: Hashable {
 
 extension EnumCollection {
     public static func cases() -> AnySequence<Self> {
-        typealias S = Self
-        return AnySequence { () -> AnyIterator<S> in
+        typealias ST = Self
+        return AnySequence { () -> AnyIterator<ST> in
             var raw = 0
             return AnyIterator {
-                let current: Self = withUnsafePointer(to: &raw) { $0.withMemoryRebound(to: S.self, capacity: 1) { $0.pointee } }
+                let current: Self = withUnsafePointer(to: &raw) { $0.withMemoryRebound(to: ST.self, capacity: 1) { $0.pointee } }
                 guard current.hashValue == raw else { return nil }
                 raw += 1
                 return current

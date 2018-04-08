@@ -2,11 +2,17 @@
 All notable changes to this project will be documented in this file.
 
 #### 3.x Releases
-- `3.9.x` Releases  - [3.9.0](#390) | [3.9.1](#391) 
+- `3.9.x` Releases  - [3.9.0](#390) | [3.9.1](#391) | [3.9.2](#392) 
 - `3.8.x` Releases  - [3.8.0](#380) 
 - `3.7.x` Releases  - [3.7.0](#370) | [3.7.1](#371) |  [3.7.2](#372)
 
 ---
+## [3.9.2](https://github.com/congncif/SiFUtilities/releases/tag/3.9.2)
+Released on 2018-4-8
+
+#### Updated
+- KeyValueProtocol: add stringDictionary which returns [String: String] instead of [String: Any]
+
 ## [3.9.1](https://github.com/congncif/SiFUtilities/releases/tag/3.9.1)
 Released on 2018-4-7
 
