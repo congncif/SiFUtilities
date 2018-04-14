@@ -9,7 +9,7 @@ import Foundation
 
 @IBDesignable
 extension UITextField {
-    @IBInspectable @objc open var leftPadding: CGFloat {
+    @IBInspectable open var leftPadding: CGFloat {
         get {
             return leftView!.frame.size.width
         }
@@ -20,7 +20,7 @@ extension UITextField {
         }
     }
 
-    @IBInspectable @objc open var rightPadding: CGFloat {
+    @IBInspectable open var rightPadding: CGFloat {
         get {
             return rightView!.frame.size.width
         }

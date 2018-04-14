@@ -60,3 +60,27 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
     }
 }
+
+extension UIAlertController {
+    open class func confirm(title: String? = nil,
+                            message: String?,
+                            style: UIAlertControllerStyle = .alert,
+                            dismissOthers: Bool = false,
+                            cancelTitle: String = "Cancel".localized,
+                            cancelHandler: (() -> Void)? = nil,
+                            confirmedTitle: String = "OK".localized,
+                            confirmedHandler: @escaping () -> Void) {
+        let viewController = UIApplication.topViewController()
+        viewController?.confirm(title: title, message: message, style: style, dismissOthers: dismissOthers, cancelTitle: cancelTitle, cancelHandler: cancelHandler, confirmedTitle: confirmedTitle, confirmedHandler: confirmedHandler)
+    }
+    
+    open class func notify(title: String? = nil,
+                           message: String?,
+                           style: UIAlertControllerStyle = .alert,
+                           dismissOthers: Bool = false,
+                           buttonTitle: String = "OK".localized,
+                           handler: (() -> Void)? = nil) {
+        let viewController = UIApplication.topViewController()
+        viewController?.notify(title: title, message: message, style: style, dismissOthers: dismissOthers, buttonTitle: buttonTitle, handler: handler)
+    }
+}
