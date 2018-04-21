@@ -11,6 +11,8 @@ import UIKit
 
 extension UIViewController {
     open func show(on baseViewController: UIViewController,
+                   embedIn NavigationType: UINavigationController.Type = UINavigationController.self,
+                   cancelButton position: CancelButtonPosition = .left,
                    animated: Bool = true,
                    completion: (() -> Void)? = nil) {
         if let navigation = baseViewController as? UINavigationController {
@@ -19,23 +21,25 @@ extension UIViewController {
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.25, execute: completion)
             }
         } else {
-            baseViewController.present(self, animated: animated, completion: completion)
+            baseViewController.present(self, embedIn: NavigationType, cancelButton: position, animated: animated, completion: completion)
         }
     }
     
     open func show(viewController: UIViewController,
                    from baseviewController: UIViewController? = nil,
+                   embedIn NavigationType: UINavigationController.Type = UINavigationController.self,
+                   cancelButton position: CancelButtonPosition = .left,
                    animated: Bool = true,
                    completion: (() -> Void)? = nil) {
         guard let base = baseviewController else {
             if let navigation = self.navigationController {
-                viewController.show(on: navigation, animated: animated, completion: completion)
+                viewController.show(on: navigation, embedIn: NavigationType, cancelButton: position, animated: animated, completion: completion)
             } else {
-                viewController.show(on: self, animated: animated, completion: completion)
+                viewController.show(on: self, embedIn: NavigationType, cancelButton: position, animated: animated, completion: completion)
             }
             return
         }
-        viewController.show(on: base, animated: animated, completion: completion)
+        viewController.show(on: base, embedIn: NavigationType, cancelButton: position, animated: animated, completion: completion)
     }
     
     open func backToPrevious(animated: Bool = true, completion: (() -> Void)? = nil) {
@@ -102,7 +106,7 @@ extension UIViewController {
         }
     }
     
-    @IBAction @objc open func dismissButtonDidTap(_ sender: Any) {
+    @IBAction open func dismissButtonDidTap(_ sender: Any) {
         forceDismiss()
     }
 }
