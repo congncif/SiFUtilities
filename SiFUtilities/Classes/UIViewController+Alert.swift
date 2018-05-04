@@ -18,24 +18,35 @@ extension UIViewController {
                       cancelHandler: (() -> Void)? = nil,
                       confirmedTitle: String = "OK".localized,
                       confirmedHandler: @escaping () -> Void) {
+        if let alert = self as? UIAlertController, let presenting = presentingViewController, dismissOthers {
+            alert.dismiss(animated: false, completion: {
+                presenting.confirm(title: title, message: message, style: style, dismissOthers: dismissOthers, cancelTitle: cancelTitle, cancelHandler: cancelHandler, confirmedTitle: confirmedTitle, confirmedHandler: confirmedHandler)
+            })
+            return
+        }
+        
+        let completion = { [weak self] in
+            let alert = UIAlertController(title: title, message: message, preferredStyle: style)
+            
+            alert.addAction(UIAlertAction(title: cancelTitle, style: .cancel, handler: { _ in
+                cancelHandler?()
+            }))
+            alert.addAction(UIAlertAction(title: confirmedTitle, style: .default, handler: { _ in
+                confirmedHandler()
+            }))
+            self?.present(alert, animated: true, completion: nil)
+        }
+        
         if let presented = presentedViewController, let alert = presented as? UIAlertController {
             if dismissOthers {
-                alert.dismiss(animated: false, completion: nil)
+                alert.dismiss(animated: false, completion: completion)
             } else {
                 print("☞ Alert is presented on view controller \(self). Set up dismissOthers = true to hide current alert before present new alert")
                 return
             }
+        } else {
+            completion()
         }
-        
-        let alert = UIAlertController(title: title, message: message, preferredStyle: style)
-        
-        alert.addAction(UIAlertAction(title: cancelTitle, style: .cancel, handler: { _ in
-            cancelHandler?()
-        }))
-        alert.addAction(UIAlertAction(title: confirmedTitle, style: .default, handler: { _ in
-            confirmedHandler()
-        }))
-        present(alert, animated: true, completion: nil)
     }
     
     open func notify(title: String? = nil,
@@ -44,20 +55,32 @@ extension UIViewController {
                      dismissOthers: Bool = false,
                      buttonTitle: String = "OK".localized,
                      handler: (() -> Void)? = nil) {
+        if let alert = self as? UIAlertController, let presenting = presentingViewController, dismissOthers {
+            alert.dismiss(animated: false, completion: {
+                presenting.notify(title: title, message: message, style: style, dismissOthers: dismissOthers, buttonTitle: buttonTitle, handler: handler)
+            })
+            return
+        }
+        
+        let completion = { [weak self] in
+            let alert = UIAlertController(title: title, message: message, preferredStyle: style)
+            
+            alert.addAction(UIAlertAction(title: buttonTitle, style: .cancel, handler: { _ in
+                handler?()
+            }))
+            self?.present(alert, animated: true, completion: nil)
+        }
+        
         if let presented = presentedViewController, let alert = presented as? UIAlertController {
             if dismissOthers {
-                alert.dismiss(animated: false, completion: nil)
+                alert.dismiss(animated: false, completion: completion)
             } else {
                 print("☞ Alert is presented on view controller \(self). Set up dismissOthers = true to hide current alert before present new alert")
                 return
             }
+        } else {
+            completion()
         }
-        let alert = UIAlertController(title: title, message: message, preferredStyle: style)
-        
-        alert.addAction(UIAlertAction(title: buttonTitle, style: .cancel, handler: { _ in
-            handler?()
-        }))
-        present(alert, animated: true, completion: nil)
     }
 }
 
