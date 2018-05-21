@@ -651,9 +651,34 @@ extension Double {
     }
 }
 
+extension String {
+    public var boolValue: Bool? {
+        return Bool(self)
+    }
+    
+    public var intValue: Int? {
+        return Int(self)
+    }
+    
+    public var uintValue: UInt? {
+        return UInt(self)
+    }
+    
+    public var floatValue: Float? {
+        return Float(self)
+    }
+    
+    public var doubleValue: Double? {
+        return Double(self)
+    }
+}
+
 extension Bool {
     public var number: NSNumber {
         return NSNumber(booleanLiteral: self)
     }
+    
+    public var stringValue: String {
+        return String(describing: self)
+    }
 }
-
