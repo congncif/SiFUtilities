@@ -11,7 +11,7 @@ import Foundation
 extension UITextField {
     @IBInspectable open var leftPadding: CGFloat {
         get {
-            return leftView!.frame.size.width
+            return leftView?.frame.size.width ?? 0
         }
         set {
             let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: newValue, height: frame.size.height))
@@ -22,7 +22,7 @@ extension UITextField {
 
     @IBInspectable open var rightPadding: CGFloat {
         get {
-            return rightView!.frame.size.width
+            return rightView?.frame.size.width ?? 0
         }
         set {
             let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: newValue, height: frame.size.height))

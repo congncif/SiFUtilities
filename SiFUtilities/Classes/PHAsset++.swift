@@ -65,12 +65,14 @@ extension PHAsset {
             
             manager().requestImageData(for: self, options: options) { (data, dataUTI, orientation, info) in
                 imageData = data
-                if info!.keys.contains(NSString(string: "PHImageFileURLKey")) {
-                    let path = info![NSString(string: "PHImageFileURLKey")] as! NSURL
-                    fileName = path.lastPathComponent
-                    
-                } else if info!.keys.contains("PHImageFileDataKey") {
-                    fileName = String.random(length: 10)
+                if let info = info {
+                    if info.keys.contains(NSString(string: "PHImageFileURLKey")) {
+                        if let path = info[NSString(string: "PHImageFileURLKey")] as? NSURL {
+                            fileName = path.lastPathComponent
+                        }
+                    } else if info.keys.contains("PHImageFileDataKey") {
+                        fileName = String.random(length: 10)
+                    }
                 }
                 semaphore.signal()
             }
