@@ -27,7 +27,7 @@
 		204F5ABE2029F27100ABE58F /* Dictionary++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F5AA12029F27100ABE58F /* Dictionary++.swift */; };
 		204F5ABF2029F27100ABE58F /* UIView+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F5AA22029F27100ABE58F /* UIView+Loading.swift */; };
 		204F5AC02029F27100ABE58F /* NSManagedObject+SiF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F5AA32029F27100ABE58F /* NSManagedObject+SiF.swift */; };
-		204F5AC12029F27100ABE58F /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F5AA42029F27100ABE58F /* UIView+Border.swift */; };
+		204F5AC12029F27100ABE58F /* UIView+Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F5AA42029F27100ABE58F /* UIView+Layer.swift */; };
 		204F5AC22029F27100ABE58F /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F5AA52029F27100ABE58F /* UIViewController+Utils.swift */; };
 		204F5AC32029F27100ABE58F /* Array++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F5AA62029F27100ABE58F /* Array++.swift */; };
 		204F5AC42029F27100ABE58F /* String+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F5AA72029F27100ABE58F /* String+JSON.swift */; };
@@ -41,6 +41,8 @@
 		2079D52620616728002E391B /* UIViewController+Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2079D52520616728002E391B /* UIViewController+Overlay.swift */; };
 		207D4B53203DBA9E0009BD39 /* UIViewController+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D4B51203DB9430009BD39 /* UIViewController+Nib.swift */; };
 		207D4B55203DBAD20009BD39 /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D4B54203DBAD20009BD39 /* UIView+Nib.swift */; };
+		20846C28210C308400668947 /* UIView+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20846C27210C308400668947 /* UIView+Frame.swift */; };
+		20846C2A210C338200668947 /* TouchColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20846C29210C338200668947 /* TouchColorButton.swift */; };
 		20B4B50620693C2300D6B7C9 /* Enum++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B4B50520693C2300D6B7C9 /* Enum++.swift */; };
 		20B4B50820693CC700D6B7C9 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B4B50720693CC700D6B7C9 /* Endpoint.swift */; };
 		20E587ED2077C70100C5D65B /* UINavigationBar++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E587EB2077C66B00C5D65B /* UINavigationBar++.swift */; };
@@ -89,7 +91,7 @@
 		204F5AA12029F27100ABE58F /* Dictionary++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary++.swift"; sourceTree = "<group>"; };
 		204F5AA22029F27100ABE58F /* UIView+Loading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Loading.swift"; sourceTree = "<group>"; };
 		204F5AA32029F27100ABE58F /* NSManagedObject+SiF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+SiF.swift"; sourceTree = "<group>"; };
-		204F5AA42029F27100ABE58F /* UIView+Border.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Border.swift"; sourceTree = "<group>"; };
+		204F5AA42029F27100ABE58F /* UIView+Layer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layer.swift"; sourceTree = "<group>"; };
 		204F5AA52029F27100ABE58F /* UIViewController+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		204F5AA62029F27100ABE58F /* Array++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array++.swift"; sourceTree = "<group>"; };
 		204F5AA72029F27100ABE58F /* String+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+JSON.swift"; sourceTree = "<group>"; };
@@ -103,6 +105,8 @@
 		2079D52520616728002E391B /* UIViewController+Overlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Overlay.swift"; sourceTree = "<group>"; };
 		207D4B51203DB9430009BD39 /* UIViewController+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Nib.swift"; sourceTree = "<group>"; };
 		207D4B54203DBAD20009BD39 /* UIView+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
+		20846C27210C308400668947 /* UIView+Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Frame.swift"; sourceTree = "<group>"; };
+		20846C29210C338200668947 /* TouchColorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchColorButton.swift; sourceTree = "<group>"; };
 		20B4B50520693C2300D6B7C9 /* Enum++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enum++.swift"; sourceTree = "<group>"; };
 		20B4B50720693CC700D6B7C9 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		20E587EB2077C66B00C5D65B /* UINavigationBar++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar++.swift"; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 		204F5A8F2029F27100ABE58F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				20846C29210C338200668947 /* TouchColorButton.swift */,
 				204F5AA62029F27100ABE58F /* Array++.swift */,
 				204F5A922029F27100ABE58F /* AssociatedObject.swift */,
 				204F5A972029F27100ABE58F /* AVPlayer++.swift */,
@@ -206,7 +211,8 @@
 				20E587EB2077C66B00C5D65B /* UINavigationBar++.swift */,
 				20E587EE2077CAD500C5D65B /* UITextField++.swift */,
 				204F5AAD2029F27100ABE58F /* UIView+Animation.swift */,
-				204F5AA42029F27100ABE58F /* UIView+Border.swift */,
+				204F5AA42029F27100ABE58F /* UIView+Layer.swift */,
+				20846C27210C308400668947 /* UIView+Frame.swift */,
 				204F5AA22029F27100ABE58F /* UIView+Loading.swift */,
 				207D4B54203DBAD20009BD39 /* UIView+Nib.swift */,
 				204F5A982029F27100ABE58F /* UIView+Utils.swift */,
@@ -399,7 +405,7 @@
 				20388035207683A7002FE6BA /* TimeInterval+Ex.swift in Sources */,
 				204F5AC62029F27100ABE58F /* String+Validation.swift in Sources */,
 				204F5AB12029F27100ABE58F /* Swizzling.swift in Sources */,
-				204F5AC12029F27100ABE58F /* UIView+Border.swift in Sources */,
+				204F5AC12029F27100ABE58F /* UIView+Layer.swift in Sources */,
 				2079D52620616728002E391B /* UIViewController+Overlay.swift in Sources */,
 				204F9DE12078A33200F6FC4F /* Object++.swift in Sources */,
 				207D4B55203DBAD20009BD39 /* UIView+Nib.swift in Sources */,
@@ -411,6 +417,7 @@
 				204F5AB42029F27100ABE58F /* UIViewController+Show.swift in Sources */,
 				204F5ABC2029F27100ABE58F /* UIViewController+Alert.swift in Sources */,
 				204F5AAF2029F27100ABE58F /* UIViewController+Storyboard.swift in Sources */,
+				20846C2A210C338200668947 /* TouchColorButton.swift in Sources */,
 				204F5ABE2029F27100ABE58F /* Dictionary++.swift in Sources */,
 				204F5AB32029F27100ABE58F /* UIViewController+Runtime.swift in Sources */,
 				204F5AC22029F27100ABE58F /* UIViewController+Utils.swift in Sources */,
@@ -437,6 +444,7 @@
 			files = (
 				E507253D9E0AB843B37DBDFB5A3107D1 /* Pods-SiFUtilities_Example-dummy.m in Sources */,
 				20E587EF2077CAD500C5D65B /* UITextField++.swift in Sources */,
+				20846C28210C308400668947 /* UIView+Frame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

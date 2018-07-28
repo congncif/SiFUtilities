@@ -1,9 +1,9 @@
 //
 //  String+Validation.swift
-//  Meeting Up
+//  SiFUtilities
 //
 //  Created by FOLY on 2/7/17.
-//  Copyright © 2017 Julian Heissl. All rights reserved.
+//  Copyright © 2017 [iF] Solution. All rights reserved.
 //
 
 import Foundation
