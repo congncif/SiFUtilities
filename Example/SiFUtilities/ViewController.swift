@@ -1,12 +1,11 @@
 //
-import SiFUtilities
 //  ViewController.swift
 //  SiFUtilities
 //
 //  Created by NGUYEN CHI CONG on 05/29/2016.
 //  Copyright (c) 2016 NGUYEN CHI CONG. All rights reserved.
 //
-
+import SiFUtilities
 import UIKit
 
 class Test: KeyValueProtocol {
@@ -15,6 +14,10 @@ class Test: KeyValueProtocol {
 
     var mapKeys: [String: String] {
         return ["name": "nameMapped"]
+    }
+    
+    func transformKey(for mapKey: String) -> String {
+        return mapKey.snakeCased()
     }
 }
 
@@ -72,10 +75,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-//        let test = Test()
-//        test.name = "clgt"
-//        test.address = "HN"
-//        print(test.dictionary)
+        
+        let x = "test_abc_uou"
+        print(x.camelCase())
+        print(x.snakeCased())
+        
+        let test = Test()
+        test.name = "clgt"
+        test.address = "HN"
+        print(test.dictionary)
 //        print(test.JSONString!)
 
 //        let test2 = Test2()

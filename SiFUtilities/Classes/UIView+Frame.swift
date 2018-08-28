@@ -19,7 +19,6 @@ import UIKit
         }
     }
     
-    /// SwifterSwift: Width of view.
     public var width: CGFloat {
         get {
             return frame.size.width
@@ -29,7 +28,6 @@ import UIKit
         }
     }
     
-    /// SwifterSwift: Height of view.
     public var height: CGFloat {
         get {
             return frame.size.height
@@ -39,8 +37,6 @@ import UIKit
         }
     }
     
-    // swiftlint:disable next identifier_name
-    /// SwifterSwift: x origin of view.
     public var x: CGFloat {
         get {
             return frame.origin.x
@@ -49,9 +45,7 @@ import UIKit
             frame.origin.x = newValue
         }
     }
-    
-    // swiftlint:disable next identifier_name
-    /// SwifterSwift: y origin of view.
+
     public var y: CGFloat {
         get {
             return frame.origin.y

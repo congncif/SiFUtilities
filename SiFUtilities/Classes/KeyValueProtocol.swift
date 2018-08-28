@@ -11,6 +11,8 @@ import Foundation
 public protocol KeyValueProtocol {
     var mapKeys: [String: String] { get }
     var ignoreKeys: [String] { get }
+    
+    func transformKey(for mapKey: String) -> String
 }
 
 extension KeyValueProtocol {
@@ -27,7 +29,11 @@ extension KeyValueProtocol {
         if let mapKey = mapKeys[key] {
             newKey = mapKey
         }
-        return newKey
+        return self.transformKey(for: newKey)
+    }
+    
+    public func transformKey(for mapKey: String) -> String {
+        return mapKey
     }
 }
 
@@ -84,9 +90,9 @@ public extension KeyValueProtocol {
             return object.dictionary
         }
         else if let values = wrappedValue as? [KeyValueProtocol] {
-            return values.map({ (item) -> [String: Any] in
+            return values.map { (item) -> [String: Any] in
                 item.dictionary
-            })
+            }
         }
         else {
             return wrappedValue

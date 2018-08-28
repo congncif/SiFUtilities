@@ -64,3 +64,44 @@ extension String {
             .filter { !$0.isEmpty }
     }
 }
+
+extension String {
+    public func capitalizingFirstLetter() -> String {
+        return prefix(1).uppercased() + dropFirst()
+    }
+    
+    public func lowercasingFirstLetter() -> String {
+        return prefix(1).lowercased() + dropFirst()
+    }
+    
+    public mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
+    }
+    
+    public mutating func lowercasedFirstLetter() {
+        self = self.lowercasingFirstLetter()
+    }
+    
+    public func snakeCased() -> String {
+        let pattern = "([a-z0-9])([A-Z])"
+        
+        let regex = try? NSRegularExpression(pattern: pattern, options: [])
+        let range = NSRange(location: 0, length: self.count)
+        return regex?.stringByReplacingMatches(in: self, options: [], range: range, withTemplate: "$1_$2").lowercased() ?? self
+    }
+    
+    public func camelCase(separator: String = "_", skipFirstLetter: Bool = true) -> String {
+        let components = self.components(separatedBy: separator)
+        var newComponents: [String] = []
+        
+        for (idx, word) in components.enumerated() {
+            if idx == 0 && skipFirstLetter {
+                newComponents.append(word.lowercased())
+            } else {
+                newComponents.append(word.lowercased().capitalizingFirstLetter())
+            }
+        }
+        
+        return newComponents.joined()
+    }
+}
