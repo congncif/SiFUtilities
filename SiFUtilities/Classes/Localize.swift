@@ -23,7 +23,7 @@ extension String: Localizable {
 }
 
 @IBDesignable extension UILabel {
-    public var localizedTextKey: String? {
+    @IBInspectable public var localizedTextKey: String? {
         get {
             return nil // ignore
         }
@@ -35,7 +35,7 @@ extension String: Localizable {
 }
 
 @IBDesignable extension UITextField {
-    public var localizedPlaceholderKey: String? {
+    @IBInspectable public var localizedPlaceholderKey: String? {
         get {
             return nil // ignore
         }
@@ -45,7 +45,7 @@ extension String: Localizable {
         }
     }
 
-    public var localizedTextKey: String? {
+    @IBInspectable public var localizedTextKey: String? {
         get {
             return nil // ignore
         }
@@ -57,7 +57,7 @@ extension String: Localizable {
 }
 
 @IBDesignable extension UITextView {
-    public var localizedTextKey: String? {
+    @IBInspectable public var localizedTextKey: String? {
         get {
             return nil // ignore
         }
@@ -69,7 +69,7 @@ extension String: Localizable {
 }
 
 @IBDesignable extension UIButton {
-    public var localizedNormalTitleKey: String? {
+    @IBInspectable public var localizedNormalTitleKey: String? {
         get {
             return nil // ignore
         }
@@ -79,7 +79,7 @@ extension String: Localizable {
         }
     }
 
-    public var localizedSelectedTitleKey: String? {
+    @IBInspectable public var localizedSelectedTitleKey: String? {
         get {
             return nil // ignore
         }
@@ -91,7 +91,7 @@ extension String: Localizable {
 }
 
 @IBDesignable extension UINavigationItem {
-    public var localizedTitleKey: String? {
+    @IBInspectable public var localizedTitleKey: String? {
         get {
             return nil // ignore
         }
@@ -103,7 +103,7 @@ extension String: Localizable {
 }
 
 @IBDesignable extension UIViewController {
-    public var localizedTitleKey: String? {
+    @IBInspectable public var localizedTitleKey: String? {
         get {
             return nil // ignore
         }
@@ -115,7 +115,7 @@ extension String: Localizable {
 }
 
 @IBDesignable extension UIBarButtonItem {
-    public var localizedTitleKey: String? {
+    @IBInspectable public var localizedTitleKey: String? {
         get {
             return nil // ignore
         }
@@ -127,7 +127,7 @@ extension String: Localizable {
 }
 
 @IBDesignable extension UITabBarItem {
-    public var localizedTitleKey: String? {
+    @IBInspectable public var localizedTitleKey: String? {
         get {
             return nil // ignore
         }
@@ -139,7 +139,7 @@ extension String: Localizable {
 }
 
 @IBDesignable extension UISearchBar {
-    public var localizedPlaceholderKey: String? {
+    @IBInspectable public var localizedPlaceholderKey: String? {
         get {
             return nil // ignore
         }
@@ -151,7 +151,7 @@ extension String: Localizable {
 }
 
 @IBDesignable extension UIImageView {
-    public var localizedImageName: String? {
+    @IBInspectable public var localizedImageName: String? {
         get {
             return nil // ignore
         }

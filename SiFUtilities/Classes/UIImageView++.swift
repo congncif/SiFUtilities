@@ -8,7 +8,7 @@
 import Foundation
 
 @IBDesignable extension UIImageView {
-    public var imageName: String? {
+    @IBInspectable public var imageName: String? {
         get {
             return nil // ignore
         }
