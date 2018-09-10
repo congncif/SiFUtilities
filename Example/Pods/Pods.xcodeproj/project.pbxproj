@@ -20,7 +20,7 @@
 		204F5AB72029F27100ABE58F /* CommonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F5A992029F27100ABE58F /* CommonError.swift */; };
 		204F5AB82029F27100ABE58F /* Foundation++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F5A9B2029F27100ABE58F /* Foundation++.swift */; };
 		204F5AB92029F27100ABE58F /* PHAsset++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F5A9C2029F27100ABE58F /* PHAsset++.swift */; };
-		204F5ABA2029F27100ABE58F /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F5A9D2029F27100ABE58F /* Common.swift */; };
+		204F5ABA2029F27100ABE58F /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F5A9D2029F27100ABE58F /* Localize.swift */; };
 		204F5ABB2029F27100ABE58F /* ValueKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F5A9E2029F27100ABE58F /* ValueKeeper.swift */; };
 		204F5ABC2029F27100ABE58F /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F5A9F2029F27100ABE58F /* UIViewController+Alert.swift */; };
 		204F5ABD2029F27100ABE58F /* UIKit++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F5AA02029F27100ABE58F /* UIKit++.swift */; };
@@ -38,6 +38,7 @@
 		204F5AC92029F27100ABE58F /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F5AAC2029F27100ABE58F /* Date+Utils.swift */; };
 		204F5ACA2029F27100ABE58F /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F5AAD2029F27100ABE58F /* UIView+Animation.swift */; };
 		204F9DE12078A33200F6FC4F /* Object++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204F9DDF2078A32800F6FC4F /* Object++.swift */; };
+		20652BA621465573001CF1C6 /* UIImageView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20652BA521465573001CF1C6 /* UIImageView++.swift */; };
 		2079D52620616728002E391B /* UIViewController+Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2079D52520616728002E391B /* UIViewController+Overlay.swift */; };
 		207D4B53203DBA9E0009BD39 /* UIViewController+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D4B51203DB9430009BD39 /* UIViewController+Nib.swift */; };
 		207D4B55203DBAD20009BD39 /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D4B54203DBAD20009BD39 /* UIView+Nib.swift */; };
@@ -84,7 +85,7 @@
 		204F5A992029F27100ABE58F /* CommonError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonError.swift; sourceTree = "<group>"; };
 		204F5A9B2029F27100ABE58F /* Foundation++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Foundation++.swift"; sourceTree = "<group>"; };
 		204F5A9C2029F27100ABE58F /* PHAsset++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PHAsset++.swift"; sourceTree = "<group>"; };
-		204F5A9D2029F27100ABE58F /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		204F5A9D2029F27100ABE58F /* Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localize.swift; sourceTree = "<group>"; };
 		204F5A9E2029F27100ABE58F /* ValueKeeper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueKeeper.swift; sourceTree = "<group>"; };
 		204F5A9F2029F27100ABE58F /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		204F5AA02029F27100ABE58F /* UIKit++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit++.swift"; sourceTree = "<group>"; };
@@ -102,6 +103,7 @@
 		204F5AAC2029F27100ABE58F /* Date+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
 		204F5AAD2029F27100ABE58F /* UIView+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Animation.swift"; sourceTree = "<group>"; };
 		204F9DDF2078A32800F6FC4F /* Object++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Object++.swift"; sourceTree = "<group>"; };
+		20652BA521465573001CF1C6 /* UIImageView++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView++.swift"; sourceTree = "<group>"; };
 		2079D52520616728002E391B /* UIViewController+Overlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Overlay.swift"; sourceTree = "<group>"; };
 		207D4B51203DB9430009BD39 /* UIViewController+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Nib.swift"; sourceTree = "<group>"; };
 		207D4B54203DBAD20009BD39 /* UIView+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
@@ -188,7 +190,7 @@
 				204F5AA62029F27100ABE58F /* Array++.swift */,
 				204F5A922029F27100ABE58F /* AssociatedObject.swift */,
 				204F5A972029F27100ABE58F /* AVPlayer++.swift */,
-				204F5A9D2029F27100ABE58F /* Common.swift */,
+				204F5A9D2029F27100ABE58F /* Localize.swift */,
 				204F5A992029F27100ABE58F /* CommonError.swift */,
 				204F5AAC2029F27100ABE58F /* Date+Utils.swift */,
 				204F5AAA2029F27100ABE58F /* Debouncer.swift */,
@@ -207,6 +209,7 @@
 				204F5A932029F27100ABE58F /* Swizzling.swift */,
 				20388034207683A7002FE6BA /* TimeInterval+Ex.swift */,
 				204F5A902029F27100ABE58F /* UIImage+Compress.swift */,
+				20652BA521465573001CF1C6 /* UIImageView++.swift */,
 				204F5AA02029F27100ABE58F /* UIKit++.swift */,
 				20E587EB2077C66B00C5D65B /* UINavigationBar++.swift */,
 				20E587EE2077CAD500C5D65B /* UITextField++.swift */,
@@ -428,10 +431,11 @@
 				207D4B53203DBA9E0009BD39 /* UIViewController+Nib.swift in Sources */,
 				204F5AC32029F27100ABE58F /* Array++.swift in Sources */,
 				204F5AC92029F27100ABE58F /* Date+Utils.swift in Sources */,
+				20652BA621465573001CF1C6 /* UIImageView++.swift in Sources */,
 				204F5AB62029F27100ABE58F /* UIView+Utils.swift in Sources */,
 				204F5ACA2029F27100ABE58F /* UIView+Animation.swift in Sources */,
 				204F5AC02029F27100ABE58F /* NSManagedObject+SiF.swift in Sources */,
-				204F5ABA2029F27100ABE58F /* Common.swift in Sources */,
+				204F5ABA2029F27100ABE58F /* Localize.swift in Sources */,
 				204F5ABF2029F27100ABE58F /* UIView+Loading.swift in Sources */,
 				204F5AB82029F27100ABE58F /* Foundation++.swift in Sources */,
 				204F5AC72029F27100ABE58F /* Debouncer.swift in Sources */,
