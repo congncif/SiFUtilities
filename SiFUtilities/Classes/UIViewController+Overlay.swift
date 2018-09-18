@@ -12,21 +12,21 @@ import UIKit
 extension UIViewController {
     @objc public func displayContentController(content: UIViewController,
                                                animation: ((_ container: UIView, _ overlay: UIView) -> Void)? = { container, _ in container.fade() }) {
-        addChildViewController(content)
+        addChild(content)
         content.view.frame = view.bounds
         content.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(content.view)
         animation?(view, content.view)
-        content.didMove(toParentViewController: self)
+        content.didMove(toParent: self)
     }
 
     @objc public func hideContentController(content: UIViewController,
                                             animation: ((_ container: UIView, _ overlay: UIView) -> Void)? = { container, _ in container.fade() }) {
-        content.willMove(toParentViewController: nil)
+        content.willMove(toParent: nil)
         let superView = content.view.superview ?? view!
         animation?(superView, view)
         content.view.removeFromSuperview()
-        content.removeFromParentViewController()
+        content.removeFromParent()
     }
 
     @objc public func showOverlay(on viewController: UIViewController,
@@ -35,10 +35,10 @@ extension UIViewController {
     }
 
     @objc public func hideOverlay(animation: ((_ container: UIView, _ overlay: UIView) -> Void)? = { container, _ in container.fade() }) {
-        willMove(toParentViewController: nil)
+        willMove(toParent: nil)
         let superView = view.superview ?? view!
         animation?(superView, view)
         view.removeFromSuperview()
-        removeFromParentViewController()
+        removeFromParent()
     }
 }

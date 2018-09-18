@@ -95,7 +95,7 @@ extension UIViewController {
     }
     
     open func showCancelButton(at position: CancelButtonPosition = .left) {
-        let cancelButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(dismissButtonDidTap(_:)))
+        let cancelButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(dismissButtonDidTap(_:)))
         switch position {
         case .left:
             navigationItem.leftBarButtonItem = cancelButton

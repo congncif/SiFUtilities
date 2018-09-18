@@ -10,67 +10,67 @@ import UIKit
 
 extension UIView {
     public func animate(duration: Double = 0.25,
-                        transitionType: String = kCATransitionMoveIn,
-                        direction: String = kCATransitionFromLeft,
+                        transitionType: CATransitionType = .moveIn,
+                        direction: CATransitionSubtype = .fromLeft,
                         key: String = "animation") {
         let transition = CATransition()
         transition.duration = duration
         transition.type = transitionType
         transition.subtype = direction
-        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         transition.isRemovedOnCompletion = true
         layer.add(transition, forKey: key)
     }
     
     public func fade(_ duration: Double = 0.25) {
-        animate(duration: duration, transitionType: kCATransitionFade, direction: kCATransitionFromLeft)
+        animate(duration: duration, transitionType: .fade, direction: .fromLeft)
     }
     
     public func moveInFromLeft(_ duration: Double = 0.25) {
-        animate(duration: duration, transitionType: kCATransitionMoveIn, direction: kCATransitionFromLeft)
+        animate(duration: duration, transitionType: .moveIn, direction: .fromLeft)
     }
     
     public func moveInFromRight(_ duration: Double = 0.25) {
-        animate(duration: duration, transitionType: kCATransitionMoveIn, direction: kCATransitionFromRight)
+        animate(duration: duration, transitionType: .moveIn, direction: .fromRight)
     }
     
     public func moveInFromTop(_ duration: Double = 0.25) {
-        animate(duration: duration, transitionType: kCATransitionMoveIn, direction: kCATransitionFromTop)
+        animate(duration: duration, transitionType: .moveIn, direction: .fromTop)
     }
     
     public func moveInFromBottom(_ duration: Double = 0.25) {
-        animate(duration: duration, transitionType: kCATransitionMoveIn, direction: kCATransitionFromBottom)
+        animate(duration: duration, transitionType: .moveIn, direction: .fromBottom)
     }
     
     public func pushFromLeft(_ duration: Double = 0.25) {
-        animate(duration: duration, transitionType: kCATransitionPush, direction: kCATransitionFromLeft)
+        animate(duration: duration, transitionType: .push, direction: .fromLeft)
     }
     
     public func pushFromRight(_ duration: Double = 0.25) {
-        animate(duration: duration, transitionType: kCATransitionPush, direction: kCATransitionFromRight)
+        animate(duration: duration, transitionType: .push, direction: .fromRight)
     }
     
     public func pushFromTop(_ duration: Double = 0.25) {
-        animate(duration: duration, transitionType: kCATransitionPush, direction: kCATransitionFromTop)
+        animate(duration: duration, transitionType: .push, direction: .fromTop)
     }
     
     public func pushFromBottom(_ duration: Double = 0.25) {
-        animate(duration: duration, transitionType: kCATransitionPush, direction: kCATransitionFromBottom)
+        animate(duration: duration, transitionType: .push, direction: .fromBottom)
     }
     
     public func revealFromLeft(_ duration: Double = 0.25) {
-        animate(duration: duration, transitionType: kCATransitionReveal, direction: kCATransitionFromLeft)
+        animate(duration: duration, transitionType: .reveal, direction: .fromLeft)
     }
     
     public func revealFromRight(_ duration: Double = 0.25) {
-        animate(duration: duration, transitionType: kCATransitionReveal, direction: kCATransitionFromRight)
+        animate(duration: duration, transitionType: .reveal, direction: .fromRight)
     }
     
     public func revealFromTop(_ duration: Double = 0.25) {
-        animate(duration: duration, transitionType: kCATransitionReveal, direction: kCATransitionFromTop)
+        animate(duration: duration, transitionType: .reveal, direction: .fromTop)
     }
     
     public func revealFromBottom(_ duration: Double = 0.25) {
-        animate(duration: duration, transitionType: kCATransitionReveal, direction: kCATransitionFromBottom)
+        animate(duration: duration, transitionType: .reveal, direction: .fromBottom)
     }
 }

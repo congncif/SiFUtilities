@@ -44,7 +44,7 @@ extension UIView {
             
             var customView: UIView
             if customIndicator == nil {
-                let loadingView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+                let loadingView = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
                 loadingView.startAnimating()
                 
                 customView = loadingView

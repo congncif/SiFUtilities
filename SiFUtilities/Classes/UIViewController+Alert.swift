@@ -12,7 +12,7 @@ import UIKit
 extension UIViewController {
     open func confirm(title: String? = nil,
                       message: String?,
-                      style: UIAlertControllerStyle = .alert,
+                      style: UIAlertController.Style = .alert,
                       dismissOthers: Bool = false,
                       cancelTitle: String = "Cancel".localized,
                       cancelHandler: (() -> Void)? = nil,
@@ -51,7 +51,7 @@ extension UIViewController {
     
     open func notify(title: String? = nil,
                      message: String?,
-                     style: UIAlertControllerStyle = .alert,
+                     style: UIAlertController.Style = .alert,
                      dismissOthers: Bool = false,
                      buttonTitle: String = "OK".localized,
                      handler: (() -> Void)? = nil) {
@@ -87,7 +87,7 @@ extension UIViewController {
 extension UIAlertController {
     open class func confirm(title: String? = nil,
                             message: String?,
-                            style: UIAlertControllerStyle = .alert,
+                            style: UIAlertController.Style = .alert,
                             dismissOthers: Bool = false,
                             cancelTitle: String = "Cancel".localized,
                             cancelHandler: (() -> Void)? = nil,
@@ -99,7 +99,7 @@ extension UIAlertController {
     
     open class func notify(title: String? = nil,
                            message: String?,
-                           style: UIAlertControllerStyle = .alert,
+                           style: UIAlertController.Style = .alert,
                            dismissOthers: Bool = false,
                            buttonTitle: String = "OK".localized,
                            handler: (() -> Void)? = nil) {

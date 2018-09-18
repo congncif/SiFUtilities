@@ -17,14 +17,14 @@ extension UIViewController {
         placeholderView.backgroundColor = navigationController?.navigationBar.barTintColor
         view.addSubview(placeholderView)
         
-        let topConstraint = NSLayoutConstraint(item: placeholderView, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: topLayoutGuide, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 0)
-        let centerConstraint = NSLayoutConstraint(item: placeholderView, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0)
+        let topConstraint = NSLayoutConstraint(item: placeholderView, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: topLayoutGuide, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1, constant: 0)
+        let centerConstraint = NSLayoutConstraint(item: placeholderView, attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, toItem: view, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1, constant: 0)
         
-        let widthConstraint = NSLayoutConstraint(item: placeholderView, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.width, multiplier: 1, constant: 0)
+        let widthConstraint = NSLayoutConstraint(item: placeholderView, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: view, attribute: NSLayoutConstraint.Attribute.width, multiplier: 1, constant: 0)
         
         view.addConstraints([topConstraint, centerConstraint, widthConstraint])
         
-        let heightConstraint = NSLayoutConstraint(item: placeholderView, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: height)
+        let heightConstraint = NSLayoutConstraint(item: placeholderView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: height)
         
         placeholderView.addConstraint(heightConstraint)
     }
