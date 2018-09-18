@@ -15,7 +15,7 @@ class Test: KeyValueProtocol {
     var mapKeys: [String: String] {
         return ["name": "nameMapped"]
     }
-    
+
     func transformKey(for mapKey: String) -> String {
         return mapKey.snakeCased()
     }
@@ -44,16 +44,15 @@ class Test3: NSObject, KeyValueProtocol {
 }
 
 protocol NewEndPoint: EndpointProtocol {
-    
 }
 
 extension NewEndPoint {
     public static var base: String { return "https://sif.vn" }
 }
 
-//extension EndpointProtocol {
+// extension EndpointProtocol {
 //    public static var base: String { return "https://sif.vn" }
-//}
+// }
 
 public enum APIEndpoint: String, NewEndPoint {
     case login
@@ -62,11 +61,12 @@ public enum APIEndpoint: String, NewEndPoint {
         case cool = "cool/%d"
         case xxx = "xxx/%@/abc/%d"
     }
-    
+
     enum newpp: String, NewEndPoint {
         static var base: String {
             return "ftp://aba.com"
         }
+
         case example
     }
 }
@@ -75,11 +75,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+
         let x = "test_abc_uou"
         print(x.camelCase())
         print(x.snakeCased())
-        
+
         let test = Test()
         test.name = "clgt"
         test.address = "HN"
@@ -109,11 +109,11 @@ class ViewController: UIViewController {
 //            let v = self.value()
 //            print(v)
 //        }
-        
+
         print(typeName)
         print(weakSelf() as Any)
     }
-    
+
 //    func
 
     override func viewDidAppear(_ animated: Bool) {
@@ -140,9 +140,9 @@ class ViewController: UIViewController {
 
     func value() -> String? {
         let keeper = ValueKeeper<String>(defaultValue: "Default") { completion in
-            DispatchQueue.global().asyncAfter(deadline: .now() + 10, execute: {
+            DispatchQueue.global().asyncAfter(deadline: .now() + 10) {
                 completion("Test")
-            })
+            }
         }
         return keeper.syncValue
     }
