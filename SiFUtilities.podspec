@@ -51,6 +51,8 @@ Pod::Spec.new do |s|
 
   s.subspec 'IBDesignable' do |co|
     co.source_files = 'SiFUtilities/IBDesignable/**/*'
+
+    co.dependency 'SiFUtilities/Core'
   end
 
   s.subspec 'KeyValue' do |co|
@@ -69,6 +71,8 @@ Pod::Spec.new do |s|
 
   s.subspec 'Nib' do |co|
     co.source_files = 'SiFUtilities/Nib/**/*'
+
+    co.dependency 'SiFUtilities/Core'
   end
 
   s.subspec 'Runtime' do |co|
@@ -77,6 +81,8 @@ Pod::Spec.new do |s|
 
   s.subspec 'Show' do |co|
     co.source_files = 'SiFUtilities/Show/**/*'
+
+    co.dependency 'SiFUtilities/Core'
   end
 
   s.subspec 'WeakObject' do |co|

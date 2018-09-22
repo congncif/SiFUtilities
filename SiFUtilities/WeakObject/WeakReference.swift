@@ -45,13 +45,3 @@ extension TypeNameProtocol {
 
 extension NSObject: TypeNameProtocol {}
 extension NSObject: WeakReferenceProtocol {}
-
-extension NSObject {
-    open class var className: String {
-        return NSStringFromClass(self).components(separatedBy: ".").last!
-    }
-
-    open var className: String {
-        return NSStringFromClass(type(of: self)).components(separatedBy: ".").last!
-    }
-}
