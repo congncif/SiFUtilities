@@ -67,6 +67,11 @@
       }
     },
     {
+      "name": "CommandLineTool",
+      "preserve_paths": "*",
+      "exclude_files": "**/localizable2appstrings"
+    },
+    {
       "name": "Nib",
       "source_files": "SiFUtilities/Nib/**/*",
       "dependencies": {
