@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SiFUtilities'
-  s.version          = '4.0.0'
+  s.version          = '4.0.1'
   s.summary          = 'A set of utilities for your app.'
   s.swift_version    = '4.2'
 
@@ -66,9 +66,15 @@ Pod::Spec.new do |s|
   s.subspec 'Localize' do |co|
     co.source_files = 'SiFUtilities/Localize/**/*.swift'
 
+    co.dependency 'Localize-Swift'
+
     preserve_paths =  "SiFUtilities/Localize/localizable2appstrings"
   end
 
+  # s.subspec 'CommandLineTool' do |co|
+  #   preserve_paths =  "SiFUtilities/CommandLineTool/localizable2appstrings"
+  # end
+    
   s.subspec 'Nib' do |co|
     co.source_files = 'SiFUtilities/Nib/**/*'
 

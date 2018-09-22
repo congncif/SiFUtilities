@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Localize_Swift
 
 public func LocalizedString(_ string: String, tableName: String? = nil) -> String {
     return NSLocalizedString(string, tableName: tableName, comment: string)
@@ -18,7 +19,7 @@ public protocol Localizable {
 
 extension String: Localizable {
     public var localized: String {
-        return NSLocalizedString(self, comment: "")
+        return self.localized()
     }
 }
 
