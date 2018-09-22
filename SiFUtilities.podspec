@@ -83,6 +83,7 @@ Pod::Spec.new do |s|
     co.source_files = 'SiFUtilities/Show/**/*'
 
     co.dependency 'SiFUtilities/Core'
+    co.dependency 'SiFUtilities/Localize'
   end
 
   s.subspec 'WeakObject' do |co|
