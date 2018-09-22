@@ -61,8 +61,8 @@ Pod::Spec.new do |s|
       co.source_files = 'SiFUtilities/Loading/**/*'
   end
 
-  s.subspec 'Localise' do |co|
-    co.source_files = 'SiFUtilities/Localize/**/*'
+  s.subspec 'Localize' do |co|
+    co.source_files = 'SiFUtilities/Localize/**/*.swift'
 
     preserve_paths =  "SiFUtilities/Localize/localizable2appstrings"
   end
@@ -90,7 +90,7 @@ Pod::Spec.new do |s|
     co.dependency 'SiFUtilities/IBDesignable'
     co.dependency 'SiFUtilities/KeyValue'
     co.dependency 'SiFUtilities/Loading'
-    co.dependency 'SiFUtilities/Localise'
+    co.dependency 'SiFUtilities/Localize'
     co.dependency 'SiFUtilities/Nib'
     co.dependency 'SiFUtilities/Runtime'
     co.dependency 'SiFUtilities/Show'

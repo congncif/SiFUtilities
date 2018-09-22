@@ -9,7 +9,7 @@ PODS:
     - SiFUtilities/IBDesignable
     - SiFUtilities/KeyValue
     - SiFUtilities/Loading
-    - SiFUtilities/Localise
+    - SiFUtilities/Localize
     - SiFUtilities/Nib
     - SiFUtilities/Runtime
     - SiFUtilities/Show
@@ -19,7 +19,7 @@ PODS:
   - SiFUtilities/IBDesignable (4.0.0)
   - SiFUtilities/KeyValue (4.0.0)
   - SiFUtilities/Loading (4.0.0)
-  - SiFUtilities/Localise (4.0.0)
+  - SiFUtilities/Localize (4.0.0)
   - SiFUtilities/Nib (4.0.0)
   - SiFUtilities/Runtime (4.0.0)
   - SiFUtilities/Show (4.0.0)
@@ -33,7 +33,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SiFUtilities: 49e5b1dbf1548d098f50aa27d521e2486beb8d20
+  SiFUtilities: 4ae90e3994fc70a9b4b7a1b8bab9184d0a197d6b
 
 PODFILE CHECKSUM: 478561156f8b79ebe1f0d553cf63ff219f44930e
 

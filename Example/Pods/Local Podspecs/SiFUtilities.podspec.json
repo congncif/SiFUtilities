@@ -53,8 +53,8 @@
       "source_files": "SiFUtilities/Loading/**/*"
     },
     {
-      "name": "Localise",
-      "source_files": "SiFUtilities/Localize/**/*"
+      "name": "Localize",
+      "source_files": "SiFUtilities/Localize/**/*.swift"
     },
     {
       "name": "Nib",
@@ -93,7 +93,7 @@
         "SiFUtilities/Loading": [
 
         ],
-        "SiFUtilities/Localise": [
+        "SiFUtilities/Localize": [
 
         ],
         "SiFUtilities/Nib": [
