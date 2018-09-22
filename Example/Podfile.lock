@@ -1,16 +1,40 @@
 PODS:
-  - SiFUtilities (3.2.1)
+  - SiFUtilities (4.0.0):
+    - SiFUtilities/Default (= 4.0.0)
+  - SiFUtilities/Core (4.0.0)
+  - SiFUtilities/Default (4.0.0):
+    - SiFUtilities/Core
+    - SiFUtilities/Endpoint
+    - SiFUtilities/Helpers
+    - SiFUtilities/IBDesignable
+    - SiFUtilities/KeyValue
+    - SiFUtilities/Loading
+    - SiFUtilities/Localise
+    - SiFUtilities/Nib
+    - SiFUtilities/Runtime
+    - SiFUtilities/Show
+    - SiFUtilities/WeakObject
+  - SiFUtilities/Endpoint (4.0.0)
+  - SiFUtilities/Helpers (4.0.0)
+  - SiFUtilities/IBDesignable (4.0.0)
+  - SiFUtilities/KeyValue (4.0.0)
+  - SiFUtilities/Loading (4.0.0)
+  - SiFUtilities/Localise (4.0.0)
+  - SiFUtilities/Nib (4.0.0)
+  - SiFUtilities/Runtime (4.0.0)
+  - SiFUtilities/Show (4.0.0)
+  - SiFUtilities/WeakObject (4.0.0)
 
 DEPENDENCIES:
   - SiFUtilities (from `../`)
 
 EXTERNAL SOURCES:
   SiFUtilities:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  SiFUtilities: f68968e348dbbbe99336ff95a9f8e82c9d5c0e26
+  SiFUtilities: 49e5b1dbf1548d098f50aa27d521e2486beb8d20
 
 PODFILE CHECKSUM: 478561156f8b79ebe1f0d553cf63ff219f44930e
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3

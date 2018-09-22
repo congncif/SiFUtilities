@@ -8,9 +8,9 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SiFUtilities'
-  s.version          = '3.9.12'
+  s.version          = '4.0.0'
   s.summary          = 'A set of utilities for your app.'
-s.swift_version    = '4.2'
+  s.swift_version    = '4.2'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -33,16 +33,76 @@ s.swift_version    = '4.2'
   s.social_media_url = 'https://twitter.com/congncif'
 
   s.ios.deployment_target = '8.0'
+  s.frameworks = 'UIKit', 'Foundation', 'AVFoundation', 'CoreData'
 
-  s.source_files = 'SiFUtilities/Classes/*.swift'
-  
+  s.default_subspec = 'Default'
+
+  s.subspec 'Core' do |co|
+      co.source_files = 'SiFUtilities/Core/**/*'
+  end
+
+  s.subspec 'Endpoint' do |co|
+    co.source_files = 'SiFUtilities/Endpoint/**/*'
+  end
+
+  s.subspec 'Helpers' do |co|
+    co.source_files = 'SiFUtilities/Helpers/**/*'
+  end
+
+  s.subspec 'IBDesignable' do |co|
+    co.source_files = 'SiFUtilities/IBDesignable/**/*'
+  end
+
+  s.subspec 'KeyValue' do |co|
+    co.source_files = 'SiFUtilities/KeyValue/**/*'
+  end
+
+  s.subspec 'Loading' do |co|
+      co.source_files = 'SiFUtilities/Loading/**/*'
+  end
+
+  s.subspec 'Localise' do |co|
+    co.source_files = 'SiFUtilities/Localize/**/*'
+
+    preserve_paths =  "SiFUtilities/Localize/localizable2appstrings"
+  end
+
+  s.subspec 'Nib' do |co|
+    co.source_files = 'SiFUtilities/Nib/**/*'
+  end
+
+  s.subspec 'Runtime' do |co|
+    co.source_files = 'SiFUtilities/Runtime/**/*'
+  end
+
+  s.subspec 'Show' do |co|
+    co.source_files = 'SiFUtilities/Show/**/*'
+  end
+
+  s.subspec 'WeakObject' do |co|
+    co.source_files = 'SiFUtilities/WeakObject/**/*'
+  end
+
+  s.subspec 'Default' do |co|
+    co.dependency 'SiFUtilities/Core'
+    co.dependency 'SiFUtilities/Endpoint'
+    co.dependency 'SiFUtilities/Helpers'
+    co.dependency 'SiFUtilities/IBDesignable'
+    co.dependency 'SiFUtilities/KeyValue'
+    co.dependency 'SiFUtilities/Loading'
+    co.dependency 'SiFUtilities/Localise'
+    co.dependency 'SiFUtilities/Nib'
+    co.dependency 'SiFUtilities/Runtime'
+    co.dependency 'SiFUtilities/Show'
+    co.dependency 'SiFUtilities/WeakObject'
+  end
+
+
+  # s.source_files = 'SiFUtilities/Classes/*.swift'
   # s.resource_bundles = {
   #   'SiFUtilities' => ['SiFUtilities/Assets/*.png']
   # }
-
-#s.vendored_frameworks = 'SiFUtilities/SiFUtilities.framework'
-
+  #s.vendored_frameworks = 'SiFUtilities/SiFUtilities.framework'
   # s.public_header_files = 'Pod/Classes/**/*.h'
-s.frameworks = 'UIKit', 'Foundation', 'AVFoundation', 'CoreData'
   # s.dependency 'AFNetworking', '~> 2.3'
 end
