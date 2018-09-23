@@ -67,15 +67,12 @@ Pod::Spec.new do |s|
     co.source_files = 'Localize/**/*.swift'
 
     co.dependency 'Localize-Swift'
-
-    co.preserve_paths = 'CommandLineTool/localizable2appstrings'
-    co.exclude_files  = 'CommandLineTool/localizable2appstrings'
   end
 
-  # s.subspec 'CommandLineTool' do |co|
-  #   co.preserve_paths = 'CommandLineTool/*'
-  #   co.exclude_files  = 'CommandLineTool/*'
-  # end
+  s.subspec 'CommandLineTool' do |co|
+    co.preserve_paths = 'CommandLineTool/*'
+    co.exclude_files  = 'CommandLineTool/*'
+  end
     
   s.subspec 'Nib' do |co|
     co.source_files = 'Nib/**/*'
