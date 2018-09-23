@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SiFUtilities'
-  s.version          = '4.0.1'
+  s.version          = '4.0.2'
   s.summary          = 'A set of utilities for your app.'
   s.swift_version    = '4.2'
 
@@ -38,61 +38,64 @@ Pod::Spec.new do |s|
   s.default_subspec = 'Default'
 
   s.subspec 'Core' do |co|
-      co.source_files = 'SiFUtilities/Core/**/*'
+      co.source_files = 'Core/**/*'
   end
 
   s.subspec 'Endpoint' do |co|
-    co.source_files = 'SiFUtilities/Endpoint/**/*'
+    co.source_files = 'Endpoint/**/*'
   end
 
   s.subspec 'Helpers' do |co|
-    co.source_files = 'SiFUtilities/Helpers/**/*'
+    co.source_files = 'Helpers/**/*'
   end
 
   s.subspec 'IBDesignable' do |co|
-    co.source_files = 'SiFUtilities/IBDesignable/**/*'
+    co.source_files = 'IBDesignable/**/*'
 
     co.dependency 'SiFUtilities/Core'
   end
 
   s.subspec 'KeyValue' do |co|
-    co.source_files = 'SiFUtilities/KeyValue/**/*'
+    co.source_files = 'KeyValue/**/*'
   end
 
   s.subspec 'Loading' do |co|
-      co.source_files = 'SiFUtilities/Loading/**/*'
+      co.source_files = 'Loading/**/*'
   end
 
   s.subspec 'Localize' do |co|
-    co.source_files = 'SiFUtilities/Localize/**/*.swift'
+    co.source_files = 'Localize/**/*.swift'
 
     co.dependency 'Localize-Swift'
+
+    co.preserve_paths = 'CommandLineTool/localizable2appstrings'
+    co.exclude_files  = 'CommandLineTool/localizable2appstrings'
   end
 
-  s.subspec 'CommandLineTool' do |co|
-    co.preserve_paths = '*'
-    co.exclude_files  = '**/localizable2appstrings'
-  end
+  # s.subspec 'CommandLineTool' do |co|
+  #   co.preserve_paths = 'CommandLineTool/*'
+  #   co.exclude_files  = 'CommandLineTool/*'
+  # end
     
   s.subspec 'Nib' do |co|
-    co.source_files = 'SiFUtilities/Nib/**/*'
+    co.source_files = 'Nib/**/*'
 
     co.dependency 'SiFUtilities/Core'
   end
 
   s.subspec 'Runtime' do |co|
-    co.source_files = 'SiFUtilities/Runtime/**/*'
+    co.source_files = 'Runtime/**/*'
   end
 
   s.subspec 'Show' do |co|
-    co.source_files = 'SiFUtilities/Show/**/*'
+    co.source_files = 'Show/**/*'
 
     co.dependency 'SiFUtilities/Core'
     co.dependency 'SiFUtilities/Localize'
   end
 
   s.subspec 'WeakObject' do |co|
-    co.source_files = 'SiFUtilities/WeakObject/**/*'
+    co.source_files = 'WeakObject/**/*'
   end
 
   s.subspec 'Default' do |co|
@@ -108,7 +111,6 @@ Pod::Spec.new do |s|
     co.dependency 'SiFUtilities/Show'
     co.dependency 'SiFUtilities/WeakObject'
   end
-
 
   # s.source_files = 'SiFUtilities/Classes/*.swift'
   # s.resource_bundles = {
