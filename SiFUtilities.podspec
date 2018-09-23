@@ -71,7 +71,6 @@ Pod::Spec.new do |s|
 
   s.subspec 'CommandLineTool' do |co|
     co.preserve_paths = 'CommandLineTool/localizable2appstrings'
-    co.exclude_files  = 'CommandLineTool/localizable2appstrings'
   end
     
   s.subspec 'Nib' do |co|
