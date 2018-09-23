@@ -101,6 +101,16 @@ extension String: Localizable {
             title = newValue?.localized
         }
     }
+    
+    @IBInspectable public var localizedBackButtonTitleKey: String? {
+        get {
+            return nil // ignore
+        }
+        
+        set {
+            backBarButtonItem?.title = newValue?.localized
+        }
+    }
 }
 
 @IBDesignable extension UIViewController {
