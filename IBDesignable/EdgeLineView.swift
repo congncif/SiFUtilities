@@ -3,7 +3,7 @@
 //  SiFUtilities
 //
 //  Created by FOLY on 11/7/18.
-//  Copyright © 2018 ViettelPost. All rights reserved.
+//  Copyright © 2018 [iF] Solution. All rights reserved.
 //
 
 import CoreGraphics
