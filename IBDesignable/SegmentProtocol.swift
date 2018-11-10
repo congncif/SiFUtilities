@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SiFUtilities
 
 public protocol SegmentProtocol: class {
     associatedtype Item: SegmentItemProtocol

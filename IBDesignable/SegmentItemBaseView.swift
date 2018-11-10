@@ -13,6 +13,8 @@ import UIKit
     func segmentItemViewDidSelect(_ item: SegmentItemBaseView)
 }
 
+// This implementation is just for Interface Builder
+
 open class SegmentItemBaseView: UIView, SegmentItemProtocol {
     @IBOutlet public weak var delegate: SegmentItemViewDelegate?
     

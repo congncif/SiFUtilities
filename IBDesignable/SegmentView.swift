@@ -12,6 +12,8 @@ import Foundation
     func segmentViewDidChange(selectedIndex: Int)
 }
 
+// This implementation is just for Interface Builder
+
 open class SegmentView: UIView, SegmentProtocol, SegmentItemViewDelegate {
     @IBOutlet public var items: [SegmentItemBaseView] = []
     
@@ -19,6 +21,12 @@ open class SegmentView: UIView, SegmentProtocol, SegmentItemViewDelegate {
     
     open override func awakeFromNib() {
         super.awakeFromNib()
+        
+        for itemView in items {
+            if itemView.delegate == nil {
+                itemView.delegate = self
+            }
+        }
         
         if items.count > 0 {
             selectItem(at: 0)
