@@ -10,6 +10,7 @@ import Foundation
 
 @objc public protocol SegmentViewDelegate: class {
     func segmentViewDidChange(selectedIndex: Int)
+    func segmentViewDidReset()
 }
 
 // This implementation is just for Interface Builder
@@ -39,5 +40,10 @@ open class SegmentView: UIView, SegmentProtocol, SegmentItemViewDelegate {
         if let index = selectedIndex {
             delegate?.segmentViewDidChange(selectedIndex: index)
         }
+    }
+    
+    open func reset() {
+        resetSelections()
+        delegate?.segmentViewDidReset()
     }
 }

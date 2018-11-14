@@ -30,6 +30,13 @@ extension SegmentProtocol {
     public var selectedIndex: Int? {
         return items.lastIndex { $0.selected }
     }
+    
+    public func resetSelections() {
+        let selectedItems = items.filter { $0.selected == true }
+        selectedItems.forEach { object in
+            object.selected = false
+        }
+    }
 }
 
 extension SegmentProtocol where Item: Equatable {
