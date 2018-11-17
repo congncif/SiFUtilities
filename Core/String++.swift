@@ -102,6 +102,10 @@ extension String {
             }
         }
         
+        if newComponents.count <= 1 {
+            return self
+        }
+        
         return newComponents.joined()
     }
 }
