@@ -8,7 +8,7 @@
 
 import Foundation
 
-open class CommonError: Error {
+open class CommonError: LocalizedError {
     open var title: String?
     open var message: String?
 
@@ -17,7 +17,7 @@ open class CommonError: Error {
         self.message = message
     }
 
-    open var localizedDescription: String {
+    public var errorDescription: String? {
         if let tit = title {
             return tit
         } else if let msg = message {
