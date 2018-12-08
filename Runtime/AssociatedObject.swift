@@ -16,7 +16,7 @@ extension AssociatedObject {
     }
     
     public func setAssociatedObject<T>(key: inout UInt8,
-                             value: T,
+                             value: T?,
                              policy: objc_AssociationPolicy = .OBJC_ASSOCIATION_RETAIN_NONATOMIC) {
         objc_setAssociatedObject(self, &key, value, policy)
     }

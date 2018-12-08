@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  SiFUtilities
+
+  Created by FOLY on 12/7/18.
+  Copyright © 2018 CocoaPods. All rights reserved.
+*/
+
+"Hello" = "Hello";
+"dcm" = "Fuck fuck";
+
+"seg1" = "One";
+"seg2" = "Two";

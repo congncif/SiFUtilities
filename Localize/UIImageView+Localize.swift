@@ -8,16 +8,20 @@
 import Foundation
 
 @IBDesignable extension UIImageView {
-    @IBInspectable public var imageName: String? {
+    @IBInspectable public var imageNameLocalizedKey: String? {
         get {
-            return nil // ignore
+            return getStringValue(by: &RunTimeKey.localizedImageNameKey)
         }
 
         set {
-            if let name = newValue {
-                let assetImage = UIImage(named: name)
-                image = assetImage
-            }
+            setStringValue(newValue, forRuntimeKey: &RunTimeKey.localizedImageNameKey)
+        }
+    }
+
+    @objc open override func updateLocalize() {
+        if !imageNameLocalizedKey.isNoValue, let name = imageNameLocalizedKey {
+            let assetImage = UIImage(named: name)
+            image = assetImage
         }
     }
 }

@@ -7,6 +7,7 @@
 //
 import SiFUtilities
 import UIKit
+import Localize_Swift
 
 class Test: KeyValueProtocol {
     var name: String?
@@ -146,12 +147,12 @@ class ViewController: UIViewController {
         }
         return keeper.syncValue
     }
-
+    
     @IBAction func tap() {
-        let vc = EXViewController.instantiateFromMainStoryboard()
+//        let vc = EXViewController.instantiateFromMainStoryboard()
 //        vc.showOverlay(on: self, animation: { v in
 //            v.moveInFromLeft()
 //        })
-        present(vc, embedIn: NavViewController.self)
+//        present(vc, embedIn: NavViewController.self)
     }
 }

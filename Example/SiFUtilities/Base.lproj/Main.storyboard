@@ -101,14 +101,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Vd-2j-wxL">
-                                <rect key="frame" x="164" y="276" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="tap" destination="36s-TJ-4Kf" eventType="touchUpInside" id="LmC-9M-F39"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FQk-Ml-xCI" customClass="EdgeLineView" customModule="SiFUtilities">
                                 <rect key="frame" x="116" y="380" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -130,13 +122,49 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Vd-2j-wxL">
+                                <rect key="frame" x="20" y="183" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="normalTitleLocalizedKey" value="Hello"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tap" destination="36s-TJ-4Kf" eventType="touchUpInside" id="LmC-9M-F39"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ay-mu-FQ3">
+                                <rect key="frame" x="20" y="135" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="normalTitleLocalizedKey" value="Hello"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tap2" destination="36s-TJ-4Kf" eventType="touchUpInside" id="Ifw-cD-CbR"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VmU-Ue-dZ2">
+                                <rect key="frame" x="31" y="249" width="121" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedTitlesKey" value="seg1,seg2"/>
+                                </userDefinedRuntimeAttributes>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <connections>
+                        <outlet property="button" destination="1Vd-2j-wxL" id="KYt-SD-ME7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GbO-Bh-naT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-506" y="317"/>
+            <point key="canvasLocation" x="-507.24637681159425" y="316.304347826087"/>
         </scene>
         <!--Nav View Controller-->
         <scene sceneID="wpz-73-Y9A">

@@ -7,23 +7,34 @@
 //
 
 import UIKit
+import Localize_Swift
+import SiFUtilities
 
 class EXViewController: UIViewController {
+    @IBOutlet weak var button: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 100, width: 100, height: 50))
+        label.textLocalizedKey = "Hello"
+        
+        view.addSubview(label)
     }
     
-
+    private var flag: Bool = true
+    
     @IBAction func tap() {
-        self.hideOverlay()
+//        self.hideOverlay()
+        flag = !flag
+        
+        let lang = flag ? "en" : "vi-VN"
+        
+        Localize.setCurrentLanguage(lang)
+    }
+    
+    @IBAction func tap2() {
+       button.normalTitleLocalizedKey = "dcm"
     }
 
 }

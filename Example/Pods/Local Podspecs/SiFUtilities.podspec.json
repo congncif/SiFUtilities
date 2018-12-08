@@ -1,6 +1,6 @@
 {
   "name": "SiFUtilities",
-  "version": "4.0.4",
+  "version": "4.0.14",
   "summary": "A set of utilities for your app.",
   "swift_version": "4.2",
   "description": "- Get instance view controller from Storyboard shortly\n- Handle viewcontroller did finished layout at first time\n- Configure status bar quickly\n- More extensions",
@@ -14,7 +14,7 @@
   },
   "source": {
     "git": "https://github.com/congncif/SiFUtilities.git",
-    "tag": "4.0.4"
+    "tag": "4.0.14"
   },
   "social_media_url": "https://twitter.com/congncif",
   "platforms": {
@@ -60,7 +60,11 @@
     {
       "name": "Localize",
       "source_files": "Localize/**/*.swift",
+      "preserve_paths": "Localize/localizable2appstrings",
       "dependencies": {
+        "SiFUtilities/Runtime": [
+
+        ],
         "Localize-Swift": [
 
         ]

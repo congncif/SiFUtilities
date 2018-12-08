@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		08D92B554C278FD3780F40C0 /* Pods_SiFUtilities_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01407A1F46E005B53A3964E6 /* Pods_SiFUtilities_Example.framework */; };
 		200FBB872076936B001746A7 /* NavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FBB862076936B001746A7 /* NavViewController.swift */; };
+		20260FDB21BAC4C2007F758C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 20260FDD21BAC4C2007F758C /* Localizable.strings */; };
 		2079D52820616960002E391B /* EXViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2079D52720616960002E391B /* EXViewController.swift */; };
 		207D4B57203DBBBE0009BD39 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D4B56203DBBBE0009BD39 /* CustomView.swift */; };
 		209882451CFB491100A62CF1 /* SiFUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 209882431CFB47C200A62CF1 /* SiFUtilities.framework */; };
@@ -35,6 +36,8 @@
 /* Begin PBXFileReference section */
 		01407A1F46E005B53A3964E6 /* Pods_SiFUtilities_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SiFUtilities_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		200FBB862076936B001746A7 /* NavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavViewController.swift; sourceTree = "<group>"; };
+		20260FDC21BAC4C2007F758C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		20260FDE21BAC4E0007F758C /* vi-VN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "vi-VN"; path = "vi-VN.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		2079D52720616960002E391B /* EXViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXViewController.swift; sourceTree = "<group>"; };
 		207D4B56203DBBBE0009BD39 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		209882431CFB47C200A62CF1 /* SiFUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SiFUtilities.framework; path = /Users/congnc/Documents/Frameworks/SiFUtilities/Example/SiFUtilities.framework; sourceTree = "<absolute>"; };
@@ -104,6 +107,7 @@
 				2079D52720616960002E391B /* EXViewController.swift */,
 				207D4B56203DBBBE0009BD39 /* CustomView.swift */,
 				200FBB862076936B001746A7 /* NavViewController.swift */,
+				20260FDD21BAC4C2007F758C /* Localizable.strings */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -196,6 +200,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"vi-VN",
 			);
 			mainGroup = 607FACC71AFB9204008FA782;
 			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
@@ -213,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				20260FDB21BAC4C2007F758C /* Localizable.strings in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -277,6 +283,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		20260FDD21BAC4C2007F758C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20260FDC21BAC4C2007F758C /* en */,
+				20260FDE21BAC4E0007F758C /* vi-VN */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -300,6 +315,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -353,6 +369,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
