@@ -67,6 +67,7 @@ Pod::Spec.new do |s|
     co.source_files = 'Localize/**/*.swift'
     co.preserve_paths = 'Localize/localizable2appstrings'
     
+    co.dependency 'SiFUtilities/Core'
     co.dependency 'SiFUtilities/Runtime'
     co.dependency 'Localize-Swift'
   end
