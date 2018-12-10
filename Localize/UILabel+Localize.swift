@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-@IBDesignable extension UILabel {
+@IBDesignable extension UILabel: AssociatedObject {
     @IBInspectable open var textLocalizedKey: String? {
         get {
             return getStringValue(by: &RunTimeKey.localizedTextKey)

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-@IBDesignable extension UITextView {
+@IBDesignable extension UITextView: AssociatedObject {
     @IBInspectable public var textLocalizedKey: String? {
         get {
             return getStringValue(by: &RunTimeKey.localizedTextKey)

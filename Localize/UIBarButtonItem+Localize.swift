@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-@IBDesignable extension UIBarButtonItem {
+@IBDesignable extension UIBarButtonItem: AssociatedObject {
     @IBInspectable public var titleLocalizedKey: String? {
         get {
             return getStringValue(by: &RunTimeKey.localizedTitleKey)

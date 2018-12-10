@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-@IBDesignable extension UINavigationItem {
+@IBDesignable extension UINavigationItem: AssociatedObject {
     @IBInspectable public var titleLocalizedKey: String? {
         get {
             return getStringValue(by: &RunTimeKey.localizedTitleKey)

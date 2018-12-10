@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-@IBDesignable extension UISearchBar {
+@IBDesignable extension UISearchBar: AssociatedObject {
     @IBInspectable public var placeholderLocalizedKey: String? {
         get {
             return getStringValue(by: &RunTimeKey.localizedPlaceholderTextKey)

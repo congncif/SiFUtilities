@@ -54,7 +54,7 @@ extension NSObject: LocalizeRenderable {
     @objc open func updateLocalize() {}
 }
 
-extension NSObject: AssociatedObject {
+extension AssociatedObject where Self: NSObject {
     func getStringValue(by runtimeKey: inout UInt8) -> String? {
         return getAssociatedObject(key: &runtimeKey)
     }
