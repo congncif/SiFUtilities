@@ -51,10 +51,16 @@ extension String {
         return dateFormatter.date(from: self)
     }
     
-    public var trimmingWhiteSpaces: String {
-        let string = self as NSString
-        let trimmedString = string.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
-        return trimmedString
+    public var trimmedWhiteSpaces: String {
+        return trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+    
+    public func removingCharacters(_ characters: CharacterSet) -> String {
+        return components(separatedBy: characters).joined()
+    }
+    
+    public var removedWhiteSpaces: String {
+        return self.removingCharacters(.whitespacesAndNewlines)
     }
     
     public var words: [String] {
@@ -95,7 +101,7 @@ extension String {
         var newComponents: [String] = []
         
         for (idx, word) in components.enumerated() {
-            if idx == 0 && skipFirstLetter {
+            if idx == 0, skipFirstLetter {
                 newComponents.append(word.lowercased())
             } else {
                 newComponents.append(word.lowercased().capitalizingFirstLetter())
@@ -113,10 +119,12 @@ extension String {
 extension Optional where Wrapped == String {
     public var isNoValue: Bool {
         switch self {
-        case .none:
-            return true
-        case .some(let value):
-            return value.isEmpty
+        case .none: return true
+        case .some(let value): return value.isEmpty
         }
+    }
+    
+    public func unwrapped(default: String = String()) -> String {
+        return self ?? `default`
     }
 }

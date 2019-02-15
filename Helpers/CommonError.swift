@@ -12,7 +12,7 @@ open class CommonError: LocalizedError {
     open var title: String?
     open var message: String?
 
-    public init(title: String? = nil, message: String? = nil) {
+    public init(title: String? = nil, message: String?) {
         self.title = title
         self.message = message
     }

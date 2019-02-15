@@ -12,7 +12,7 @@ extension UIView {
     public func animate(duration: Double = 0.25,
                         transitionType: CATransitionType = .moveIn,
                         direction: CATransitionSubtype = .fromLeft,
-                        key: String = "animation") {
+                        key: String = String()) {
         let transition = CATransition()
         transition.duration = duration
         transition.type = transitionType

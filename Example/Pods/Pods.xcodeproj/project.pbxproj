@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03D876531E605E007B1FB810C3CF980F /* Foundation++.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB819B0C7301742AD5BEB96CE84594CB /* Foundation++.swift */; };
+		0ABB27332216AFA4004D82F8 /* Bundle++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABB27322216AFA4004D82F8 /* Bundle++.swift */; };
 		0FD2E6B0A84512A75EBCE5465E9E1B36 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F50A22E9A371D3C4F3E7DD0C351B9A5 /* Endpoint.swift */; };
 		12E3724E243F5715D317733CEA346ABF /* Number++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEEEF220D6BA03FF2BA4D80D26E5AA2 /* Number++.swift */; };
 		158E0CB2694B721BEFB8F73BB9E6BC4D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA692A677F15F8A99E685DFB72889DF9 /* Foundation.framework */; };
@@ -113,6 +114,7 @@
 
 /* Begin PBXFileReference section */
 		04985C3ED95135B5352F27782E4291FC /* TimeInterval+Ex.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TimeInterval+Ex.swift"; path = "Core/TimeInterval+Ex.swift"; sourceTree = "<group>"; };
+		0ABB27322216AFA4004D82F8 /* Bundle++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Bundle++.swift"; path = "Core/Bundle++.swift"; sourceTree = "<group>"; };
 		0C9A20B2F81E8EF9EAD96C57383F8256 /* Pods-SiFUtilities_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SiFUtilities_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		100035CCEDD99F85BA4FBBAB0CE07FD2 /* UISegmentControl+Localize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UISegmentControl+Localize.swift"; path = "Localize/UISegmentControl+Localize.swift"; sourceTree = "<group>"; };
 		121803127E9A6AC06F2AB540C4185A35 /* UIView+Frame.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Frame.swift"; path = "Core/UIView+Frame.swift"; sourceTree = "<group>"; };
@@ -509,6 +511,7 @@
 				BBD0B58C4F55F94DE3CD957BA1AE245F /* UITextField++.swift */,
 				121803127E9A6AC06F2AB540C4185A35 /* UIView+Frame.swift */,
 				7D47648150F1FDEB3809F483471C35AF /* UIView+Utils.swift */,
+				0ABB27322216AFA4004D82F8 /* Bundle++.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -703,6 +706,7 @@
 				E4A0D56208473C6EC3478F66F713BE70 /* EdgeLineView.swift in Sources */,
 				0FD2E6B0A84512A75EBCE5465E9E1B36 /* Endpoint.swift in Sources */,
 				03D876531E605E007B1FB810C3CF980F /* Foundation++.swift in Sources */,
+				0ABB27332216AFA4004D82F8 /* Bundle++.swift in Sources */,
 				6372749ECC9AA608AC5E218A6FFDA85C /* KeyValueProtocol.swift in Sources */,
 				AFE0B63D0F5A79FCDF012EA1AA7803CB /* Localize.swift in Sources */,
 				5A6A217902D51D35FF3D0999B66C5BDF /* NSManagedObject+SiF.swift in Sources */,
@@ -960,7 +964,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SiFUtilities/SiFUtilities-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SiFUtilities/SiFUtilities-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SiFUtilities/SiFUtilities.modulemap";
 				PRODUCT_MODULE_NAME = SiFUtilities;
@@ -1089,7 +1093,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SiFUtilities/SiFUtilities-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SiFUtilities/SiFUtilities-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SiFUtilities/SiFUtilities.modulemap";
 				PRODUCT_MODULE_NAME = SiFUtilities;

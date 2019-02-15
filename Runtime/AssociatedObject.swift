@@ -8,16 +8,21 @@
 
 import Foundation
 
-public protocol AssociatedObject {}
+public protocol AssociatedObject {
+    func getAssociatedObject<T>(key: inout UInt8) -> T?
+    func setAssociatedObject<T>(key: inout UInt8,
+                                value: T?,
+                                policy: objc_AssociationPolicy)
+}
 
 extension AssociatedObject {
     public func getAssociatedObject<T>(key: inout UInt8) -> T? {
         return objc_getAssociatedObject(self, &key) as? T
     }
-    
+
     public func setAssociatedObject<T>(key: inout UInt8,
-                             value: T?,
-                             policy: objc_AssociationPolicy = .OBJC_ASSOCIATION_RETAIN_NONATOMIC) {
+                                       value: T?,
+                                       policy: objc_AssociationPolicy = .OBJC_ASSOCIATION_RETAIN_NONATOMIC) {
         objc_setAssociatedObject(self, &key, value, policy)
     }
 }

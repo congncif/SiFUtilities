@@ -27,7 +27,7 @@ extension EndpointProtocol {
         return String(describing: self)
     }
 
-    public func path(base: String = "", _ arguments: CVarArg...) -> String {
+    public func path(base: String = String(), _ arguments: CVarArg...) -> String {
         let basePath = base.isEmpty ? Self.base : base
         let purePath = basePath +/ (Self.root.isEmpty ? description : Self.root +/ description)
         if arguments.count > 0 {
@@ -38,7 +38,7 @@ extension EndpointProtocol {
         }
     }
     
-    public static func path(base: String = "", _ arguments: CVarArg...) -> String {
+    public static func path(base: String = String(), _ arguments: CVarArg...) -> String {
         let basePath = base.isEmpty ? Self.base : base
         let purePath = basePath +/ Self.root
         if arguments.count > 0 {
@@ -49,13 +49,13 @@ extension EndpointProtocol {
         }
     }
 
-    public func path(base: String = "") -> String {
+    public func path(base: String = String()) -> String {
         let basePath = base.isEmpty ? Self.base : base
         let purePath = basePath +/ (Self.root.isEmpty ? description : Self.root +/ description)
         return purePath
     }
 
-    public static func path(base: String = "") -> String {
+    public static func path(base: String = String()) -> String {
         let basePath = base.isEmpty ? Self.base : base
         let purePath = basePath +/ Self.root
         return purePath

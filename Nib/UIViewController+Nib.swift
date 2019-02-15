@@ -10,7 +10,7 @@ import UIKit
 
 extension UIViewController {
     fileprivate class func instantiateFromNibHelper<T: UIViewController>() -> T {
-        let controller = T(nibName: T.className, bundle: nil)
+        let controller = T(nibName: T.className, bundle: Bundle.current)
         return controller
     }
     

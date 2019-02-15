@@ -24,32 +24,29 @@ open class ValueKeeper<Value> {
         self.getValueAsync = getValueAsync
     }
     
-    /**
-     * Call this func in backgound to avoid blocking UI
-     * Eg:
-     * DispatchQueue.global().async {
-     *    let v = keeper.syncValue
-     *    ...
-     * }
-     */
     open var syncValue: Value? {
         var val = value
-        let semaphore = DispatchSemaphore(value: 0)
+//        let semaphore = DispatchSemaphore(value: 0)
+        let group = DispatchGroup()
+        group.enter()
         
         DispatchQueue
-            .global(qos: .background)
-            .asyncAfter(deadline: DispatchTime.now() + delay, execute: {
-                [weak self] in
+            .global()
+            .asyncAfter(deadline: DispatchTime.now() + delay, execute: { [weak self] in
                 guard let this = self else {
-                    semaphore.signal()
+//                    semaphore.signal()
+                    group.leave()
                     return
                 }
                 this.getValueAsync({ newValue in
                     val = newValue
-                    semaphore.signal()
+//                    semaphore.signal()
+                    group.leave()
                 })
             })
-        _ = semaphore.wait(timeout: timeout)
+//        _ = semaphore.wait(timeout: timeout)
+        _ = group.wait(timeout: timeout)
+        
         return val
     }
 }
