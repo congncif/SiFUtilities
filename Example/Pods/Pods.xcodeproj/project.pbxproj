@@ -15,6 +15,7 @@
 		1ADDAB22EE76A57822ABED7B8B43EED5 /* CommonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF47BD20131B753244AA0416FEE7BA9 /* CommonError.swift */; };
 		1CF0BB9358E9107202A1A116AC9C4226 /* UINavigationBar++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395050113C81BDE87D4EF412BD2267C0 /* UINavigationBar++.swift */; };
 		1E2A6795510249AAF688C1612A132E2B /* AssociatedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3DD51397CDBED23E73B17B7798CC53 /* AssociatedObject.swift */; };
+		2036BC7F221AF47D009FAB3E /* UIViewController+Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2036BC7E221AF47C009FAB3E /* UIViewController+Popover.swift */; };
 		2B3617541F7EB81BA93E8A7B77DC3558 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F2A309A5DAD28BD7A2EC8FCB0B0E9BC /* UIKit.framework */; };
 		30303E690A7F2190171D61C9DF9ADD61 /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822E53073F4FE6633506C528A0931974 /* UIView+Animation.swift */; };
 		324501B399EEC5DA0345872182831E86 /* SiFUtilities-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E085332E6F56AFB5F0C1C516514D8158 /* SiFUtilities-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -124,6 +125,7 @@
 		1C7F1690E19992D307D220CA006800EE /* UIKit++.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIKit++.swift"; path = "Core/UIKit++.swift"; sourceTree = "<group>"; };
 		1F0651C9CD1E6CBBDAC75E5225FCA568 /* UIView+Loading.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Loading.swift"; path = "Loading/UIView+Loading.swift"; sourceTree = "<group>"; };
 		1FF5CA777595033848371FE8A64414FE /* Swizzling.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swizzling.swift; path = Runtime/Swizzling.swift; sourceTree = "<group>"; };
+		2036BC7E221AF47C009FAB3E /* UIViewController+Popover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Popover.swift"; path = "Show/UIViewController+Popover.swift"; sourceTree = "<group>"; };
 		20A9E34B2033A730C24525FA312821B9 /* SiFUtilities-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SiFUtilities-dummy.m"; sourceTree = "<group>"; };
 		20B4D377E690EEBC1CA99D5B669253D5 /* SegmentProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SegmentProtocol.swift; path = IBDesignable/SegmentProtocol.swift; sourceTree = "<group>"; };
 		215715BB3390AE0729F4377073F65619 /* UIViewController+Localize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+Localize.swift"; path = "Localize/UIViewController+Localize.swift"; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 		46A8DAB1459D1D9504E8FD89FCDEBD31 /* Show */ = {
 			isa = PBXGroup;
 			children = (
+				2036BC7E221AF47C009FAB3E /* UIViewController+Popover.swift */,
 				822E53073F4FE6633506C528A0931974 /* UIView+Animation.swift */,
 				C76CD45A8E685FDE3378F90C0BF01586 /* UIViewController+Alert.swift */,
 				37FDBE2BCC8BC17189D52493405836A0 /* UIViewController+Overlay.swift */,
@@ -704,6 +707,7 @@
 				ADC1293109D71A1C80E60E2B3A7F6A49 /* Debouncer.swift in Sources */,
 				3B0C31309206241AC42582EF832EFAAD /* Dictionary++.swift in Sources */,
 				E4A0D56208473C6EC3478F66F713BE70 /* EdgeLineView.swift in Sources */,
+				2036BC7F221AF47D009FAB3E /* UIViewController+Popover.swift in Sources */,
 				0FD2E6B0A84512A75EBCE5465E9E1B36 /* Endpoint.swift in Sources */,
 				03D876531E605E007B1FB810C3CF980F /* Foundation++.swift in Sources */,
 				0ABB27332216AFA4004D82F8 /* Bundle++.swift in Sources */,
