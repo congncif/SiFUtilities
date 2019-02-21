@@ -8,8 +8,8 @@
 import Foundation
 
 public protocol EndpointProtocol: CustomStringConvertible {
-    static var base: String { get }
-    static var root: String { get }
+    static var base: String { get } // base path contains scheme, host, port
+    static var root: String { get } // root path for a group of resource
 }
 
 func PathHelper(format: String) -> (_ params: CVaListPointer) -> String {
@@ -19,13 +19,14 @@ func PathHelper(format: String) -> (_ params: CVaListPointer) -> String {
 }
 
 extension EndpointProtocol {
-    public static var base: String {
-        return ""
-    }
-
-    public static var root: String {
-        return String(describing: self)
-    }
+    // Need explicitly implementing
+//    public static var base: String {
+//        return String()
+//    }
+//
+//    public static var root: String {
+//        return String(describing: self)
+//    }
 
     public func path(base: String = String(), _ arguments: CVarArg...) -> String {
         let basePath = base.isEmpty ? Self.base : base
@@ -37,7 +38,7 @@ extension EndpointProtocol {
             return purePath
         }
     }
-    
+
     public static func path(base: String = String(), _ arguments: CVarArg...) -> String {
         let basePath = base.isEmpty ? Self.base : base
         let purePath = basePath +/ Self.root

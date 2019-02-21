@@ -15,64 +15,66 @@ extension UIStoryboard {
     }
     
     open var main: UIStoryboard {
-        return UIStoryboard(name: Name.main, bundle: Bundle.current)
+        return UIStoryboard(name: Name.main, bundle: nil)
     }
     
     public convenience init(name: String) {
-        self.init(name: name, bundle: Bundle.current)
+        self.init(name: name, bundle: nil)
     }
 }
 
 extension UIViewController {
     fileprivate class func instantiateFromStoryboardHelper<T>(storyboardName: String,
                                                               storyboardId: String,
-                                                              bundle: Bundle? = Bundle.current) -> T {
-        let storyboard = UIStoryboard(name: storyboardName, bundle: bundle)
+                                                              bundle: Bundle? = nil) -> T {
+        let _bundle = bundle ?? Bundle(for: self)
+        let storyboard = UIStoryboard(name: storyboardName, bundle: _bundle)
         let controller = storyboard.instantiateViewController(withIdentifier: storyboardId) as! T
         return controller
     }
     
     fileprivate class func instantiateFromStoryboardHelper<T>(storyboardName: String,
-                                                              bundle: Bundle? = Bundle.current) -> T {
-        let storyboard = UIStoryboard(name: storyboardName, bundle: bundle)
+                                                              bundle: Bundle? = nil) -> T {
+        let _bundle = bundle ?? Bundle(for: self)
+        let storyboard = UIStoryboard(name: storyboardName, bundle: _bundle)
         let controller = storyboard.instantiateInitialViewController() as! T
         return controller
     }
     
     open class func instantiateFromStoryboard(name: String,
                                               identifier: String,
-                                              bundle: Bundle? = Bundle.current) -> Self {
+                                              bundle: Bundle? = nil) -> Self {
         return instantiateFromStoryboardHelper(storyboardName: name,
                                                storyboardId: identifier,
                                                bundle: bundle)
     }
     
     open class func instantiateFromStoryboard(name: String,
-                                              bundle: Bundle? = Bundle.current) -> Self {
+                                              bundle: Bundle? = nil) -> Self {
         let identifier = className
         return instantiateFromStoryboardHelper(storyboardName: name, storyboardId: identifier, bundle: bundle)
     }
     
-    open class func instantiateFromStoryboard(bundle: Bundle? = Bundle.current) -> Self {
+    open class func instantiateFromStoryboard(bundle: Bundle? = nil) -> Self {
         let name = className
         let identifier = className
         return instantiateFromStoryboardHelper(storyboardName: name, storyboardId: identifier, bundle: bundle)
     }
     
-    open class func instantiateFromMainStoryboard(identifier: String, bundle: Bundle? = Bundle.current) -> Self {
+    open class func instantiateFromMainStoryboard(identifier: String, bundle: Bundle? = nil) -> Self {
         return instantiateFromStoryboard(name: UIStoryboard.Name.main, identifier: identifier, bundle: bundle)
     }
     
-    open class func instantiateFromMainStoryboard(bundle: Bundle? = Bundle.current) -> Self {
+    open class func instantiateFromMainStoryboard(bundle: Bundle? = nil) -> Self {
         let identifier = className
         return instantiateFromStoryboard(name: UIStoryboard.Name.main, identifier: identifier, bundle: bundle)
     }
     
-    open class func instantiateInitialFromStoryboard(name: String, bundle: Bundle? = Bundle.current) -> Self {
+    open class func instantiateInitialFromStoryboard(name: String, bundle: Bundle? = nil) -> Self {
         return instantiateFromStoryboardHelper(storyboardName: name, bundle: bundle)
     }
     
-    open class func instantiateInitialFromStoryboard(bundle: Bundle? = Bundle.current) -> Self {
+    open class func instantiateInitialFromStoryboard(bundle: Bundle? = nil) -> Self {
         let name = className
         return instantiateFromStoryboardHelper(storyboardName: name, bundle: bundle)
     }
@@ -92,7 +94,7 @@ extension UIViewController {
      
      - returns: instance of this class
      */
-    open class func instantiateViewController(storyboardPath: String, bundle: Bundle? = Bundle.current) -> Self {
+    open class func instantiateViewController(storyboardPath: String, bundle: Bundle? = nil) -> Self {
         let components = (storyboardPath as NSString).components(separatedBy: ".")
         
         guard components.count > 0, components.count < 3 else { return self.init() }

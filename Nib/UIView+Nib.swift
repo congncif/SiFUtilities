@@ -10,7 +10,7 @@ import UIKit
 
 extension UIView {
     fileprivate class func loadFromNibHelper<T: UIView>() -> T {
-        let bundle = Bundle.current
+        let bundle = Bundle(for: self)
         let view = bundle.loadNibNamed(T.className, owner: nil, options: nil)?.first as! T
         return view
     }
