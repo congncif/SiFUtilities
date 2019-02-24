@@ -128,3 +128,9 @@ extension Optional where Wrapped == String {
         return self ?? `default`
     }
 }
+
+extension Optional {
+    public func unwrapped(default: Wrapped) -> Wrapped {
+        return self ?? `default`
+    }
+}

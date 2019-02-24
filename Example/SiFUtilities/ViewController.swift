@@ -56,14 +56,20 @@ extension NewEndPoint {
 // }
 
 public enum APIEndpoint: String, NewEndPoint {
+    public static var root = String()
+    
     case login
     enum work: String, NewEndPoint {
+        public static var root = "work"
+        
         case examEp = "exam_ep"
         case cool = "cool/%d"
         case xxx = "xxx/%@/abc/%d"
     }
 
     enum newpp: String, NewEndPoint {
+        public static var root = "newpp"
+        
         static var base: String {
             return "ftp://aba.com"
         }
