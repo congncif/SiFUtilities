@@ -109,7 +109,7 @@ extension UIAlertController {
 }
 
 extension UIViewController {
-    public func showAlertError(_ error: Error) {
+    public func showErrorAlert(_ error: Error) {
         if let err = error as? LocalizedError {
             self.notify(title: err.errorDescription, message: err.failureReason)
         } else {
