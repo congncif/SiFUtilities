@@ -10,18 +10,18 @@ import Foundation
 import UIKit
 
 extension UIViewController {
-    open func confirm(title: String? = nil,
-                      message: String?,
-                      style: UIAlertController.Style = .alert,
-                      dismissOthers: Bool = false,
-                      cancelTitle: String = "Cancel".localized,
-                      cancelHandler: (() -> Void)? = nil,
-                      confirmedTitle: String = "OK".localized,
-                      confirmedHandler: @escaping () -> Void) {
+    public func confirm(title: String? = nil,
+                        message: String?,
+                        style: UIAlertController.Style = .alert,
+                        dismissOthers: Bool = false,
+                        cancelTitle: String = "Cancel".localized,
+                        cancelHandler: (() -> Void)? = nil,
+                        confirmedTitle: String = "OK".localized,
+                        confirmedHandler: @escaping () -> Void) {
         if let alert = self as? UIAlertController, let presenting = presentingViewController, dismissOthers {
-            alert.dismiss(animated: false, completion: {
+            alert.dismiss(animated: false) {
                 presenting.confirm(title: title, message: message, style: style, dismissOthers: dismissOthers, cancelTitle: cancelTitle, cancelHandler: cancelHandler, confirmedTitle: confirmedTitle, confirmedHandler: confirmedHandler)
-            })
+            }
             return
         }
         
@@ -49,16 +49,16 @@ extension UIViewController {
         }
     }
     
-    open func notify(title: String? = nil,
-                     message: String?,
-                     style: UIAlertController.Style = .alert,
-                     dismissOthers: Bool = false,
-                     buttonTitle: String = "OK".localized,
-                     handler: (() -> Void)? = nil) {
+    public func notify(title: String? = nil,
+                       message: String?,
+                       style: UIAlertController.Style = .alert,
+                       dismissOthers: Bool = false,
+                       buttonTitle: String = "OK".localized,
+                       handler: (() -> Void)? = nil) {
         if let alert = self as? UIAlertController, let presenting = presentingViewController, dismissOthers {
-            alert.dismiss(animated: false, completion: {
+            alert.dismiss(animated: false) {
                 presenting.notify(title: title, message: message, style: style, dismissOthers: dismissOthers, buttonTitle: buttonTitle, handler: handler)
-            })
+            }
             return
         }
         
@@ -105,5 +105,16 @@ extension UIAlertController {
                            handler: (() -> Void)? = nil) {
         let viewController = UIApplication.topViewController()
         viewController?.notify(title: title, message: message, style: style, dismissOthers: dismissOthers, buttonTitle: buttonTitle, handler: handler)
+    }
+}
+
+extension UIViewController {
+    public func showAlertError(_ error: Error) {
+        if let err = error as? LocalizedError {
+            self.notify(title: err.errorDescription, message: err.failureReason)
+        } else {
+            let message = error.localizedDescription
+            self.notify(message: message)
+        }
     }
 }
