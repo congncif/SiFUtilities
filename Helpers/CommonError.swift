@@ -8,21 +8,34 @@
 
 import Foundation
 
-open class CommonError: LocalizedError {
-    open var title: String?
-    open var message: String?
+public struct CommonError {
+    public var title: String?
+    public var message: String?
+    public var suggestion: String?
+    public var help: String?
+}
 
+extension CommonError {
     public init(title: String? = nil, message: String?) {
         self.title = title
         self.message = message
     }
+}
 
+extension CommonError: LocalizedError {
     public var errorDescription: String? {
-        if let tit = title {
-            return tit
-        } else if let msg = message {
-            return msg
-        }
-        return "Unkown error"
+        return title
+    }
+
+    public var failureReason: String? {
+        return message
+    }
+
+    public var recoverySuggestion: String? {
+        return suggestion
+    }
+
+    public var helpAnchor: String? {
+        return help
     }
 }

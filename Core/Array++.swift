@@ -45,20 +45,24 @@ extension Array where Element: Hashable {
 
 extension Array {
     public func chunk(_ chunkSize: Int) -> [[Element]] {
-        return stride(from: 0, to: self.count, by: chunkSize).map({ (startIndex) -> [Element] in
+        return stride(from: 0, to: self.count, by: chunkSize).map { (startIndex) -> [Element] in
             let endIndex = (startIndex.advanced(by: chunkSize) > self.count) ? self.count - startIndex : chunkSize
             return Array(self[startIndex..<startIndex.advanced(by: endIndex)])
-        })
+        }
     }
 }
 
 infix operator &
-public func  &<T : Equatable>(lhs: [T], rhs: [T]) -> [T] {
+public func & <T: Equatable>(lhs: [T], rhs: [T]) -> [T] {
     return lhs.filter { rhs.contains($0) }
 }
 
 extension Collection {
     public subscript(safe index: Index) -> Element? {
+        return self.safeElement(at: index)
+    }
+
+    public func safeElement(at index: Index) -> Element? {
         return indices.contains(index) ? self[index] : nil
     }
 }

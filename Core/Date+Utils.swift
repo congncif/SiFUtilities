@@ -15,7 +15,7 @@ extension Date {
 }
 
 extension Date {
-    public func toString(format: String? = "dd-MM-yyyy", timeZone: TimeZone = TimeZone(secondsFromGMT: 0)!) -> String {
+    public func toString(format: String? = "dd/MM/yyyy", timeZone: TimeZone = TimeZone(secondsFromGMT: 0)!) -> String {
         
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = timeZone
