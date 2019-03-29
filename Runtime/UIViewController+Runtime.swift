@@ -9,53 +9,49 @@
 import Foundation
 
 @IBDesignable extension UIViewController {
-
     // MARK: - Runtime properties
     
     fileprivate struct AssociatedKeys {
-        static var LayoutDidFinished = false
-        static var DidDisplay = false
+        static var isViewLayoutFinished = false
+        static var didDisplay = false
+        static var willDisplay = false
     }
     
-    public private(set) var layoutDidFinished: Bool {
+    public private(set) var isViewLayoutFinished: Bool {
         get {
-            let number = objc_getAssociatedObject(self, &AssociatedKeys.LayoutDidFinished) as? NSNumber
-            guard number != nil else { return false }
-            return number!.boolValue
+            let number = objc_getAssociatedObject(self, &AssociatedKeys.isViewLayoutFinished) as? NSNumber
+            guard let _number = number else { return false }
+            return _number.boolValue
         }
         
         set {
-            objc_setAssociatedObject(
-                self,
-                &AssociatedKeys.LayoutDidFinished,
-                NSNumber(value: newValue as Bool),
-                .OBJC_ASSOCIATION_RETAIN_NONATOMIC
-            )
+            objc_setAssociatedObject(self, &AssociatedKeys.isViewLayoutFinished, NSNumber(value: newValue as Bool), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
     
-    public private(set) var didDisplay: Bool {
+    public private(set) var isViewDidDisplay: Bool {
         get {
-            let number = objc_getAssociatedObject(self, &AssociatedKeys.DidDisplay) as? NSNumber
-            guard number != nil else { return false }
-            return number!.boolValue
+            let number = objc_getAssociatedObject(self, &AssociatedKeys.didDisplay) as? NSNumber
+            guard let _number = number else { return false }
+            return _number.boolValue
         }
         
         set {
-            objc_setAssociatedObject(
-                self,
-                &AssociatedKeys.DidDisplay,
-                NSNumber(value: newValue as Bool),
-                .OBJC_ASSOCIATION_RETAIN_NONATOMIC
-            )
+            objc_setAssociatedObject(self, &AssociatedKeys.didDisplay, NSNumber(value: newValue as Bool), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
-
-    /*********************************************************************************/
     
-    // MARK: -  Method Swizzling
-    
-    /*********************************************************************************/
+    public private(set) var isViewWillDisplay: Bool {
+        get {
+            let number = objc_getAssociatedObject(self, &AssociatedKeys.willDisplay) as? NSNumber
+            guard let _number = number else { return false }
+            return _number.boolValue
+        }
+        
+        set {
+            objc_setAssociatedObject(self, &AssociatedKeys.willDisplay, NSNumber(value: newValue as Bool), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
     
     open class func swizzling() {
         struct Static {
@@ -67,9 +63,7 @@ import Foundation
             return
         }
         
-        guard !Static.token else {
-            return
-        }
+        guard !Static.token else { return }
         Static.token = true
         
         let originalSelector = #selector(viewDidLayoutSubviews)
@@ -86,55 +80,88 @@ import Foundation
         let swizzledSelector4 = #selector(sif_viewDidAppear(_:))
         
         self.swizzledMethod(self, originalSelector: originalSelector4, to: swizzledSelector4)
+        
+        let originalSelector5 = #selector(viewDidDisappear(_:))
+        let swizzledSelector5 = #selector(sif_viewDidDisappear(_:))
+        
+        self.swizzledMethod(self, originalSelector: originalSelector5, to: swizzledSelector5)
     }
     
-    open class func swizzledMethod(
-        _ cls: AnyClass,
-        originalSelector: Selector,
-        to swizzledSelector: Selector
-    ) {
-        guard let originalMethod = class_getInstanceMethod(cls, originalSelector),
-            let swizzledMethod = class_getInstanceMethod(cls, swizzledSelector) else {
-            return
-        }
-        
-        let didAddMethod = class_addMethod(
-            cls,
-            originalSelector,
-            method_getImplementation(swizzledMethod),
-            method_getTypeEncoding(swizzledMethod)
-        )
-        
-        if didAddMethod {
-            class_replaceMethod(
-                cls,
-                swizzledSelector,
-                method_getImplementation(originalMethod),
-                method_getTypeEncoding(originalMethod)
-            )
-        } else {
-            method_exchangeImplementations(originalMethod, swizzledMethod)
-        }
-    }
-
     @objc func sif_viewDidLayoutSubviews() {
-        if self.layoutDidFinished == false {
-            self.layoutDidFinished = true
-            self.viewDidFinishLayout()
+        let originalSelector = #selector(viewDidLayoutSubviews)
+        let swizzledSelector = #selector(sif_viewDidLayoutSubviews)
+
+        type(of: self).exchangeMethod(originalSelector: swizzledSelector, to: originalSelector)
+        viewDidLayoutSubviews()
+        type(of: self).exchangeMethod(originalSelector: originalSelector, to: swizzledSelector)
+        
+        if self.isViewLayoutFinished == false {
+            self.isViewLayoutFinished = true
+            self.viewDidFinishInitialLayout()
+        } else {
+            self.viewDidFinishRefreshLayout()
         }
     }
-    
-    @objc open func viewDidFinishLayout() {}
-    @objc open func viewDidDisplay() {}
     
     @objc func sif_viewWillAppear(_ animated: Bool) {
-        self.setNeedsStatusBarAppearanceUpdate()
+        let originalSelector = #selector(viewWillAppear(_:))
+        let swizzledSelector = #selector(sif_viewWillAppear(_:))
+
+        type(of: self).exchangeMethod(originalSelector: swizzledSelector, to: originalSelector)
+        viewWillAppear(animated)
+        type(of: self).exchangeMethod(originalSelector: originalSelector, to: swizzledSelector)
+        
+        if self.isViewWillDisplay == false {
+            self.isViewWillDisplay = true
+            self.viewWillDisplay()
+        } else {
+            self.viewWillResume()
+        }
     }
     
     @objc func sif_viewDidAppear(_ animated: Bool) {
-        if self.didDisplay == false {
-            self.didDisplay = true
+        let originalSelector = #selector(viewDidAppear(_:))
+        let swizzledSelector = #selector(sif_viewDidAppear(_:))
+        
+        type(of: self).exchangeMethod(originalSelector: swizzledSelector, to: originalSelector)
+        viewDidAppear(animated)
+        type(of: self).exchangeMethod(originalSelector: originalSelector, to: swizzledSelector)
+        
+        if self.isViewDidDisplay == false {
+            self.isViewDidDisplay = true
             self.viewDidDisplay()
+        } else {
+            self.viewDidResume()
         }
     }
+    
+    @objc func sif_viewDidDisappear(_ animated: Bool) {
+        let originalSelector = #selector(viewDidDisappear(_:))
+        let swizzledSelector = #selector(sif_viewDidDisappear(_:))
+
+        type(of: self).exchangeMethod(originalSelector: swizzledSelector, to: originalSelector)
+        viewDidDisappear(animated)
+        type(of: self).exchangeMethod(originalSelector: originalSelector, to: swizzledSelector)
+        
+        if self.isMovingFromParent {
+            didRemoveFromParent()
+        }
+    }
+}
+
+// Addtional methods
+extension UIViewController {
+    @objc open func viewDidFinishInitialLayout() {}
+    @objc open func viewDidFinishRefreshLayout() {}
+    
+    @objc open func viewWillDisplay() {}
+    @objc open func viewWillResume() {}
+    
+    @objc open func viewDidDisplay() {}
+    @objc open func viewDidResume() {}
+    
+    @objc open func didRemoveFromParent() {}
+    
+    @available(*, deprecated, message: "Using viewDidFinishInitialLayout instead")
+    @objc open func viewDidFinishLayout() {}
 }

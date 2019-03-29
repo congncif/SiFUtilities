@@ -117,14 +117,38 @@ class ViewController: UIViewController {
 //            print(v)
 //        }
 
-        print(typeName)
-        print(weakSelf() as Any)
+//        print(typeName)
+//        print(weakSelf() as Any)
+//
+        print("---> Did Display")
+    }
+    
+    override func viewDidResume() {
+        print("---> Did Resume")
+    }
+    
+    override func viewWillDisplay() {
+        print("---> Will Display")
+    }
+    
+    override func viewWillResume() {
+        print("---> Will Resume")
+    }
+    
+    override func viewDidFinishInitialLayout() {
+        print("---> init layout")
+    }
+    
+    override func viewDidFinishRefreshLayout() {
+        print("---> refresh layout")
     }
 
 //    func
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        print("---> Did Appear")
 
 //        let blur = UIBlurEffect(style: UIBlurEffectStyle.light)
 //        let blurView = UIVisualEffectView(effect: blur)

@@ -37,4 +37,7 @@ class EXViewController: UIViewController {
        button.normalTitleLocalizedKey = "dcm"
     }
 
+    override func didRemoveFromParent() {
+        print("Backing from prarent")
+    }
 }

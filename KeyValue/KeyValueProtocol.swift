@@ -52,7 +52,7 @@ func wrap(any: Any) -> Any? {
     return any
 }
 
-public extension KeyValueProtocol {
+extension KeyValueProtocol {
     public var dictionary: [String: Any] {
         var dict = [String: Any]()
         let otherSelf = Mirror(reflecting: self)

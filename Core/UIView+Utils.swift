@@ -34,7 +34,7 @@ extension UIView {
     }
 }
 
-public extension UIView {
+extension UIView {
     public func firstResponder() -> UIView? {
         var views = [UIView](arrayLiteral: self)
         var i = 0

@@ -31,7 +31,7 @@ public func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 // MARK: - Push
 //////////////////////////////////////////////////////////////////////////////////////
 
-public extension Data {
+extension Data {
     public var deviceToken: String {
         let characterSet: CharacterSet = CharacterSet( charactersIn: "<>" )
         

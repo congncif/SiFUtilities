@@ -34,7 +34,7 @@ extension UITextField {
 
 // MARK: - Methods inspired by S.w.i.f.t.e.r.S.w.i.f.t
 
-public extension UITextField {
+extension UITextField {
     public func clear() {
         text = ""
         attributedText = NSAttributedString(string: "")

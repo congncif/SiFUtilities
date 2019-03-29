@@ -10,8 +10,8 @@ import Foundation
 
 extension Dictionary {
     mutating func merge(dict: [Key: Value]){
-        for (k, v) in dict {
-            updateValue(v, forKey: k)
+        for (key, value) in dict {
+            updateValue(value, forKey: key)
         }
     }
 }
