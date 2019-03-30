@@ -10,7 +10,7 @@ import Foundation
 
 extension Array where Element: Equatable {
     public mutating func remove(_ item: Element) {
-        if let index = index(of: item) {
+        if let index = firstIndex(of: item) {
             self.remove(at: index)
         }
     }
@@ -28,7 +28,7 @@ extension Array where Element: Equatable {
     }
 
     public mutating func replace(_ item: Element) {
-        if let index = index(of: item) {
+        if let index = firstIndex(of: item) {
             self[index] = item
         }
     }
@@ -36,7 +36,7 @@ extension Array where Element: Equatable {
 
 extension Array where Element: Hashable {
     public func after(item: Element) -> Element? {
-        if let index = self.index(of: item), index + 1 < self.count {
+        if let index = self.firstIndex(of: item), index + 1 < self.count {
             return self[index + 1]
         }
         return nil

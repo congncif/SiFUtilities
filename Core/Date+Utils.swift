@@ -9,13 +9,13 @@
 import Foundation
 
 extension Date {
-    public var age: Int {
-        return Calendar.current.dateComponents([.year], from: self, to: Date()).year!
+    public var age: Int? {
+        return Calendar.current.dateComponents([.year], from: self, to: Date()).year
     }
 }
 
 extension Date {
-    public func toString(format: String? = "dd/MM/yyyy", timeZone: TimeZone = TimeZone(secondsFromGMT: 0)!) -> String {
+    public func toString(format: String? = "dd/MM/yyyy", timeZone: TimeZone? = TimeZone(secondsFromGMT: 0)) -> String {
         
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = timeZone

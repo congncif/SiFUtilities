@@ -68,7 +68,7 @@ class SwizzlingEntry {
 
 extension UIApplication {
     private static let runOnce: Void = {
-//        SwizzlingEntry.swizzling()
+        SwizzlingEntry.swizzling()
         UIViewController.swizzling()
     }()
     
