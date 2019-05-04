@@ -9,11 +9,11 @@
 import Foundation
 
 extension String {
-    public static func random(length: Int = 10) -> String {
+    public static func random(length: Int = 16) -> String {
         let letters: NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         let len = UInt32(letters.length)
         
-        var randomString = ""
+        var randomString = String()
         
         for _ in 0 ..< length {
             let rand = arc4random_uniform(len)
@@ -24,25 +24,15 @@ extension String {
         return randomString
     }
     
-    /**
-     * Create regex to search results contain one sub pattern at least
-     * Eg: "abc,Abc,ABC".containOneAtLeastRegex(",")
-     */
-    public func containOneAtLeastRegex(separatedBy: String? = nil) -> String {
-        let searchTags = separatedBy == nil ? [self] : self.components(separatedBy: separatedBy!)
-        var regex = ".*("
-        for tag in searchTags {
-            regex += tag
-            if tag != searchTags.last {
-                regex += "|"
-            }
-        }
-        regex += ").*"
-        
-        return regex
+    public func uuid() -> String {
+        return UUID().uuidString
     }
     
-    public func toDate(format: String? = "dd-MM-yyyy", timeZone: TimeZone = TimeZone(secondsFromGMT: 0)!) -> Date? {
+    public func uniqueIdentifier() -> String {
+        return self.uuid().lowercased()
+    }
+    
+    public func toDate(format: String? = "dd/MM/yyyy", timeZone: TimeZone? = TimeZone(secondsFromGMT: 0)) -> Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = timeZone
         let internalFormat = format
@@ -84,7 +74,7 @@ extension String {
         self = self.capitalizingFirstLetter()
     }
     
-    public mutating func lowercasedFirstLetter() {
+    public mutating func lowercaseFirstLetter() {
         self = self.lowercasingFirstLetter()
     }
     
@@ -96,7 +86,7 @@ extension String {
         return regex?.stringByReplacingMatches(in: self, options: [], range: range, withTemplate: "$1_$2").lowercased() ?? self
     }
     
-    public func camelCase(separator: String = "_", skipFirstLetter: Bool = true) -> String {
+    public func camelCased(separator: String = "_", skipFirstLetter: Bool = true) -> String {
         let components = self.components(separatedBy: separator)
         var newComponents: [String] = []
         

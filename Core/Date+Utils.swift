@@ -9,7 +9,7 @@
 import Foundation
 
 extension Date {
-    public var age: Int? {
+    public func age() -> Int? {
         return Calendar.current.dateComponents([.year], from: self, to: Date()).year
     }
 }

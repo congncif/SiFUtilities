@@ -9,7 +9,7 @@ import Foundation
 import Photos
 
 extension PHAsset {
-    open func thumbnail(size: CGSize = CGSize(width: 180, height: 180)) -> UIImage? {
+    open func thumbnail(size: CGSize = CGSize(width: 320, height: 320)) -> UIImage? {
         let manager = PHImageManager.default
         let options = PHImageRequestOptions()
         var thumbnail: UIImage?
@@ -21,7 +21,7 @@ extension PHAsset {
         let scale = UIScreen.main.scale
         let targetSize = CGSize(width: scale * size.width, height: scale * size.height)
         
-        manager().requestImage(for: self, targetSize: targetSize, contentMode: .aspectFill, options: options, resultHandler: {(result, info)->Void in
+        manager().requestImage(for: self, targetSize: targetSize, contentMode: .aspectFill, options: options, resultHandler: { (result, _) -> Void in
             if let img = result {
                 thumbnail = img
             }
@@ -29,7 +29,7 @@ extension PHAsset {
         return thumbnail
     }
     
-    open func cacheThumbnail(size: CGSize = CGSize(width: 180, height: 180)) -> UIImage? {
+    open func cacheThumbnail(size: CGSize = CGSize(width: 320, height: 320)) -> UIImage? {
         let manager = PHCachingImageManager()
         let options = PHImageRequestOptions()
         var thumbnail: UIImage?
@@ -41,7 +41,7 @@ extension PHAsset {
         let scale = UIScreen.main.scale
         let targetSize = CGSize(width: scale * size.width, height: scale * size.height)
         
-        manager.requestImage(for: self, targetSize: targetSize, contentMode: .aspectFill, options: nil, resultHandler: {(result, info)->Void in
+        manager.requestImage(for: self, targetSize: targetSize, contentMode: .aspectFill, options: nil, resultHandler: { (result, _) -> Void in
             if let img = result {
                 thumbnail = img
             }
@@ -49,7 +49,7 @@ extension PHAsset {
         return thumbnail
     }
     
-    open func imageAssetInfo() -> (imageData: Data?, fileName: String?){
+    open func imageAssetInfo() -> (imageData: Data?, fileName: String?) {
         var imageData: Data?
         var fileName: String?
         
@@ -63,7 +63,7 @@ extension PHAsset {
             options.deliveryMode = .highQualityFormat
             options.resizeMode = .exact
             
-            manager().requestImageData(for: self, options: options) { (data, dataUTI, orientation, info) in
+            manager().requestImageData(for: self, options: options) { data, _, _, info in
                 imageData = data
                 if let info = info {
                     if info.keys.contains(NSString(string: "PHImageFileURLKey")) {
@@ -89,7 +89,7 @@ extension PHAsset {
             options.isNetworkAccessAllowed = true
             options.deliveryMode = .highQualityFormat
             
-            manager().requestAVAsset(forVideo: self, options: options, resultHandler: { (asset, mix, info) in
+            manager().requestAVAsset(forVideo: self, options: options, resultHandler: { asset, _, _ in
                 if let avurlAsset = asset as? AVURLAsset {
                     do {
                         try FileManager.default.copyItem(at: avurlAsset.url, to: url)

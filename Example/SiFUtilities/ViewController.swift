@@ -84,7 +84,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
 
         let x = "test_abc_uou"
-        print(x.camelCase())
+        print(x.camelCased())
         print(x.snakeCased())
 
         let test = Test()

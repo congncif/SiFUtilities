@@ -9,6 +9,26 @@
 import SiFUtilities
 import UIKit
 
+extension String {
+    /**
+     * Create regex to search results contain one sub pattern at least
+     * Eg: "abc,Abc,ABC".containOneAtLeastRegex(",")
+     */
+    public func containOneAtLeastRegex(separatedBy: String? = nil) -> String {
+        let searchTags = separatedBy == nil ? [self] : self.components(separatedBy: separatedBy!)
+        var regex = ".*("
+        for tag in searchTags {
+            regex += tag
+            if tag != searchTags.last {
+                regex += "|"
+            }
+        }
+        regex += ").*"
+        
+        return regex
+    }
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?

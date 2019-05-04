@@ -39,7 +39,6 @@
 		6129A449F7E9C6D5865A230F32F129BB /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13E896AF4A13C06654473E230030316 /* UIViewController+Utils.swift */; };
 		6372749ECC9AA608AC5E218A6FFDA85C /* KeyValueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908CA4184EC394EBDC7583892A04BD5D /* KeyValueProtocol.swift */; };
 		64C3BD2CA5898ADCABE407F2FB07AEB7 /* String+LocalizeTableName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8C5F62A66BD21B87C87518E97AFDDB /* String+LocalizeTableName.swift */; };
-		6AE819FCA79B1D4C7A592EB57A78569D /* SegmentItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D613AFCAEFDDBD9F46912D5835C02A /* SegmentItemProtocol.swift */; };
 		75D95FC8D299A4762BD8DA4675552909 /* UISegmentControl+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100035CCEDD99F85BA4FBBAB0CE07FD2 /* UISegmentControl+Localize.swift */; };
 		7B893A93476968BE6441EEA984279369 /* UIViewController+Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211229DF7426A088853F9CB7359AF37 /* UIViewController+Show.swift */; };
 		7BBA9AD7E53FF7ADC204135B6087C0DB /* UIView+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0651C9CD1E6CBBDAC75E5225FCA568 /* UIView+Loading.swift */; };
@@ -55,7 +54,6 @@
 		A28F812339561848DB2DA3AFE2B0D1C2 /* WeakReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EB904941BC70EA206BB3C8F64C22F1 /* WeakReference.swift */; };
 		A44FB910AE2722A4C5AA2BC875C8E8CD /* UIButton+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3ED970063E64FB8008DEA284220D00 /* UIButton+Localize.swift */; };
 		A475D98BAC8989E783CB5BAA566E34EA /* UIImage+Compress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8346961430FF67CCC4D76A47F41CBFB6 /* UIImage+Compress.swift */; };
-		AA5797FC6F7E185069A7D15C9D40CC9E /* SegmentItemBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3019EF5DBEAA583B72493721B2B66AA4 /* SegmentItemBaseView.swift */; };
 		ADC1293109D71A1C80E60E2B3A7F6A49 /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AA0B93A72943247F7132E95634507D /* Debouncer.swift */; };
 		AEBC62986FF16191DA7B051E1223F395 /* String++.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CCCB86ACFC96F30CDFE93B4A1321B3 /* String++.swift */; };
 		AFE0B63D0F5A79FCDF012EA1AA7803CB /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91F3D86FC4D38C3720ACFCCE693875F /* Localize.swift */; };
@@ -77,7 +75,6 @@
 		D3995DB30ED6936D990B72ABB4FB3B11 /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459F9159731EFC4D4A8DCAB3C7FF7E3F /* UIView+Nib.swift */; };
 		D56F350B3E943DC967BEB54067FBB416 /* Localize_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AA3CE09EEA1F5453D831ECDACA925D1 /* Localize_Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D625C45FBF90ACEBC5B787A63B08A315 /* UIViewController+Runtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661455EB94028D4786EFD4C71973C558 /* UIViewController+Runtime.swift */; };
-		D7748C9A614A9211591C867A5CCC554C /* SegmentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B4D377E690EEBC1CA99D5B669253D5 /* SegmentProtocol.swift */; };
 		D7D814DF5B1BA2036F23E086C42C292E /* UIView+Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B066B262BCE7A7A3F7D2EF1B93BE91 /* UIView+Layer.swift */; };
 		D8097C2D0DCA8D8EFF85386F08C5B654 /* AVPlayer++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD70178DD09DAFC7E90132C2AB7AA89 /* AVPlayer++.swift */; };
 		D895EC1EEDFAF9CDD6252AA80F436677 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD499B613BA54CD32F9F1814B0C015D /* CoreData.framework */; };
@@ -130,11 +127,9 @@
 		1FF5CA777595033848371FE8A64414FE /* Swizzling.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swizzling.swift; path = Runtime/Swizzling.swift; sourceTree = "<group>"; };
 		2036BC7E221AF47C009FAB3E /* UIViewController+Popover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Popover.swift"; path = "Show/UIViewController+Popover.swift"; sourceTree = "<group>"; };
 		20A9E34B2033A730C24525FA312821B9 /* SiFUtilities-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SiFUtilities-dummy.m"; sourceTree = "<group>"; };
-		20B4D377E690EEBC1CA99D5B669253D5 /* SegmentProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SegmentProtocol.swift; path = IBDesignable/SegmentProtocol.swift; sourceTree = "<group>"; };
 		215715BB3390AE0729F4377073F65619 /* UIViewController+Localize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+Localize.swift"; path = "Localize/UIViewController+Localize.swift"; sourceTree = "<group>"; };
 		24EC3D235236022E632BE566FBE16457 /* URL++.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URL++.swift"; path = "KeyValue/URL++.swift"; sourceTree = "<group>"; };
 		2B5F71008E7FEE863B184235D1407DB7 /* SiFUtilities.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SiFUtilities.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		3019EF5DBEAA583B72493721B2B66AA4 /* SegmentItemBaseView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SegmentItemBaseView.swift; path = IBDesignable/SegmentItemBaseView.swift; sourceTree = "<group>"; };
 		322ECE15848ABC5085A87C92FE2D2465 /* Pods-SiFUtilities_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SiFUtilities_Example.modulemap"; sourceTree = "<group>"; };
 		32DAD2E64E654029A26318CFCF8693D3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		331D4EC818C95030223F3A9E68E89EB1 /* UINavigationItem+Localize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UINavigationItem+Localize.swift"; path = "Localize/UINavigationItem+Localize.swift"; sourceTree = "<group>"; };
@@ -178,7 +173,6 @@
 		908CA4184EC394EBDC7583892A04BD5D /* KeyValueProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyValueProtocol.swift; path = KeyValue/KeyValueProtocol.swift; sourceTree = "<group>"; };
 		9672525D26A524635F686C9DEDC60B48 /* Sequence+Group.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Sequence+Group.swift"; path = "KeyValue/Sequence+Group.swift"; sourceTree = "<group>"; };
 		970F5AF0D119FADC5ED305162F43D255 /* Pods-SiFUtilities_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SiFUtilities_Example-dummy.m"; sourceTree = "<group>"; };
-		98D613AFCAEFDDBD9F46912D5835C02A /* SegmentItemProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SegmentItemProtocol.swift; path = IBDesignable/SegmentItemProtocol.swift; sourceTree = "<group>"; };
 		9AA3CE09EEA1F5453D831ECDACA925D1 /* Localize_Swift.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Localize_Swift.h; path = Sources/Localize_Swift.h; sourceTree = "<group>"; };
 		9B3DD51397CDBED23E73B17B7798CC53 /* AssociatedObject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssociatedObject.swift; path = Runtime/AssociatedObject.swift; sourceTree = "<group>"; };
 		9B4700ACB3384FBAB349A0A2FF821DB4 /* UITextField+Localize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITextField+Localize.swift"; path = "Localize/UITextField+Localize.swift"; sourceTree = "<group>"; };
@@ -287,9 +281,6 @@
 			isa = PBXGroup;
 			children = (
 				845460C776F5D0082F2B2974E2B47E89 /* EdgeLineView.swift */,
-				3019EF5DBEAA583B72493721B2B66AA4 /* SegmentItemBaseView.swift */,
-				98D613AFCAEFDDBD9F46912D5835C02A /* SegmentItemProtocol.swift */,
-				20B4D377E690EEBC1CA99D5B669253D5 /* SegmentProtocol.swift */,
 				A1F09B4F662EA9033C438EC820064E7B /* SegmentView.swift */,
 				1575AE40232AA1E487C6F44FD741F626 /* TouchColorButton.swift */,
 				36B066B262BCE7A7A3F7D2EF1B93BE91 /* UIView+Layer.swift */,
@@ -726,9 +717,6 @@
 				12E3724E243F5715D317733CEA346ABF /* Number++.swift in Sources */,
 				B6F512185ABAC42D205AA2DF5D7A4591 /* Object++.swift in Sources */,
 				C4F5858BF5984ED515E76A5673A693FF /* PHAsset++.swift in Sources */,
-				AA5797FC6F7E185069A7D15C9D40CC9E /* SegmentItemBaseView.swift in Sources */,
-				6AE819FCA79B1D4C7A592EB57A78569D /* SegmentItemProtocol.swift in Sources */,
-				D7748C9A614A9211591C867A5CCC554C /* SegmentProtocol.swift in Sources */,
 				38AF501303046271C9427989659C829F /* SegmentView.swift in Sources */,
 				36D4D244D9EDE024443CBB8DC161A2F5 /* Sequence+Group.swift in Sources */,
 				F55E0EC0552D145F5761FC197CD7222A /* SiFUtilities-dummy.m in Sources */,

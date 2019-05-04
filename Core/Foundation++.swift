@@ -8,7 +8,7 @@
 
 import Foundation
 
-public func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+public func < <T: Comparable>(lhs: T?, rhs: T?) -> Bool {
     switch (lhs, rhs) {
     case let (l?, r?):
         return l < r
@@ -19,7 +19,7 @@ public func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
     }
 }
 
-public func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+public func > <T: Comparable>(lhs: T?, rhs: T?) -> Bool {
     switch (lhs, rhs) {
     case let (l?, r?):
         return l > r
@@ -29,16 +29,17 @@ public func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 }
 
 // MARK: - Push
+
 //////////////////////////////////////////////////////////////////////////////////////
 
 extension Data {
     public var deviceToken: String {
-        let characterSet: CharacterSet = CharacterSet( charactersIn: "<>" )
-        
-        let deviceTokenString: String = ( self.description as NSString )
-            .trimmingCharacters( in: characterSet )
-            .replacingOccurrences( of: " ", with: "" ) as String
-        
+        let characterSet: CharacterSet = CharacterSet(charactersIn: "<>")
+
+        let deviceTokenString: String = (self.description as NSString)
+            .trimmingCharacters(in: characterSet)
+            .replacingOccurrences(of: " ", with: "") as String
+
         return deviceTokenString
     }
 }
