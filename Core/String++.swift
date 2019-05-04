@@ -24,11 +24,11 @@ extension String {
         return randomString
     }
     
-    public func uuid() -> String {
+    public static func uuid() -> String {
         return UUID().uuidString
     }
     
-    public func uniqueIdentifier() -> String {
+    public static func uniqueIdentifier() -> String {
         return self.uuid().lowercased()
     }
     
