@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03D876531E605E007B1FB810C3CF980F /* Foundation++.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB819B0C7301742AD5BEB96CE84594CB /* Foundation++.swift */; };
+		0A03518122DA011600D05855 /* UITableView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A03518022DA011600D05855 /* UITableView++.swift */; };
 		0A94253A224F2B1F003D9C42 /* Optional++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A942539224F2B1F003D9C42 /* Optional++.swift */; };
 		0A94253C224F2B97003D9C42 /* Dictionary++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A94253B224F2B97003D9C42 /* Dictionary++.swift */; };
 		0ABB27332216AFA4004D82F8 /* Bundle++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABB27322216AFA4004D82F8 /* Bundle++.swift */; };
@@ -117,6 +118,7 @@
 
 /* Begin PBXFileReference section */
 		04985C3ED95135B5352F27782E4291FC /* TimeInterval+Ex.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TimeInterval+Ex.swift"; path = "Core/TimeInterval+Ex.swift"; sourceTree = "<group>"; };
+		0A03518022DA011600D05855 /* UITableView++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITableView++.swift"; path = "Core/UITableView++.swift"; sourceTree = "<group>"; };
 		0A942539224F2B1F003D9C42 /* Optional++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Optional++.swift"; path = "Core/Optional++.swift"; sourceTree = "<group>"; };
 		0A94253B224F2B97003D9C42 /* Dictionary++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Dictionary++.swift"; path = "Core/Dictionary++.swift"; sourceTree = "<group>"; };
 		0ABB27322216AFA4004D82F8 /* Bundle++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Bundle++.swift"; path = "Core/Bundle++.swift"; sourceTree = "<group>"; };
@@ -521,6 +523,7 @@
 				0ACE893822D98D2F00F3EED9 /* UIBarButtonItem++.swift */,
 				0ACE893722D98D2F00F3EED9 /* UINavigationController++.swift */,
 				0ACE893B22D98D5700F3EED9 /* UITabBarController++.swift */,
+				0A03518022DA011600D05855 /* UITableView++.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -734,6 +737,7 @@
 				38AF501303046271C9427989659C829F /* SegmentView.swift in Sources */,
 				36D4D244D9EDE024443CBB8DC161A2F5 /* Sequence+Group.swift in Sources */,
 				F55E0EC0552D145F5761FC197CD7222A /* SiFUtilities-dummy.m in Sources */,
+				0A03518122DA011600D05855 /* UITableView++.swift in Sources */,
 				AEBC62986FF16191DA7B051E1223F395 /* String++.swift in Sources */,
 				51A92734FD8A8CD0FDA971BA2642DA2E /* String+JSON.swift in Sources */,
 				5B4EE67B3AF679D1FCBC84B724366230 /* String+Validation.swift in Sources */,
