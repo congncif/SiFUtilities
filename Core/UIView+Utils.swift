@@ -24,8 +24,8 @@ extension UIView {
 
     public var parentViewController: UIViewController? {
         weak var parentResponder: UIResponder? = self
-        while parentResponder != nil {
-            parentResponder = parentResponder!.next
+        while let parent = parentResponder {
+            parentResponder = parent.next
             if let viewController = parentResponder as? UIViewController {
                 return viewController
             }

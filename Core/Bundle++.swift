@@ -26,7 +26,9 @@ extension Bundle {
                 return bundle
             }
         }
-        assertionFailure("Bundle not found for caller \"\(String(cString: info.dli_sname))\"")
+        #if DEBUG
+        print("Bundle not found for caller \"\(String(cString: info.dli_sname))\"")
+        #endif
         return Bundle.main
     }
     

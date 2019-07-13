@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-@IBDesignable extension UIView {
+extension UIView {
     public var size: CGSize {
         get {
             return frame.size

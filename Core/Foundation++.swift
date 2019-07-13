@@ -30,8 +30,6 @@ public func > <T: Comparable>(lhs: T?, rhs: T?) -> Bool {
 
 // MARK: - Push
 
-//////////////////////////////////////////////////////////////////////////////////////
-
 extension Data {
     public var deviceToken: String {
         let characterSet: CharacterSet = CharacterSet(charactersIn: "<>")
@@ -41,5 +39,12 @@ extension Data {
             .replacingOccurrences(of: " ", with: "") as String
 
         return deviceTokenString
+    }
+}
+
+extension Data {
+    public var hexString: String {
+        let hexString = map { String(format: "%02.2hhx", $0) }.joined()
+        return hexString
     }
 }

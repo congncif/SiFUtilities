@@ -8,7 +8,7 @@
 
 import Foundation
 
-@IBDesignable extension UIViewController {
+extension UIViewController {
     // MARK: - Runtime properties
     
     fileprivate struct AssociatedKeys {
@@ -161,7 +161,4 @@ extension UIViewController {
     @objc open func viewDidResume() {}
     
     @objc open func didRemoveFromParent() {}
-    
-    @available(*, deprecated, message: "Using viewDidFinishInitialLayout instead")
-    @objc open func viewDidFinishLayout() {}
 }

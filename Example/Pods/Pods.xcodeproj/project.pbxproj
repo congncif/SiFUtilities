@@ -11,6 +11,10 @@
 		0A94253A224F2B1F003D9C42 /* Optional++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A942539224F2B1F003D9C42 /* Optional++.swift */; };
 		0A94253C224F2B97003D9C42 /* Dictionary++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A94253B224F2B97003D9C42 /* Dictionary++.swift */; };
 		0ABB27332216AFA4004D82F8 /* Bundle++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABB27322216AFA4004D82F8 /* Bundle++.swift */; };
+		0ACE893222D983DC00F3EED9 /* UIViewController++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACE893122D983DC00F3EED9 /* UIViewController++.swift */; };
+		0ACE893922D98D2F00F3EED9 /* UINavigationController++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACE893722D98D2F00F3EED9 /* UINavigationController++.swift */; };
+		0ACE893A22D98D2F00F3EED9 /* UIBarButtonItem++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACE893822D98D2F00F3EED9 /* UIBarButtonItem++.swift */; };
+		0ACE893C22D98D5700F3EED9 /* UITabBarController++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACE893B22D98D5700F3EED9 /* UITabBarController++.swift */; };
 		0FD2E6B0A84512A75EBCE5465E9E1B36 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F50A22E9A371D3C4F3E7DD0C351B9A5 /* Endpoint.swift */; };
 		12E3724E243F5715D317733CEA346ABF /* Number++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEEEF220D6BA03FF2BA4D80D26E5AA2 /* Number++.swift */; };
 		158E0CB2694B721BEFB8F73BB9E6BC4D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA692A677F15F8A99E685DFB72889DF9 /* Foundation.framework */; };
@@ -116,6 +120,10 @@
 		0A942539224F2B1F003D9C42 /* Optional++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Optional++.swift"; path = "Core/Optional++.swift"; sourceTree = "<group>"; };
 		0A94253B224F2B97003D9C42 /* Dictionary++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Dictionary++.swift"; path = "Core/Dictionary++.swift"; sourceTree = "<group>"; };
 		0ABB27322216AFA4004D82F8 /* Bundle++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Bundle++.swift"; path = "Core/Bundle++.swift"; sourceTree = "<group>"; };
+		0ACE893122D983DC00F3EED9 /* UIViewController++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController++.swift"; path = "Core/UIViewController++.swift"; sourceTree = "<group>"; };
+		0ACE893722D98D2F00F3EED9 /* UINavigationController++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UINavigationController++.swift"; path = "Core/UINavigationController++.swift"; sourceTree = "<group>"; };
+		0ACE893822D98D2F00F3EED9 /* UIBarButtonItem++.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIBarButtonItem++.swift"; path = "Core/UIBarButtonItem++.swift"; sourceTree = "<group>"; };
+		0ACE893B22D98D5700F3EED9 /* UITabBarController++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITabBarController++.swift"; path = "Core/UITabBarController++.swift"; sourceTree = "<group>"; };
 		0C9A20B2F81E8EF9EAD96C57383F8256 /* Pods-SiFUtilities_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SiFUtilities_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		100035CCEDD99F85BA4FBBAB0CE07FD2 /* UISegmentControl+Localize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UISegmentControl+Localize.swift"; path = "Localize/UISegmentControl+Localize.swift"; sourceTree = "<group>"; };
 		121803127E9A6AC06F2AB540C4185A35 /* UIView+Frame.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Frame.swift"; path = "Core/UIView+Frame.swift"; sourceTree = "<group>"; };
@@ -509,6 +517,10 @@
 				BBD0B58C4F55F94DE3CD957BA1AE245F /* UITextField++.swift */,
 				121803127E9A6AC06F2AB540C4185A35 /* UIView+Frame.swift */,
 				7D47648150F1FDEB3809F483471C35AF /* UIView+Utils.swift */,
+				0ACE893122D983DC00F3EED9 /* UIViewController++.swift */,
+				0ACE893822D98D2F00F3EED9 /* UIBarButtonItem++.swift */,
+				0ACE893722D98D2F00F3EED9 /* UINavigationController++.swift */,
+				0ACE893B22D98D5700F3EED9 /* UITabBarController++.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -705,12 +717,14 @@
 				1ADDAB22EE76A57822ABED7B8B43EED5 /* CommonError.swift in Sources */,
 				32F40BC1CF9CA89AB87C0D22E207C405 /* Date+Utils.swift in Sources */,
 				ADC1293109D71A1C80E60E2B3A7F6A49 /* Debouncer.swift in Sources */,
+				0ACE893A22D98D2F00F3EED9 /* UIBarButtonItem++.swift in Sources */,
 				0A94253A224F2B1F003D9C42 /* Optional++.swift in Sources */,
 				E4A0D56208473C6EC3478F66F713BE70 /* EdgeLineView.swift in Sources */,
 				2036BC7F221AF47D009FAB3E /* UIViewController+Popover.swift in Sources */,
 				0FD2E6B0A84512A75EBCE5465E9E1B36 /* Endpoint.swift in Sources */,
 				03D876531E605E007B1FB810C3CF980F /* Foundation++.swift in Sources */,
 				0ABB27332216AFA4004D82F8 /* Bundle++.swift in Sources */,
+				0ACE893222D983DC00F3EED9 /* UIViewController++.swift in Sources */,
 				6372749ECC9AA608AC5E218A6FFDA85C /* KeyValueProtocol.swift in Sources */,
 				AFE0B63D0F5A79FCDF012EA1AA7803CB /* Localize.swift in Sources */,
 				5A6A217902D51D35FF3D0999B66C5BDF /* NSManagedObject+SiF.swift in Sources */,
@@ -735,6 +749,7 @@
 				349F1E57EE5C1471339B3865B0DDBA1B /* UILabel+Localize.swift in Sources */,
 				1CF0BB9358E9107202A1A116AC9C4226 /* UINavigationBar++.swift in Sources */,
 				34CDD4A2455E6953EC0E48F8DB7B4324 /* UINavigationItem+Localize.swift in Sources */,
+				0ACE893C22D98D5700F3EED9 /* UITabBarController++.swift in Sources */,
 				B50670142148A975116059F5B2BEE5BD /* UISearchBar+Localize.swift in Sources */,
 				75D95FC8D299A4762BD8DA4675552909 /* UISegmentControl+Localize.swift in Sources */,
 				C9E024BEEF0BCBB38543D66FC09BB34D /* UITabBarItem+Localize.swift in Sources */,
@@ -753,6 +768,7 @@
 				D1A1AC86E0F752105D1370043F065757 /* UIViewController+Localize.swift in Sources */,
 				7C21A2E27103ACCFBEC8D5AB74DA57CD /* UIViewController+Nib.swift in Sources */,
 				B6C4FA01412256040A3C5A986752A20A /* UIViewController+Overlay.swift in Sources */,
+				0ACE893922D98D2F00F3EED9 /* UINavigationController++.swift in Sources */,
 				D625C45FBF90ACEBC5B787A63B08A315 /* UIViewController+Runtime.swift in Sources */,
 				7B893A93476968BE6441EEA984279369 /* UIViewController+Show.swift in Sources */,
 				C20D6D9EEA9C60D152487BB7C6EC65F1 /* UIViewController+Storyboard.swift in Sources */,

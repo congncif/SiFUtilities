@@ -25,7 +25,7 @@ extension UIViewController {
             baseViewController.present(self, embedIn: NavigationType, cancelButton: cancelButton, position: position, animated: animated, completion: completion)
         }
     }
-    
+
     open func show(viewController: UIViewController,
                    from baseviewController: UIViewController? = nil,
                    embedIn NavigationType: UINavigationController.Type = UINavigationController.self,
@@ -43,7 +43,7 @@ extension UIViewController {
         }
         viewController.show(on: base, embedIn: NavigationType, cancelButton: cancelButton, position: position, animated: animated, completion: completion)
     }
-    
+
     open func backToPrevious(animated: Bool = true, completion: (() -> Void)? = nil) {
         if let navigation = self.navigationController {
             if navigation.viewControllers.first != self {
@@ -55,16 +55,16 @@ extension UIViewController {
                 if let _ = navigation.presentingViewController {
                     navigation.dismiss(animated: animated, completion: completion)
                 } else {
-                    print("Previous page not found")
+                    assertionFailure("Previous page not found")
                 }
             }
         } else if let _ = self.presentingViewController {
             dismiss(animated: animated, completion: completion)
         } else {
-            print("Previous page not found")
+            assertionFailure("Previous page not found")
         }
     }
-    
+
     open func forceDismiss(animated: Bool = true, completion: (() -> Void)? = nil) {
         if let _ = self.presentingViewController {
             dismiss(animated: animated, completion: completion)
@@ -73,10 +73,10 @@ extension UIViewController {
         } else if let presented = self.presentedViewController {
             presented.dismiss(animated: animated, completion: completion)
         } else {
-            print("Presenting page not found")
+            assertionFailure("Presenting page not found")
         }
     }
-    
+
     open func present(_ vc: UIViewController, embedIn NavigationType: UINavigationController.Type = UINavigationController.self, cancelButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel), position: CancelButtonPosition = .left, animated: Bool = true, completion: (() -> Void)? = nil) {
         if let nav = vc as? UINavigationController {
             nav.topViewController?.showCancelButton(cancelButton, at: position)
@@ -94,11 +94,11 @@ extension UIViewController {
         case left
         case right
     }
-    
+
     open func showCancelButton(_ barButtonItem: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel), at position: CancelButtonPosition) {
         barButtonItem.action = #selector(dismissButtonDidTap(_:))
         barButtonItem.target = self
-        
+
         switch position {
         case .left:
             navigationItem.leftBarButtonItem = barButtonItem
@@ -106,26 +106,10 @@ extension UIViewController {
             navigationItem.rightBarButtonItem = barButtonItem
         }
     }
-    
+
     @IBAction open func dismissButtonDidTap(_ sender: Any) {
         forceDismiss()
     }
 }
 
-extension UIBarButtonItem {
-    public convenience init(barButtonSystemItem: UIBarButtonItem.SystemItem) {
-        self.init(barButtonSystemItem: barButtonSystemItem, target: nil, action: nil)
-    }
-    
-    public convenience init(title: String?, style: UIBarButtonItem.Style) {
-        self.init(title: title, style: style, target: nil, action: nil)
-    }
-    
-    public convenience init(image: UIImage?, style: UIBarButtonItem.Style) {
-        self.init(image: image, style: style, target: nil, action: nil)
-    }
-    
-    public convenience init(image: UIImage, landscapeImagePhone: UIImage, style: UIBarButtonItem.Style) {
-        self.init(image: image, landscapeImagePhone: landscapeImagePhone, style: style, target: nil, action: nil)
-    }
-}
+// MARK: - Navigation

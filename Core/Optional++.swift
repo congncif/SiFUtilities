@@ -17,13 +17,13 @@ extension Optional where Wrapped == String {
         }
     }
 
-    public func unwrapped(default: String = String()) -> String {
+    public func unwrapped(_ default: String = String()) -> String {
         return self ?? `default`
     }
 }
 
 extension Optional {
-    public func unwrapped(default: Wrapped) -> Wrapped {
+    public func unwrapped(_ default: Wrapped) -> Wrapped {
         return self ?? `default`
     }
 }

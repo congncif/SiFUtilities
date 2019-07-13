@@ -166,9 +166,6 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    override func viewDidFinishLayout() {
-    }
-
     func value() -> String? {
         let keeper = ValueKeeper<String>(defaultValue: "Default") { completion in
             DispatchQueue.global().asyncAfter(deadline: .now() + 10) {
