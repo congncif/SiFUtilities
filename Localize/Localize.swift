@@ -64,9 +64,7 @@ extension AssociatedObject where Self: NSObject {
 
         if let value = newValue, !value.isEmpty {
             registerLocalizeUpdateNotification()
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) { [weak self] in
-                self?.updateLocalize()
-            }
+            updateLocalize()
         } else {
             unregisterLocalizeUpdateNotification()
         }
