@@ -19,10 +19,8 @@ import UIKit
         }
     }
     
-    @objc open override func updateLocalize() {
-        if let value = placeholderLocalizedKey, !placeholderLocalizedKey.isNoValue {
-            placeholder = value.localized
-        }
+    @objc open override func updateLocalize(attributes: [UInt8: String]) {
+        placeholder = attributes[.localizedPlaceholderTextKey]?.localized
     }
 }
 

@@ -21,8 +21,8 @@ import UIKit
         }
     }
 
-    @objc open override func updateLocalize() {
-        if let value = titlesLocalizedKey, !titlesLocalizedKey.isNoValue {
+    @objc open override func updateLocalize(attributes: [UInt8: String]) {
+        if let value = attributes[.localizedTitleKey] {
             let components = value.components(separatedBy: ",")
             for i in 0..<self.numberOfSegments {
                 if i < components.count {

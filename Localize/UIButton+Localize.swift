@@ -29,13 +29,8 @@ import UIKit
         }
     }
     
-    @objc open override func updateLocalize() {
-        if let value = normalTitleLocalizedKey, !normalTitleLocalizedKey.isNoValue {
-            setTitle(value.localized, for: .normal)
-        }
-        
-        if let value = selectedTitleLocalizedKey, !selectedTitleLocalizedKey.isNoValue {
-            setTitle(value.localized, for: .selected)
-        }
+    @objc open override func updateLocalize(attributes: [UInt8: String]) {
+        setTitle(attributes[.localizedNormalTitleKey]?.localized, for: .normal)
+        setTitle(attributes[.localizedSelectedTitleKey]?.localized, for: .selected)
     }
 }

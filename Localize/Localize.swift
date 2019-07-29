@@ -20,6 +20,19 @@ struct RunTimeKey {
     static var localizedArrayKey: UInt8 = 8
 }
 
+public typealias LocalizedKey = UInt8
+
+public extension LocalizedKey {
+    static let localizedTextKey: UInt8 = 0
+    static let localizedPlaceholderTextKey: UInt8 = 1
+    static let localizedImageNameKey: UInt8 = 3
+    static let localizedNormalTitleKey: UInt8 = 4
+    static let localizedSelectedTitleKey: UInt8 = 5
+    static let localizedTitleKey: UInt8 = 6
+    static let localizedBackTitleKey: UInt8 = 7
+    static let localizedArrayKey: UInt8 = 8
+}
+
 public func LocalizedString(_ string: String, tableName: String? = nil) -> String {
     return NSLocalizedString(string, tableName: tableName, comment: string)
 }
@@ -37,7 +50,7 @@ extension String: Localizable {
 @objc public protocol LocalizeRenderable: class {
     func registerLocalizeUpdateNotification()
     func unregisterLocalizeUpdateNotification()
-    func updateLocalize()
+    func updateLocalize(attributes: [LocalizedKey: String])
 }
 
 extension NSObject: LocalizeRenderable {
@@ -51,7 +64,7 @@ extension NSObject: LocalizeRenderable {
         NotificationCenter.default.removeObserver(self, name: Notification.Name(rawValue: LCLLanguageChangeNotification), object: nil)
     }
 
-    @objc open func updateLocalize() {}
+    @objc open func updateLocalize(attributes: [LocalizedKey: String]) {}
 }
 
 extension AssociatedObject where Self: NSObject {
@@ -62,9 +75,10 @@ extension AssociatedObject where Self: NSObject {
     func setStringValue(_ newValue: String?, forRuntimeKey key: inout UInt8) {
         setAssociatedObject(key: &key, value: newValue)
 
+        let altKey = key
         if let value = newValue, !value.isEmpty {
             registerLocalizeUpdateNotification()
-            updateLocalize()
+            updateLocalize(attributes: [altKey: value])
         } else {
             unregisterLocalizeUpdateNotification()
         }
