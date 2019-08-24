@@ -27,7 +27,7 @@ extension UIBarButtonItem {
 }
 
 extension UIBarButtonItem {
-    public static func backBarButtonItem(title: String = "") -> UIBarButtonItem {
+    public static func plainBarButtonItem(title: String = "") -> UIBarButtonItem {
         return UIBarButtonItem(title: title, style: .plain, target: nil, action: nil)
     }
 }

@@ -12,8 +12,8 @@ import UIKit
 extension UIViewController {
     open func show(on baseViewController: UIViewController,
                    embedIn NavigationType: UINavigationController.Type = UINavigationController.self,
-                   cancelButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel),
-                   position: CancelButtonPosition = .left,
+                   closeButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop),
+                   position: CloseButtonPosition = .left,
                    animated: Bool = true,
                    completion: (() -> Void)? = nil) {
         if let navigation = baseViewController as? UINavigationController {
@@ -22,26 +22,26 @@ extension UIViewController {
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.25, execute: completion)
             }
         } else {
-            baseViewController.present(self, embedIn: NavigationType, cancelButton: cancelButton, position: position, animated: animated, completion: completion)
+            baseViewController.present(self, embedIn: NavigationType, closeButton: closeButton, position: position, animated: animated, completion: completion)
         }
     }
 
     open func show(viewController: UIViewController,
                    from baseviewController: UIViewController? = nil,
                    embedIn NavigationType: UINavigationController.Type = UINavigationController.self,
-                   cancelButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel),
-                   position: CancelButtonPosition = .left,
+                   closeButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop),
+                   position: CloseButtonPosition = .left,
                    animated: Bool = true,
                    completion: (() -> Void)? = nil) {
         guard let base = baseviewController else {
             if let navigation = self.navigationController {
-                viewController.show(on: navigation, embedIn: NavigationType, cancelButton: cancelButton, position: position, animated: animated, completion: completion)
+                viewController.show(on: navigation, embedIn: NavigationType, closeButton: closeButton, position: position, animated: animated, completion: completion)
             } else {
-                viewController.show(on: self, embedIn: NavigationType, cancelButton: cancelButton, position: position, animated: animated, completion: completion)
+                viewController.show(on: self, embedIn: NavigationType, closeButton: closeButton, position: position, animated: animated, completion: completion)
             }
             return
         }
-        viewController.show(on: base, embedIn: NavigationType, cancelButton: cancelButton, position: position, animated: animated, completion: completion)
+        viewController.show(on: base, embedIn: NavigationType, closeButton: closeButton, position: position, animated: animated, completion: completion)
     }
 
     open func backToPrevious(animated: Bool = true, completion: (() -> Void)? = nil) {
@@ -77,12 +77,12 @@ extension UIViewController {
         }
     }
 
-    open func present(_ vc: UIViewController, embedIn NavigationType: UINavigationController.Type = UINavigationController.self, cancelButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel), position: CancelButtonPosition = .left, animated: Bool = true, completion: (() -> Void)? = nil) {
+    open func present(_ vc: UIViewController, embedIn NavigationType: UINavigationController.Type = UINavigationController.self, closeButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop), position: CloseButtonPosition = .left, animated: Bool = true, completion: (() -> Void)? = nil) {
         if let nav = vc as? UINavigationController {
-            nav.topViewController?.showCancelButton(cancelButton, at: position)
+            nav.topViewController?.showCloseButton(closeButton, at: position)
             present(nav, animated: animated, completion: completion)
         } else {
-            vc.showCancelButton(at: position)
+            vc.showCloseButton(at: position)
             let nav = NavigationType.init(rootViewController: vc)
             present(nav, animated: animated, completion: completion)
         }
@@ -90,12 +90,12 @@ extension UIViewController {
 }
 
 extension UIViewController {
-    public enum CancelButtonPosition {
+    public enum CloseButtonPosition {
         case left
         case right
     }
 
-    open func showCancelButton(_ barButtonItem: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel), at position: CancelButtonPosition) {
+    open func showCloseButton(_ barButtonItem: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop), at position: CloseButtonPosition = .left) {
         barButtonItem.action = #selector(dismissButtonDidTap(_:))
         barButtonItem.target = self
 
@@ -107,9 +107,21 @@ extension UIViewController {
         }
     }
 
-    @IBAction open func dismissButtonDidTap(_ sender: Any) {
+    open func showCloseButtonIfNeeded(_ barButtonItem: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop), at position: CloseButtonPosition = .left) {
+        if isPresentedInNavigation, isRootOfNavigation {
+            showCloseButton(barButtonItem, at: position)
+        }
+    }
+
+    @IBAction private func dismissButtonDidTap(_ sender: Any) {
         forceDismiss()
     }
-}
 
-// MARK: - Navigation
+    var isRootOfNavigation: Bool {
+        return navigationController?.viewControllers.first == self
+    }
+
+    var isPresentedInNavigation: Bool {
+        return navigationController?.presentingViewController != nil
+    }
+}
