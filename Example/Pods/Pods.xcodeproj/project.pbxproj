@@ -23,6 +23,7 @@
 		1CF0BB9358E9107202A1A116AC9C4226 /* UINavigationBar++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395050113C81BDE87D4EF412BD2267C0 /* UINavigationBar++.swift */; };
 		1E2A6795510249AAF688C1612A132E2B /* AssociatedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3DD51397CDBED23E73B17B7798CC53 /* AssociatedObject.swift */; };
 		2036BC7F221AF47D009FAB3E /* UIViewController+Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2036BC7E221AF47C009FAB3E /* UIViewController+Popover.swift */; };
+		27D75832232E4F99008FEA5E /* StoryboardSegue+Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D75831232E4F99008FEA5E /* StoryboardSegue+Sender.swift */; };
 		2B3617541F7EB81BA93E8A7B77DC3558 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F2A309A5DAD28BD7A2EC8FCB0B0E9BC /* UIKit.framework */; };
 		30303E690A7F2190171D61C9DF9ADD61 /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822E53073F4FE6633506C528A0931974 /* UIView+Animation.swift */; };
 		324501B399EEC5DA0345872182831E86 /* SiFUtilities-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E085332E6F56AFB5F0C1C516514D8158 /* SiFUtilities-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -139,6 +140,7 @@
 		20A9E34B2033A730C24525FA312821B9 /* SiFUtilities-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SiFUtilities-dummy.m"; sourceTree = "<group>"; };
 		215715BB3390AE0729F4377073F65619 /* UIViewController+Localize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+Localize.swift"; path = "Localize/UIViewController+Localize.swift"; sourceTree = "<group>"; };
 		24EC3D235236022E632BE566FBE16457 /* URL++.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URL++.swift"; path = "KeyValue/URL++.swift"; sourceTree = "<group>"; };
+		27D75831232E4F99008FEA5E /* StoryboardSegue+Sender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "StoryboardSegue+Sender.swift"; path = "Runtime/StoryboardSegue+Sender.swift"; sourceTree = "<group>"; };
 		2B5F71008E7FEE863B184235D1407DB7 /* SiFUtilities.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SiFUtilities.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		322ECE15848ABC5085A87C92FE2D2465 /* Pods-SiFUtilities_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SiFUtilities_Example.modulemap"; sourceTree = "<group>"; };
 		32DAD2E64E654029A26318CFCF8693D3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -378,6 +380,7 @@
 				9B3DD51397CDBED23E73B17B7798CC53 /* AssociatedObject.swift */,
 				1FF5CA777595033848371FE8A64414FE /* Swizzling.swift */,
 				661455EB94028D4786EFD4C71973C558 /* UIViewController+Runtime.swift */,
+				27D75831232E4F99008FEA5E /* StoryboardSegue+Sender.swift */,
 			);
 			name = Runtime;
 			sourceTree = "<group>";
@@ -720,6 +723,7 @@
 				1ADDAB22EE76A57822ABED7B8B43EED5 /* CommonError.swift in Sources */,
 				32F40BC1CF9CA89AB87C0D22E207C405 /* Date+Utils.swift in Sources */,
 				ADC1293109D71A1C80E60E2B3A7F6A49 /* Debouncer.swift in Sources */,
+				27D75832232E4F99008FEA5E /* StoryboardSegue+Sender.swift in Sources */,
 				0ACE893A22D98D2F00F3EED9 /* UIBarButtonItem++.swift in Sources */,
 				0A94253A224F2B1F003D9C42 /* Optional++.swift in Sources */,
 				E4A0D56208473C6EC3478F66F713BE70 /* EdgeLineView.swift in Sources */,
