@@ -1,6 +1,6 @@
 //
 //  StoryboardSegue+Sender.swift
-//  
+//
 //
 //  Created by NGUYEN CHI CONG on 9/15/19.
 //
@@ -17,7 +17,8 @@ extension UIStoryboardSegue: AssociatedObject {
         }
 
         get {
-            getAssociatedObject(key: &senderKey)
+            let value: Any? = getAssociatedObject(key: &senderKey)
+            return value
         }
     }
 }
