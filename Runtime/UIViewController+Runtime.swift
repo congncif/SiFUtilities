@@ -85,12 +85,17 @@ extension UIViewController {
         let swizzledSelector5 = #selector(sif_viewDidDisappear(_:))
         
         self.swizzledMethod(self, originalSelector: originalSelector5, to: swizzledSelector5)
+        
+        let originalSelector6 = #selector(prepare(for:sender:))
+        let swizzledSelector6 = #selector(sif_prepare(for:sender:))
+        
+        self.swizzledMethod(self, originalSelector: originalSelector6, to: swizzledSelector6)
     }
     
     @objc func sif_viewDidLayoutSubviews() {
         let originalSelector = #selector(viewDidLayoutSubviews)
-        let swizzledSelector = #selector(sif_viewDidLayoutSubviews)
-
+        let swizzledSelector = #selector(self.sif_viewDidLayoutSubviews)
+        
         type(of: self).exchangeMethod(originalSelector: swizzledSelector, to: originalSelector)
         viewDidLayoutSubviews()
         type(of: self).exchangeMethod(originalSelector: originalSelector, to: swizzledSelector)
@@ -105,8 +110,8 @@ extension UIViewController {
     
     @objc func sif_viewWillAppear(_ animated: Bool) {
         let originalSelector = #selector(viewWillAppear(_:))
-        let swizzledSelector = #selector(sif_viewWillAppear(_:))
-
+        let swizzledSelector = #selector(self.sif_viewWillAppear(_:))
+        
         type(of: self).exchangeMethod(originalSelector: swizzledSelector, to: originalSelector)
         viewWillAppear(animated)
         type(of: self).exchangeMethod(originalSelector: originalSelector, to: swizzledSelector)
@@ -121,7 +126,7 @@ extension UIViewController {
     
     @objc func sif_viewDidAppear(_ animated: Bool) {
         let originalSelector = #selector(viewDidAppear(_:))
-        let swizzledSelector = #selector(sif_viewDidAppear(_:))
+        let swizzledSelector = #selector(self.sif_viewDidAppear(_:))
         
         type(of: self).exchangeMethod(originalSelector: swizzledSelector, to: originalSelector)
         viewDidAppear(animated)
@@ -137,8 +142,8 @@ extension UIViewController {
     
     @objc func sif_viewDidDisappear(_ animated: Bool) {
         let originalSelector = #selector(viewDidDisappear(_:))
-        let swizzledSelector = #selector(sif_viewDidDisappear(_:))
-
+        let swizzledSelector = #selector(self.sif_viewDidDisappear(_:))
+        
         type(of: self).exchangeMethod(originalSelector: swizzledSelector, to: originalSelector)
         viewDidDisappear(animated)
         type(of: self).exchangeMethod(originalSelector: originalSelector, to: swizzledSelector)
@@ -147,18 +152,39 @@ extension UIViewController {
             didRemoveFromParent()
         }
     }
+    
+    @objc func sif_prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let originalSelector = #selector(prepare(for:sender:))
+        let swizzledSelector = #selector(self.sif_prepare(for:sender:))
+        
+        type(of: self).exchangeMethod(originalSelector: swizzledSelector, to: originalSelector)
+        prepare(for: segue, sender: sender)
+        type(of: self).exchangeMethod(originalSelector: originalSelector, to: swizzledSelector)
+        
+        segue.sender = sender
+    }
 }
 
 // Addtional methods
 extension UIViewController {
+    /// Call super is unnessary
     @objc open func viewDidFinishInitialLayout() {}
+    
+    /// Call super is unnessary
     @objc open func viewDidFinishRefreshLayout() {}
     
+    /// Call super is unnessary
     @objc open func viewWillDisplay() {}
+    
+    /// Call super is unnessary
     @objc open func viewWillResume() {}
     
+    /// Call super is unnessary
     @objc open func viewDidDisplay() {}
+    
+    /// Call super is unnessary
     @objc open func viewDidResume() {}
     
+    /// Call super is unnessary
     @objc open func didRemoveFromParent() {}
 }
