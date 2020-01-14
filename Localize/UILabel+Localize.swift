@@ -20,6 +20,6 @@ import UIKit
     }
 
     @objc open override func updateLocalize(attributes: [UInt8: String]) {
-        text = attributes[.localizedTitleKey]?.localized
+        text = attributes[.localizedTextKey]?.localized
     }
 }
