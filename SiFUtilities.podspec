@@ -8,9 +8,9 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SiFUtilities'
-  s.version          = '4.4.2'
+  s.version          = '4.4.3'
   s.summary          = 'A set of utilities for your app.'
-  s.swift_versions = ['4.0', '4.2', '5.0', '5.1']
+  s.swift_versions = ['4.0', '4.2', '5.0', '5.1', "5.2"]
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?

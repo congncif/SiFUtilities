@@ -29,7 +29,9 @@ extension UIViewController {
                                                               bundle: Bundle? = nil) -> T {
         let _bundle = bundle ?? Bundle(for: self)
         let storyboard = UIStoryboard(name: storyboardName, bundle: _bundle)
-        let controller = storyboard.instantiateViewController(withIdentifier: storyboardId) as! T
+        guard let controller = storyboard.instantiateViewController(withIdentifier: storyboardId) as? T else {
+            preconditionFailure("Cannot instantiate \(T.self) with identifier \(storyboardId) from storyboard \(storyboardName)")
+        }
         return controller
     }
     
@@ -61,6 +63,12 @@ extension UIViewController {
         return instantiateFromStoryboardHelper(storyboardName: name, storyboardId: identifier, bundle: bundle)
     }
     
+    open class func instantiateFromModuleStoryboard(bundle: Bundle? = nil) -> Self {
+        let name = className.replacingOccurrences(of: "ViewController", with: "")
+        let identifier = className
+        return instantiateFromStoryboardHelper(storyboardName: name, storyboardId: identifier, bundle: bundle)
+    }
+    
     open class func instantiateFromMainStoryboard(identifier: String, bundle: Bundle? = nil) -> Self {
         return instantiateFromStoryboard(name: UIStoryboard.Name.main, identifier: identifier, bundle: bundle)
     }
@@ -79,6 +87,11 @@ extension UIViewController {
         return instantiateFromStoryboardHelper(storyboardName: name, bundle: bundle)
     }
     
+    open class func instantiateInitialFromModuleStoryboard(bundle: Bundle? = nil) -> Self {
+        let name = className.replacingOccurrences(of: "ViewController", with: "")
+        return instantiateFromStoryboardHelper(storyboardName: name, bundle: bundle)
+    }
+    
     open func navigationContainer<U: UINavigationController>() -> U? {
         return navigationController as? U
     }
@@ -94,19 +107,21 @@ extension UIViewController {
      
      - returns: instance of this class
      */
-    open class func instantiateViewController(storyboardPath: String, bundle: Bundle? = nil) -> Self {
-        let components = (storyboardPath as NSString).components(separatedBy: ".")
+    open class func instantiateViewController(storyboardPath: String,
+                                              separator: String = ".",
+                                              bundle: Bundle? = nil) -> Self {
+        let components = storyboardPath.components(separatedBy: separator)
         
-        guard components.count > 0, components.count < 3 else { return self.init() }
+        guard !components.isEmpty, components.count < 3 else { return self.init() }
         
         if components.count == 1 {
             return instantiateFromMainStoryboard(identifier: storyboardPath, bundle: bundle)
         } else {
-            let storyboardName = components.first
-            let storyboardId = components.last
-            
-            return instantiateFromStoryboardHelper(storyboardName: storyboardName!,
-                                                   storyboardId: storyboardId!, bundle: bundle)
+            let storyboardName = components[0]
+            let storyboardId = components[1]
+            return instantiateFromStoryboardHelper(storyboardName: storyboardName,
+                                                   storyboardId: storyboardId,
+                                                   bundle: bundle)
         }
     }
 }
