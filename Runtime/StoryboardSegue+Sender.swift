@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-private var senderKey: UInt8 = 1
+private var senderKey: UInt8 = 11
 
 extension UIStoryboardSegue: AssociatedObject {
     public var sender: Any? {

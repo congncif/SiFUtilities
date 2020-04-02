@@ -39,7 +39,7 @@ extension KeyValueProtocol {
     }
 }
 
-func wrap(any: Any) -> Any? {
+func unwrap(any: Any) -> Any? {
     let mi = Mirror(reflecting: any)
     if let style = mi.displayStyle {
         if style != .optional {
@@ -86,7 +86,7 @@ extension KeyValueProtocol {
     }
     
     func parse(value: Any) -> Any? {
-        let wrappedValue = wrap(any: value)
+        let wrappedValue = unwrap(any: value)
         
         if let object = wrappedValue as? KeyValueProtocol {
             return object.dictionary
@@ -145,6 +145,35 @@ extension KeyValueProtocol {
         }
         
         return results
+    }
+    
+    public subscript(key: String) -> Any? {
+        let otherSelf = Mirror(reflecting: self)
+        
+        for child in otherSelf.children {
+            if let okey = child.label {
+                let newKey = mapKey(for: okey)
+                if newKey == key {
+                    return unwrap(any: child.value)
+                }
+            }
+        }
+        
+        var mirror: Mirror = otherSelf
+        
+        while let superMirror = mirror.superclassMirror {
+            for child in superMirror.children {
+                if let okey = child.label {
+                    let newKey = mapKey(for: okey)
+                    if newKey == key {
+                        return unwrap(any: child.value)
+                    }
+                }
+            }
+            mirror = superMirror
+        }
+        
+        return nil
     }
 }
 
