@@ -67,14 +67,23 @@ public final class PresentationConfiguration {
 
     public static var `default`: PresentationConfiguration { PresentationConfiguration() }
 
-    public func apply(_ configureHandler: (PresentationConfiguration) -> Void = { _ in }) -> PresentationConfiguration {
-        configureHandler(self)
+    public func apply(_ configurationBlock: (PresentationConfiguration) -> Void = { _ in }) -> PresentationConfiguration {
+        configurationBlock(self)
         return self
     }
 }
 
 extension UIViewController {
-    public func show(_ viewController: UIViewController, configuration: PresentationConfiguration = .default, completion: (() -> Void)? = nil) {
+    public func show(_ viewController: UIViewController,
+                     configurationBlock: (PresentationConfiguration) -> Void = { _ in },
+                     completion: (() -> Void)? = nil) {
+        let configs = PresentationConfiguration.default.apply(configurationBlock)
+        show(viewController, configuration: configs, completion: completion)
+    }
+
+    public func show(_ viewController: UIViewController,
+                     configuration: PresentationConfiguration = .default,
+                     completion: (() -> Void)? = nil) {
         viewController.hidesBottomBarWhenPushed = configuration.hidesBottomBarWhenPushed
         viewController.setNavigationBarBackTitle(configuration.backTitle)
 
