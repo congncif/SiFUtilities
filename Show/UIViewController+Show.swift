@@ -75,7 +75,7 @@ public final class PresentationConfiguration {
 
 extension UIViewController {
     public func show(_ viewController: UIViewController,
-                     configurationBlock: (PresentationConfiguration) -> Void = { _ in },
+                     configurationBlock: (PresentationConfiguration) -> Void,
                      completion: (() -> Void)? = nil) {
         let configs = PresentationConfiguration.default.apply(configurationBlock)
         show(viewController, configuration: configs, completion: completion)
