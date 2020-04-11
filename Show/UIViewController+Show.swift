@@ -13,7 +13,7 @@ public struct PresentConfiguration {
     public let navigationType: UINavigationController.Type?
     public let modalPresentationStyle: UIModalPresentationStyle
     public let modalTransitionStyle: UIModalTransitionStyle
-    public let isModalInPresentation: Bool
+    public let isModalInPresentation: Bool // iOS 13 only
 
     public init(navigationType: UINavigationController.Type?,
                 modalPresentationStyle: UIModalPresentationStyle,
@@ -42,19 +42,19 @@ public struct PresentConfiguration {
     }
 }
 
-public enum PresentationStyle {
+public enum NavigateConfiguration {
     case push
+    case replace
+    case replaceAll
+}
+
+public enum PresentationStyle {
+    case navigate(NavigateConfiguration)
     case present(PresentConfiguration)
 
     public static var defaultPresent: PresentationStyle {
         return .present(.embeddedInNavigation)
     }
-}
-
-public enum PresentationCloseStyle {
-    case `default`
-    case close
-    case auto
 }
 
 public final class PresentationConfiguration {
@@ -75,9 +75,9 @@ public final class PresentationConfiguration {
 
 extension UIViewController {
     public func show(_ viewController: UIViewController,
-                     configurationBlock: (PresentationConfiguration) -> Void,
+                     configurations: (PresentationConfiguration) -> Void,
                      completion: (() -> Void)? = nil) {
-        let configs = PresentationConfiguration.default.apply(configurationBlock)
+        let configs = PresentationConfiguration.default.apply(configurations)
         show(viewController, configuration: configs, completion: completion)
     }
 
@@ -100,25 +100,44 @@ extension UIViewController {
             if targetIsNavigation {
                 presentationStyle = .present(.default)
             } else if sourceIsNavigation {
-                presentationStyle = .push
+                presentationStyle = .navigate(.push)
             } else if navigationController != nil {
-                presentationStyle = .push
+                presentationStyle = .navigate(.push)
             } else {
                 presentationStyle = .present(.embeddedInNavigation)
             }
         }
 
         switch presentationStyle {
-        case .push:
-            destination = viewController
-            source.navigator?.pushViewController(destination, animated: configuration.animated)
-            if let completion = completion {
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.25, execute: completion)
+        case let .navigate(configs):
+            switch configs {
+            case .push:
+                destination = viewController
+                source.navigator?.pushViewController(destination, animated: configuration.animated)
+            case .replace:
+                destination = viewController
+                let viewControllers = source.navigator?.viewControllers ?? []
+                let droppedViewControllers = Array(viewControllers.dropLast())
+                if droppedViewControllers.isEmpty {
+                    destination.showCloseButton(at: .left)
+                }
+                let newViewControllers = droppedViewControllers + [destination]
+                source.navigator?.setViewControllers(newViewControllers, animated: configuration.animated)
+            case .replaceAll:
+                destination = viewController
+                destination.showCloseButton(at: .left)
+                source.navigator?.setViewControllers([destination], animated: configuration.animated)
             }
-        case .present(let configs):
+            if let completion = completion, configuration.animated {
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.25, execute: completion)
+            } else {
+                completion?()
+            }
+
+        case let .present(configs):
             if let navigationType = configs.navigationType {
                 if let nav = viewController as? UINavigationController {
-                    nav.topViewController?.showCloseButton(at: .left)
+                    nav.viewControllers.first?.showCloseButton(at: .left)
                     destination = nav
                 } else {
                     viewController.showCloseButton(at: .left)
@@ -126,7 +145,7 @@ extension UIViewController {
                 }
             } else {
                 if let nav = viewController as? UINavigationController {
-                    nav.topViewController?.showCloseButton(at: .left)
+                    nav.viewControllers.first?.showCloseButton(at: .left)
                 }
                 destination = viewController
             }
@@ -134,8 +153,6 @@ extension UIViewController {
             destination.modalTransitionStyle = configs.modalTransitionStyle
             if #available(iOS 13.0, *) {
                 destination.isModalInPresentation = configs.isModalInPresentation
-            } else {
-                // Fallback on earlier versions
             }
             source.present(destination, animated: configuration.animated, completion: completion)
         }
@@ -257,15 +274,15 @@ extension UIViewController {
         }
     }
 
-    @IBAction private func dismissButtonDidTap(_ sender: Any) {
+    @objc private func dismissButtonDidTap(_ sender: Any) {
         forceDismiss()
     }
 
-    var isRootOfNavigation: Bool {
+    public var isRootOfNavigation: Bool {
         return navigationController?.viewControllers.first == self
     }
 
-    var isPresentedInNavigation: Bool {
+    public var isPresentedInNavigation: Bool {
         return navigationController?.presentingViewController != nil
     }
 }
