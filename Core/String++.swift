@@ -32,7 +32,8 @@ extension String {
         return self.uuid().lowercased()
     }
     
-    public func toDate(format: String? = "dd/MM/yyyy", timeZone: TimeZone? = TimeZone(secondsFromGMT: 0)) -> Date? {
+    public func toDate(format: String? = DateFormat.detailRegular,
+                       timeZone: TimeZone? = .current) -> Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = timeZone
         let internalFormat = format
@@ -103,5 +104,19 @@ extension String {
         }
         
         return newComponents.joined()
+    }
+}
+
+extension String {
+    public var isAlphanumerics: Bool {
+        return !isEmpty && range(of: "[^a-zA-Z0-9]", options: .regularExpression) == nil
+    }
+    
+    public var digitsOnly: String {
+        return replacingOccurrences(of: "[^\\d+]", with: "", options: [.regularExpression])
+    }
+    
+    public func insensitiveContains(_ subString: String) -> Bool {
+        return range(of: subString, options: [.caseInsensitive, .diacriticInsensitive]) != nil
     }
 }
