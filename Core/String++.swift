@@ -120,3 +120,14 @@ extension String {
         return range(of: subString, options: [.caseInsensitive, .diacriticInsensitive]) != nil
     }
 }
+
+extension String {
+    public func formatted(defaultAttributes: [NSAttributedString.Key: Any], attributedStrings: NSAttributedString...) -> NSAttributedString {
+        let attributedString = NSMutableAttributedString(string: self, attributes: defaultAttributes)
+        for subString in attributedStrings {
+            let range = (self as NSString).range(of: subString.string)
+            attributedString.replaceCharacters(in: range, with: subString)
+        }
+        return attributedString
+    }
+}

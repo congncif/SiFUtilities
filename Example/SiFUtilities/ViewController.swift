@@ -1,4 +1,5 @@
 //
+import Localize_Swift
 //  ViewController.swift
 //  SiFUtilities
 //
@@ -7,7 +8,6 @@
 //
 import SiFUtilities
 import UIKit
-import Localize_Swift
 
 class Test: KeyValueProtocol {
     var name: String?
@@ -44,8 +44,7 @@ class Test3: NSObject, KeyValueProtocol {
     var attr: AdAttribute = AdAttribute()
 }
 
-protocol NewEndPoint: EndpointProtocol {
-}
+protocol NewEndPoint: EndpointProtocol {}
 
 extension NewEndPoint {
     public static var base: String { return "https://sif.vn" }
@@ -57,11 +56,11 @@ extension NewEndPoint {
 
 public enum APIEndpoint: String, NewEndPoint {
     public static var root = String()
-    
+
     case login
     enum work: String, NewEndPoint {
         public static var root = "work"
-        
+
         case examEp = "exam_ep"
         case cool = "cool/%d"
         case xxx = "xxx/%@/abc/%d"
@@ -69,7 +68,7 @@ public enum APIEndpoint: String, NewEndPoint {
 
     enum newpp: String, NewEndPoint {
         public static var root = "newpp"
-        
+
         static var base: String {
             return "ftp://aba.com"
         }
@@ -122,23 +121,23 @@ class ViewController: UIViewController {
 //
         print("---> Did Display")
     }
-    
+
     override func viewDidResume() {
         print("---> Did Resume")
     }
-    
+
     override func viewWillDisplay() {
         print("---> Will Display")
     }
-    
+
     override func viewWillResume() {
         print("---> Will Resume")
     }
-    
+
     override func viewDidFinishInitialLayout() {
         print("---> init layout")
     }
-    
+
     override func viewDidFinishRefreshLayout() {
         print("---> refresh layout")
     }
@@ -147,7 +146,7 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+
         print("---> Did Appear")
 
 //        let blur = UIBlurEffect(style: UIBlurEffectStyle.light)
@@ -174,7 +173,9 @@ class ViewController: UIViewController {
         }
         return keeper.syncValue
     }
-    
+
+    @IBOutlet var label: UILabel!
+
     @IBAction func tap() {
 //        let vc = EXViewController.instantiateFromMainStoryboard()
 //        vc.showOverlay(on: self, animation: { v in
@@ -182,7 +183,7 @@ class ViewController: UIViewController {
 //        })
 //        present(vc, embedIn: NavViewController.self)
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
     }
