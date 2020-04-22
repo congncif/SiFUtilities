@@ -13,13 +13,21 @@ import UIKit
         get {
             return getStringValue(by: &RunTimeKey.localizedTitleKey)
         }
-        
+
         set {
             setStringValue(newValue, forRuntimeKey: &RunTimeKey.localizedTitleKey)
         }
     }
-    
-    @objc open override func updateLocalize(attributes: [UInt8: String]) {
-        title = attributes[.localizedTitleKey]?.localized
+
+    @objc open override func updateLocalize(attributes: [LocalizedKey: String]) {
+        if let text = attributes[.localizedTitleKey]?.localized {
+            title = text
+        }
+    }
+
+    @objc open override func updateLanguage() {
+        if let key = titleLocalizedKey {
+            updateLocalize(attributes: [.localizedTitleKey: key])
+        }
     }
 }

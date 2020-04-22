@@ -18,10 +18,16 @@ import Foundation
         }
     }
 
-    @objc open override func updateLocalize(attributes: [UInt8: String]) {
+    @objc open override func updateLocalize(attributes: [LocalizedKey: String]) {
         if let imageName = attributes[.localizedImageNameKey]?.localized {
             let assetImage = UIImage(named: imageName)
             image = assetImage
+        }
+    }
+
+    @objc open override func updateLanguage() {
+        if let key = imageNameLocalizedKey {
+            updateLocalize(attributes: [.localizedImageNameKey: key])
         }
     }
 }

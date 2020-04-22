@@ -13,14 +13,21 @@ import UIKit
         get {
             return getStringValue(by: &RunTimeKey.localizedPlaceholderTextKey)
         }
-        
+
         set {
             setStringValue(newValue, forRuntimeKey: &RunTimeKey.localizedPlaceholderTextKey)
         }
     }
-    
-    @objc open override func updateLocalize(attributes: [UInt8: String]) {
-        placeholder = attributes[.localizedPlaceholderTextKey]?.localized
+
+    @objc open override func updateLocalize(attributes: [LocalizedKey: String]) {
+        if let text = attributes[.localizedPlaceholderTextKey]?.localized {
+            placeholder = text
+        }
+    }
+
+    @objc open override func updateLanguage() {
+        if let key = placeholderLocalizedKey {
+            updateLocalize(attributes: [.localizedPlaceholderTextKey: key])
+        }
     }
 }
-

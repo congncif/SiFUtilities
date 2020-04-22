@@ -47,17 +47,19 @@ extension String: Localizable {
     }
 }
 
-@objc public protocol LocalizeRenderable: class {
+@objc protocol LocalizeRenderable: AnyObject {
     func registerLocalizeUpdateNotification()
     func unregisterLocalizeUpdateNotification()
+
     func updateLocalize(attributes: [LocalizedKey: String])
+    func updateLanguage()
 }
 
 extension NSObject: LocalizeRenderable {
     @objc open func registerLocalizeUpdateNotification() {
         unregisterLocalizeUpdateNotification()
 
-        NotificationCenter.default.addObserver(self, selector: #selector(updateLocalize), name: Notification.Name(rawValue: LCLLanguageChangeNotification), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateLanguage), name: Notification.Name(rawValue: LCLLanguageChangeNotification), object: nil)
     }
 
     @objc open func unregisterLocalizeUpdateNotification() {
@@ -65,6 +67,8 @@ extension NSObject: LocalizeRenderable {
     }
 
     @objc open func updateLocalize(attributes: [LocalizedKey: String]) {}
+
+    @objc open func updateLanguage() {}
 }
 
 extension AssociatedObject where Self: NSObject {

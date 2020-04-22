@@ -33,6 +33,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="textLocalizedKey" value="seg2"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="2kC-ih-9KY">
                                 <rect key="frame" x="169" y="432" width="37" height="37"/>
@@ -61,7 +64,12 @@
                             <constraint firstItem="c9N-1P-cGl" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="s04-uW-vHw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="g4b-EW-DoC"/>
+                    <navigationItem key="navigationItem" id="g4b-EW-DoC">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="titleLocalizedKey" value="seg1"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="backTitleLocalizedKey" value="seg2"/>
+                        </userDefinedRuntimeAttributes>
+                    </navigationItem>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="statusBarHidden" value="YES"/>
                     </userDefinedRuntimeAttributes>

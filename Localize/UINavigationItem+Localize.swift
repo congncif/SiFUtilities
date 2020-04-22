@@ -29,8 +29,24 @@ import UIKit
         }
     }
     
-    @objc open override func updateLocalize(attributes: [UInt8: String]) {
-        title = attributes[.localizedTitleKey]?.localized
-        backBarButtonItem?.title = attributes[.localizedBackTitleKey]?.localized
+    @objc open override func updateLocalize(attributes: [LocalizedKey: String]) {
+        if let value = attributes[.localizedTitleKey]?.localized {
+            title = value
+        }
+        
+        if let value = attributes[.localizedBackTitleKey]?.localized {
+            let backItem = UIBarButtonItem.plainBarButtonItem(title: value)
+            backBarButtonItem = backItem
+        }
+    }
+    
+    @objc open override func updateLanguage() {
+        if let key = titleLocalizedKey {
+            updateLocalize(attributes: [.localizedTitleKey: key])
+        }
+        
+        if let key = backTitleLocalizedKey {
+            updateLocalize(attributes: [.localizedBackTitleKey: key])
+        }
     }
 }

@@ -19,7 +19,15 @@ import UIKit
         }
     }
 
-    @objc open override func updateLocalize(attributes: [UInt8: String]) {
-        title = attributes[.localizedTitleKey]?.localized
+    @objc open override func updateLocalize(attributes: [LocalizedKey: String]) {
+        if let value = attributes[.localizedTitleKey]?.localized {
+            title = value
+        }
+    }
+
+    @objc open override func updateLanguage() {
+        if let key = titleLocalizedKey {
+            updateLocalize(attributes: [.localizedTitleKey: key])
+        }
     }
 }

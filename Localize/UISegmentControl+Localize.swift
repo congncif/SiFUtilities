@@ -21,15 +21,21 @@ import UIKit
         }
     }
 
-    @objc open override func updateLocalize(attributes: [UInt8: String]) {
+    @objc open override func updateLocalize(attributes: [LocalizedKey: String]) {
         if let value = attributes[.localizedTitleKey] {
             let components = value.components(separatedBy: ",")
-            for i in 0..<self.numberOfSegments {
+            for i in 0..<numberOfSegments {
                 if i < components.count {
                     let title = components[i]
                     setTitle(title.localized, forSegmentAt: i)
                 }
             }
+        }
+    }
+
+    @objc open override func updateLanguage() {
+        if let key = titlesLocalizedKey {
+            updateLocalize(attributes: [.localizedTitleKey: key])
         }
     }
 }

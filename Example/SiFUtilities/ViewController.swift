@@ -182,6 +182,10 @@ class ViewController: UIViewController {
 //            v.moveInFromLeft()
 //        })
 //        present(vc, embedIn: NavViewController.self)
+
+        print(Localize.availableLanguages())
+
+        Localize.setCurrentLanguage("vi-VN")
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
