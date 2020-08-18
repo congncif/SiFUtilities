@@ -23,6 +23,9 @@
 		1CF0BB9358E9107202A1A116AC9C4226 /* UINavigationBar++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395050113C81BDE87D4EF412BD2267C0 /* UINavigationBar++.swift */; };
 		1E2A6795510249AAF688C1612A132E2B /* AssociatedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3DD51397CDBED23E73B17B7798CC53 /* AssociatedObject.swift */; };
 		2036BC7F221AF47D009FAB3E /* UIViewController+Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2036BC7E221AF47C009FAB3E /* UIViewController+Popover.swift */; };
+		2739A4BC24EBC3B300F0BB7F /* UIViewController+Top.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2739A4BB24EBC3B300F0BB7F /* UIViewController+Top.swift */; };
+		2739A4BE24EBC56000F0BB7F /* UIViewController+PushOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2739A4BD24EBC56000F0BB7F /* UIViewController+PushOver.swift */; };
+		2739A4C024EBC75B00F0BB7F /* UIViewController+Return.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2739A4BF24EBC75B00F0BB7F /* UIViewController+Return.swift */; };
 		27D75832232E4F99008FEA5E /* StoryboardSegue+Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D75831232E4F99008FEA5E /* StoryboardSegue+Sender.swift */; };
 		2B3617541F7EB81BA93E8A7B77DC3558 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F2A309A5DAD28BD7A2EC8FCB0B0E9BC /* UIKit.framework */; };
 		30303E690A7F2190171D61C9DF9ADD61 /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822E53073F4FE6633506C528A0931974 /* UIView+Animation.swift */; };
@@ -140,6 +143,9 @@
 		20A9E34B2033A730C24525FA312821B9 /* SiFUtilities-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SiFUtilities-dummy.m"; sourceTree = "<group>"; };
 		215715BB3390AE0729F4377073F65619 /* UIViewController+Localize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+Localize.swift"; path = "Localize/UIViewController+Localize.swift"; sourceTree = "<group>"; };
 		24EC3D235236022E632BE566FBE16457 /* URL++.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URL++.swift"; path = "KeyValue/URL++.swift"; sourceTree = "<group>"; };
+		2739A4BB24EBC3B300F0BB7F /* UIViewController+Top.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+Top.swift"; path = "Show/UIViewController+Top.swift"; sourceTree = "<group>"; };
+		2739A4BD24EBC56000F0BB7F /* UIViewController+PushOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+PushOver.swift"; path = "Show/UIViewController+PushOver.swift"; sourceTree = "<group>"; };
+		2739A4BF24EBC75B00F0BB7F /* UIViewController+Return.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+Return.swift"; path = "Show/UIViewController+Return.swift"; sourceTree = "<group>"; };
 		27D75831232E4F99008FEA5E /* StoryboardSegue+Sender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "StoryboardSegue+Sender.swift"; path = "Runtime/StoryboardSegue+Sender.swift"; sourceTree = "<group>"; };
 		2B5F71008E7FEE863B184235D1407DB7 /* SiFUtilities.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SiFUtilities.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		322ECE15848ABC5085A87C92FE2D2465 /* Pods-SiFUtilities_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SiFUtilities_Example.modulemap"; sourceTree = "<group>"; };
@@ -370,6 +376,9 @@
 				37FDBE2BCC8BC17189D52493405836A0 /* UIViewController+Overlay.swift */,
 				5211229DF7426A088853F9CB7359AF37 /* UIViewController+Show.swift */,
 				C13E896AF4A13C06654473E230030316 /* UIViewController+Utils.swift */,
+				2739A4BB24EBC3B300F0BB7F /* UIViewController+Top.swift */,
+				2739A4BD24EBC56000F0BB7F /* UIViewController+PushOver.swift */,
+				2739A4BF24EBC75B00F0BB7F /* UIViewController+Return.swift */,
 			);
 			name = Show;
 			sourceTree = "<group>";
@@ -733,11 +742,13 @@
 				0ABB27332216AFA4004D82F8 /* Bundle++.swift in Sources */,
 				0ACE893222D983DC00F3EED9 /* UIViewController++.swift in Sources */,
 				6372749ECC9AA608AC5E218A6FFDA85C /* KeyValueProtocol.swift in Sources */,
+				2739A4C024EBC75B00F0BB7F /* UIViewController+Return.swift in Sources */,
 				AFE0B63D0F5A79FCDF012EA1AA7803CB /* Localize.swift in Sources */,
 				5A6A217902D51D35FF3D0999B66C5BDF /* NSManagedObject+SiF.swift in Sources */,
 				12E3724E243F5715D317733CEA346ABF /* Number++.swift in Sources */,
 				B6F512185ABAC42D205AA2DF5D7A4591 /* Object++.swift in Sources */,
 				C4F5858BF5984ED515E76A5673A693FF /* PHAsset++.swift in Sources */,
+				2739A4BE24EBC56000F0BB7F /* UIViewController+PushOver.swift in Sources */,
 				38AF501303046271C9427989659C829F /* SegmentView.swift in Sources */,
 				36D4D244D9EDE024443CBB8DC161A2F5 /* Sequence+Group.swift in Sources */,
 				F55E0EC0552D145F5761FC197CD7222A /* SiFUtilities-dummy.m in Sources */,
@@ -753,6 +764,7 @@
 				C783F0C30C4AAE9FCE3E5D664C77E55C /* UIImage++.swift in Sources */,
 				A475D98BAC8989E783CB5BAA566E34EA /* UIImage+Compress.swift in Sources */,
 				963AB4711C96DD42280C7C6F1FC6EF6A /* UIImageView+Localize.swift in Sources */,
+				2739A4BC24EBC3B300F0BB7F /* UIViewController+Top.swift in Sources */,
 				4953212F9CEF3FB1E412333910EC83F5 /* UIKit++.swift in Sources */,
 				349F1E57EE5C1471339B3865B0DDBA1B /* UILabel+Localize.swift in Sources */,
 				1CF0BB9358E9107202A1A116AC9C4226 /* UINavigationBar++.swift in Sources */,
