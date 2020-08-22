@@ -11,7 +11,7 @@ import UIKit
 extension UIViewController {
     public func pushOverFullScreen(_ viewController: UIViewController,
                                    animated: Bool = true) {
-        let contentView = (topMostViewController.navigationController ?? topMostViewController).view.snapshotView(afterScreenUpdates: true)
+        let contentView = topMostViewController.oldestParent.view.snapshotView(afterScreenUpdates: true)
         let rootViewController = ResumeDismissViewController(contentView: contentView)
         let navigationController = UINavigationController(rootViewController: rootViewController)
         navigationController.view.backgroundColor = .clear

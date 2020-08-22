@@ -22,6 +22,11 @@ class EXViewController: UIViewController {
         view.addSubview(label)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     private var flag: Bool = true
     
     @IBAction func tap() {

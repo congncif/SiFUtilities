@@ -53,3 +53,13 @@ extension UINavigationController {
         return viewControllers.first
     }
 }
+
+extension UIViewController {
+    public var oldestParent: UIViewController {
+        if let parent = self.parent {
+            return parent.oldestParent
+        } else {
+            return self
+        }
+    }
+}

@@ -15,10 +15,10 @@ final class LastViewController: UIViewController {
     }
 
     @IBAction private func returnButtonDidTap() {
-        let root = (UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController as? UINavigationController
-        root?.rootViewController?.returnHere(animated: true) {
-            let exVC = EXViewController.instantiateFromMainStoryboard()
-            root?.show(exVC, configurations: { $0.style = .defaultPresent })
-        }
+//        let root = (UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController as? UINavigationController
+//        root?.rootViewController?.returnHere(animated: true) {
+//            let exVC = EXViewController.instantiateFromMainStoryboard()
+//            root?.show(exVC, configurations: { $0.style = .defaultPresent })
+//        }
     }
 }
