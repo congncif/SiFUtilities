@@ -19,7 +19,7 @@ extension UIViewController {
         CATransaction.commit()
     }
 
-    func popToShowIfNeeded(animated: Bool) {
+    private func popToShowIfNeeded(animated: Bool) {
         if let nav = navigationController {
             nav.popToViewController(self, animated: animated)
         }

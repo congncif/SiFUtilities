@@ -194,7 +194,7 @@ extension UIViewController {
                      animated: Bool = true,
                      completion: (() -> Void)? = nil) {
         guard let base = baseviewController else {
-            if let navigation = self.navigationController {
+            if let navigation = navigationController {
                 viewController.show(on: navigation, embedIn: NavigationType, closeButton: closeButton, position: position, animated: animated, completion: completion)
             } else {
                 viewController.show(on: self, embedIn: NavigationType, closeButton: closeButton, position: position, animated: animated, completion: completion)
@@ -217,7 +217,7 @@ extension UIViewController {
     }
 
     public func backToPrevious(animated: Bool = true, completion: (() -> Void)? = nil) {
-        if let navigation = self.navigationController {
+        if let navigation = navigationController {
             if navigation.viewControllers.first != self {
                 navigation.popViewController(animated: animated)
                 if let completion = completion {
@@ -230,7 +230,7 @@ extension UIViewController {
                     assertionFailure("Previous page not found")
                 }
             }
-        } else if let _ = self.presentingViewController {
+        } else if let _ = presentingViewController {
             dismiss(animated: animated, completion: completion)
         } else {
             assertionFailure("Previous page not found")
@@ -238,11 +238,11 @@ extension UIViewController {
     }
 
     public func forceDismiss(animated: Bool = true, completion: (() -> Void)? = nil) {
-        if let presenting = self.presentingViewController {
+        if let presenting = presentingViewController {
             presenting.dismiss(animated: animated, completion: completion)
         } else if let navigation = navigationController, let presenting = navigation.presentingViewController {
             presenting.dismiss(animated: animated, completion: completion)
-        } else if let presented = self.presentedViewController {
+        } else if let presented = presentedViewController {
             presented.dismiss(animated: animated, completion: completion)
         } else {
             dismiss(animated: animated, completion: completion)
@@ -284,5 +284,14 @@ extension UIViewController {
 
     public var isPresentedInNavigation: Bool {
         return navigationController?.presentingViewController != nil
+    }
+}
+
+// MARK: - Segues + Show
+
+public final class ShowSegue: UIStoryboardSegue {
+    override public func perform() {
+        let animated = UIView.areAnimationsEnabled
+        source.show(destination, configurations: { $0.animated = animated })
     }
 }

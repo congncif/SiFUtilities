@@ -27,14 +27,35 @@ extension UIViewController {
     }
 
     public func popOverFullScreen(animated: Bool = true, completion: (() -> Void)? = nil) {
-        guard let rootViewController = navigationController?.viewControllers.first as? ResumeDismissViewController else {
+        let presentedNavigaiton = presentedViewController as? UINavigationController
+
+        guard let foundNavigation = presentedNavigaiton ?? navigationController ?? self as? UINavigationController, let rootViewController = foundNavigation.rootViewController as? ResumeDismissViewController else {
             assertionFailure("Cannot detect Over Full Screen")
             return
         }
+
         rootViewController.dismissHandler = completion
-        navigationController?.popToRootViewController(animated: animated)
+        foundNavigation.popToRootViewController(animated: animated)
     }
 }
+
+// MARK: - Segues
+
+public final class PushOverFullScreenSegue: UIStoryboardSegue {
+    override public func perform() {
+        let animated = UIView.areAnimationsEnabled
+        source.pushOverFullScreen(destination, animated: animated)
+    }
+}
+
+public final class UnwindPopOverFullScreenSegue: UIStoryboardSegue {
+    override public func perform() {
+        let animated = UIView.areAnimationsEnabled
+        destination.popOverFullScreen(animated: animated)
+    }
+}
+
+// MARK: - Internal ResumeDismissViewController
 
 final class ResumeDismissViewController: UIViewController {
     private var appearCount: Int = 0
