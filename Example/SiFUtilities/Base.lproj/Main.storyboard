@@ -197,7 +197,7 @@
                                 <state key="normal" title="Push over fullscreen"/>
                                 <connections>
                                     <action selector="pushButtonDidTap" destination="CY8-mX-YdX" eventType="touchUpInside" id="vDO-RV-6KV"/>
-                                    <segue destination="u7L-uq-CZd" kind="custom" customClass="PushOverFullScreenSegue" customModule="SiFUtilities" id="AXZ-gS-Qhd"/>
+                                    <segue destination="u7L-uq-CZd" kind="show" id="AXZ-gS-Qhd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -233,12 +233,13 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3ty-N6-Rsn" firstAttribute="centerY" secondItem="3S5-e0-9TB" secondAttribute="centerY" id="Ac4-2Y-NVe"/>
                             <constraint firstItem="3ty-N6-Rsn" firstAttribute="centerX" secondItem="3S5-e0-9TB" secondAttribute="centerX" id="y05-Ow-Zev"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="vrr-qp-lSe"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a2Z-L1-otI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -253,18 +254,18 @@
                         <viewControllerLayoutGuide type="bottom" id="RGt-uN-0qh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="HiQ-pX-gyR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcQ-Ku-mPb">
-                                <rect key="frame" x="183.66666666666666" y="343" width="47" height="30"/>
+                                <rect key="frame" x="183.66666666666666" y="353" width="47" height="30"/>
                                 <state key="normal" title="Push 2"/>
                                 <connections>
                                     <segue destination="YBW-D5-Xr2" kind="unwind" customClass="UnwindPopOverFullScreenSegue" customModule="SiFUtilities" unwindAction="unwindPop:" id="5h2-5z-pUO"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.99215686270000003" green="0.42352941179999998" blue="0.098039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="pcQ-Ku-mPb" firstAttribute="centerX" secondItem="HiQ-pX-gyR" secondAttribute="centerX" id="NUn-D8-Rll"/>
                             <constraint firstItem="pcQ-Ku-mPb" firstAttribute="centerY" secondItem="HiQ-pX-gyR" secondAttribute="centerY" id="sNX-Kf-jFw"/>
