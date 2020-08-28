@@ -154,7 +154,7 @@ extension UIViewController {
             if #available(iOS 13.0, *) {
                 destination.isModalInPresentation = configs.isModalInPresentation
             }
-            source.present(destination, animated: configuration.animated, completion: completion)
+            source.topPresentedViewController.present(destination, animated: configuration.animated, completion: completion)
         }
     }
 
@@ -168,54 +168,6 @@ extension UIViewController {
 }
 
 extension UIViewController {
-    @available(*, deprecated, message: "This method was replaced by method show(_:configuration:completion)")
-    public func show(on baseViewController: UIViewController,
-                     embedIn NavigationType: UINavigationController.Type = UINavigationController.self,
-                     closeButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop),
-                     position: CloseButtonPosition = .left,
-                     animated: Bool = true,
-                     completion: (() -> Void)? = nil) {
-        if let navigation = baseViewController as? UINavigationController {
-            navigation.pushViewController(self, animated: animated)
-            if let completion = completion {
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.25, execute: completion)
-            }
-        } else {
-            baseViewController.present(self, embedIn: NavigationType, closeButton: closeButton, position: position, animated: animated, completion: completion)
-        }
-    }
-
-    @available(*, deprecated, message: "This method was replaced by method show(_:configuration:completion)")
-    public func show(viewController: UIViewController,
-                     from baseviewController: UIViewController? = nil,
-                     embedIn NavigationType: UINavigationController.Type = UINavigationController.self,
-                     closeButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop),
-                     position: CloseButtonPosition = .left,
-                     animated: Bool = true,
-                     completion: (() -> Void)? = nil) {
-        guard let base = baseviewController else {
-            if let navigation = navigationController {
-                viewController.show(on: navigation, embedIn: NavigationType, closeButton: closeButton, position: position, animated: animated, completion: completion)
-            } else {
-                viewController.show(on: self, embedIn: NavigationType, closeButton: closeButton, position: position, animated: animated, completion: completion)
-            }
-            return
-        }
-        viewController.show(on: base, embedIn: NavigationType, closeButton: closeButton, position: position, animated: animated, completion: completion)
-    }
-
-    @available(*, deprecated, message: "This method was replaced by method show(_:configuration:completion)")
-    public func present(_ vc: UIViewController, embedIn navigationType: UINavigationController.Type = UINavigationController.self, closeButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop), position: CloseButtonPosition = .left, animated: Bool = true, completion: (() -> Void)? = nil) {
-        if let nav = vc as? UINavigationController {
-            nav.topViewController?.showCloseButton(closeButton, at: position)
-            present(nav, animated: animated, completion: completion)
-        } else {
-            vc.showCloseButton(at: position)
-            let nav = navigationType.init(rootViewController: vc)
-            present(nav, animated: animated, completion: completion)
-        }
-    }
-
     public func backToPrevious(animated: Bool = true, completion: (() -> Void)? = nil) {
         if let navigation = navigationController {
             if navigation.viewControllers.first != self {
@@ -293,5 +245,57 @@ public final class ShowSegue: UIStoryboardSegue {
     override public func perform() {
         let animated = UIView.areAnimationsEnabled
         source.show(destination, configurations: { $0.animated = animated })
+    }
+}
+
+// MARK: - Deprecated
+
+extension UIViewController {
+    @available(*, deprecated, message: "This method was replaced by method show(_:configuration:completion)")
+    public func show(on baseViewController: UIViewController,
+                     embedIn NavigationType: UINavigationController.Type = UINavigationController.self,
+                     closeButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop),
+                     position: CloseButtonPosition = .left,
+                     animated: Bool = true,
+                     completion: (() -> Void)? = nil) {
+        if let navigation = baseViewController as? UINavigationController {
+            navigation.pushViewController(self, animated: animated)
+            if let completion = completion {
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.25, execute: completion)
+            }
+        } else {
+            baseViewController.present(self, embedIn: NavigationType, closeButton: closeButton, position: position, animated: animated, completion: completion)
+        }
+    }
+
+    @available(*, deprecated, message: "This method was replaced by method show(_:configuration:completion)")
+    public func show(viewController: UIViewController,
+                     from baseviewController: UIViewController? = nil,
+                     embedIn NavigationType: UINavigationController.Type = UINavigationController.self,
+                     closeButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop),
+                     position: CloseButtonPosition = .left,
+                     animated: Bool = true,
+                     completion: (() -> Void)? = nil) {
+        guard let base = baseviewController else {
+            if let navigation = navigationController {
+                viewController.show(on: navigation, embedIn: NavigationType, closeButton: closeButton, position: position, animated: animated, completion: completion)
+            } else {
+                viewController.show(on: self, embedIn: NavigationType, closeButton: closeButton, position: position, animated: animated, completion: completion)
+            }
+            return
+        }
+        viewController.show(on: base, embedIn: NavigationType, closeButton: closeButton, position: position, animated: animated, completion: completion)
+    }
+
+    @available(*, deprecated, message: "This method was replaced by method show(_:configuration:completion)")
+    public func present(_ vc: UIViewController, embedIn navigationType: UINavigationController.Type = UINavigationController.self, closeButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop), position: CloseButtonPosition = .left, animated: Bool = true, completion: (() -> Void)? = nil) {
+        if let nav = vc as? UINavigationController {
+            nav.topViewController?.showCloseButton(closeButton, at: position)
+            present(nav, animated: animated, completion: completion)
+        } else {
+            vc.showCloseButton(at: position)
+            let nav = navigationType.init(rootViewController: vc)
+            present(nav, animated: animated, completion: completion)
+        }
     }
 }
