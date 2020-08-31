@@ -27,6 +27,7 @@
 		2739A4BE24EBC56000F0BB7F /* UIViewController+PushOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2739A4BD24EBC56000F0BB7F /* UIViewController+PushOver.swift */; };
 		2739A4C024EBC75B00F0BB7F /* UIViewController+Return.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2739A4BF24EBC75B00F0BB7F /* UIViewController+Return.swift */; };
 		276B8B8924F0D31C008687DB /* UIWindow+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276B8B8824F0D0F5008687DB /* UIWindow+Animation.swift */; };
+		27B038BE24FC95F300A8BD5B /* FittingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B038BD24FC95F300A8BD5B /* FittingView.swift */; };
 		27D75832232E4F99008FEA5E /* StoryboardSegue+Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D75831232E4F99008FEA5E /* StoryboardSegue+Sender.swift */; };
 		2B3617541F7EB81BA93E8A7B77DC3558 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F2A309A5DAD28BD7A2EC8FCB0B0E9BC /* UIKit.framework */; };
 		30303E690A7F2190171D61C9DF9ADD61 /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822E53073F4FE6633506C528A0931974 /* UIView+Animation.swift */; };
@@ -148,6 +149,7 @@
 		2739A4BD24EBC56000F0BB7F /* UIViewController+PushOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+PushOver.swift"; path = "Show/UIViewController+PushOver.swift"; sourceTree = "<group>"; };
 		2739A4BF24EBC75B00F0BB7F /* UIViewController+Return.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+Return.swift"; path = "Show/UIViewController+Return.swift"; sourceTree = "<group>"; };
 		276B8B8824F0D0F5008687DB /* UIWindow+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIWindow+Animation.swift"; path = "Show/UIWindow+Animation.swift"; sourceTree = "<group>"; };
+		27B038BD24FC95F300A8BD5B /* FittingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FittingView.swift; path = Helpers/FittingView.swift; sourceTree = "<group>"; };
 		27D75831232E4F99008FEA5E /* StoryboardSegue+Sender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "StoryboardSegue+Sender.swift"; path = "Runtime/StoryboardSegue+Sender.swift"; sourceTree = "<group>"; };
 		2B5F71008E7FEE863B184235D1407DB7 /* SiFUtilities.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SiFUtilities.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		322ECE15848ABC5085A87C92FE2D2465 /* Pods-SiFUtilities_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SiFUtilities_Example.modulemap"; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 		3876A9659903C3D662389D3BDD515AA8 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				27B038BD24FC95F300A8BD5B /* FittingView.swift */,
 				8BF47BD20131B753244AA0416FEE7BA9 /* CommonError.swift */,
 				F7AA0B93A72943247F7132E95634507D /* Debouncer.swift */,
 				C6A10A74C9338D6C4A5FBA4885B64B56 /* ValueKeeper.swift */,
@@ -749,6 +752,7 @@
 				AFE0B63D0F5A79FCDF012EA1AA7803CB /* Localize.swift in Sources */,
 				5A6A217902D51D35FF3D0999B66C5BDF /* NSManagedObject+SiF.swift in Sources */,
 				12E3724E243F5715D317733CEA346ABF /* Number++.swift in Sources */,
+				27B038BE24FC95F300A8BD5B /* FittingView.swift in Sources */,
 				B6F512185ABAC42D205AA2DF5D7A4591 /* Object++.swift in Sources */,
 				C4F5858BF5984ED515E76A5673A693FF /* PHAsset++.swift in Sources */,
 				2739A4BE24EBC56000F0BB7F /* UIViewController+PushOver.swift in Sources */,
