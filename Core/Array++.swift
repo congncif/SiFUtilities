@@ -72,4 +72,9 @@ extension Sequence where Iterator.Element: Hashable {
         var seen: Set<Iterator.Element> = []
         return filter { seen.insert($0).inserted }
     }
+
+    public var isUnique: Bool {
+        var seen = Set<Element>()
+        return allSatisfy { seen.insert($0).inserted }
+    }
 }
