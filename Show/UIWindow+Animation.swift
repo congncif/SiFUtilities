@@ -10,6 +10,13 @@ import UIKit
 
 extension UIWindow {
     public func setRootViewController(_ rootViewController: UIViewController, animated: Bool = true, completion: ((Bool) -> Void)? = nil) {
+        if let presented = self.rootViewController?.presentedViewController {
+            presented.modalTransitionStyle = .crossDissolve
+            self.rootViewController?.dismiss(animated: animated, completion: {
+                self.setRootViewController(rootViewController, animated: animated, completion: completion)
+            })
+            return
+        }
         if animated {
             transitRootViewController(rootViewController, duration: 0.3, options: .transitionCrossDissolve)
         } else {

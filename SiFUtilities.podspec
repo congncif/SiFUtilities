@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SiFUtilities'
-  s.version          = '4.9.5'
+  s.version          = '4.9.6'
   s.summary          = 'A set of utilities for your app.'
   s.swift_versions = ['4.0', '4.2', '5.0', '5.1', "5.2", "5.3"]
 
