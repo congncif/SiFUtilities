@@ -106,7 +106,7 @@ extension UIViewController {
             presentationStyle = style
         } else {
             if targetIsNavigation {
-                presentationStyle = .present(.default)
+                presentationStyle = .present(.defaultFullScreen)
             } else if sourceIsNavigation {
                 presentationStyle = .navigate(.push)
             } else if navigationController != nil {
