@@ -33,12 +33,20 @@ public struct PresentConfiguration {
         }
     }
 
+    public static var embeddedInNavigationFullScreen: PresentConfiguration {
+        PresentConfiguration(navigationType: UINavigationController.self, modalPresentationStyle: .fullScreen, modalTransitionStyle: .coverVertical, isModalInPresentation: true)
+    }
+
     public static var `default`: PresentConfiguration {
         if #available(iOS 13.0, *) {
             return PresentConfiguration(navigationType: nil, modalPresentationStyle: .automatic, modalTransitionStyle: .coverVertical, isModalInPresentation: true)
         } else {
             return PresentConfiguration(navigationType: nil, modalPresentationStyle: .fullScreen, modalTransitionStyle: .coverVertical, isModalInPresentation: true)
         }
+    }
+
+    public static var defaultFullScreen: PresentConfiguration {
+        return PresentConfiguration(navigationType: nil, modalPresentationStyle: .fullScreen, modalTransitionStyle: .coverVertical, isModalInPresentation: true)
     }
 }
 
