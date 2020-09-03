@@ -44,7 +44,9 @@ extension UIViewController {
     }
 
     public var topPresentedViewController: UIViewController {
-        allPresentedViewControllers.last?.topMostViewController ?? self
+        let topBasic = allPresentedViewControllers.last?.topMostViewController ?? self
+        if topBasic.presentedViewController == nil { return topBasic }
+        return topBasic.topPresentedViewController
     }
 }
 
