@@ -10,19 +10,19 @@ import UIKit
 
 extension UITabBarController {
     @objc override var topMostViewController: UIViewController {
-        return selectedViewController?.topMostViewController ?? self
+        return presentedViewController?.topMostViewController ?? selectedViewController?.topMostViewController ?? self
     }
 }
 
 extension UINavigationController {
     @objc override var topMostViewController: UIViewController {
-        return topViewController?.topMostViewController ?? self
+        return presentedViewController?.topMostViewController ?? topViewController?.topMostViewController ?? self
     }
 }
 
 extension UIViewController {
     @objc var topMostViewController: UIViewController {
-        return self
+        return presentedViewController?.topMostViewController ?? self
     }
 }
 
@@ -44,9 +44,7 @@ extension UIViewController {
     }
 
     public var topPresentedViewController: UIViewController {
-        let topBasic = allPresentedViewControllers.last?.topMostViewController ?? self
-        if topBasic.presentedViewController == nil { return topBasic }
-        return topBasic.topPresentedViewController
+        topMostViewController
     }
 }
 
@@ -57,11 +55,23 @@ extension UINavigationController {
 }
 
 extension UIViewController {
-    public var oldestParent: UIViewController {
+    public var oldestLineageViewController: UIViewController {
         if let parent = self.parent {
-            return parent.oldestParent
+            return parent.oldestLineageViewController
         } else {
             return self
         }
+    }
+
+    public var allParents: [UIViewController] {
+        if let parent = self.parent {
+            return [parent] + parent.allParents
+        } else {
+            return []
+        }
+    }
+
+    public var olderLineageViewControllers: [UIViewController] {
+        allParents + [self]
     }
 }
