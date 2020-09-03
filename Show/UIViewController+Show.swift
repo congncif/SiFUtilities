@@ -112,7 +112,7 @@ extension UIViewController {
             } else if navigationController != nil {
                 presentationStyle = .navigate(.push)
             } else {
-                presentationStyle = .present(.embeddedInNavigation)
+                presentationStyle = .present(.embeddedInNavigationFullScreen)
             }
         }
 
