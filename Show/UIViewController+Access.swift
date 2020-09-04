@@ -44,7 +44,7 @@ extension UIViewController {
     }
 
     public var topPresentedViewController: UIViewController {
-        topMostViewController
+        tabBarController?.topMostViewController ?? navigationController?.topMostViewController ?? topMostViewController
     }
 }
 
