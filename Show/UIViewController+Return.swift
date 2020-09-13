@@ -20,8 +20,16 @@ extension UIViewController {
     }
 
     private func popToShowIfNeeded(animated: Bool) {
-        if let nav = navigationController {
-            nav.popToViewController(self, animated: animated)
+        if let nav = navigationController, let foundTarget = findParentViewController(in: nav) {
+            nav.popToViewController(foundTarget, animated: animated)
+        }
+    }
+
+    private func findParentViewController(in navigationController: UINavigationController) -> UIViewController? {
+        if navigationController.viewControllers.contains(self) {
+            return self
+        } else {
+            return allParents.first { navigationController.viewControllers.contains($0) }
         }
     }
 }
