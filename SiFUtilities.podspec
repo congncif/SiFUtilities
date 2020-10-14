@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SiFUtilities'
-  s.version          = '4.9.12'
+  s.version          = '4.9.13'
   s.summary          = 'A set of utilities for your app.'
   s.swift_versions = ['4.0', '4.2', '5.0', '5.1', "5.2", "5.3"]
 
@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/congncif/SiFUtilities.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/congncif'
 
-  s.ios.deployment_target = '8.2'
+  s.ios.deployment_target = '9.0'
   s.frameworks = 'UIKit', 'Foundation', 'AVFoundation', 'CoreData'
 
   s.default_subspec = 'Default'
