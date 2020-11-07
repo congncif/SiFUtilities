@@ -1,9 +1,9 @@
 PODS:
   - Localize-Swift (2.0.0)
-  - SiFUtilities (4.9.6):
-    - SiFUtilities/Default (= 4.9.6)
-  - SiFUtilities/Core (4.9.6)
-  - SiFUtilities/Default (4.9.6):
+  - SiFUtilities (4.10.0):
+    - SiFUtilities/Default (= 4.10.0)
+  - SiFUtilities/Core (4.10.0)
+  - SiFUtilities/Default (4.10.0):
     - SiFUtilities/Core
     - SiFUtilities/Endpoint
     - SiFUtilities/Helpers
@@ -15,23 +15,22 @@ PODS:
     - SiFUtilities/Runtime
     - SiFUtilities/Show
     - SiFUtilities/WeakObject
-  - SiFUtilities/Endpoint (4.9.6)
-  - SiFUtilities/Helpers (4.9.6)
-  - SiFUtilities/IBDesignable (4.9.6):
+  - SiFUtilities/Endpoint (4.10.0)
+  - SiFUtilities/Helpers (4.10.0)
+  - SiFUtilities/IBDesignable (4.10.0):
     - SiFUtilities/Core
-  - SiFUtilities/KeyValue (4.9.6)
-  - SiFUtilities/Loading (4.9.6)
-  - SiFUtilities/Localize (4.9.6):
+  - SiFUtilities/KeyValue (4.10.0)
+  - SiFUtilities/Loading (4.10.0)
+  - SiFUtilities/Localize (4.10.0):
     - Localize-Swift
     - SiFUtilities/Core
     - SiFUtilities/Runtime
-  - SiFUtilities/Nib (4.9.6):
+  - SiFUtilities/Nib (4.10.0):
     - SiFUtilities/Core
-  - SiFUtilities/Runtime (4.9.6)
-  - SiFUtilities/Show (4.9.6):
+  - SiFUtilities/Runtime (4.10.0)
+  - SiFUtilities/Show (4.10.0):
     - SiFUtilities/Core
-    - SiFUtilities/Localize
-  - SiFUtilities/WeakObject (4.9.6)
+  - SiFUtilities/WeakObject (4.10.0)
 
 DEPENDENCIES:
   - SiFUtilities (from `../`)
@@ -46,8 +45,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Localize-Swift: c798ec9286494866f7068f85f7c71283ac5bdab4
-  SiFUtilities: d7fa56dfe5b70c8097effba35b31ee8c0ff011a2
+  SiFUtilities: 34bf71c7f74942d70ce20498dd2d9f2308fd0dff
 
 PODFILE CHECKSUM: 478561156f8b79ebe1f0d553cf63ff219f44930e
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0

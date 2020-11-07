@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SiFUtilities'
-  s.version          = '4.9.13'
+  s.version          = '4.10.0'
   s.summary          = 'A set of utilities for your app.'
   s.swift_versions = ['4.0', '4.2', '5.0', '5.1', "5.2", "5.3"]
 
@@ -88,9 +88,8 @@ Pod::Spec.new do |s|
 
   s.subspec 'Show' do |co|
     co.source_files = 'Show/**/*'
-
+    
     co.dependency 'SiFUtilities/Core'
-    co.dependency 'SiFUtilities/Localize'
   end
 
   s.subspec 'WeakObject' do |co|

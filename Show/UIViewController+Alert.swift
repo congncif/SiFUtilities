@@ -14,9 +14,9 @@ extension UIViewController {
                         message: String?,
                         style: UIAlertController.Style = .alert,
                         dismissOthers: Bool = false,
-                        cancelTitle: String = "Cancel".localized,
+                        cancelTitle: String = "Cancel",
                         cancelHandler: (() -> Void)? = nil,
-                        confirmedTitle: String = "OK".localized,
+                        confirmedTitle: String = "OK",
                         confirmedHandler: @escaping () -> Void) {
         if let alert = self as? UIAlertController, let presenting = presentingViewController, dismissOthers {
             alert.dismiss(animated: false) {
@@ -53,7 +53,7 @@ extension UIViewController {
                        message: String?,
                        style: UIAlertController.Style = .alert,
                        dismissOthers: Bool = false,
-                       buttonTitle: String = "OK".localized,
+                       buttonTitle: String = "OK",
                        handler: (() -> Void)? = nil) {
         if let alert = self as? UIAlertController, let presenting = presentingViewController, dismissOthers {
             alert.dismiss(animated: false) {
@@ -89,9 +89,9 @@ extension UIAlertController {
                             message: String?,
                             style: UIAlertController.Style = .alert,
                             dismissOthers: Bool = false,
-                            cancelTitle: String = "Cancel".localized,
+                            cancelTitle: String = "Cancel",
                             cancelHandler: (() -> Void)? = nil,
-                            confirmedTitle: String = "OK".localized,
+                            confirmedTitle: String = "OK",
                             confirmedHandler: @escaping () -> Void) {
         let viewController = UIApplication.topViewController()
         viewController?.confirm(title: title, message: message, style: style, dismissOthers: dismissOthers, cancelTitle: cancelTitle, cancelHandler: cancelHandler, confirmedTitle: confirmedTitle, confirmedHandler: confirmedHandler)
@@ -101,7 +101,7 @@ extension UIAlertController {
                            message: String?,
                            style: UIAlertController.Style = .alert,
                            dismissOthers: Bool = false,
-                           buttonTitle: String = "OK".localized,
+                           buttonTitle: String = "OK",
                            handler: (() -> Void)? = nil) {
         let viewController = UIApplication.topViewController()
         viewController?.notify(title: title, message: message, style: style, dismissOthers: dismissOthers, buttonTitle: buttonTitle, handler: handler)

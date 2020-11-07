@@ -1,6 +1,6 @@
 {
   "name": "SiFUtilities",
-  "version": "4.9.6",
+  "version": "4.10.0",
   "summary": "A set of utilities for your app.",
   "swift_versions": [
     "4.0",
@@ -21,11 +21,11 @@
   },
   "source": {
     "git": "https://github.com/congncif/SiFUtilities.git",
-    "tag": "4.9.6"
+    "tag": "4.10.0"
   },
   "social_media_url": "https://twitter.com/congncif",
   "platforms": {
-    "ios": "8.2"
+    "ios": "9.0"
   },
   "frameworks": [
     "UIKit",
@@ -102,9 +102,6 @@
       "source_files": "Show/**/*",
       "dependencies": {
         "SiFUtilities/Core": [
-
-        ],
-        "SiFUtilities/Localize": [
 
         ]
       }
