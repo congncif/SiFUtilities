@@ -7,7 +7,8 @@
 
 import Foundation
 
-@IBDesignable extension UIImageView: AssociatedObject {
+// @IBDesignable
+extension UIImageView: AssociatedObject {
     @IBInspectable public var imageNameLocalizedKey: String? {
         get {
             return getStringValue(by: &RunTimeKey.localizedImageNameKey)
@@ -18,14 +19,14 @@ import Foundation
         }
     }
 
-    @objc open override func updateLocalize(attributes: [LocalizedKey: String]) {
+    @objc override open func updateLocalize(attributes: [LocalizedKey: String]) {
         if let imageName = attributes[.localizedImageNameKey]?.localized {
             let assetImage = UIImage(named: imageName)
             image = assetImage
         }
     }
 
-    @objc open override func updateLanguage() {
+    @objc override open func updateLanguage() {
         if let key = imageNameLocalizedKey {
             updateLocalize(attributes: [.localizedImageNameKey: key])
         }

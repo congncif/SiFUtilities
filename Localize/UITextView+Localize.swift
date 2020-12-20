@@ -8,7 +8,8 @@
 import Foundation
 import UIKit
 
-@IBDesignable extension UITextView: AssociatedObject {
+// @IBDesignable
+extension UITextView: AssociatedObject {
     @IBInspectable public var textLocalizedKey: String? {
         get {
             return getStringValue(by: &RunTimeKey.localizedTextKey)
@@ -19,13 +20,13 @@ import UIKit
         }
     }
 
-    @objc open override func updateLocalize(attributes: [LocalizedKey: String]) {
+    @objc override open func updateLocalize(attributes: [LocalizedKey: String]) {
         if let text = attributes[.localizedTextKey]?.localized {
             self.text = text
         }
     }
 
-    @objc open override func updateLanguage() {
+    @objc override open func updateLanguage() {
         if let key = textLocalizedKey {
             updateLocalize(attributes: [.localizedTextKey: key])
         }

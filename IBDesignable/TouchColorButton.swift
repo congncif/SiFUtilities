@@ -8,10 +8,11 @@
 
 import UIKit
 
-@IBDesignable open class TouchColorButton: UIButton {
-    @IBInspectable open var color: UIColor = UIColor.white {
+@IBDesignable
+open class TouchColorButton: UIButton {
+    @IBInspectable open var color = UIColor.white {
         didSet {
-            setup()
+            self.setup()
         }
     }
     
@@ -27,18 +28,18 @@ import UIKit
         }
     }
     
-    open override func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
         self.setup()
     }
     
-    open override func prepareForInterfaceBuilder() {
+    override open func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         self.setup()
     }
     
     open func setup() {
-        let image = UIImage.image(color: color, size: bounds.size)
+        let image = UIImage.image(color: self.color, size: bounds.size)
         setBackgroundImage(image, for: .normal)
         if let tColor = touchedColor {
             let touchedImage = UIImage.image(color: tColor, size: bounds.size)
@@ -54,7 +55,7 @@ import UIKit
         }
     }
     
-    open override func updateConstraints() {
+    override open func updateConstraints() {
         super.updateConstraints()
         
         if self.circleBounds {

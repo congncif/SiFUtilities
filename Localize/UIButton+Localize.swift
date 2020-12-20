@@ -8,7 +8,8 @@
 import Foundation
 import UIKit
 
-@IBDesignable extension UIButton: AssociatedObject {
+// @IBDesignable
+extension UIButton: AssociatedObject {
     @IBInspectable public var normalTitleLocalizedKey: String? {
         get {
             return getStringValue(by: &RunTimeKey.localizedNormalTitleKey)
@@ -29,7 +30,7 @@ import UIKit
         }
     }
     
-    @objc open override func updateLocalize(attributes: [LocalizedKey: String]) {
+    @objc override open func updateLocalize(attributes: [LocalizedKey: String]) {
         if let normalTitle = attributes[.localizedNormalTitleKey]?.localized {
             setTitle(normalTitle, for: .normal)
         }
@@ -39,7 +40,7 @@ import UIKit
         }
     }
     
-    @objc open override func updateLanguage() {
+    @objc override open func updateLanguage() {
         if let key = normalTitleLocalizedKey {
             updateLocalize(attributes: [.localizedNormalTitleKey: key])
         }

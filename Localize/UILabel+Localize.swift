@@ -8,7 +8,8 @@
 import Foundation
 import UIKit
 
-@IBDesignable extension UILabel: AssociatedObject {
+// @IBDesignable
+extension UILabel: AssociatedObject {
     @IBInspectable open var textLocalizedKey: String? {
         get {
             return getStringValue(by: &RunTimeKey.localizedTextKey)
@@ -19,11 +20,11 @@ import UIKit
         }
     }
 
-    @objc open override func updateLocalize(attributes: [LocalizedKey: String]) {
+    @objc override open func updateLocalize(attributes: [LocalizedKey: String]) {
         text = attributes[.localizedTextKey]?.localized
     }
 
-    @objc open override func updateLanguage() {
+    @objc override open func updateLanguage() {
         if let key = textLocalizedKey {
             updateLocalize(attributes: [.localizedTextKey: key])
         }

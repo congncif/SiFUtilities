@@ -8,7 +8,8 @@
 import Foundation
 import UIKit
 
-@IBDesignable extension UITextField: AssociatedObject {
+// @IBDesignable
+extension UITextField: AssociatedObject {
     @IBInspectable public var placeholderLocalizedKey: String? {
         get {
             return getStringValue(by: &RunTimeKey.localizedPlaceholderTextKey)
@@ -33,7 +34,7 @@ import UIKit
         }
     }
     
-    @objc open override func updateLocalize(attributes: [LocalizedKey: String]) {
+    @objc override open func updateLocalize(attributes: [LocalizedKey: String]) {
         if let text = attributes[.localizedTextKey]?.localized {
             self.text = text
         }
@@ -43,7 +44,7 @@ import UIKit
         }
     }
     
-    @objc open override func updateLanguage() {
+    @objc override open func updateLanguage() {
         if let key = textLocalizedKey {
             updateLocalize(attributes: [.localizedTextKey: key])
         }

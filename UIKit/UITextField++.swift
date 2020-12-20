@@ -7,7 +7,7 @@
 
 import Foundation
 
-@IBDesignable
+// @IBDesignable
 extension UITextField {
     @IBInspectable open var leftPadding: CGFloat {
         get {
@@ -19,7 +19,7 @@ extension UITextField {
             leftViewMode = .always
         }
     }
-    
+
     @IBInspectable open var rightPadding: CGFloat {
         get {
             return rightView?.frame.size.width ?? 0
@@ -39,7 +39,7 @@ extension UITextField {
         text = ""
         attributedText = NSAttributedString(string: "")
     }
-    
+
     public func setPlaceHolderTextColor(_ color: UIColor) {
         guard let holder = placeholder, !holder.isEmpty else {
             return
@@ -52,7 +52,7 @@ extension UITextField {
         leftView = paddingView
         leftViewMode = .always
     }
-    
+
     public func addPaddingLeftIcon(_ image: UIImage, padding: CGFloat) {
         let imageView = UIImageView(image: image)
         imageView.contentMode = .center

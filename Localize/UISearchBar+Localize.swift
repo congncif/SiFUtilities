@@ -8,7 +8,8 @@
 import Foundation
 import UIKit
 
-@IBDesignable extension UISearchBar: AssociatedObject {
+// @IBDesignable
+extension UISearchBar: AssociatedObject {
     @IBInspectable public var placeholderLocalizedKey: String? {
         get {
             return getStringValue(by: &RunTimeKey.localizedPlaceholderTextKey)
@@ -19,13 +20,13 @@ import UIKit
         }
     }
 
-    @objc open override func updateLocalize(attributes: [LocalizedKey: String]) {
+    @objc override open func updateLocalize(attributes: [LocalizedKey: String]) {
         if let text = attributes[.localizedPlaceholderTextKey]?.localized {
             placeholder = text
         }
     }
 
-    @objc open override func updateLanguage() {
+    @objc override open func updateLanguage() {
         if let key = placeholderLocalizedKey {
             updateLocalize(attributes: [.localizedPlaceholderTextKey: key])
         }

@@ -8,7 +8,8 @@
 import Foundation
 import UIKit
 
-@IBDesignable extension UITabBarItem: AssociatedObject {
+// @IBDesignable
+extension UITabBarItem: AssociatedObject {
     @IBInspectable public var titleLocalizedKey: String? {
         get {
             return getStringValue(by: &RunTimeKey.localizedTitleKey)
@@ -19,13 +20,13 @@ import UIKit
         }
     }
 
-    @objc open override func updateLocalize(attributes: [LocalizedKey: String]) {
+    @objc override open func updateLocalize(attributes: [LocalizedKey: String]) {
         if let text = attributes[.localizedTitleKey]?.localized {
             title = text
         }
     }
 
-    @objc open override func updateLanguage() {
+    @objc override open func updateLanguage() {
         if let key = titleLocalizedKey {
             updateLocalize(attributes: [.localizedTitleKey: key])
         }
