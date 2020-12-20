@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SiFUtilities'
-  s.version          = '4.11.0'
+  s.version          = '4.11.1'
   s.summary          = 'A set of utilities for your app.'
   s.swift_versions = ['4.0', '4.2', '5.0', '5.1', "5.2", "5.3"]
 
@@ -60,7 +60,7 @@ Pod::Spec.new do |s|
   s.subspec 'IBDesignable' do |co|
     co.source_files = 'IBDesignable/**/*'
 
-    co.dependency 'SiFUtilities/Foundation'
+    co.dependency 'SiFUtilities/UIKit'
   end
 
   s.subspec 'KeyValue' do |co|
@@ -76,6 +76,7 @@ Pod::Spec.new do |s|
     co.preserve_paths = 'Localize/localizable2appstrings'
     
     co.dependency 'SiFUtilities/Foundation'
+    co.dependency 'SiFUtilities/UIKit'
     co.dependency 'SiFUtilities/Runtime'
     co.dependency 'Localize-Swift'
   end

@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 
-@IBDesignable extension UIView {
+// @IBDesignable
+extension UIView {
     @IBInspectable open var borderWidth: CGFloat {
         set {
             layer.borderWidth = newValue

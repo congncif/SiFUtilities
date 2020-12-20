@@ -71,7 +71,7 @@ extension PHAsset {
                             fileName = path.lastPathComponent
                         }
                     } else if info.keys.contains("PHImageFileDataKey") {
-                        fileName = String.random(length: 10)
+                        fileName = UUID().uuidString
                     }
                 }
                 semaphore.signal()
