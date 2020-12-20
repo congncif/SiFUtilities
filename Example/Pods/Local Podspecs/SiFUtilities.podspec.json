@@ -1,6 +1,6 @@
 {
   "name": "SiFUtilities",
-  "version": "4.10.0",
+  "version": "4.11.0",
   "summary": "A set of utilities for your app.",
   "swift_versions": [
     "4.0",
@@ -21,23 +21,25 @@
   },
   "source": {
     "git": "https://github.com/congncif/SiFUtilities.git",
-    "tag": "4.10.0"
+    "tag": "4.11.0"
   },
   "social_media_url": "https://twitter.com/congncif",
   "platforms": {
     "ios": "9.0"
   },
-  "frameworks": [
-    "UIKit",
-    "Foundation",
-    "AVFoundation",
-    "CoreData"
-  ],
   "default_subspecs": "Default",
   "subspecs": [
     {
-      "name": "Core",
-      "source_files": "Core/**/*"
+      "name": "Foundation",
+      "source_files": "Foundation/**/*"
+    },
+    {
+      "name": "UIKit",
+      "source_files": "UIKit/**/*.swift"
+    },
+    {
+      "name": "Media",
+      "source_files": "Media/**/*.swift"
     },
     {
       "name": "Endpoint",
@@ -51,7 +53,7 @@
       "name": "IBDesignable",
       "source_files": "IBDesignable/**/*",
       "dependencies": {
-        "SiFUtilities/Core": [
+        "SiFUtilities/Foundation": [
 
         ]
       }
@@ -69,7 +71,7 @@
       "source_files": "Localize/**/*.swift",
       "preserve_paths": "Localize/localizable2appstrings",
       "dependencies": {
-        "SiFUtilities/Core": [
+        "SiFUtilities/Foundation": [
 
         ],
         "SiFUtilities/Runtime": [
@@ -88,7 +90,7 @@
       "name": "Nib",
       "source_files": "Nib/**/*",
       "dependencies": {
-        "SiFUtilities/Core": [
+        "SiFUtilities/Foundation": [
 
         ]
       }
@@ -101,7 +103,7 @@
       "name": "Show",
       "source_files": "Show/**/*",
       "dependencies": {
-        "SiFUtilities/Core": [
+        "SiFUtilities/UIKit": [
 
         ]
       }
@@ -113,7 +115,13 @@
     {
       "name": "Default",
       "dependencies": {
-        "SiFUtilities/Core": [
+        "SiFUtilities/Foundation": [
+
+        ],
+        "SiFUtilities/UIKit": [
+
+        ],
+        "SiFUtilities/Media": [
 
         ],
         "SiFUtilities/Endpoint": [

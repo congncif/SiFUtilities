@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SiFUtilities'
-  s.version          = '4.10.0'
+  s.version          = '4.11.0'
   s.summary          = 'A set of utilities for your app.'
   s.swift_versions = ['4.0', '4.2', '5.0', '5.1', "5.2", "5.3"]
 
@@ -33,12 +33,20 @@ Pod::Spec.new do |s|
   s.social_media_url = 'https://twitter.com/congncif'
 
   s.ios.deployment_target = '9.0'
-  s.frameworks = 'UIKit', 'Foundation', 'AVFoundation', 'CoreData'
+#  s.frameworks = 'UIKit', 'Foundation', 'AVFoundation', 'CoreData'
 
   s.default_subspec = 'Default'
 
-  s.subspec 'Core' do |co|
-      co.source_files = 'Core/**/*'
+  s.subspec 'Foundation' do |co|
+      co.source_files = 'Foundation/**/*'
+  end
+  
+  s.subspec 'UIKit' do |co|
+      co.source_files = 'UIKit/**/*.swift'
+  end
+  
+  s.subspec 'Media' do |co|
+      co.source_files = 'Media/**/*.swift'
   end
 
   s.subspec 'Endpoint' do |co|
@@ -52,7 +60,7 @@ Pod::Spec.new do |s|
   s.subspec 'IBDesignable' do |co|
     co.source_files = 'IBDesignable/**/*'
 
-    co.dependency 'SiFUtilities/Core'
+    co.dependency 'SiFUtilities/Foundation'
   end
 
   s.subspec 'KeyValue' do |co|
@@ -67,7 +75,7 @@ Pod::Spec.new do |s|
     co.source_files = 'Localize/**/*.swift'
     co.preserve_paths = 'Localize/localizable2appstrings'
     
-    co.dependency 'SiFUtilities/Core'
+    co.dependency 'SiFUtilities/Foundation'
     co.dependency 'SiFUtilities/Runtime'
     co.dependency 'Localize-Swift'
   end
@@ -79,7 +87,7 @@ Pod::Spec.new do |s|
   s.subspec 'Nib' do |co|
     co.source_files = 'Nib/**/*'
 
-    co.dependency 'SiFUtilities/Core'
+    co.dependency 'SiFUtilities/Foundation'
   end
 
   s.subspec 'Runtime' do |co|
@@ -89,7 +97,7 @@ Pod::Spec.new do |s|
   s.subspec 'Show' do |co|
     co.source_files = 'Show/**/*'
     
-    co.dependency 'SiFUtilities/Core'
+    co.dependency 'SiFUtilities/UIKit'
   end
 
   s.subspec 'WeakObject' do |co|
@@ -97,7 +105,9 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Default' do |co|
-    co.dependency 'SiFUtilities/Core'
+    co.dependency 'SiFUtilities/Foundation'
+    co.dependency 'SiFUtilities/UIKit'
+    co.dependency 'SiFUtilities/Media'
     co.dependency 'SiFUtilities/Endpoint'
     co.dependency 'SiFUtilities/Helpers'
     co.dependency 'SiFUtilities/IBDesignable'
@@ -109,12 +119,4 @@ Pod::Spec.new do |s|
     co.dependency 'SiFUtilities/Show'
     co.dependency 'SiFUtilities/WeakObject'
   end
-
-  # s.source_files = 'SiFUtilities/Classes/*.swift'
-  # s.resource_bundles = {
-  #   'SiFUtilities' => ['SiFUtilities/Assets/*.png']
-  # }
-  #s.vendored_frameworks = 'SiFUtilities/SiFUtilities.framework'
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
