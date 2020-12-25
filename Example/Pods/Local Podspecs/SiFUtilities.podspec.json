@@ -1,6 +1,6 @@
 {
   "name": "SiFUtilities",
-  "version": "4.11.2",
+  "version": "4.11.3",
   "summary": "A set of utilities for your app.",
   "swift_versions": [
     "4.0",
@@ -21,7 +21,7 @@
   },
   "source": {
     "git": "https://github.com/congncif/SiFUtilities.git",
-    "tag": "4.11.2"
+    "tag": "4.11.3"
   },
   "social_media_url": "https://twitter.com/congncif",
   "platforms": {
