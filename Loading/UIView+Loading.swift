@@ -37,28 +37,36 @@ extension UIView {
     @objc open func showLoading(overlayView: UIView = UIView(),
                                 customIndicator: UIView? = nil,
                                 animated: Bool = true) {
-        var blurView = self.viewWithTag(Tag.loading)
-        if blurView == nil {
-            blurView = overlayView
+        if let blurView = self.viewWithTag(Tag.loading) {
+            self.addSubview(blurView)
+        } else {
+            let blurView = overlayView
             
-            blurView?.tag = Tag.loading
-            blurView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            blurView.tag = Tag.loading
+            blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             
             var customView: UIView
-            if customIndicator == nil {
-                let loadingView = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
+            
+            if let indicatorView = customIndicator {
+                customView = indicatorView
+            } else {
+                let loadingView: UIActivityIndicatorView
+                if #available(iOS 13.0, *) {
+                    loadingView = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
+                } else {
+                    loadingView = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.whiteLarge)
+                    loadingView.tintColor = .gray
+                }
                 loadingView.startAnimating()
                 
                 customView = loadingView
-            } else {
-                customView = customIndicator!
             }
             
             customView.center = CGPoint(x: self.bounds.size.width / 2, y: self.bounds.size.height / 2)
             customView.autoresizingMask = [.flexibleTopMargin, .flexibleBottomMargin, .flexibleLeftMargin, .flexibleRightMargin]
             
-            blurView?.frame = self.bounds
-            blurView?.addSubview(customView)
+            blurView.frame = self.bounds
+            blurView.addSubview(customView)
             
             if animated {
                 if let blur = blurView as? UIVisualEffectView {
@@ -75,19 +83,17 @@ extension UIView {
                     }, completion: nil)
                     
                 } else {
-                    blurView?.alpha = 0
-                    self.addSubview(blurView!)
+                    blurView.alpha = 0
+                    self.addSubview(blurView)
                     UIView.animate(withDuration: 0.25, animations: {
-                        blurView?.alpha = 1
+                        blurView.alpha = 1
                     }, completion: nil)
                 }
-            } else {
-                self.addSubview(blurView!)
             }
         }
         
         var count = 0
-        count = loadingCount
+        count = self.loadingCount
         self.loadingCount = count + 1
     }
     
