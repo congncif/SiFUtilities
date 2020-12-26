@@ -9,7 +9,7 @@
 import CoreGraphics
 import UIKit
 
-@IBDesignable
+//@IBDesignable
 open class EdgeLineView: UIView {
     @IBInspectable public var lineColor: UIColor = .lightGray
     @IBInspectable public var lineWidth: CGFloat = 0.5

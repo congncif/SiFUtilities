@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable
+//@IBDesignable
 open class TouchColorButton: UIButton {
     @IBInspectable open var color = UIColor.white {
         didSet {
