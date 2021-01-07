@@ -10,11 +10,12 @@ import UIKit
 
 extension UIViewController {
     // MARK: - Loading
-    @objc open func showLoading() {
-        self.view.showLoading()
+
+    @objc open func showLoading(animated: Bool = false) {
+        self.view.showLoading(animated: animated)
     }
-    
-    @objc open func hideLoading() {
-        self.view.hideLoading()
+
+    @objc open func hideLoading(animated: Bool = false) {
+        self.view.hideLoading(animated: animated)
     }
 }

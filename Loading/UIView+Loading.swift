@@ -36,7 +36,7 @@ extension UIView {
     
     @objc open func showLoading(overlayView: UIView = UIView(),
                                 customIndicator: UIView? = nil,
-                                animated: Bool = true) {
+                                animated: Bool = false) {
         if let blurView = self.viewWithTag(Tag.loading) {
             self.addSubview(blurView)
         } else {
@@ -97,7 +97,7 @@ extension UIView {
         self.loadingCount = count + 1
     }
     
-    @objc open func hideLoading(animated: Bool = true) {
+    @objc open func hideLoading(animated: Bool = false) {
         self.loadingCount = self.loadingCount - 1
         if self.loadingCount <= 0 {
             let loadingView = self.viewWithTag(Tag.loading)
