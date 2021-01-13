@@ -40,8 +40,8 @@ class AdAttribute: KeyValueProtocol {
 }
 
 class Test3: NSObject, KeyValueProtocol {
-    var test2: Test2 = Test2()
-    var attr: AdAttribute = AdAttribute()
+    var test2 = Test2()
+    var attr = AdAttribute()
 }
 
 protocol NewEndPoint: EndpointProtocol {}
