@@ -74,6 +74,15 @@ public extension UIViewController {
         }
     }
 
+    func detachObjects(where condition: (AnyObject) -> Bool) {
+        children.filter {
+            guard let associatedObject = ($0 as? WrappedController)?.associatedObject else { return false }
+            return condition(associatedObject)
+        }.forEach {
+            $0.removeFromParent()
+        }
+    }
+
     func detachAllObjects() {
         children.filter { $0 is WrappedController }.forEach {
             $0.removeFromParent()
