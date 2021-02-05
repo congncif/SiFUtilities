@@ -14,28 +14,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     private let debouncer = Debouncer(delay: 2)
-    private let timerDebouncer = TimerDebouncer(delay: 2)
+    private var timerDebouncer: TimerDebouncer? = TimerDebouncer(delay: 2)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         DispatchQueue.global().asyncAfter(deadline: .now() + 1) {
-            self.timerDebouncer.perform {
+            self.timerDebouncer?.perform {
                 print("1")
             }
         }
 
         DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
-            self.timerDebouncer.perform {
+            self.timerDebouncer?.perform {
                 print("2")
             }
         }
 
         DispatchQueue.global().asyncAfter(deadline: .now() + 4.1) {
-            self.timerDebouncer.perform {
+            self.timerDebouncer?.perform {
                 print("3")
             }
         }
+
+        timerDebouncer?.performNow()
         
-        timerDebouncer.performNow()
+        DispatchQueue.global().asyncAfter(deadline: .now() + 7) {
+            self.timerDebouncer = nil
+        }
 
         return true
     }

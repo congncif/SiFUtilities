@@ -12,32 +12,49 @@ public final class TimerDebouncer {
     private var work: (() -> Void)?
     private var delay: TimeInterval
     
-    private weak var timer: Timer?
+    private var timer: DispatchSourceTimer?
     
     public init(delay: TimeInterval, work: (() -> Void)? = nil) {
         self.delay = delay
-        self.work = work
+        set(work: work)
+    }
+    
+    private func set(work: (() -> Void)?) {
+        if let work = work {
+            self.work = work
+        }
     }
     
     deinit {
+        timer?.setEventHandler(handler: nil)
         cancel()
     }
     
     public func cancel() {
-        timer?.invalidate()
-        timer = nil
+        guard let timer = timer else { return }
+        guard !timer.isCancelled else { return }
+        timer.cancel()
     }
     
     public func perform(work: (() -> Void)? = nil) {
         cancel()
-        if let work = work {
-            self.work = work
+        set(work: work)
+        
+        guard let currentWork = self.work else {
+            #if DEBUG
+            print("⚠️ [TimerDebouncer] Nothing to perform")
+            #endif
+            return
         }
-        let nextTimer = Timer.scheduledTimer(timeInterval: delay, target: self, selector: #selector(performNow), userInfo: nil, repeats: false)
+        
+        let nextTimer = DispatchSource.makeTimerSource()
+        nextTimer.schedule(deadline: .now() + delay)
+        nextTimer.setEventHandler(handler: currentWork)
         timer = nextTimer
+        timer?.resume()
     }
     
-    @objc public func performNow() {
+    public func performNow() {
         guard let work = self.work else {
             #if DEBUG
             print("⚠️ [TimerDebouncer] Nothing to perform")
@@ -77,6 +94,7 @@ public final class Debouncer {
     public func perform(work: (() -> Void)? = nil) {
         cancel()
         set(work: work)
+        
         guard let workItem = self.workItem else {
             #if DEBUG
             print("⚠️ [Debouncer] Nothing to perform")
