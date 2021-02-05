@@ -13,35 +13,34 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        let object = NSObject()
-        window?.rootViewController?.attachObject(object)
-        print("👉 \(object)")
-        window?.rootViewController?.attachObject(object)
+    private let debouncer = Debouncer(delay: 2)
+    private let timerDebouncer = TimerDebouncer(delay: 2)
 
-        let oid = ObjectIdentifier(object)
-        let attObject: NSObject? = window?.rootViewController?.attachedObject(identifier: oid)
-        print("👉 \(attObject)")
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 1) {
+            self.timerDebouncer.perform {
+                print("1")
+            }
+        }
+
+        DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
+            self.timerDebouncer.perform {
+                print("2")
+            }
+        }
+
+        DispatchQueue.global().asyncAfter(deadline: .now() + 4.1) {
+            self.timerDebouncer.perform {
+                print("3")
+            }
+        }
+        
+        timerDebouncer.performNow()
 
         return true
     }
 
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        if let rootVC = (UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController {
-            if let attObject: NSObject = rootVC.attachedObject() {
-                print("👉 \(attObject)")
-                rootVC.detachObject(attObject)
-            }
-        }
-    }
+    func applicationDidBecomeActive(_ application: UIApplication) {}
 
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        if let rootVC = (UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController {
-            if let attObject: NSObject = rootVC.attachedObject() {
-                print("👉 \(attObject)")
-            } else {
-                print("👉 REMOVED")
-            }
-        }
-    }
+    func applicationDidEnterBackground(_ application: UIApplication) {}
 }

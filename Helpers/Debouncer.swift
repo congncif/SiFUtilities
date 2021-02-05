@@ -8,24 +8,19 @@
 
 import Foundation
 
-public class Debouncer: NSObject {
-    public private(set) var callback: (() -> ())
-    public private(set) var delay: Double
-    public private(set) weak var timer: Timer?
+public final class TimerDebouncer {
+    private var work: (() -> Void)?
+    private var delay: TimeInterval
     
-    public init(delay: Double, callback: @escaping (() -> ())) {
+    private weak var timer: Timer?
+    
+    public init(delay: TimeInterval, work: (() -> Void)? = nil) {
         self.delay = delay
-        self.callback = callback
+        self.work = work
     }
     
     deinit {
         cancel()
-    }
-    
-    public func call() {
-        cancel()
-        let nextTimer = Timer.scheduledTimer(timeInterval: delay, target: self, selector: #selector(Debouncer.fireNow), userInfo: nil, repeats: false)
-        timer = nextTimer
     }
     
     public func cancel() {
@@ -33,7 +28,71 @@ public class Debouncer: NSObject {
         timer = nil
     }
     
-    @objc public func fireNow() {
-        self.callback()
+    public func perform(work: (() -> Void)? = nil) {
+        cancel()
+        if let work = work {
+            self.work = work
+        }
+        let nextTimer = Timer.scheduledTimer(timeInterval: delay, target: self, selector: #selector(performNow), userInfo: nil, repeats: false)
+        timer = nextTimer
+    }
+    
+    @objc public func performNow() {
+        guard let work = self.work else {
+            #if DEBUG
+            print("⚠️ [TimerDebouncer] Nothing to perform")
+            #endif
+            return
+        }
+        work()
+    }
+}
+
+public final class Debouncer {
+    private var delay: TimeInterval
+    private let queue: DispatchQueue
+    
+    private var workItem: DispatchWorkItem?
+    
+    public init(queue: DispatchQueue = .main, delay: TimeInterval, work: (() -> Void)? = nil) {
+        self.queue = queue
+        self.delay = delay
+        set(work: work)
+    }
+    
+    private func set(work: (() -> Void)?) {
+        if let work = work {
+            workItem = DispatchWorkItem(block: work)
+        }
+    }
+    
+    deinit {
+        cancel()
+    }
+    
+    public func cancel() {
+        workItem?.cancel()
+    }
+    
+    public func perform(work: (() -> Void)? = nil) {
+        cancel()
+        set(work: work)
+        guard let workItem = self.workItem else {
+            #if DEBUG
+            print("⚠️ [Debouncer] Nothing to perform")
+            #endif
+            return
+        }
+        queue.asyncAfter(deadline: .now() + delay, execute: workItem)
+    }
+    
+    public func performNow() {
+        guard let workItem = self.workItem else {
+            #if DEBUG
+            print("⚠️ [Debouncer] Nothing to perform")
+            #endif
+            return
+        }
+        queue.async(execute: workItem)
     }
 }
