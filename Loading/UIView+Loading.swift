@@ -89,6 +89,8 @@ extension UIView {
                         blurView.alpha = 1
                     }, completion: nil)
                 }
+            } else {
+                self.addSubview(blurView)
             }
         }
         
