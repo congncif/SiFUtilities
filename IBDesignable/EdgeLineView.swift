@@ -9,9 +9,9 @@
 import CoreGraphics
 import UIKit
 
-//@IBDesignable
+// @IBDesignable
 open class EdgeLineView: UIView {
-    @IBInspectable public var lineColor: UIColor = .lightGray
+    @IBInspectable public var lineColor: UIColor? = .lightGray
     @IBInspectable public var lineWidth: CGFloat = 0.5
     
     @IBInspectable public var leftLine: Bool = false
@@ -24,10 +24,10 @@ open class EdgeLineView: UIView {
     @IBInspectable public var bottomSpace: CGFloat = 0
     @IBInspectable public var topSpace: CGFloat = 0
     
-    @IBInspectable public var dashPatterns: String = ""
+    @IBInspectable public var dashPatterns: String? = ""
     
     public var dashes: [CGFloat] {
-        let values = dashPatterns
+        guard let values = dashPatterns else { return [] }
         
         guard !values.isEmpty else {
             return []
@@ -73,7 +73,7 @@ open class EdgeLineView: UIView {
         return points
     }
     
-    open override func draw(_ rect: CGRect) {
+    override open func draw(_ rect: CGRect) {
         super.draw(rect)
         
         guard let context = UIGraphicsGetCurrentContext() else {
@@ -85,19 +85,18 @@ open class EdgeLineView: UIView {
             context.addLine(to: point.end)
         }
         
-        
-        if dashes.count > 0 {
+        if !dashes.isEmpty {
             context.setLineDash(phase: 0, lengths: dashes)
         }
         
         context.setLineWidth(lineWidth)
-        context.setStrokeColor(lineColor.cgColor)
+        context.setStrokeColor((lineColor ?? .lightGray).cgColor)
         context.setLineCap(.round)
         
         context.strokePath()
     }
     
-    open override func prepareForInterfaceBuilder() {
+    override open func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         setNeedsDisplay()
     }

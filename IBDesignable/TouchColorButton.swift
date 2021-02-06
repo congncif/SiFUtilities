@@ -10,7 +10,7 @@ import UIKit
 
 //@IBDesignable
 open class TouchColorButton: UIButton {
-    @IBInspectable open var color = UIColor.white {
+    @IBInspectable open var color: UIColor? = UIColor.white {
         didSet {
             self.setup()
         }
@@ -39,7 +39,7 @@ open class TouchColorButton: UIButton {
     }
     
     open func setup() {
-        let image = UIImage.image(color: self.color, size: bounds.size)
+        let image = UIImage.image(color: self.color ?? .white, size: bounds.size)
         setBackgroundImage(image, for: .normal)
         if let tColor = touchedColor {
             let touchedImage = UIImage.image(color: tColor, size: bounds.size)
