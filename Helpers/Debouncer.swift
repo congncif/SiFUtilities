@@ -69,16 +69,24 @@ public final class Debouncer {
     private var delay: TimeInterval
     private let queue: DispatchQueue
     
+    private var work: (() -> Void)?
+    
     private var workItem: DispatchWorkItem?
     
     public init(queue: DispatchQueue = .main, delay: TimeInterval, work: (() -> Void)? = nil) {
         self.queue = queue
         self.delay = delay
-        set(work: work)
+        self.work = work
     }
     
     private func set(work: (() -> Void)?) {
         if let work = work {
+            self.work = work
+        }
+    }
+    
+    private func newWorkItem() {
+        if let work = self.work {
             workItem = DispatchWorkItem(block: work)
         }
     }
@@ -94,6 +102,7 @@ public final class Debouncer {
     public func perform(work: (() -> Void)? = nil) {
         cancel()
         set(work: work)
+        newWorkItem()
         
         guard let workItem = self.workItem else {
             #if DEBUG
@@ -105,6 +114,9 @@ public final class Debouncer {
     }
     
     public func performNow() {
+        cancel()
+        newWorkItem()
+        
         guard let workItem = self.workItem else {
             #if DEBUG
             print("⚠️ [Debouncer] Nothing to perform")
