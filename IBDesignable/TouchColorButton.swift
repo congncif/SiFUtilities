@@ -51,7 +51,7 @@ open class TouchColorButton: UIButton {
         
         if self.circleBounds {
             self.clipsToBounds = true
-            self.cornerRadius = self.frame.size.height / 2
+            self.layer.cornerRadius = self.frame.size.height / 2
         }
     }
     
@@ -60,7 +60,7 @@ open class TouchColorButton: UIButton {
         
         if self.circleBounds {
             self.clipsToBounds = true
-            self.cornerRadius = self.frame.size.height / 2
+            self.layer.cornerRadius = self.frame.size.height / 2
         }
     }
 }

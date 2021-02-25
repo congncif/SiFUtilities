@@ -15,7 +15,7 @@ extension UIView {
         set {
             layer.borderWidth = newValue
         }
-        
+    
         get {
             return layer.borderWidth
         }
@@ -25,7 +25,7 @@ extension UIView {
         set {
             layer.borderColor = newValue?.cgColor
         }
-        
+    
         get {
             guard let cgColor = layer.borderColor else {
                 return nil
@@ -38,12 +38,12 @@ extension UIView {
         set {
             layer.cornerRadius = newValue
         }
-        
+    
         get {
             return layer.cornerRadius
         }
     }
-    
+
     @IBInspectable open var opacity: Float {
         get {
             return layer.opacity
