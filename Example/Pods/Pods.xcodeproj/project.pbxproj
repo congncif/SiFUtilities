@@ -19,6 +19,7 @@
 		1FDAE644E75FA2EFFF0A5D84FE0C4415 /* UINavigationController++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CF54A5FFBB9B891C8475162ECACBD1 /* UINavigationController++.swift */; };
 		204E4F624393F0946CA835747CF5A952 /* UIButton+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF418CFFB1EA485A4D7814CC00B5B70B /* UIButton+Localize.swift */; };
 		25986C8E53A90BAE9DCE57DF24727C4D /* UINavigationItem+Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456FD39F76BFE659E32DBD6AB7995D3E /* UINavigationItem+Localize.swift */; };
+		279716D325F0F42100371FEE /* UIView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279716D225F0F42100371FEE /* UIView++.swift */; };
 		2833C881CB49BE50134ACC24D9720D75 /* String+LocalizedBundleTableName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D1C8D5976F7A2EE249AC52798D4D48 /* String+LocalizedBundleTableName.swift */; };
 		289130899045A7FCCA20A9B29FB556F5 /* JSONCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AD6604FEAD2B71271E136192DF873A /* JSONCodable.swift */; };
 		2A3B44A65F0F957CAFDBEE05D3E89F8D /* ValueKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688F2B5F2021C21BE16B5F6457E44E9A /* ValueKeeper.swift */; };
@@ -144,6 +145,7 @@
 		207A7C490BEBC7DBDC89430A227CCF76 /* UIViewController+Runtime.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+Runtime.swift"; path = "Runtime/UIViewController+Runtime.swift"; sourceTree = "<group>"; };
 		20CF9655AD308662BBA8D936CF5BD39D /* Localize_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Localize_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		246169F46A0D7A2B71269F94F88E73A3 /* String+LocalizeTableName.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+LocalizeTableName.swift"; path = "Sources/String+LocalizeTableName.swift"; sourceTree = "<group>"; };
+		279716D225F0F42100371FEE /* UIView++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView++.swift"; path = "UIKit/UIView++.swift"; sourceTree = "<group>"; };
 		2A1FE5C2A4ACF44C8DC8404B9701643B /* UIBarButtonItem+Localize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIBarButtonItem+Localize.swift"; path = "Localize/UIBarButtonItem+Localize.swift"; sourceTree = "<group>"; };
 		2A27885B852ED163C2359DAD75FE7551 /* UIKit++.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIKit++.swift"; path = "UIKit/UIKit++.swift"; sourceTree = "<group>"; };
 		2A2DF16BE7AAC6524EBFC525EDA77CC5 /* Localize-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Localize-Swift-umbrella.h"; sourceTree = "<group>"; };
@@ -470,6 +472,7 @@
 				B4E326134CFFF80833F220423FC171E3 /* UITextField++.swift */,
 				9F19BA176F67633C6698E35DB2580EF0 /* UIViewController++.swift */,
 				48BE5FD13C8A446E138FB15F80D5212E /* UIViewController+Access.swift */,
+				279716D225F0F42100371FEE /* UIView++.swift */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -849,6 +852,7 @@
 				4D25C56D8B5903F042BCAA4AB696CB1D /* UITextField+Localize.swift in Sources */,
 				BDCC4D5CD495058B813DB0AEDE5F61BA /* UITextView+Localize.swift in Sources */,
 				01B8F5FB2AD5CFAEA8604FD9CD6ABA0C /* UIView+Animation.swift in Sources */,
+				279716D325F0F42100371FEE /* UIView++.swift in Sources */,
 				BCFB626CE25CE27E27108D3830991A14 /* UIView+Layer.swift in Sources */,
 				FCDCAE9E2099BF8E219A517FD84B697E /* UIView+Loading.swift in Sources */,
 				EC809850919C7797E665C9B5EC5EE717 /* UIView+Nib.swift in Sources */,

@@ -181,3 +181,35 @@ extension Date {
         return calendar.dateComponents([.year], from: self, to: Date()).year!
     }
 }
+
+public extension Date {
+    /// The `year` date component of `self`. The time zone used is equal to the `Calendar.current.timeZone`.
+    var year: Int {
+        return Calendar.current.component(.year, from: self)
+    }
+
+    /// The `month` date component of `self`. The time zone used is equal to the `Calendar.current.timeZone`.
+    var month: Int {
+        return Calendar.current.component(.month, from: self)
+    }
+
+    /// The `day` date component of `self`. The time zone used is equal to the `Calendar.current.timeZone`.
+    var day: Int {
+        return Calendar.current.component(.day, from: self)
+    }
+
+    /// The `hour` date component of `self`. The time zone used is equal to the `Calendar.current.timeZone`.
+    var hour: Int {
+        return Calendar.current.component(.hour, from: self)
+    }
+
+    /// The `minute` date component of `self`. The time zone used is equal to the `Calendar.current.timeZone`.
+    var minute: Int {
+        return Calendar.current.component(.minute, from: self)
+    }
+
+    /// The `second` date component of `self`. The time zone used is equal to the `Calendar.current.timeZone`.
+    var second: Int {
+        return Calendar.current.component(.second, from: self)
+    }
+}

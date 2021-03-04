@@ -8,6 +8,8 @@
 
 import Foundation
 
+// MARK: - ID
+
 extension String {
     public static func random(length: Int = 16) -> String {
         let letters: NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
@@ -31,7 +33,11 @@ extension String {
     public static func uniqueIdentifier() -> String {
         return self.uuid().lowercased()
     }
-    
+}
+
+// MARK: - Date
+
+extension String {
     public func toDate(format: String? = DateFormat.detailRegular,
                        timeZone: TimeZone? = .current) -> Date? {
         let dateFormatter = DateFormatter()
@@ -41,8 +47,12 @@ extension String {
         
         return dateFormatter.date(from: self)
     }
-    
-    public var trimmedWhiteSpaces: String {
+}
+
+// MARK: - Transform
+
+extension String {
+    public var trimmingWhiteSpaces: String {
         return trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
@@ -50,7 +60,7 @@ extension String {
         return components(separatedBy: characters).joined()
     }
     
-    public var removedWhiteSpaces: String {
+    public var removingWhiteSpaces: String {
         return self.removingCharacters(.whitespacesAndNewlines)
     }
     
@@ -60,23 +70,25 @@ extension String {
             .components(separatedBy: .whitespaces)
             .filter { !$0.isEmpty }
     }
-}
-
-extension String {
-    public func capitalizingFirstLetter() -> String {
+    
+    public var replacingWhiteSpacesByNonbreakingSpaces: String {
+        return replacingOccurrences(of: " ", with: "\u{00a0}")
+    }
+    
+    public var capitalizingFirstLetter: String {
         return prefix(1).uppercased() + dropFirst()
     }
     
-    public func lowercasingFirstLetter() -> String {
+    public var lowercasingFirstLetter: String {
         return prefix(1).lowercased() + dropFirst()
     }
     
     public mutating func capitalizeFirstLetter() {
-        self = self.capitalizingFirstLetter()
+        self = self.capitalizingFirstLetter
     }
     
     public mutating func lowercaseFirstLetter() {
-        self = self.lowercasingFirstLetter()
+        self = self.lowercasingFirstLetter
     }
     
     public func snakeCased() -> String {
@@ -95,7 +107,7 @@ extension String {
             if idx == 0, skipFirstLetter {
                 newComponents.append(word.lowercased())
             } else {
-                newComponents.append(word.lowercased().capitalizingFirstLetter())
+                newComponents.append(word.lowercased().capitalizingFirstLetter)
             }
         }
         
@@ -106,6 +118,8 @@ extension String {
         return newComponents.joined()
     }
 }
+
+// MARK: - Checking
 
 extension String {
     public var isAlphanumerics: Bool {
@@ -120,6 +134,8 @@ extension String {
         return range(of: subString, options: [.caseInsensitive, .diacriticInsensitive]) != nil
     }
 }
+
+// MARK: - Format
 
 extension String {
     public func formatted(defaultAttributes: [NSAttributedString.Key: Any], attributedStrings: NSAttributedString...) -> NSAttributedString {
