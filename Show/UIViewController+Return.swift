@@ -10,19 +10,21 @@ import UIKit
 
 extension UIViewController {
     public func returnHere(animated: Bool = true, completion: (() -> Void)? = nil) {
-        CATransaction.begin()
-        CATransaction.setCompletionBlock(completion)
         if self.presentedViewController != nil {
-            self.dismiss(animated: animated)
+            self.dismiss(animated: animated, completion: completion)
+            self.popToShowIfNeeded(animated: animated, completion: nil)
+        } else {
+            self.popToShowIfNeeded(animated: animated, completion: completion)
         }
-        self.popToShowIfNeeded(animated: animated)
-        CATransaction.commit()
     }
 
-    private func popToShowIfNeeded(animated: Bool) {
+    private func popToShowIfNeeded(animated: Bool, completion: (() -> Void)?) {
+        CATransaction.begin()
+        CATransaction.setCompletionBlock(completion)
         if let nav = navigationController, let foundTarget = findParentViewController(in: nav) {
             nav.popToViewController(foundTarget, animated: animated)
         }
+        CATransaction.commit()
     }
 
     private func findParentViewController(in navigationController: UINavigationController) -> UIViewController? {
