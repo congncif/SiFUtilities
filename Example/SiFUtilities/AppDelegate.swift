@@ -13,8 +13,8 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
-    private let debouncer: Debouncer? = Debouncer(delay: 2) { print("XX") }
-    private var timerDebouncer: TimerDebouncer? = TimerDebouncer(delay: 2)
+    private let debouncer: Debouncer? = Debouncer(delay: .seconds(2)) { print("XX") }
+    private var timerDebouncer: TimerDebouncer? = TimerDebouncer(delay: .seconds(2))
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         DispatchQueue.global().asyncAfter(deadline: .now() + 1) {

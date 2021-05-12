@@ -9,14 +9,14 @@
 import Foundation
 
 public final class TimerDebouncer {
-    private var delay: TimeInterval
+    private var delay: DispatchTimeInterval
     private let queue: DispatchQueue
     
     private var work: (() -> Void)?
     
     private var timer: DispatchSourceTimer?
     
-    public init(delay: TimeInterval, queue: DispatchQueue = .main, work: (() -> Void)? = nil) {
+    public init(delay: DispatchTimeInterval, queue: DispatchQueue = .main, work: (() -> Void)? = nil) {
         self.delay = delay
         self.queue = queue
         set(work: work)
@@ -69,14 +69,14 @@ public final class TimerDebouncer {
 }
 
 public final class Debouncer {
-    private var delay: TimeInterval
+    private var delay: DispatchTimeInterval
     private let queue: DispatchQueue
     
     private var work: (() -> Void)?
     
     private var workItem: DispatchWorkItem?
     
-    public init(queue: DispatchQueue = .main, delay: TimeInterval, work: (() -> Void)? = nil) {
+    public init(delay: DispatchTimeInterval, queue: DispatchQueue = .main, work: (() -> Void)? = nil) {
         self.queue = queue
         self.delay = delay
         self.work = work
