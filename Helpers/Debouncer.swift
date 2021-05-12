@@ -9,13 +9,16 @@
 import Foundation
 
 public final class TimerDebouncer {
-    private var work: (() -> Void)?
     private var delay: TimeInterval
+    private let queue: DispatchQueue
+    
+    private var work: (() -> Void)?
     
     private var timer: DispatchSourceTimer?
     
-    public init(delay: TimeInterval, work: (() -> Void)? = nil) {
+    public init(delay: TimeInterval, queue: DispatchQueue = .main, work: (() -> Void)? = nil) {
         self.delay = delay
+        self.queue = queue
         set(work: work)
     }
     
@@ -47,7 +50,7 @@ public final class TimerDebouncer {
             return
         }
         
-        let nextTimer = DispatchSource.makeTimerSource()
+        let nextTimer = DispatchSource.makeTimerSource(queue: queue)
         nextTimer.schedule(deadline: .now() + delay)
         nextTimer.setEventHandler(handler: currentWork)
         timer = nextTimer
