@@ -55,7 +55,7 @@ extension PHAsset {
         
         let semaphore = DispatchSemaphore(value: 0)
         DispatchQueue.global().async {
-            let manager = PHImageManager.default
+            let manager = PHImageManager.default()
             let options = PHImageRequestOptions()
             
             options.isNetworkAccessAllowed = true
@@ -63,7 +63,7 @@ extension PHAsset {
             options.deliveryMode = .highQualityFormat
             options.resizeMode = .exact
             
-            manager().requestImageData(for: self, options: options) { data, _, _, info in
+            manager.requestImageData(for: self, options: options) { data, _, _, info in
                 imageData = data
                 if let info = info {
                     if info.keys.contains(NSString(string: "PHImageFileURLKey")) {
@@ -84,20 +84,20 @@ extension PHAsset {
     open func exportVideo(to url: URL) {
         let semaphore = DispatchSemaphore(value: 0)
         DispatchQueue.global().async {
-            let manager = PHImageManager.default
+            let manager = PHImageManager.default()
             let options = PHVideoRequestOptions()
             options.isNetworkAccessAllowed = true
             options.deliveryMode = .highQualityFormat
             
-            manager().requestAVAsset(forVideo: self, options: options, resultHandler: { asset, _, _ in
+            manager.requestAVAsset(forVideo: self, options: options, resultHandler: { asset, _, _ in
                 if let avurlAsset = asset as? AVURLAsset {
                     do {
                         try FileManager.default.copyItem(at: avurlAsset.url, to: url)
                     } catch {
-                        print("Can not copy video")
+                        print("👻👻👻 Can not copy video")
                     }
                 } else {
-                    print("No valid data")
+                    print("👻👻👻 No valid AVURLAsset")
                 }
                 semaphore.signal()
             })

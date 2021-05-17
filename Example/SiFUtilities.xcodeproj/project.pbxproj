@@ -13,6 +13,8 @@
 		2079D52820616960002E391B /* EXViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2079D52720616960002E391B /* EXViewController.swift */; };
 		207D4B57203DBBBE0009BD39 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D4B56203DBBBE0009BD39 /* CustomView.swift */; };
 		209882451CFB491100A62CF1 /* SiFUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 209882431CFB47C200A62CF1 /* SiFUtilities.framework */; };
+		209E21D226512BD60096522D /* PHViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209E21D126512BD60096522D /* PHViewController.swift */; };
+		209E21D426512BE50096522D /* PHViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 209E21D326512BE50096522D /* PHViewController.storyboard */; };
 		2739A4C224EBC9D200F0BB7F /* LastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2739A4C124EBC9D200F0BB7F /* LastViewController.swift */; };
 		276B8B8724F0C960008687DB /* PushDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276B8B8624F0C960008687DB /* PushDemoViewController.swift */; };
 		27EDA04A24F0FEC600CDF86D /* UnwindPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EDA04924F0FEC600CDF86D /* UnwindPopViewController.swift */; };
@@ -44,6 +46,8 @@
 		2079D52720616960002E391B /* EXViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXViewController.swift; sourceTree = "<group>"; };
 		207D4B56203DBBBE0009BD39 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		209882431CFB47C200A62CF1 /* SiFUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SiFUtilities.framework; path = /Users/congnc/Documents/Frameworks/SiFUtilities/Example/SiFUtilities.framework; sourceTree = "<absolute>"; };
+		209E21D126512BD60096522D /* PHViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHViewController.swift; sourceTree = "<group>"; };
+		209E21D326512BE50096522D /* PHViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PHViewController.storyboard; sourceTree = "<group>"; };
 		20E587EA2077BB5500C5D65B /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
 		2739A4C124EBC9D200F0BB7F /* LastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastViewController.swift; sourceTree = "<group>"; };
 		276B8B8624F0C960008687DB /* PushDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushDemoViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				209E21D126512BD60096522D /* PHViewController.swift */,
+				209E21D326512BE50096522D /* PHViewController.storyboard */,
 			);
 			name = "Example for SiFUtilities";
 			path = SiFUtilities;
@@ -229,6 +235,7 @@
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				20260FDB21BAC4C2007F758C /* Localizable.strings in Resources */,
+				209E21D426512BE50096522D /* PHViewController.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -284,6 +291,7 @@
 			files = (
 				207D4B57203DBBBE0009BD39 /* CustomView.swift in Sources */,
 				200FBB872076936B001746A7 /* NavViewController.swift in Sources */,
+				209E21D226512BD60096522D /* PHViewController.swift in Sources */,
 				2079D52820616960002E391B /* EXViewController.swift in Sources */,
 				27EDA04A24F0FEC600CDF86D /* UnwindPopViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
