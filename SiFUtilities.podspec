@@ -89,6 +89,7 @@ Pod::Spec.new do |s|
   s.subspec "Boardy" do |co|
     co.source_files = "Boardy/**/*.swift"
 
+    co.dependency "SiFUtilities/Show"
     co.dependency "SiFUtilities/Loading"
     co.dependency "Boardy/ComponentKit"
   end
