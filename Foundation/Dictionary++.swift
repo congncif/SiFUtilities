@@ -9,9 +9,18 @@
 import Foundation
 
 extension Dictionary {
-    mutating func merge(dict: [Key: Value]){
-        for (key, value) in dict {
-            updateValue(value, forKey: key)
+    public mutating func map(key: Key, to newKey: Key, keepOldKey: Bool = false) {
+        if let value = self[key] {
+            updateValue(value, forKey: newKey)
+            if !keepOldKey {
+                removeValue(forKey: key)
+            }
         }
+    }
+
+    public func mapping(key: Key, to newKey: Key, keepOldKey: Bool = false) -> Self {
+        var newDict = self
+        newDict.map(key: key, to: newKey)
+        return newDict
     }
 }
