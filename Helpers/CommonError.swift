@@ -20,6 +20,10 @@ extension CommonError {
         self.title = title
         self.message = message
     }
+    
+    public init(title: String?) {
+        self.init(title: nil, message: title)
+    }
 }
 
 extension CommonError: LocalizedError {
