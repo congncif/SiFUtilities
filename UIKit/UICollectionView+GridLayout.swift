@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 public extension UICollectionView {
-    func gridItemSize(numberOfColumns: Int) -> CGSize {
+    func gridItemSize(numberOfColumns: Int, ratioHW: CGFloat = 1) -> CGSize {
         let layout = collectionViewLayout as! UICollectionViewFlowLayout
         let containerWidth = bounds.width
 
@@ -20,7 +20,7 @@ public extension UICollectionView {
 
         let columns = CGFloat(numberOfColumns)
         let width = (containerWidth - totalInsetsHorizontalSpace - (columns - 1) * layout.minimumInteritemSpacing) / columns
-        let height = width
+        let height = width * ratioHW
         let calculatedItemSize = CGSize(width: width, height: height)
 
         return calculatedItemSize

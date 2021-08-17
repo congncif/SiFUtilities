@@ -20,6 +20,7 @@
 		2686EE95F70CC67DC4281EC9C8089205 /* UIKit++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07083812B09C74B8CA2E14F838B33AE7 /* UIKit++.swift */; };
 		270B571326CBBE71009B64A0 /* Notification+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270B571226CBBE71009B64A0 /* Notification+Keyboard.swift */; };
 		270B573026CBCF8B009B64A0 /* UICollectionView+GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270B572F26CBCF8B009B64A0 /* UICollectionView+GridLayout.swift */; };
+		270B573426CC0980009B64A0 /* Number+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270B573326CC0980009B64A0 /* Number+Format.swift */; };
 		2833C881CB49BE50134ACC24D9720D75 /* String+LocalizedBundleTableName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D1C8D5976F7A2EE249AC52798D4D48 /* String+LocalizedBundleTableName.swift */; };
 		2C38AE4AB700D998874FD9171B1AAD7E /* Localize_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 519143527170A026EFB269DD6EB8782D /* Localize_Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2DFA72D10FC3E34191496000897EE86E /* UIViewController+Return.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431E4E02859A7990FA91099FB61F11EC /* UIViewController+Return.swift */; };
@@ -151,6 +152,7 @@
 		246169F46A0D7A2B71269F94F88E73A3 /* String+LocalizeTableName.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+LocalizeTableName.swift"; path = "Sources/String+LocalizeTableName.swift"; sourceTree = "<group>"; };
 		270B571226CBBE71009B64A0 /* Notification+Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Notification+Keyboard.swift"; path = "UIKit/Notification+Keyboard.swift"; sourceTree = "<group>"; };
 		270B572F26CBCF8B009B64A0 /* UICollectionView+GridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UICollectionView+GridLayout.swift"; path = "UIKit/UICollectionView+GridLayout.swift"; sourceTree = "<group>"; };
+		270B573326CC0980009B64A0 /* Number+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Number+Format.swift"; path = "Foundation/Number+Format.swift"; sourceTree = "<group>"; };
 		286DB0A7CD2E7A3BB9735E279314B263 /* SiFUtilities.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SiFUtilities.modulemap; sourceTree = "<group>"; };
 		2A2DF16BE7AAC6524EBFC525EDA77CC5 /* Localize-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Localize-Swift-umbrella.h"; sourceTree = "<group>"; };
 		2AA8F2F575ACE1DA90163D953B70A474 /* Pods-SiFUtilities_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SiFUtilities_Example-Info.plist"; sourceTree = "<group>"; };
@@ -411,6 +413,7 @@
 				1CEBC205E2F95B58ACE683FC334F78EB /* Dictionary++.swift */,
 				AA3A80C4121BDF207CA5D2DDE627FFE4 /* Foundation++.swift */,
 				4546FC2084EA5DE2AA8E1B6B113B93AF /* Number++.swift */,
+				270B573326CC0980009B64A0 /* Number+Format.swift */,
 				5CBC79C8BBAC1E9D6DB48C9BE95C520C /* Object++.swift */,
 				D22BD223D942FBE863CD31FD9501612C /* Optional++.swift */,
 				3DD282F070EEF469F48D5DDEBDA0B1EB /* String++.swift */,
@@ -805,6 +808,7 @@
 				8E48DE78280489A4FFED2DF98093B953 /* FittingView.swift in Sources */,
 				94948AA79B81FEA89732B68EB3DABA46 /* Foundation++.swift in Sources */,
 				55BFB0F7AD621C166879E4D097ABF3AC /* JSONCodable.swift in Sources */,
+				270B573426CC0980009B64A0 /* Number+Format.swift in Sources */,
 				70E73840CE1F6FD50DF4E3321D10A02E /* KeyValueProtocol.swift in Sources */,
 				CDABFD4113E7D362C867411A049E8AF7 /* Localize.swift in Sources */,
 				E751B40B3F79B6D2C19C5FE9C82263E6 /* NSManagedObject+SiF.swift in Sources */,
