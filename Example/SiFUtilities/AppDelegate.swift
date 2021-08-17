@@ -34,6 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DispatchQueue.global().asyncAfter(deadline: .now() + 7) {
             self.timerDebouncer = nil
         }
+        
+        let dict = ["abc": "abc", "def": "def"]
+        let newDict = dict.mapping(key: "abc", to: "ABC")
+        print(newDict)
 
         return true
     }
