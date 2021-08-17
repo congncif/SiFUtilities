@@ -19,6 +19,7 @@
 		1FD0A4F214F9B4F5B425B54E54ED0FF7 /* ValueKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F4EF6B9E76CB50635833CE322475F9 /* ValueKeeper.swift */; };
 		2686EE95F70CC67DC4281EC9C8089205 /* UIKit++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07083812B09C74B8CA2E14F838B33AE7 /* UIKit++.swift */; };
 		270B571326CBBE71009B64A0 /* Notification+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270B571226CBBE71009B64A0 /* Notification+Keyboard.swift */; };
+		270B573026CBCF8B009B64A0 /* UICollectionView+GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270B572F26CBCF8B009B64A0 /* UICollectionView+GridLayout.swift */; };
 		2833C881CB49BE50134ACC24D9720D75 /* String+LocalizedBundleTableName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D1C8D5976F7A2EE249AC52798D4D48 /* String+LocalizedBundleTableName.swift */; };
 		2C38AE4AB700D998874FD9171B1AAD7E /* Localize_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 519143527170A026EFB269DD6EB8782D /* Localize_Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2DFA72D10FC3E34191496000897EE86E /* UIViewController+Return.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431E4E02859A7990FA91099FB61F11EC /* UIViewController+Return.swift */; };
@@ -149,6 +150,7 @@
 		240E6A9F10508CF295FFA98F1A050950 /* AVPlayer++.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AVPlayer++.swift"; path = "Media/AVPlayer++.swift"; sourceTree = "<group>"; };
 		246169F46A0D7A2B71269F94F88E73A3 /* String+LocalizeTableName.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+LocalizeTableName.swift"; path = "Sources/String+LocalizeTableName.swift"; sourceTree = "<group>"; };
 		270B571226CBBE71009B64A0 /* Notification+Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Notification+Keyboard.swift"; path = "UIKit/Notification+Keyboard.swift"; sourceTree = "<group>"; };
+		270B572F26CBCF8B009B64A0 /* UICollectionView+GridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UICollectionView+GridLayout.swift"; path = "UIKit/UICollectionView+GridLayout.swift"; sourceTree = "<group>"; };
 		286DB0A7CD2E7A3BB9735E279314B263 /* SiFUtilities.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SiFUtilities.modulemap; sourceTree = "<group>"; };
 		2A2DF16BE7AAC6524EBFC525EDA77CC5 /* Localize-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Localize-Swift-umbrella.h"; sourceTree = "<group>"; };
 		2AA8F2F575ACE1DA90163D953B70A474 /* Pods-SiFUtilities_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SiFUtilities_Example-Info.plist"; sourceTree = "<group>"; };
@@ -532,6 +534,7 @@
 				3F754851AA6E10F69CC587A54E446719 /* UIImage++.swift */,
 				07083812B09C74B8CA2E14F838B33AE7 /* UIKit++.swift */,
 				A9A0F20D1CE8704B3E9F61E7386A770D /* UINavigationBar++.swift */,
+				270B572F26CBCF8B009B64A0 /* UICollectionView+GridLayout.swift */,
 				C3F2872DA19CA2F70B1D45206496C8B5 /* UINavigationController++.swift */,
 				D4F929C8C62D22941C8090A57D06574A /* UITabBarController++.swift */,
 				6E615AE6593523884B9C5A949282808F /* UITableView++.swift */,
@@ -849,6 +852,7 @@
 				6CCF40CF474B046F06A30B1A3197CEB3 /* UIViewController+Loading.swift in Sources */,
 				60F00E8870D3682F1FDC301A0B58FF27 /* UIViewController+Localize.swift in Sources */,
 				FBBF1023491C382B20E27E4B0CEB9CA7 /* UIViewController+Nib.swift in Sources */,
+				270B573026CBCF8B009B64A0 /* UICollectionView+GridLayout.swift in Sources */,
 				597E99CB9DFDC5A54AF9572ED83F6BF7 /* UIViewController+Overlay.swift in Sources */,
 				C8BC3ED66ECD30EA5371866D5CEC9CB0 /* UIViewController+Popover.swift in Sources */,
 				A31FBA98B2727B14DAE556C311EBF957 /* UIViewController+PushOver.swift in Sources */,
