@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "SiFUtilities"
-  s.version = "4.23.0"
+  s.version = "4.23.1"
   s.summary = "A set of utilities for your app."
   s.swift_versions = ["5.0", "5.1", "5.2", "5.3", "5.4"]
 
@@ -63,7 +63,7 @@ Pod::Spec.new do |s|
     co.dependency "SiFUtilities/Foundation"
     co.dependency "SiFUtilities/UIKit"
     co.dependency "SiFUtilities/Runtime"
-    co.dependency "Localize-Swift"
+    co.dependency "Localize-Swift/LocalizeSwiftCore"
   end
 
   s.subspec "Nib" do |co|
@@ -103,7 +103,7 @@ Pod::Spec.new do |s|
     co.dependency "SiFUtilities/IBDesignable"
     co.dependency "SiFUtilities/KeyValue"
     co.dependency "SiFUtilities/Loading"
-    co.dependency "SiFUtilities/Localize"
+    # co.dependency "SiFUtilities/Localize"
     co.dependency "SiFUtilities/Nib"
     co.dependency "SiFUtilities/Runtime"
     co.dependency "SiFUtilities/Show"
