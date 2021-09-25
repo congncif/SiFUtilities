@@ -34,7 +34,7 @@ public enum ImageCompressionType {
 }
 
 public extension UIImage {
-    func compressed(type: ImageCompressionType = .jpeg(quality: 0.33), boundary: CGFloat? = 1280) -> UIImage {
+    func compressedData(type: ImageCompressionType = .jpeg(quality: 0.33), boundary: CGFloat? = 1280) -> Data? {
         let size = self.fittedSize(boundary: boundary)
         let resizedImage = boundary == nil ? self : self.resized(targetSize: size)
         var data: Data?
@@ -44,14 +44,16 @@ public extension UIImage {
         case .png:
             data = resizedImage?.pngData()
         }
-        guard let rawData = data else {
-            #if DEBUG
+        return data
+    }
+    
+    func compressedIfNeeded(type: ImageCompressionType = .jpeg(quality: 0.33), boundary: CGFloat? = 1280) -> UIImage {
+        guard let data = compressedData(type: type, boundary: boundary) else {
             print("⚠️ Image Compression failed ➤ Return original image")
-            #endif
             return self
         }
         
-        guard let image = UIImage(data: rawData) else {
+        guard let image = UIImage(data: data) else {
             #if DEBUG
             print("⚠️ Image Compression cannot render new image ➤ Return original image")
             #endif
