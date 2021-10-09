@@ -15,14 +15,16 @@ public protocol AssociatedObject {
                                 policy: objc_AssociationPolicy)
 }
 
-extension AssociatedObject {
-    public func getAssociatedObject<T>(key: inout UInt8) -> T? {
+public extension AssociatedObject {
+    func getAssociatedObject<T>(key: inout UInt8) -> T? {
         return objc_getAssociatedObject(self, &key) as? T
     }
 
-    public func setAssociatedObject<T>(key: inout UInt8,
-                                       value: T?,
-                                       policy: objc_AssociationPolicy = .OBJC_ASSOCIATION_RETAIN_NONATOMIC) {
+    func setAssociatedObject<T>(key: inout UInt8,
+                                value: T?,
+                                policy: objc_AssociationPolicy = .OBJC_ASSOCIATION_RETAIN_NONATOMIC) {
         objc_setAssociatedObject(self, &key, value, policy)
     }
 }
+
+extension NSObject: AssociatedObject {}

@@ -21,10 +21,11 @@
 		270B571326CBBE71009B64A0 /* Notification+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270B571226CBBE71009B64A0 /* Notification+Keyboard.swift */; };
 		270B573026CBCF8B009B64A0 /* UICollectionView+GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270B572F26CBCF8B009B64A0 /* UICollectionView+GridLayout.swift */; };
 		270B573426CC0980009B64A0 /* Number+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270B573326CC0980009B64A0 /* Number+Format.swift */; };
+		27D3FADC2711F8FB005901C4 /* UIViewController+NavigationIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D3FADB2711F8FB005901C4 /* UIViewController+NavigationIndicator.swift */; };
+		27D3FADE2711FB3B005901C4 /* AssociatedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D3FADD2711FB3B005901C4 /* AssociatedObject.swift */; };
 		2833C881CB49BE50134ACC24D9720D75 /* String+LocalizedBundleTableName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D1C8D5976F7A2EE249AC52798D4D48 /* String+LocalizedBundleTableName.swift */; };
 		2C38AE4AB700D998874FD9171B1AAD7E /* Localize_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 519143527170A026EFB269DD6EB8782D /* Localize_Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2DFA72D10FC3E34191496000897EE86E /* UIViewController+Return.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431E4E02859A7990FA91099FB61F11EC /* UIViewController+Return.swift */; };
-		2F95900A6B3F8BC9D0492961D12BC994 /* AssociatedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D383AFF1BF30744267F00F4CDFE9105B /* AssociatedObject.swift */; };
 		2FCA55FDE71A22A5E713DE3733019634 /* UINavigationBar++.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A0F20D1CE8704B3E9F61E7386A770D /* UINavigationBar++.swift */; };
 		320766DAC651CE59D6ABA3AEB793BC4C /* UIView+Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7610CBE158BE1ECD240B009FA4F7DF /* UIView+Layer.swift */; };
 		334D50632074C254ABA04AC01BB66E67 /* WeakReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF30C3088A2C53049277C354CC737B7 /* WeakReference.swift */; };
@@ -153,6 +154,8 @@
 		270B571226CBBE71009B64A0 /* Notification+Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Notification+Keyboard.swift"; path = "UIKit/Notification+Keyboard.swift"; sourceTree = "<group>"; };
 		270B572F26CBCF8B009B64A0 /* UICollectionView+GridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UICollectionView+GridLayout.swift"; path = "UIKit/UICollectionView+GridLayout.swift"; sourceTree = "<group>"; };
 		270B573326CC0980009B64A0 /* Number+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Number+Format.swift"; path = "Foundation/Number+Format.swift"; sourceTree = "<group>"; };
+		27D3FADB2711F8FB005901C4 /* UIViewController+NavigationIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+NavigationIndicator.swift"; path = "Loading/UIViewController+NavigationIndicator.swift"; sourceTree = "<group>"; };
+		27D3FADD2711FB3B005901C4 /* AssociatedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssociatedObject.swift; path = Foundation/AssociatedObject.swift; sourceTree = "<group>"; };
 		286DB0A7CD2E7A3BB9735E279314B263 /* SiFUtilities.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SiFUtilities.modulemap; sourceTree = "<group>"; };
 		2A2DF16BE7AAC6524EBFC525EDA77CC5 /* Localize-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Localize-Swift-umbrella.h"; sourceTree = "<group>"; };
 		2AA8F2F575ACE1DA90163D953B70A474 /* Pods-SiFUtilities_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SiFUtilities_Example-Info.plist"; sourceTree = "<group>"; };
@@ -220,7 +223,6 @@
 		D13B73BD7554699F2E74B33CDDCFE8CA /* UIWindow+Animation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIWindow+Animation.swift"; path = "Show/UIWindow+Animation.swift"; sourceTree = "<group>"; };
 		D21C6918A1D468C820D84FE20A199511 /* DataConvert.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DataConvert.swift; sourceTree = "<group>"; };
 		D22BD223D942FBE863CD31FD9501612C /* Optional++.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Optional++.swift"; path = "Foundation/Optional++.swift"; sourceTree = "<group>"; };
-		D383AFF1BF30744267F00F4CDFE9105B /* AssociatedObject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssociatedObject.swift; path = Runtime/AssociatedObject.swift; sourceTree = "<group>"; };
 		D4F929C8C62D22941C8090A57D06574A /* UITabBarController++.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITabBarController++.swift"; path = "UIKit/UITabBarController++.swift"; sourceTree = "<group>"; };
 		D7E7753792B70814CC1732FE5EE4495C /* UILabel+Localize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILabel+Localize.swift"; path = "Localize/UILabel+Localize.swift"; sourceTree = "<group>"; };
 		DD358B198846D938A22D09B3B464B61F /* Pods-SiFUtilities_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SiFUtilities_Example-dummy.m"; sourceTree = "<group>"; };
@@ -406,6 +408,7 @@
 		C4AC702695DD01947DA34179B4E3F380 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				27D3FADD2711FB3B005901C4 /* AssociatedObject.swift */,
 				355152AFB4C7909A046E8F3632B4CE6B /* Array++.swift */,
 				F0AE66952D078C423F7FE5C6CBFC7F01 /* Bundle++.swift */,
 				5453E46ECD6827444CA20518C0E7B177 /* Date+Utils.swift */,
@@ -552,7 +555,6 @@
 		E89788F8A6871E22CBF5D720576A9B50 /* Runtime */ = {
 			isa = PBXGroup;
 			children = (
-				D383AFF1BF30744267F00F4CDFE9105B /* AssociatedObject.swift */,
 				5C35BD221FE7243DF10EB84C67A15428 /* StoryboardSegue+Sender.swift */,
 				EE9516012FA5C7D939A3E2CCA16ABDB5 /* Swizzling.swift */,
 				A6947E5C80F5D49D8692D0BFE8514096 /* UIViewController+Runtime.swift */,
@@ -563,6 +565,7 @@
 		EDF7614FC3C0595D14A49A0F22B62757 /* Loading */ = {
 			isa = PBXGroup;
 			children = (
+				27D3FADB2711F8FB005901C4 /* UIViewController+NavigationIndicator.swift */,
 				85E025D306258A18023DA0457AC75B29 /* UIView+Loading.swift */,
 				CE04317B608CD895F8609060A838E548 /* UIViewController+Loading.swift */,
 			);
@@ -792,7 +795,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				38D4BC7F735E7AD49D63E12F980A21F2 /* Array++.swift in Sources */,
-				2F95900A6B3F8BC9D0492961D12BC994 /* AssociatedObject.swift in Sources */,
 				473B7A7D13B2A5587376712C7F3353BA /* AVPlayer++.swift in Sources */,
 				EA1E738BC968E4C0B12A471F66E1188A /* Bundle++.swift in Sources */,
 				DD748805D6098749835329C85B8C9D8B /* Codable+JSON.swift in Sources */,
@@ -847,6 +849,8 @@
 				BA5280C9C300D94CDF5530D898CCC641 /* UITextView+Localize.swift in Sources */,
 				721EC3FA34DC22A37C9B82D629123BDE /* UIView++.swift in Sources */,
 				D44EDEE7225C8600DCB20CEA08466D26 /* UIView+Animation.swift in Sources */,
+				27D3FADE2711FB3B005901C4 /* AssociatedObject.swift in Sources */,
+				27D3FADC2711F8FB005901C4 /* UIViewController+NavigationIndicator.swift in Sources */,
 				320766DAC651CE59D6ABA3AEB793BC4C /* UIView+Layer.swift in Sources */,
 				E1B9352F6B6176E952A4FD146838D9EE /* UIView+Loading.swift in Sources */,
 				567BBEBBF58AB2E8733D4B9211F8EF98 /* UIView+Nib.swift in Sources */,

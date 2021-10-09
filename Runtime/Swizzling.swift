@@ -40,7 +40,7 @@ extension NSObject {
     }
 }
 
-public protocol SelfAware: class {
+public protocol SelfAware: AnyObject {
     static func awake()
 }
 

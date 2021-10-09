@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 // @IBDesignable
-extension UIViewController: AssociatedObject {
+extension UIViewController {
     @IBInspectable public var titleLocalizedKey: String? {
         get {
             return getStringValue(by: &RunTimeKey.localizedTitleKey)

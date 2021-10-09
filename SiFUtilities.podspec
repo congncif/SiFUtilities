@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "SiFUtilities"
-  s.version = "4.24.1"
+  s.version = "4.25.0"
   s.summary = "A set of utilities for your app."
   s.swift_versions = ["5.0", "5.1", "5.2", "5.3", "5.4", "5.5"]
 
@@ -54,6 +54,8 @@ Pod::Spec.new do |s|
 
   s.subspec "Loading" do |co|
     co.source_files = "Loading/**/*"
+    
+    co.dependency "SiFUtilities/Foundation"
   end
 
   s.subspec "Localize" do |co|
@@ -62,7 +64,7 @@ Pod::Spec.new do |s|
 
     co.dependency "SiFUtilities/Foundation"
     co.dependency "SiFUtilities/UIKit"
-    co.dependency "SiFUtilities/Runtime"
+    co.dependency "SiFUtilities/Foundation"
     co.dependency "Localize-Swift/LocalizeSwiftCore"
   end
 
