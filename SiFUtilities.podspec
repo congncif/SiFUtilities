@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "SiFUtilities"
-  s.version = "4.25.0"
+  s.version = "4.25.1"
   s.summary = "A set of utilities for your app."
   s.swift_versions = ["5.0", "5.1", "5.2", "5.3", "5.4", "5.5"]
 
@@ -76,6 +76,8 @@ Pod::Spec.new do |s|
 
   s.subspec "Runtime" do |co|
     co.source_files = "Runtime/**/*"
+    
+    co.dependency "SiFUtilities/Foundation"
   end
 
   s.subspec "Show" do |co|
