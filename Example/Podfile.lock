@@ -1,62 +1,60 @@
 PODS:
-  - Localize-Swift (3.2.0):
-    - Localize-Swift/LocalizeSwiftCore (= 3.2.0)
-    - Localize-Swift/UIKit (= 3.2.0)
-  - Localize-Swift/LocalizeSwiftCore (3.2.0)
-  - Localize-Swift/UIKit (3.2.0):
-    - Localize-Swift/LocalizeSwiftCore
-  - SiFUtilities (4.17.0):
-    - SiFUtilities/Default (= 4.17.0)
-  - SiFUtilities/Default (4.17.0):
+  - Boardy/ComponentKit (1.36.1):
+    - Boardy/Core
+  - Boardy/Core (1.36.1)
+  - SiFUtilities (4.26.0):
+    - SiFUtilities/Default (= 4.26.0)
+  - SiFUtilities/Boardy (4.26.0):
+    - Boardy/ComponentKit
+    - SiFUtilities/Loading
+    - SiFUtilities/Show
+  - SiFUtilities/Default (4.26.0):
+    - SiFUtilities/Boardy
     - SiFUtilities/Endpoint
     - SiFUtilities/Foundation
     - SiFUtilities/Helpers
     - SiFUtilities/IBDesignable
     - SiFUtilities/KeyValue
     - SiFUtilities/Loading
-    - SiFUtilities/Localize
     - SiFUtilities/Media
     - SiFUtilities/Nib
     - SiFUtilities/Runtime
     - SiFUtilities/Show
     - SiFUtilities/UIKit
     - SiFUtilities/WeakObject
-  - SiFUtilities/Endpoint (4.17.0)
-  - SiFUtilities/Foundation (4.17.0)
-  - SiFUtilities/Helpers (4.17.0)
-  - SiFUtilities/IBDesignable (4.17.0):
+  - SiFUtilities/Endpoint (4.26.0)
+  - SiFUtilities/Foundation (4.26.0)
+  - SiFUtilities/Helpers (4.26.0)
+  - SiFUtilities/IBDesignable (4.26.0):
     - SiFUtilities/UIKit
-  - SiFUtilities/KeyValue (4.17.0)
-  - SiFUtilities/Loading (4.17.0)
-  - SiFUtilities/Localize (4.17.0):
-    - Localize-Swift
+  - SiFUtilities/KeyValue (4.26.0)
+  - SiFUtilities/Loading (4.26.0):
     - SiFUtilities/Foundation
-    - SiFUtilities/Runtime
-    - SiFUtilities/UIKit
-  - SiFUtilities/Media (4.17.0)
-  - SiFUtilities/Nib (4.17.0):
+  - SiFUtilities/Media (4.26.0)
+  - SiFUtilities/Nib (4.26.0):
     - SiFUtilities/Foundation
-  - SiFUtilities/Runtime (4.17.0)
-  - SiFUtilities/Show (4.17.0):
+  - SiFUtilities/Runtime (4.26.0):
+    - SiFUtilities/Foundation
+  - SiFUtilities/Show (4.26.0):
     - SiFUtilities/UIKit
-  - SiFUtilities/UIKit (4.17.0)
-  - SiFUtilities/WeakObject (4.17.0)
+  - SiFUtilities/UIKit (4.26.0)
+  - SiFUtilities/WeakObject (4.26.0)
 
 DEPENDENCIES:
   - SiFUtilities (from `../`)
 
 SPEC REPOS:
   trunk:
-    - Localize-Swift
+    - Boardy
 
 EXTERNAL SOURCES:
   SiFUtilities:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Localize-Swift: 6f4475136bdb0d7b2882ea3d4ea919d70142b232
-  SiFUtilities: 40e0c6369a0c99ad58575f202bf5c1c014f9c33d
+  Boardy: ea3ba611b693035849291bc7e635471aec8299bb
+  SiFUtilities: c78edc4914d7ed317a722191bc87cf76fb81ef0c
 
-PODFILE CHECKSUM: 478561156f8b79ebe1f0d553cf63ff219f44930e
+PODFILE CHECKSUM: 09ccd09c4d72b2d5e2182cf74f4db3afe87c7207
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.2

@@ -1,0 +1,6 @@
+framework module Boardy {
+  umbrella header "Boardy-umbrella.h"
+
+  export *
+  module * { export * }
+}

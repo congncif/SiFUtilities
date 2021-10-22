@@ -1,16 +1,16 @@
 {
   "name": "SiFUtilities",
-  "version": "4.17.0",
+  "version": "4.26.0",
   "summary": "A set of utilities for your app.",
   "swift_versions": [
-    "4.0",
-    "4.2",
     "5.0",
     "5.1",
     "5.2",
-    "5.3"
+    "5.3",
+    "5.4",
+    "5.5"
   ],
-  "description": "- Get instance view controller from Storyboard shortly\n- Handle viewcontroller did finished layout at first time\n- Configure status bar quickly\n- More extensions",
+  "description": "- Get instance view controller from Storyboard shortly\n- Handle viewController did finished layout at first time\n- Configure status bar quickly\n- More extensions",
   "homepage": "https://github.com/congncif/SiFUtilities",
   "license": {
     "type": "MIT",
@@ -21,11 +21,11 @@
   },
   "source": {
     "git": "https://github.com/congncif/SiFUtilities.git",
-    "tag": "4.17.0"
+    "tag": "4.26.0"
   },
   "social_media_url": "https://twitter.com/congncif",
   "platforms": {
-    "ios": "9.0"
+    "ios": "10.0"
   },
   "default_subspecs": "Default",
   "subspecs": [
@@ -64,7 +64,12 @@
     },
     {
       "name": "Loading",
-      "source_files": "Loading/**/*"
+      "source_files": "Loading/**/*",
+      "dependencies": {
+        "SiFUtilities/Foundation": [
+
+        ]
+      }
     },
     {
       "name": "Localize",
@@ -77,17 +82,10 @@
         "SiFUtilities/UIKit": [
 
         ],
-        "SiFUtilities/Runtime": [
-
-        ],
-        "Localize-Swift": [
+        "Localize-Swift/LocalizeSwiftCore": [
 
         ]
       }
-    },
-    {
-      "name": "CommandLineTool",
-      "preserve_paths": "CommandLineTool/localizable2appstrings"
     },
     {
       "name": "Nib",
@@ -100,7 +98,12 @@
     },
     {
       "name": "Runtime",
-      "source_files": "Runtime/**/*"
+      "source_files": "Runtime/**/*",
+      "dependencies": {
+        "SiFUtilities/Foundation": [
+
+        ]
+      }
     },
     {
       "name": "Show",
@@ -114,6 +117,21 @@
     {
       "name": "WeakObject",
       "source_files": "WeakObject/**/*"
+    },
+    {
+      "name": "Boardy",
+      "source_files": "Boardy/**/*.swift",
+      "dependencies": {
+        "SiFUtilities/Show": [
+
+        ],
+        "SiFUtilities/Loading": [
+
+        ],
+        "Boardy/ComponentKit": [
+
+        ]
+      }
     },
     {
       "name": "Default",
@@ -142,9 +160,6 @@
         "SiFUtilities/Loading": [
 
         ],
-        "SiFUtilities/Localize": [
-
-        ],
         "SiFUtilities/Nib": [
 
         ],
@@ -156,9 +171,16 @@
         ],
         "SiFUtilities/WeakObject": [
 
+        ],
+        "SiFUtilities/Boardy": [
+
         ]
       }
+    },
+    {
+      "name": "CommandLineTool",
+      "preserve_paths": "CommandLineTool/localizable2appstrings"
     }
   ],
-  "swift_version": "5.3"
+  "swift_version": "5.5"
 }
