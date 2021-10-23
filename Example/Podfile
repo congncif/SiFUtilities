@@ -4,4 +4,5 @@ use_frameworks!
 
 target 'SiFUtilities_Example' do
   pod 'SiFUtilities' , :path => '../'
+  pod 'SiFUtilities/Localize' , :path => '../'
 end

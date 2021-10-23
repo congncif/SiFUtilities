@@ -2,13 +2,14 @@ PODS:
   - Boardy/ComponentKit (1.36.1):
     - Boardy/Core
   - Boardy/Core (1.36.1)
-  - SiFUtilities (4.26.0):
-    - SiFUtilities/Default (= 4.26.0)
-  - SiFUtilities/Boardy (4.26.0):
+  - Localize-Swift/LocalizeSwiftCore (3.2.0)
+  - SiFUtilities (4.26.3):
+    - SiFUtilities/Default (= 4.26.3)
+  - SiFUtilities/Boardy (4.26.3):
     - Boardy/ComponentKit
     - SiFUtilities/Loading
     - SiFUtilities/Show
-  - SiFUtilities/Default (4.26.0):
+  - SiFUtilities/Default (4.26.3):
     - SiFUtilities/Boardy
     - SiFUtilities/Endpoint
     - SiFUtilities/Foundation
@@ -22,30 +23,36 @@ PODS:
     - SiFUtilities/Show
     - SiFUtilities/UIKit
     - SiFUtilities/WeakObject
-  - SiFUtilities/Endpoint (4.26.0)
-  - SiFUtilities/Foundation (4.26.0)
-  - SiFUtilities/Helpers (4.26.0)
-  - SiFUtilities/IBDesignable (4.26.0):
+  - SiFUtilities/Endpoint (4.26.3)
+  - SiFUtilities/Foundation (4.26.3)
+  - SiFUtilities/Helpers (4.26.3)
+  - SiFUtilities/IBDesignable (4.26.3):
     - SiFUtilities/UIKit
-  - SiFUtilities/KeyValue (4.26.0)
-  - SiFUtilities/Loading (4.26.0):
+  - SiFUtilities/KeyValue (4.26.3)
+  - SiFUtilities/Loading (4.26.3):
     - SiFUtilities/Foundation
-  - SiFUtilities/Media (4.26.0)
-  - SiFUtilities/Nib (4.26.0):
+  - SiFUtilities/Localize (4.26.3):
+    - Localize-Swift/LocalizeSwiftCore
     - SiFUtilities/Foundation
-  - SiFUtilities/Runtime (4.26.0):
-    - SiFUtilities/Foundation
-  - SiFUtilities/Show (4.26.0):
     - SiFUtilities/UIKit
-  - SiFUtilities/UIKit (4.26.0)
-  - SiFUtilities/WeakObject (4.26.0)
+  - SiFUtilities/Media (4.26.3)
+  - SiFUtilities/Nib (4.26.3):
+    - SiFUtilities/Foundation
+  - SiFUtilities/Runtime (4.26.3):
+    - SiFUtilities/Foundation
+  - SiFUtilities/Show (4.26.3):
+    - SiFUtilities/UIKit
+  - SiFUtilities/UIKit (4.26.3)
+  - SiFUtilities/WeakObject (4.26.3)
 
 DEPENDENCIES:
   - SiFUtilities (from `../`)
+  - SiFUtilities/Localize (from `../`)
 
 SPEC REPOS:
   trunk:
     - Boardy
+    - Localize-Swift
 
 EXTERNAL SOURCES:
   SiFUtilities:
@@ -53,8 +60,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Boardy: ea3ba611b693035849291bc7e635471aec8299bb
-  SiFUtilities: c78edc4914d7ed317a722191bc87cf76fb81ef0c
+  Localize-Swift: 6f4475136bdb0d7b2882ea3d4ea919d70142b232
+  SiFUtilities: b8055b3dd9ef6b4f5629b8a1079b4a07a12961bd
 
-PODFILE CHECKSUM: 09ccd09c4d72b2d5e2182cf74f4db3afe87c7207
+PODFILE CHECKSUM: 6c9cf79a45c37367d6a1a35a474f3f5a80aef618
 
 COCOAPODS: 1.11.2

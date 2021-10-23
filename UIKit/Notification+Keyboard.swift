@@ -98,3 +98,47 @@ public final class KeyboardAppearanceObserver {
         handler(info)
     }
 }
+
+public final class KeyboardAppearanceScrollObserver {
+    private weak var scrollView: UIScrollView?
+
+    private let initialContentInset: UIEdgeInsets
+    private let initialContentOffset: CGPoint
+
+    public init(scrollView: UIScrollView) {
+        self.scrollView = scrollView
+        initialContentInset = scrollView.contentInset
+        initialContentOffset = scrollView.contentOffset
+    }
+
+    private lazy var observer = KeyboardAppearanceObserver { [weak self] info in
+        guard let scrollView = self?.scrollView, let initialContentInset = self?.initialContentInset, let initialContentOffset = self?.initialContentOffset else { return }
+        var contentInset = initialContentInset
+        contentInset.bottom = initialContentInset.bottom + (info.visible ? info.height : 0)
+        scrollView.contentInset = contentInset
+
+        if let activeView = scrollView.firstResponder, info.visible {
+            let rect = activeView.convert(activeView.bounds, to: scrollView)
+            let bounds = UIScreen.main.bounds
+
+            let activeViewMaxY = rect.maxY + contentInset.top + scrollView.frame.minY - initialContentOffset.y
+            let visibleMaxY = bounds.height - info.height
+
+            let missingDistance = activeViewMaxY - visibleMaxY
+            let space: Double = missingDistance < 0 ? 0 : 20
+
+            var contentOffset = initialContentOffset
+            contentOffset.y = initialContentOffset.y + max(missingDistance, 0) + space
+
+            scrollView.contentOffset = contentOffset
+        }
+    }
+
+    public func startObserving() {
+        observer.startObserving()
+    }
+
+    public func stopObserving() {
+        observer.stopObserving()
+    }
+}
