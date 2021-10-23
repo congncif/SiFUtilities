@@ -102,17 +102,18 @@ public final class KeyboardAppearanceObserver {
 public final class KeyboardAppearanceScrollObserver {
     private weak var scrollView: UIScrollView?
 
-    private let initialContentInset: UIEdgeInsets
-    private let initialContentOffset: CGPoint
+    private var initialContentInset: UIEdgeInsets?
 
     public init(scrollView: UIScrollView) {
         self.scrollView = scrollView
-        initialContentInset = scrollView.contentInset
-        initialContentOffset = scrollView.contentOffset
     }
 
     private lazy var observer = KeyboardAppearanceObserver { [weak self] info in
-        guard let scrollView = self?.scrollView, let initialContentInset = self?.initialContentInset, let initialContentOffset = self?.initialContentOffset else { return }
+        if self?.initialContentInset == nil {
+            self?.initialContentInset = self?.scrollView?.contentInset
+        }
+
+        guard let scrollView = self?.scrollView, let initialContentInset = self?.initialContentInset else { return }
         var contentInset = initialContentInset
         contentInset.bottom = initialContentInset.bottom + (info.visible ? info.height : 0)
         scrollView.contentInset = contentInset
@@ -121,16 +122,17 @@ public final class KeyboardAppearanceScrollObserver {
             let rect = activeView.convert(activeView.bounds, to: scrollView)
             let bounds = UIScreen.main.bounds
 
-            let activeViewMaxY = rect.maxY + contentInset.top + scrollView.frame.minY - initialContentOffset.y
+            let activeViewMaxY = rect.maxY + scrollView.frame.minY + scrollView.contentInset.top - scrollView.contentOffset.y
             let visibleMaxY = bounds.height - info.height
 
             let missingDistance = activeViewMaxY - visibleMaxY
-            let space: Double = missingDistance < 0 ? 0 : 20
 
-            var contentOffset = initialContentOffset
-            contentOffset.y = initialContentOffset.y + max(missingDistance, 0) + space
+            if missingDistance > 0 {
+                var contentOffset = scrollView.contentOffset
+                contentOffset.y = scrollView.contentOffset.y + missingDistance + 20
 
-            scrollView.contentOffset = contentOffset
+                scrollView.contentOffset = contentOffset
+            }
         }
     }
 
