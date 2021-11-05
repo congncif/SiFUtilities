@@ -52,7 +52,11 @@ open class FittingView: UIView, ContentFitting {
     override open var intrinsicContentSize: CGSize {
         switch fittingHeight {
         case .autoSizing:
-            return super.intrinsicContentSize
+            let contentSize = super.intrinsicContentSize
+            if contentSize.height == 0 {
+                return CGSize(width: contentSize.width, height: CGFloat.leastNonzeroMagnitude)
+            }
+            return contentSize
         case let .explicit(height):
             return CGSize(width: bounds.size.width, height: height)
         }
@@ -211,8 +215,8 @@ extension UIScrollView {
     }
 }
 
-extension UIView {
-    public var closestContainerTableView: UITableView? {
+public extension UIView {
+    var closestContainerTableView: UITableView? {
         if let tableView = superview as? UITableView {
             return tableView
         } else {
