@@ -8,7 +8,7 @@
 import Foundation
 
 // @IBDesignable
-extension UIImageView: AssociatedObject {
+extension UIImageView {
     @IBInspectable public var imageNameLocalizedKey: String? {
         get {
             return getStringValue(by: &RunTimeKey.localizedImageNameKey)

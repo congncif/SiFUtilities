@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 // @IBDesignable
-extension UITextView: AssociatedObject {
+extension UITextView {
     @IBInspectable public var textLocalizedKey: String? {
         get {
             return getStringValue(by: &RunTimeKey.localizedTextKey)

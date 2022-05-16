@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 // @IBDesignable
-extension UIButton: AssociatedObject {
+extension UIButton {
     @IBInspectable public var normalTitleLocalizedKey: String? {
         get {
             return getStringValue(by: &RunTimeKey.localizedNormalTitleKey)

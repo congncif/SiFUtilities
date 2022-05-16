@@ -3,13 +3,13 @@ PODS:
     - Boardy/Core
   - Boardy/Core (1.36.1)
   - Localize-Swift/LocalizeSwiftCore (3.2.0)
-  - SiFUtilities (4.26.3):
-    - SiFUtilities/Default (= 4.26.3)
-  - SiFUtilities/Boardy (4.26.3):
+  - SiFUtilities (4.27.2):
+    - SiFUtilities/Default (= 4.27.2)
+  - SiFUtilities/Boardy (4.27.2):
     - Boardy/ComponentKit
     - SiFUtilities/Loading
     - SiFUtilities/Show
-  - SiFUtilities/Default (4.26.3):
+  - SiFUtilities/Default (4.27.2):
     - SiFUtilities/Boardy
     - SiFUtilities/Endpoint
     - SiFUtilities/Foundation
@@ -23,27 +23,27 @@ PODS:
     - SiFUtilities/Show
     - SiFUtilities/UIKit
     - SiFUtilities/WeakObject
-  - SiFUtilities/Endpoint (4.26.3)
-  - SiFUtilities/Foundation (4.26.3)
-  - SiFUtilities/Helpers (4.26.3)
-  - SiFUtilities/IBDesignable (4.26.3):
+  - SiFUtilities/Endpoint (4.27.2)
+  - SiFUtilities/Foundation (4.27.2)
+  - SiFUtilities/Helpers (4.27.2)
+  - SiFUtilities/IBDesignable (4.27.2):
     - SiFUtilities/UIKit
-  - SiFUtilities/KeyValue (4.26.3)
-  - SiFUtilities/Loading (4.26.3):
+  - SiFUtilities/KeyValue (4.27.2)
+  - SiFUtilities/Loading (4.27.2):
     - SiFUtilities/Foundation
-  - SiFUtilities/Localize (4.26.3):
+  - SiFUtilities/Localize (4.27.2):
     - Localize-Swift/LocalizeSwiftCore
     - SiFUtilities/Foundation
     - SiFUtilities/UIKit
-  - SiFUtilities/Media (4.26.3)
-  - SiFUtilities/Nib (4.26.3):
+  - SiFUtilities/Media (4.27.2)
+  - SiFUtilities/Nib (4.27.2):
     - SiFUtilities/Foundation
-  - SiFUtilities/Runtime (4.26.3):
+  - SiFUtilities/Runtime (4.27.2):
     - SiFUtilities/Foundation
-  - SiFUtilities/Show (4.26.3):
+  - SiFUtilities/Show (4.27.2):
     - SiFUtilities/UIKit
-  - SiFUtilities/UIKit (4.26.3)
-  - SiFUtilities/WeakObject (4.26.3)
+  - SiFUtilities/UIKit (4.27.2)
+  - SiFUtilities/WeakObject (4.27.2)
 
 DEPENDENCIES:
   - SiFUtilities (from `../`)
@@ -61,8 +61,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Boardy: ea3ba611b693035849291bc7e635471aec8299bb
   Localize-Swift: 6f4475136bdb0d7b2882ea3d4ea919d70142b232
-  SiFUtilities: b8055b3dd9ef6b4f5629b8a1079b4a07a12961bd
+  SiFUtilities: 0be7d38860d0cda8f3641c2503aca8dfb675c08f
 
 PODFILE CHECKSUM: 6c9cf79a45c37367d6a1a35a474f3f5a80aef618
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3

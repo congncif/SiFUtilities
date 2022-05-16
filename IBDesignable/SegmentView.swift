@@ -9,17 +9,17 @@
 import Foundation
 import UIKit
 
-public protocol SegmentItemProtocol: class {
+public protocol SegmentItemProtocol: AnyObject {
     var selected: Bool { get set }
 }
 
-public protocol SegmentProtocol: class {
+public protocol SegmentProtocol: AnyObject {
     associatedtype Item: SegmentItemProtocol
     var items: [Item] { get set }
 }
 
-extension SegmentProtocol {
-    public func selectItem(at index: Int) {
+public extension SegmentProtocol {
+    func selectItem(at index: Int) {
         guard index >= 0, index < items.count else { return }
         
         let selectedItems = items.filter { $0.selected == true }
@@ -32,11 +32,11 @@ extension SegmentProtocol {
         item.selected = true
     }
     
-    public var selectedIndex: Int? {
+    var selectedIndex: Int? {
         return items.lastIndex { $0.selected }
     }
     
-    public func resetSelections() {
+    func resetSelections() {
         let selectedItems = items.filter { $0.selected == true }
         selectedItems.forEach { object in
             object.selected = false
@@ -44,15 +44,15 @@ extension SegmentProtocol {
     }
 }
 
-extension SegmentProtocol where Item: Equatable {
-    public func selectItem(_ item: Item) {
+public extension SegmentProtocol where Item: Equatable {
+    func selectItem(_ item: Item) {
         if let idx = items.lastIndex(where: { $0 == item }) {
             selectItem(at: idx)
         }
     }
 }
 
-@objc public protocol SegmentItemViewDelegate: class {
+@objc public protocol SegmentItemViewDelegate: AnyObject {
     func segmentItemViewDidSelect(_ item: SegmentItemBaseView)
 }
 
@@ -61,7 +61,7 @@ extension SegmentProtocol where Item: Equatable {
 open class SegmentItemBaseView: UIView, SegmentItemProtocol {
     @IBOutlet public weak var delegate: SegmentItemViewDelegate?
     
-    open override func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
         
         setup()
@@ -88,7 +88,7 @@ open class SegmentItemBaseView: UIView, SegmentItemProtocol {
     open func render() {}
 }
 
-@objc public protocol SegmentViewDelegate: class {
+@objc public protocol SegmentViewDelegate: AnyObject {
     func segmentViewDidChange(selectedIndex: Int)
     func segmentViewDidReset()
 }
@@ -100,7 +100,7 @@ open class SegmentView: UIView, SegmentProtocol, SegmentItemViewDelegate {
     
     @IBOutlet public weak var delegate: SegmentViewDelegate?
     
-    open override func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
         
         for itemView in items {

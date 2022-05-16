@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 // @IBDesignable
-extension UITextField: AssociatedObject {
+extension UITextField {
     @IBInspectable public var placeholderLocalizedKey: String? {
         get {
             return getStringValue(by: &RunTimeKey.localizedPlaceholderTextKey)

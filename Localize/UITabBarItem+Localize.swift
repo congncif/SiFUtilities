@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 // @IBDesignable
-extension UITabBarItem: AssociatedObject {
+extension UITabBarItem {
     @IBInspectable public var titleLocalizedKey: String? {
         get {
             return getStringValue(by: &RunTimeKey.localizedTitleKey)

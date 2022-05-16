@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public protocol PopoverPresentable: class, UIPopoverPresentationControllerDelegate {
+public protocol PopoverPresentable: UIPopoverPresentationControllerDelegate {
     func presentPopover(_ contentViewController: UIViewController,
                         from sourceView: UIView,
                         arrowDirections: UIPopoverArrowDirection,

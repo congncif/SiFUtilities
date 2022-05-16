@@ -11,7 +11,7 @@ import UIKit
 /// The segment titles are separated by single character ',' (no space). For example: 'title1,title2,title3'
 
 // @IBDesignable
-extension UISegmentedControl: AssociatedObject {
+extension UISegmentedControl {
     @IBInspectable public var titlesLocalizedKey: String? {
         get {
             return getStringValue(by: &RunTimeKey.localizedArrayKey)

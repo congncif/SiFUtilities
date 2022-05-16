@@ -10,7 +10,7 @@ import UIKit
 
 private var senderKey: UInt8 = 11
 
-extension UIStoryboardSegue: AssociatedObject {
+extension UIStoryboardSegue {
     public var sender: Any? {
         set {
             setAssociatedObject(key: &senderKey, value: newValue)

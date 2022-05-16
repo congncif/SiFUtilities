@@ -75,7 +75,7 @@ public final class KeyboardAppearanceObserver {
 //        let animationOptions = animationCurve << 16
         // if split keyboard is being dragged, then skip notification
 
-        if keyboardFrame.size.height == 0, UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad {
+        if keyboardFrame.size.height == 0, UIDevice.current.userInterfaceIdiom == .pad {
             if isPortrait, keyboardFrameBegin.origin.y + keyboardFrameBegin.size.height == screenSize.height {
                 return
             } else if !isPortrait, keyboardFrameBegin.origin.x + keyboardFrameBegin.size.width == screenSize.width {
