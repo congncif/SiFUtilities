@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "SiFUtilities"
-  s.version = "4.27.3"
+  s.version = "4.27.4"
   s.summary = "A set of utilities for your app."
   s.swift_version = "5"
 

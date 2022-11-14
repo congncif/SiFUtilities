@@ -8,16 +8,17 @@
 import Foundation
 import UIKit
 
-extension UIViewController {
-    public func pushOverFullScreen(_ viewController: UIViewController,
-                                   animated: Bool = true) {
+public extension UIViewController {
+    func pushOverFullScreen(_ viewController: UIViewController,
+                            navigationType: UINavigationController.Type? = nil,
+                            animated: Bool = true) {
         let contentView = topMostViewController.oldestLineageViewController.view.snapshotView(afterScreenUpdates: true)
         let rootViewController = ResumeDismissViewController(contentView: contentView)
         let navigationController = UINavigationController(rootViewController: rootViewController)
         navigationController.view.backgroundColor = .clear
 
         let configuration = PresentationConfiguration.default.apply {
-            $0.style = .present(PresentConfiguration(navigationType: nil, modalPresentationStyle: .fullScreen, modalTransitionStyle: .crossDissolve, isModalInPresentation: false))
+            $0.style = .present(PresentConfiguration(navigationType: navigationType, modalPresentationStyle: .fullScreen, modalTransitionStyle: .crossDissolve, isModalInPresentation: false))
             $0.animated = false
         }
 
@@ -26,10 +27,10 @@ extension UIViewController {
         }
     }
 
-    public func popOverFullScreen(animated: Bool = true, completion: (() -> Void)? = nil) {
-        let presentedNavigaiton = presentedViewController as? UINavigationController
+    func popOverFullScreen(animated: Bool = true, completion: (() -> Void)? = nil) {
+        let presentedNavigation = presentedViewController as? UINavigationController
 
-        guard let foundNavigation = presentedNavigaiton ?? navigationController ?? self as? UINavigationController, let rootViewController = foundNavigation.rootViewController as? ResumeDismissViewController else {
+        guard let foundNavigation = presentedNavigation ?? navigationController ?? self as? UINavigationController, let rootViewController = foundNavigation.rootViewController as? ResumeDismissViewController else {
             assertionFailure("Cannot detect Over Full Screen")
             return
         }
@@ -69,6 +70,7 @@ final class ResumeDismissViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
 
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
