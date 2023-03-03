@@ -85,7 +85,7 @@ extension UIViewController {
 }
 
 extension UIAlertController {
-    open class func confirm(title: String? = nil,
+    public class func confirm(title: String? = nil,
                             message: String?,
                             style: UIAlertController.Style = .alert,
                             dismissOthers: Bool = false,
@@ -97,7 +97,7 @@ extension UIAlertController {
         viewController?.confirm(title: title, message: message, style: style, dismissOthers: dismissOthers, cancelTitle: cancelTitle, cancelHandler: cancelHandler, confirmedTitle: confirmedTitle, confirmedHandler: confirmedHandler)
     }
     
-    open class func notify(title: String? = nil,
+    public class func notify(title: String? = nil,
                            message: String?,
                            style: UIAlertController.Style = .alert,
                            dismissOthers: Bool = false,

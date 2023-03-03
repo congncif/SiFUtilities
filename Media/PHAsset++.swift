@@ -9,7 +9,7 @@ import Foundation
 import Photos
 
 extension PHAsset {
-    open func thumbnail(size: CGSize = CGSize(width: 320, height: 320)) -> UIImage? {
+    public func thumbnail(size: CGSize = CGSize(width: 320, height: 320)) -> UIImage? {
         let manager = PHImageManager.default
         let options = PHImageRequestOptions()
         var thumbnail: UIImage?
@@ -29,7 +29,7 @@ extension PHAsset {
         return thumbnail
     }
     
-    open func cacheThumbnail(size: CGSize = CGSize(width: 320, height: 320)) -> UIImage? {
+    public func cacheThumbnail(size: CGSize = CGSize(width: 320, height: 320)) -> UIImage? {
         let manager = PHCachingImageManager()
         let options = PHImageRequestOptions()
         var thumbnail: UIImage?
@@ -49,7 +49,7 @@ extension PHAsset {
         return thumbnail
     }
     
-    open func imageAssetInfo() -> (imageData: Data?, fileName: String?) {
+    public func imageAssetInfo() -> (imageData: Data?, fileName: String?) {
         var imageData: Data?
         var fileName: String?
         
@@ -81,7 +81,7 @@ extension PHAsset {
         return (imageData, fileName)
     }
     
-    open func exportVideo(to url: URL) {
+    public func exportVideo(to url: URL) {
         let semaphore = DispatchSemaphore(value: 0)
         DispatchQueue.global().async {
             let manager = PHImageManager.default

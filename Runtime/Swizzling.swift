@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension NSObject {
-    open class func swizzledMethod(_ swizzledClass: AnyClass, originalSelector: Selector, to swizzledSelector: Selector) {
+    public class func swizzledMethod(_ swizzledClass: AnyClass, originalSelector: Selector, to swizzledSelector: Selector) {
         guard let originalMethod = class_getInstanceMethod(swizzledClass, originalSelector),
             let swizzledMethod = class_getInstanceMethod(swizzledClass, swizzledSelector) else {
             return
@@ -35,7 +35,7 @@ extension NSObject {
         }
     }
     
-    open class func exchangeMethod(originalSelector: Selector, to swizzledSelector: Selector) {
+    public class func exchangeMethod(originalSelector: Selector, to swizzledSelector: Selector) {
         self.swizzledMethod(self, originalSelector: originalSelector, to: swizzledSelector)
     }
 }

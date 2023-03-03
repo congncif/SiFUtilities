@@ -14,7 +14,7 @@ extension UIStoryboard {
         static let main = "Main"
     }
     
-    open var main: UIStoryboard {
+    public var main: UIStoryboard {
         return UIStoryboard(name: Name.main, bundle: nil)
     }
     
@@ -43,7 +43,7 @@ extension UIViewController {
         return controller
     }
     
-    open class func instantiateFromStoryboard(name: String,
+    public class func instantiateFromStoryboard(name: String,
                                               identifier: String,
                                               bundle: Bundle? = nil) -> Self {
         return instantiateFromStoryboardHelper(storyboardName: name,
@@ -51,52 +51,52 @@ extension UIViewController {
                                                bundle: bundle)
     }
     
-    open class func instantiateFromStoryboard(name: String,
+    public class func instantiateFromStoryboard(name: String,
                                               bundle: Bundle? = nil) -> Self {
         let identifier = className
         return instantiateFromStoryboardHelper(storyboardName: name, storyboardId: identifier, bundle: bundle)
     }
     
-    open class func instantiateFromStoryboard(bundle: Bundle? = nil) -> Self {
+    public class func instantiateFromStoryboard(bundle: Bundle? = nil) -> Self {
         let name = className
         let identifier = className
         return instantiateFromStoryboardHelper(storyboardName: name, storyboardId: identifier, bundle: bundle)
     }
     
-    open class func instantiateFromModuleStoryboard(bundle: Bundle? = nil) -> Self {
+    public class func instantiateFromModuleStoryboard(bundle: Bundle? = nil) -> Self {
         let name = className.replacingOccurrences(of: "ViewController", with: "")
         let identifier = className
         return instantiateFromStoryboardHelper(storyboardName: name, storyboardId: identifier, bundle: bundle)
     }
     
-    open class func instantiateFromMainStoryboard(identifier: String, bundle: Bundle? = nil) -> Self {
+    public class func instantiateFromMainStoryboard(identifier: String, bundle: Bundle? = nil) -> Self {
         return instantiateFromStoryboard(name: UIStoryboard.Name.main, identifier: identifier, bundle: bundle)
     }
     
-    open class func instantiateFromMainStoryboard(bundle: Bundle? = nil) -> Self {
+    public class func instantiateFromMainStoryboard(bundle: Bundle? = nil) -> Self {
         let identifier = className
         return instantiateFromStoryboard(name: UIStoryboard.Name.main, identifier: identifier, bundle: bundle)
     }
     
-    open class func instantiateInitialFromStoryboard(name: String, bundle: Bundle? = nil) -> Self {
+    public class func instantiateInitialFromStoryboard(name: String, bundle: Bundle? = nil) -> Self {
         return instantiateFromStoryboardHelper(storyboardName: name, bundle: bundle)
     }
     
-    open class func instantiateInitialFromStoryboard(bundle: Bundle? = nil) -> Self {
+    public class func instantiateInitialFromStoryboard(bundle: Bundle? = nil) -> Self {
         let name = className
         return instantiateFromStoryboardHelper(storyboardName: name, bundle: bundle)
     }
     
-    open class func instantiateInitialFromModuleStoryboard(bundle: Bundle? = nil) -> Self {
+    public class func instantiateInitialFromModuleStoryboard(bundle: Bundle? = nil) -> Self {
         let name = className.replacingOccurrences(of: "ViewController", with: "")
         return instantiateFromStoryboardHelper(storyboardName: name, bundle: bundle)
     }
     
-    open func navigationContainer<U: UINavigationController>() -> U? {
+    public func navigationContainer<U: UINavigationController>() -> U? {
         return navigationController as? U
     }
     
-    open func tabBarContainer<U: UITabBarController>() -> U? {
+    public func tabBarContainer<U: UITabBarController>() -> U? {
         return tabBarController as? U
     }
     
@@ -107,7 +107,7 @@ extension UIViewController {
      
      - returns: instance of this class
      */
-    open class func instantiateViewController(storyboardPath: String,
+    public class func instantiateViewController(storyboardPath: String,
                                               separator: String = ".",
                                               bundle: Bundle? = nil) -> Self {
         let components = storyboardPath.components(separatedBy: separator)

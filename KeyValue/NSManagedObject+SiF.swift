@@ -11,7 +11,7 @@ import CoreData
 
 extension NSManagedObject {
     // all keys = entity properties
-    open func updateAttributes<T: ValueTransformer>(dictionary: [String: Any],
+    public func updateAttributes<T: ValueTransformer>(dictionary: [String: Any],
                           ignoreKeys: [String] = [],
                           mapKeys: [String: String] = [:],
                           transformers: [String: T] = [:]) {
@@ -55,7 +55,7 @@ extension NSManagedObject {
     }
     
     // all keys = entity properties
-    open func dictionary<T: ValueTransformer>(ignoreKeys: [String] = [],
+    public func dictionary<T: ValueTransformer>(ignoreKeys: [String] = [],
                     mapKeys: [String: String] = [:],
                     reverseTransformers: [String: T] = [:]) -> [String: Any] {
         let dictProperties = self.entity.propertiesByName

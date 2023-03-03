@@ -10,7 +10,7 @@ import AVFoundation
 import Foundation
 
 extension AVPlayer {
-    open func takeImage() -> UIImage? {
+    public func takeImage() -> UIImage? {
         guard let currentItem = self.currentItem, let asset = self.currentItem?.asset else {
             return nil
         }

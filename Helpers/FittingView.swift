@@ -228,7 +228,7 @@ public extension UIView {
 private var animationKey: UInt8 = 1
 
 extension UITableView {
-    open var resizingAnimationEnabled: Bool {
+    public var resizingAnimationEnabled: Bool {
         set {
             objc_setAssociatedObject(self, &animationKey, newValue, .OBJC_ASSOCIATION_ASSIGN)
         }

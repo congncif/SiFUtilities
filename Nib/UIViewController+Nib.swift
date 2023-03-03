@@ -15,7 +15,7 @@ extension UIViewController {
         return controller
     }
     
-    open class func instantiateFromNib() -> Self {
+    public class func instantiateFromNib() -> Self {
         return instantiateFromNibHelper()
     }
 }

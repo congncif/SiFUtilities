@@ -204,8 +204,6 @@ public extension UIViewController {
             presenting.dismiss(animated: animated, completion: completion)
         } else if let navigation = navigationController, let presenting = navigation.presentingViewController {
             presenting.dismiss(animated: animated, completion: completion)
-        } else if let presented = presentedViewController {
-            presented.dismiss(animated: animated, completion: completion)
         } else {
             dismiss(animated: animated, completion: completion)
         }

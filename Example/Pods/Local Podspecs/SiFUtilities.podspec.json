@@ -1,6 +1,6 @@
 {
   "name": "SiFUtilities",
-  "version": "4.27.3",
+  "version": "4.27.5",
   "summary": "A set of utilities for your app.",
   "swift_versions": "5",
   "description": "- Get instance view controller from Storyboard shortly\n- Handle viewController did finished layout at first time\n- Configure status bar quickly\n- More extensions",
@@ -14,7 +14,7 @@
   },
   "source": {
     "git": "https://github.com/congncif/SiFUtilities.git",
-    "tag": "4.27.3"
+    "tag": "4.27.5"
   },
   "social_media_url": "https://twitter.com/congncif",
   "platforms": {

@@ -15,7 +15,7 @@ extension UIView {
         return view
     }
 
-    open class func loadFromNib() -> Self {
+    public class func loadFromNib() -> Self {
         return loadFromNibHelper()
     }
 }

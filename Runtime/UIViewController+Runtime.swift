@@ -53,7 +53,7 @@ extension UIViewController {
         }
     }
     
-    open class func swizzling() {
+    public class func swizzling() {
         struct Static {
             static var token = false
         }
