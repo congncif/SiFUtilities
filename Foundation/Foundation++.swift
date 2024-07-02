@@ -48,3 +48,15 @@ extension Data {
         return hexString
     }
 }
+
+public extension DispatchQueue {
+    static func performOnMain(_ block: @escaping () -> Void) {
+        if Thread.current.isMainThread {
+            block()
+        } else {
+            DispatchQueue.main.async(qos: .userInteractive) {
+                block()
+            }
+        }
+    }
+}
