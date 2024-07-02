@@ -66,6 +66,7 @@ class SwizzlingEntry {
     }
 }
 
+/*
 extension UIApplication {
     private static let runOnce: Void = {
         SwizzlingEntry.swizzling()
@@ -78,3 +79,4 @@ extension UIApplication {
         return super.next
     }
 }
+*/
