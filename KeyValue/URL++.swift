@@ -7,9 +7,9 @@
 
 import Foundation
 
-extension URL {
-    public var keyValueParameters: Dictionary<String, String>? {
-        guard let keyValues = self.query?.components(separatedBy: "&") else {
+public extension URL {
+    var keyValueParameters: [String: String]? {
+        guard let keyValues = query?.components(separatedBy: "&") else {
             return nil
         }
         var results = [String: String]()
@@ -22,5 +22,24 @@ extension URL {
             }
         }
         return results
+    }
+
+    func appending(parameters: [String: String]) -> URL {
+        var url: URL = self
+        if #available(iOS 16.0, *) {
+            url = self.appending(queryItems: parameters.map { URLQueryItem(name: $0.key, value: $0.value) })
+        } else {
+            if var urlComponents = URLComponents(url: self, resolvingAgainstBaseURL: false) {
+                var queryItems = urlComponents.queryItems ?? []
+                for (key, value) in parameters {
+                    queryItems.append(URLQueryItem(name: key, value: value))
+                }
+                urlComponents.queryItems = queryItems
+                if let componentURL = urlComponents.url {
+                    url = componentURL
+                }
+            }
+        }
+        return url
     }
 }
